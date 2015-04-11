@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageStitcher", "ImageStitcher\ImageStitcher.csproj", "{E1ABDC38-23E3-41B8-AFE3-1123660AF2E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphic", "Graphics\Graphic.csproj", "{DB848305-DFCB-4B98-9F32-0E5BC128FCC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicTest", "GraphicsTest\GraphicTest.csproj", "{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1ABDC38-23E3-41B8-AFE3-1123660AF2E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1ABDC38-23E3-41B8-AFE3-1123660AF2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1ABDC38-23E3-41B8-AFE3-1123660AF2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1ABDC38-23E3-41B8-AFE3-1123660AF2E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB848305-DFCB-4B98-9F32-0E5BC128FCC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB848305-DFCB-4B98-9F32-0E5BC128FCC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB848305-DFCB-4B98-9F32-0E5BC128FCC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB848305-DFCB-4B98-9F32-0E5BC128FCC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
