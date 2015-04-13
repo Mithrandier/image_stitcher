@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Graphic;
 
-namespace KeyPointDetector.Sift {
+namespace Sift.Searching {
   class GaussPyramid {
     IPicture initial_picture;
     public GaussPyramid(IPicture picture) {

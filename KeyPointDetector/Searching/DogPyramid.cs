@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Graphic;
 
-namespace KeyPointDetector.Sift {
+namespace Sift.Searching {
   class DogPyramid {
     GaussPyramid gauss_pyramid;
     public DogPyramid(GaussPyramid gauss_pyramid) {
@@ -13,7 +13,7 @@ namespace KeyPointDetector.Sift {
     }
 
     public CorePoint[] FindExtrems() {
-      return null;
+      return new CorePoint[] { new CorePoint(-1, -1) };
     }
 
     void Build() {

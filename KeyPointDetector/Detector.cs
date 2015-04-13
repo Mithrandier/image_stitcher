@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Graphic;
+using Sift.Searching;
+using Sift.Description;
 
-namespace KeyPointDetector.Sift {
-  public class Detector : IDetector {
+namespace Sift {
+  public class Detector {
     IPicture picture;
     public Detector(IPicture picture) {
       this.picture = picture;
@@ -33,7 +35,7 @@ namespace KeyPointDetector.Sift {
     }
 
     KeyPoint[] GenerateDescriptors(CorePoint[] precised_set) {
-      return precised_set.Select((point) => new Descriptor(point).Apply()).ToArray();
+      return precised_set.Select((p) => new Descriptor(p).Apply()).ToArray();
     }
 
     DogPyramid _dogs;
