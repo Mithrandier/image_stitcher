@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphic", "Graphics\Graphic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicTest", "GraphicsTest\GraphicTest.csproj", "{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyPointDetector", "KeyPointDetector\KeyPointDetector.csproj", "{8166AF4D-6653-4FA2-81BC-ECDC981121BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyPointDetectorTest", "KeyPointDetectorTest\KeyPointDetectorTest.csproj", "{5955009D-0517-4842-B895-F3DD0D66E175}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8166AF4D-6653-4FA2-81BC-ECDC981121BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8166AF4D-6653-4FA2-81BC-ECDC981121BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8166AF4D-6653-4FA2-81BC-ECDC981121BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8166AF4D-6653-4FA2-81BC-ECDC981121BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5955009D-0517-4842-B895-F3DD0D66E175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5955009D-0517-4842-B895-F3DD0D66E175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5955009D-0517-4842-B895-F3DD0D66E175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5955009D-0517-4842-B895-F3DD0D66E175}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
