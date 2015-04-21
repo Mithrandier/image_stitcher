@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ImageStitchingExample {
-  public partial class MainStitchingForm :Form {
+  public partial class MainStitchingForm : Form {
     List<Image> segments = new List<Image>();
     Image result;
     Stitcher.IStitcher stitcher;
@@ -17,12 +17,12 @@ namespace ImageStitchingExample {
     public MainStitchingForm() {
       InitializeComponent();
       listSegments.LargeImageList = new ImageList();
-      //stitcher = new Stitcher.EmguStitcher();
+      stitcher = new Stitcher.EmguStitcher();
     }
 
     private void buttonAdd_Click(object sender, EventArgs e) {
       if (addSegmentDialog.ShowDialog() != DialogResult.OK)
-        return;      
+        return;
       foreach (var filename in addSegmentDialog.FileNames) {
         segments.Add(Image.FromFile(filename));
         listSegments.LargeImageList.Images.Add(segments.Last());
@@ -35,8 +35,11 @@ namespace ImageStitchingExample {
         textResultMessage.Text = "Not enough segments";
         return;
       }
-      result = stitcher.Stitch(segments.ToArray());
+      InvokeLongProcess(() => {
+        result = stitcher.Stitch(segments.ToArray());
+      });
       pictureResult.Image = result;
+      textResultMessage.Text = "Stitching complete";
     }
 
     private void buttonSave_Click(object sender, EventArgs e) {
@@ -47,6 +50,14 @@ namespace ImageStitchingExample {
       if (saveResultDialog.ShowDialog() != DialogResult.OK)
         return;
       result.Save(saveResultDialog.FileName);
+      textResultMessage.Text = "Saved";
+    }
+
+    delegate void AProcess();
+    void InvokeLongProcess(AProcess process) {
+      Cursor.Current = Cursors.WaitCursor;
+      process.Invoke();
+      Cursor.Current = Cursors.Default;
     }
   }
 }
