@@ -34,7 +34,6 @@
       this.performToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.iterateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.resetPixelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.copyImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.gaussBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.addSegmentDialog = new System.Windows.Forms.OpenFileDialog();
@@ -42,6 +41,8 @@
       this.loadImageDialog = new System.Windows.Forms.OpenFileDialog();
       this.textMessage = new System.Windows.Forms.TextBox();
       this.textTimer = new System.Windows.Forms.TextBox();
+      this.scale2xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.buildScaleSpaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.currentPictureBox)).BeginInit();
       this.SuspendLayout();
@@ -79,8 +80,9 @@
       this.performToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.iterateToolStripMenuItem,
             this.resetPixelsToolStripMenuItem,
-            this.copyImageToolStripMenuItem,
-            this.gaussBlurToolStripMenuItem});
+            this.gaussBlurToolStripMenuItem,
+            this.scale2xToolStripMenuItem,
+            this.buildScaleSpaceToolStripMenuItem});
       this.performToolStripMenuItem.Enabled = false;
       this.performToolStripMenuItem.Name = "performToolStripMenuItem";
       this.performToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
@@ -99,13 +101,6 @@
       this.resetPixelsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
       this.resetPixelsToolStripMenuItem.Text = "Reset pixels";
       this.resetPixelsToolStripMenuItem.Click += new System.EventHandler(this.resetPixelsToolStripMenuItem_Click);
-      // 
-      // copyImageToolStripMenuItem
-      // 
-      this.copyImageToolStripMenuItem.Name = "copyImageToolStripMenuItem";
-      this.copyImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-      this.copyImageToolStripMenuItem.Text = "Copy image";
-      this.copyImageToolStripMenuItem.Click += new System.EventHandler(this.copyImageToolStripMenuItem_Click);
       // 
       // gaussBlurToolStripMenuItem
       // 
@@ -157,6 +152,20 @@
       this.textTimer.Size = new System.Drawing.Size(100, 20);
       this.textTimer.TabIndex = 3;
       // 
+      // scale2xToolStripMenuItem
+      // 
+      this.scale2xToolStripMenuItem.Name = "scale2xToolStripMenuItem";
+      this.scale2xToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.scale2xToolStripMenuItem.Text = "Scale 2x";
+      this.scale2xToolStripMenuItem.Click += new System.EventHandler(this.scale2xToolStripMenuItem_Click);
+      // 
+      // buildScaleSpaceToolStripMenuItem
+      // 
+      this.buildScaleSpaceToolStripMenuItem.Name = "buildScaleSpaceToolStripMenuItem";
+      this.buildScaleSpaceToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+      this.buildScaleSpaceToolStripMenuItem.Text = "Build scale space";
+      this.buildScaleSpaceToolStripMenuItem.Click += new System.EventHandler(this.buildScaleSpaceToolStripMenuItem_Click);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,9 +200,10 @@
         private System.Windows.Forms.ToolStripMenuItem performToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iterateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetPixelsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gaussBlurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadRawToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scale2xToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buildScaleSpaceToolStripMenuItem;
     }
 }
 

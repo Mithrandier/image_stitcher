@@ -3,15 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageStitcher", "ImageStitcher\ImageStitcher.csproj", "{E1ABDC38-23E3-41B8-AFE3-1123660AF2E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessingExample", "ImageStitcher\ImageProcessingExample.csproj", "{E1ABDC38-23E3-41B8-AFE3-1123660AF2E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphic", "Graphics\Graphic.csproj", "{DB848305-DFCB-4B98-9F32-0E5BC128FCC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicTest", "GraphicsTest\GraphicTest.csproj", "{46420C87-1E6B-4B41-80B8-C651D3E8E7A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyPointDetector", "KeyPointDetector\KeyPointDetector.csproj", "{8166AF4D-6653-4FA2-81BC-ECDC981121BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sift", "KeyPointDetector\Sift.csproj", "{8166AF4D-6653-4FA2-81BC-ECDC981121BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyPointDetectorTest", "KeyPointDetectorTest\KeyPointDetectorTest.csproj", "{5955009D-0517-4842-B895-F3DD0D66E175}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiftTest", "KeyPointDetectorTest\SiftTest.csproj", "{5955009D-0517-4842-B895-F3DD0D66E175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageStitchingExample", "ImageStitchingExample\ImageStitchingExample.csproj", "{44A79740-4E18-4B4E-B658-56255501468D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stitcher", "Stitcher\Stitcher.csproj", "{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StitcherTest", "StitcherTest\StitcherTest.csproj", "{E51A1897-03E5-463C-B47E-64A0C8DD91C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stitching", "Stitching\Stitching.csproj", "{331F904E-E7E8-42E0-8C82-22539C35E8F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +47,22 @@ Global
 		{5955009D-0517-4842-B895-F3DD0D66E175}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5955009D-0517-4842-B895-F3DD0D66E175}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5955009D-0517-4842-B895-F3DD0D66E175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44A79740-4E18-4B4E-B658-56255501468D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A79740-4E18-4B4E-B658-56255501468D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A79740-4E18-4B4E-B658-56255501468D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A79740-4E18-4B4E-B658-56255501468D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51A1897-03E5-463C-B47E-64A0C8DD91C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51A1897-03E5-463C-B47E-64A0C8DD91C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51A1897-03E5-463C-B47E-64A0C8DD91C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51A1897-03E5-463C-B47E-64A0C8DD91C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{331F904E-E7E8-42E0-8C82-22539C35E8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{331F904E-E7E8-42E0-8C82-22539C35E8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{331F904E-E7E8-42E0-8C82-22539C35E8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{331F904E-E7E8-42E0-8C82-22539C35E8F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

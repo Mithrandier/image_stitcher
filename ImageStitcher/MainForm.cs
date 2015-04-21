@@ -48,12 +48,6 @@ namespace ImageStitcher {
           CountTime(() => current_image.EachPixel((x, y, p) => { current_image[x, y] = p; }));
         }
 
-        private void copyImageToolStripMenuItem_Click(object sender, EventArgs e) {
-          CountTime(() => {
-            var new_image = new BitmapWrap(current_image.Width, current_image.Height);
-          });
-        }
-
         private void loadRawToolStripMenuItem_Click(object sender, EventArgs e) {
           if (loadImageDialog.ShowDialog() != DialogResult.OK)
             return;
@@ -67,6 +61,14 @@ namespace ImageStitcher {
             var result_image = filter.Apply();
             CurrentImage = result_image;
           });
+        }
+
+        private void scale2xToolStripMenuItem_Click(object sender, EventArgs e) {
+          CurrentImage = CurrentImage.Scale(0.5);
+        }
+
+        private void buildScaleSpaceToolStripMenuItem_Click(object sender, EventArgs e) {
+          new Sift.Searching.GaussPyramid(CurrentImage).Build(4, 2, 4);
         }
     }
 }

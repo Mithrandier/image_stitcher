@@ -14,8 +14,11 @@ namespace Graphic {
     byte[] ByteArray { get; }
     uint[] Array { get; set; }
 
+    uint GetPixelSafe(int x, int y);
     void EachPixel(PixelIterator iterator);
     System.Drawing.Bitmap ToBitmap();
     IPicture CopyTemplate();
+    IPicture ScaleTo(int width, int height);
+    IPicture Scale(double scale);
   }
 }

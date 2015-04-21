@@ -18,6 +18,8 @@ namespace Graphic.Pictures {
     }
 
     public RawImage(int width, int height) {
+      if (width <= 0 || height <= 0)
+        throw new ArgumentOutOfRangeException();
       this.original_image = new Bitmap(width, height);
     }
 
@@ -54,6 +56,29 @@ namespace Graphic.Pictures {
       for (int iByte = 0; iByte < 4; iByte++)
         raw_pixel[iByte] = ByteArray[position + iByte];
       return raw_pixel;
+    }
+
+    public IPicture ScaleTo(int width, int height) {
+      var result = new RawImage(width, height);
+      double scale = Width * 1.0 / width;
+      result.EachPixel((x, y, p) => {
+        result[x, y] = GetPixelSafe((int)(x * scale), (int)(y * scale));
+      });
+      return result;
+    }
+
+    public uint GetPixelSafe(int x, int y) {
+      x = Math.Max(0, Math.Min(Width - 1, x));
+      y = Math.Max(0, Math.Min(Height - 1, y));
+      return this[x, y];
+    }
+
+    public IPicture Scale(double scale) {
+      var result = new RawImage((int)(Width * scale), (int)(Height * scale));
+      result.EachPixel((x, y, p) => {
+        result[x, y] = GetPixelSafe((int)(x / scale), (int)(y / scale));
+      });
+      return result;
     }
   }
 }
