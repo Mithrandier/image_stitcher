@@ -35,7 +35,7 @@ namespace SiftExample {
       textTime.Text = timer.ElapsedMilliseconds.ToString();
       textPointsCount.Text = features.Length.ToString();
       var g = Graphics.FromImage(current_image);
-      foreach (var feature in features) {
+      foreach (var feature in features) {        
         g.DrawEllipse(Pens.Red, feature.KeyPoint.Point.X, feature.KeyPoint.Point.Y, 10, 10);
       }
       g.Save();

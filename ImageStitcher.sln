@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StitcherTest", "StitcherTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiftExample", "SiftExample\SiftExample.csproj", "{5D4864D4-810F-40FD-B824-10126E3954D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformatorExample", "TransformatorExample\TransformatorExample.csproj", "{0254BDAE-1EED-4EE5-9895-AF56CE4FC60C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{5D4864D4-810F-40FD-B824-10126E3954D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D4864D4-810F-40FD-B824-10126E3954D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D4864D4-810F-40FD-B824-10126E3954D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0254BDAE-1EED-4EE5-9895-AF56CE4FC60C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0254BDAE-1EED-4EE5-9895-AF56CE4FC60C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0254BDAE-1EED-4EE5-9895-AF56CE4FC60C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0254BDAE-1EED-4EE5-9895-AF56CE4FC60C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
