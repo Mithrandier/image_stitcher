@@ -13,13 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sift", "KeyPointDetector\Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiftTest", "KeyPointDetectorTest\SiftTest.csproj", "{5955009D-0517-4842-B895-F3DD0D66E175}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageStitchingExample", "ImageStitchingExample\ImageStitchingExample.csproj", "{44A79740-4E18-4B4E-B658-56255501468D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StitchingExample", "ImageStitchingExample\StitchingExample.csproj", "{44A79740-4E18-4B4E-B658-56255501468D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stitcher", "Stitcher\Stitcher.csproj", "{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StitcherTest", "StitcherTest\StitcherTest.csproj", "{E51A1897-03E5-463C-B47E-64A0C8DD91C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stitching", "Stitching\Stitching.csproj", "{331F904E-E7E8-42E0-8C82-22539C35E8F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiftExample", "SiftExample\SiftExample.csproj", "{5D4864D4-810F-40FD-B824-10126E3954D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +59,10 @@ Global
 		{E51A1897-03E5-463C-B47E-64A0C8DD91C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E51A1897-03E5-463C-B47E-64A0C8DD91C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E51A1897-03E5-463C-B47E-64A0C8DD91C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{331F904E-E7E8-42E0-8C82-22539C35E8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{331F904E-E7E8-42E0-8C82-22539C35E8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{331F904E-E7E8-42E0-8C82-22539C35E8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{331F904E-E7E8-42E0-8C82-22539C35E8F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D4864D4-810F-40FD-B824-10126E3954D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D4864D4-810F-40FD-B824-10126E3954D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D4864D4-810F-40FD-B824-10126E3954D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D4864D4-810F-40FD-B824-10126E3954D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
