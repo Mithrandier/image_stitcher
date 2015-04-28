@@ -7,7 +7,14 @@ using Emgu.CV.Features2D;
 
 namespace TransformatorExample.Matchers {
   class SquareMatcher : IMatcher {
-    public KeyPointsPair[] Match(FeaturedImage image1, FeaturedImage image2) {
+    FeaturedImage image1, image2;
+
+    public SquareMatcher(FeaturedImage image1, FeaturedImage image2) {
+      this.image1 = image1;
+      this.image2 = image2;
+    }
+
+    public KeyPointsPair[] Match() {
       KeyPointsPair[] matches = new KeyPointsPair[image1.Features.Length];
       var modules1 = ComputeModules(image1.Features);
       var modules2 = ComputeModules(image2.Features);

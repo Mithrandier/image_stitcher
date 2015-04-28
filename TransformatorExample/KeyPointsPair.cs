@@ -7,13 +7,13 @@ using Emgu.CV.Features2D;
 
 namespace TransformatorExample {
   class KeyPointsPair {
-    public ImageFeature<float> Feature1 { get; private set; }
-    public ImageFeature<float> Feature2 { get; private set; }
+    public ImageFeature<float> FeatureLeft { get; private set; }
+    public ImageFeature<float> FeatureRight { get; private set; }
     public double Distance { get; private set; }
 
-    public KeyPointsPair(ImageFeature<float> feature1, ImageFeature<float> feature2, double distance) {
-      this.Feature1 = feature1;
-      this.Feature2 = feature2;
+    public KeyPointsPair(ImageFeature<float> feature_left, ImageFeature<float> feature_right, double distance) {
+      this.FeatureLeft = feature_left;
+      this.FeatureRight = feature_right;
       this.Distance = distance;
     }
   }

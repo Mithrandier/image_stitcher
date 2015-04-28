@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Emgu.CV.Features2D;
 
-namespace TransformatorExample {
+namespace TransformatorExample.Matchers {
   class Ruler {
     public static double Module(ImageFeature<float> feature) {
       double sum = 0;

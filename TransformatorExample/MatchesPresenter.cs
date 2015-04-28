@@ -9,26 +9,26 @@ using Emgu.CV.Features2D;
 
 namespace TransformatorExample {
   class MatchesPresenter {
-    FeaturedImage image1, image2;
+    FeaturedImage image_left, image_right;
     PictureBox picture;
     Bitmap common_template;
 
-    public MatchesPresenter(FeaturedImage image1, FeaturedImage image2, PictureBox picture) {
-      this.image1 = image1;
-      this.image2 = image2;
+    public MatchesPresenter(FeaturedImage image_left, FeaturedImage image_right, PictureBox picture) {
+      this.image_left = image_left;
+      this.image_right = image_right;
       this.picture = picture;
       this.common_template = GenerateCommonTemplate();
     }
 
     public void Render(KeyPointsPair[] matches) {
-      float x_offset = image1.Image.Width;
+      float x_offset = image_left.Image.Width;
       var template = (Bitmap)common_template.Clone();
       var g = Graphics.FromImage(template);
-      DrawFeatures(g, image1, 0);
-      DrawFeatures(g, image2, x_offset);
+      DrawFeatures(g, image_left, 0);
+      DrawFeatures(g, image_right, x_offset);
       foreach (var pair in matches) {
-        var point1 = pair.Feature1.KeyPoint.Point;
-        var point2 = pair.Feature2.KeyPoint.Point;
+        var point1 = pair.FeatureLeft.KeyPoint.Point;
+        var point2 = pair.FeatureRight.KeyPoint.Point;
         g.DrawLine(Pens.Blue, point1.X, point1.Y, point2.X + x_offset, point2.Y);
       }
       g.Save();
@@ -36,11 +36,11 @@ namespace TransformatorExample {
     }
 
     Bitmap GenerateCommonTemplate() {
-      float x_offset = image1.Image.Width;
-      var image_template = new Bitmap(image1.Image.Width + image2.Image.Width, Math.Max(image1.Image.Height, image2.Image.Height));
+      float x_offset = image_left.Image.Width;
+      var image_template = new Bitmap(image_left.Image.Width + image_right.Image.Width, Math.Max(image_left.Image.Height, image_right.Image.Height));
       var g = Graphics.FromImage(image_template);
-      g.DrawImage(image1.Image, 0, 0, image1.Image.Width, image1.Image.Height);
-      g.DrawImage(image2.Image, x_offset, 0, image2.Image.Width, image2.Image.Height);
+      g.DrawImage(image_left.Image, 0, 0, image_left.Image.Width, image_left.Image.Height);
+      g.DrawImage(image_right.Image, x_offset, 0, image_right.Image.Width, image_right.Image.Height);
       return image_template;
     }
 

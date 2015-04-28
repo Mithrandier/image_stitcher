@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TransformatorExample {
+namespace TransformatorExample.Matchers {
   interface IMatcher {
-    KeyPointsPair[] Match(FeaturedImage image1, FeaturedImage image2);
+
+    KeyPointsPair[] Match();
   }
 }
