@@ -54,9 +54,7 @@
     <Compile Include="Matchers\IMatcher.cs" />
     <Compile Include="KeyPointsPair.cs" />
     <Compile Include="Matchers\FlannMatcher.cs" />
-    <Compile Include="Matchers\SquareMatcher.cs" />
     <Compile Include="MatchesPresenter.cs" />
-    <Compile Include="Matchers\Ruler.cs" />
     <Compile Include="TransformatorForm.cs">
       <SubType>Form</SubType>
     </Compile>

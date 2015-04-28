@@ -11,8 +11,8 @@ using System.Windows.Forms;
 namespace TransformatorExample {
   public partial class TransformatorForm : Form {
     FeaturedImage image_left, image_right;
+    Matchers.FlannMatcher matcher;
     MatchesPresenter matches_presenter;
-    KeyPointsPair[] last_matches;
     Emgu.CV.HomographyMatrix transform;
 
     public TransformatorForm() {
@@ -29,9 +29,81 @@ namespace TransformatorExample {
       this.Cursor = Cursors.Default;
     }
 
+    //
+    // SEGMENTS
+    //
+
+    private void buttonSavePan_Click(object sender, EventArgs e) {
+      if (pictureMerged.Image == null)
+        return;
+      if (savePanDialog.ShowDialog() != DialogResult.OK)
+        return;
+      pictureMerged.Image.Save(savePanDialog.FileName);
+    }
+
+    private void buttonAddSegments_Click(object sender, EventArgs e) {
+      String[] filenames = new String[2];
+      for (int iFile = 0; iFile < filenames.Length; iFile++) {
+        if (loadImagesDialog.ShowDialog() != DialogResult.OK)
+          return;
+        else
+          filenames[iFile] = loadImagesDialog.FileName;
+      }
+      image_left = new FeaturedImage(filenames[0]);
+      textFeaturesNum1.Text = image_left.Features.Length.ToString();
+      image_right = new FeaturedImage(filenames[1]);
+      textFeaturesNum2.Text = image_right.Features.Length.ToString();
+
+      UseTimer(() => {
+        matcher = new Matchers.FlannMatcher(image_left, image_right);
+        matcher.Match();
+        this.transform = matcher.DefineHomography();
+        scrollLimit.Enabled = true;
+        this.matches_presenter = new MatchesPresenter(image_left, image_right, pictureMatches);
+        RenderMatches();
+      });
+      if (transform != null)
+        DisplayTransformMatrix();
+      tabControlMain.SelectedTab = tabPageMatching;
+    }
+
+    //
+    // MATCHING
+    //
+
+    void RenderMatches() {
+      matches_presenter.Render(CurrentMatches());
+    }
+
+    private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
+      if (!matcher.Matched)
+        return;
+      RenderMatches();
+    }
+
+    KeyPointsPair[] CurrentMatches() {
+      int limit = matcher.Matches.Length * scrollLimit.Value / 100;
+      return matcher.Matches.Take(limit).ToArray();
+    }
+
+    private void buttonUseMatches_Click(object sender, EventArgs e) {
+      tabControlMain.SelectedTab = tabPageMerging;
+      this.transform = matcher.DefineHomography(CurrentMatches().Length);
+      DisplayTransformMatrix();
+      MergeImages();
+    }
+
+    //
+    // MERGING
+    //
+
     private void buttonMerge_Click(object sender, EventArgs e) {
       if (transform == null)
         return;
+      MergeImages();
+    }
+
+    void MergeImages() {
       UseTimer(() => {
         var result = new Morpher(image_left.Image, image_right.Image, transform).Transform(CurrentMatrix());
         pictureMerged.Image = result;
@@ -51,7 +123,7 @@ namespace TransformatorExample {
 
       textMatrix02.Text = transform[0, 2].ToString();
       textMatrix12.Text = transform[1, 2].ToString();
-      textMatrix22.Text = transform[2, 2].ToString();      
+      textMatrix22.Text = transform[2, 2].ToString();
     }
 
     Emgu.CV.HomographyMatrix CurrentMatrix() {
@@ -76,57 +148,6 @@ namespace TransformatorExample {
       DisplayTransformMatrix();
     }
 
-    private void buttonSavePan_Click(object sender, EventArgs e) {
-      if (pictureMerged.Image == null)
-        return;
-      if (savePanDialog.ShowDialog() != DialogResult.OK)
-        return;
-      pictureMerged.Image.Save(savePanDialog.FileName);
-    }
 
-    private void buttonAddSegments_Click(object sender, EventArgs e) {
-      String[] filenames = new String[2];
-      for (int iFile = 0; iFile < filenames.Length; iFile++) {
-        if (loadImagesDialog.ShowDialog() != DialogResult.OK)
-          return;
-        else
-          filenames[iFile] = loadImagesDialog.FileName;
-      }
-      image_left = new FeaturedImage(filenames[0]);
-      textFeaturesNum1.Text = image_left.Features.Length.ToString();
-      image_right = new FeaturedImage(filenames[1]);
-      textFeaturesNum2.Text = image_right.Features.Length.ToString();
-
-      UseTimer(() => {
-        Matchers.FlannMatcher matcher = new Matchers.FlannMatcher(image_left, image_right);
-        this.last_matches = matcher.Match().OrderBy((pair) => { return pair.Distance; }).ToArray();
-        this.transform = matcher.DefineHomography();
-        scrollLimit.Enabled = true;
-        this.matches_presenter = new MatchesPresenter(image_left, image_right, pictureMatches);
-        RenderMatches();
-      });
-      if (transform != null)
-        DisplayTransformMatrix();
-      tabControlMain.SelectedTab = tabPageMatching;
-    }
-
-    private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
-      if (last_matches == null)
-        return;
-      RenderMatches();
-    }
-
-    void RenderMatches() {
-      matches_presenter.Render(currentMatches());
-    }
-
-    KeyPointsPair[] currentMatches() {
-      int limit = last_matches.Length * scrollLimit.Value / 100;
-      return last_matches.Take(limit).ToArray();
-    }
-
-    private void buttonUseMatches_Click(object sender, EventArgs e) {
-      tabControlMain.SelectedTab = tabPageMerging;
-    }
   }
 }

@@ -7,14 +7,15 @@ using Emgu.CV.Features2D;
 
 namespace TransformatorExample.Matchers {
 
-  class FlannMatcher : IMatcher {
+  class FlannMatcher {
     const int BEST_MATCHES_COUNT = 20;
     const int KNN = 1;
     const int SEARCH_ITERATIONS_COUNT = 24;
 
+    public bool Matched { get; private set; }
     Emgu.CV.Matrix<int> indices;
     Emgu.CV.Matrix<float> distances;
-    KeyPointsPair[] matches;
+    public KeyPointsPair[] Matches { get; private set; }
     FeaturedImage image_base, image_query;
 
     public FlannMatcher(FeaturedImage image_base, FeaturedImage image_query) {
@@ -22,26 +23,28 @@ namespace TransformatorExample.Matchers {
       this.image_query = image_query;
     }
 
-    public KeyPointsPair[] Match() {
+    public void Match() {
       var index = new Emgu.CV.Flann.Index(FeaturesToMatrix(image_base.Features));
       var query = FeaturesToMatrix(image_query.Features);
       int features_count = image_query.Features.Length;
       this.indices = new Emgu.CV.Matrix<int>(features_count, 1);
       this.distances = new Emgu.CV.Matrix<float>(features_count, 1);
       index.KnnSearch(query, indices, distances, KNN, SEARCH_ITERATIONS_COUNT);
-      this.matches = new KeyPointsPair[features_count];
+      this.Matches = new KeyPointsPair[features_count];
       for (int iQueryFeature = 0; iQueryFeature < features_count; iQueryFeature++) {
         var iBaseFeature = indices[iQueryFeature, 0];
-        matches[iQueryFeature] = new KeyPointsPair(
+        Matches[iQueryFeature] = new KeyPointsPair(
           image_base.Features[iBaseFeature], 
           image_query.Features[iQueryFeature], 
           distances[iQueryFeature, 0]);
       }
-      return matches;
+      Matches = Matches.OrderBy((pair) => { return pair.Distance; }).ToArray();
+      this.Matched = true;
+      return;
     }
 
-    public Emgu.CV.HomographyMatrix DefineHomography() {
-      var best_matches = matches.OrderBy((p) => p.Distance).Take(BEST_MATCHES_COUNT);
+    public Emgu.CV.HomographyMatrix DefineHomography(int matches_count = BEST_MATCHES_COUNT) {
+      var best_matches = Matches.OrderBy((p) => p.Distance).Take(matches_count);
       var points_src = best_matches.Select((m) => m.FeatureLeft.KeyPoint.Point).ToArray();
       var points_dst = best_matches.Select((m) => m.FeatureRight.KeyPoint.Point).ToArray();
       var matrix = Emgu.CV.CameraCalibration.FindHomography(
