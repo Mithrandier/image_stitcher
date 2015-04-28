@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Matcher;
+using Morpher;
 
 namespace TransformatorExample {
   public partial class TransformatorForm : Form {
     FeaturedImage image_left, image_right;
-    Matchers.FlannMatcher matcher;
+    FlannMatcher matcher;
     MatchesPresenter matches_presenter;
     Emgu.CV.HomographyMatrix transform;
+    MatrixPresenter matrix_presenter;
 
     public TransformatorForm() {
       InitializeComponent();
+      matrix_presenter = new MatrixPresenter(panelHomoMatrix);
     }
 
     delegate void Procedure();
@@ -55,15 +59,12 @@ namespace TransformatorExample {
       textFeaturesNum2.Text = image_right.Features.Length.ToString();
 
       UseTimer(() => {
-        matcher = new Matchers.FlannMatcher(image_left, image_right);
+        matcher = new FlannMatcher(image_left, image_right);
         matcher.Match();
-        this.transform = matcher.DefineHomography();
         scrollLimit.Enabled = true;
         this.matches_presenter = new MatchesPresenter(image_left, image_right, pictureMatches);
         RenderMatches();
       });
-      if (transform != null)
-        DisplayTransformMatrix();
       tabControlMain.SelectedTab = tabPageMatching;
     }
 
@@ -82,14 +83,14 @@ namespace TransformatorExample {
     }
 
     KeyPointsPair[] CurrentMatches() {
-      int limit = matcher.Matches.Length * scrollLimit.Value / 100;
+      int limit = Math.Max(matcher.Matches.Length * scrollLimit.Value / 100, 10);
       return matcher.Matches.Take(limit).ToArray();
     }
 
     private void buttonUseMatches_Click(object sender, EventArgs e) {
       tabControlMain.SelectedTab = tabPageMerging;
       this.transform = matcher.DefineHomography(CurrentMatches().Length);
-      DisplayTransformMatrix();
+      matrix_presenter.Display(transform);
       MergeImages();
     }
 
@@ -105,49 +106,23 @@ namespace TransformatorExample {
 
     void MergeImages() {
       UseTimer(() => {
-        var result = new Morpher(image_left.Image, image_right.Image, transform).Transform(CurrentMatrix());
+        var current_matrix = matrix_presenter.FixCurrentMatrix(transform);
+        var result = new Morpher.Morpher(image_left.Image, image_right.Image, transform).Transform(current_matrix);
         pictureMerged.Image = result;
       });
     }
 
-    void DisplayTransformMatrix() {
-      if (transform == null)
-        return;
-      textMatrix00.Text = transform[0, 0].ToString();
-      textMatrix10.Text = transform[1, 0].ToString();
-      textMatrix20.Text = transform[2, 0].ToString();
-
-      textMatrix01.Text = transform[0, 1].ToString();
-      textMatrix11.Text = transform[1, 1].ToString();
-      textMatrix21.Text = transform[2, 1].ToString();
-
-      textMatrix02.Text = transform[0, 2].ToString();
-      textMatrix12.Text = transform[1, 2].ToString();
-      textMatrix22.Text = transform[2, 2].ToString();
-    }
-
-    Emgu.CV.HomographyMatrix CurrentMatrix() {
-      if (transform == null)
-        return null;
-      var matrix = this.transform.Clone();
-      matrix[0, 0] = Double.Parse(textMatrix00.Text);
-      matrix[1, 0] = Double.Parse(textMatrix10.Text);
-      matrix[2, 0] = Double.Parse(textMatrix20.Text);
-
-      matrix[0, 1] = Double.Parse(textMatrix01.Text);
-      matrix[1, 1] = Double.Parse(textMatrix11.Text);
-      matrix[2, 1] = Double.Parse(textMatrix21.Text);
-
-      matrix[0, 2] = Double.Parse(textMatrix02.Text);
-      matrix[1, 2] = Double.Parse(textMatrix12.Text);
-      matrix[2, 2] = Double.Parse(textMatrix22.Text);
-      return matrix;
-    }
-
     private void buttonRestore_Click(object sender, EventArgs e) {
-      DisplayTransformMatrix();
+      matrix_presenter.Display(transform);
     }
 
-
+    private void scrollFeaturesLimitForMerging_Scroll(object sender, ScrollEventArgs e) {
+      if (!matcher.Matched)
+        return;
+      scrollLimit.Value = scrollFeaturesLimitForMerging.Value;
+      this.transform = matcher.DefineHomography(CurrentMatches().Length);
+      matrix_presenter.Display(transform);
+      MergeImages();
+    }
   }
 }

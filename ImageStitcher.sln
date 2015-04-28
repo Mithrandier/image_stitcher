@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransformatorExample", "Tra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stitcher", "Stitcher\Stitcher.csproj", "{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matcher", "Matcher\Matcher.csproj", "{49AC4807-089E-4A4F-805B-EF0421C6E25E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morpher", "Morpher\Morpher.csproj", "{0A91BE6F-D8E1-490C-8839-0222665F221C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49AC4807-089E-4A4F-805B-EF0421C6E25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49AC4807-089E-4A4F-805B-EF0421C6E25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49AC4807-089E-4A4F-805B-EF0421C6E25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49AC4807-089E-4A4F-805B-EF0421C6E25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A91BE6F-D8E1-490C-8839-0222665F221C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A91BE6F-D8E1-490C-8839-0222665F221C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A91BE6F-D8E1-490C-8839-0222665F221C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A91BE6F-D8E1-490C-8839-0222665F221C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

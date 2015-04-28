@@ -29,17 +29,8 @@
       this.scrollLimit = new System.Windows.Forms.HScrollBar();
       this.label3 = new System.Windows.Forms.Label();
       this.textTimer = new System.Windows.Forms.TextBox();
-      this.panel1 = new System.Windows.Forms.Panel();
+      this.panelHomoMatrix = new System.Windows.Forms.Panel();
       this.buttonRestore = new System.Windows.Forms.Button();
-      this.textMatrix22 = new System.Windows.Forms.TextBox();
-      this.textMatrix21 = new System.Windows.Forms.TextBox();
-      this.textMatrix20 = new System.Windows.Forms.TextBox();
-      this.textMatrix12 = new System.Windows.Forms.TextBox();
-      this.textMatrix11 = new System.Windows.Forms.TextBox();
-      this.textMatrix10 = new System.Windows.Forms.TextBox();
-      this.textMatrix02 = new System.Windows.Forms.TextBox();
-      this.textMatrix01 = new System.Windows.Forms.TextBox();
-      this.textMatrix00 = new System.Windows.Forms.TextBox();
       this.buttonMerge = new System.Windows.Forms.Button();
       this.savePanDialog = new System.Windows.Forms.SaveFileDialog();
       this.pictureMerged = new System.Windows.Forms.PictureBox();
@@ -54,8 +45,9 @@
       this.label4 = new System.Windows.Forms.Label();
       this.splitContainerDisplay = new System.Windows.Forms.SplitContainer();
       this.tabPageMerging = new System.Windows.Forms.TabPage();
+      this.scrollFeaturesLimitForMerging = new System.Windows.Forms.HScrollBar();
       this.buttonSavePan = new System.Windows.Forms.Button();
-      this.panel1.SuspendLayout();
+      this.panelHomoMatrix.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMerged)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMatches)).BeginInit();
       this.tabControlMain.SuspendLayout();
@@ -119,25 +111,16 @@
       this.textTimer.Size = new System.Drawing.Size(67, 20);
       this.textTimer.TabIndex = 4;
       // 
-      // panel1
+      // panelHomoMatrix
       // 
-      this.panel1.BackColor = System.Drawing.Color.CadetBlue;
-      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.panel1.Controls.Add(this.buttonRestore);
-      this.panel1.Controls.Add(this.textMatrix22);
-      this.panel1.Controls.Add(this.textMatrix21);
-      this.panel1.Controls.Add(this.textMatrix20);
-      this.panel1.Controls.Add(this.textMatrix12);
-      this.panel1.Controls.Add(this.textMatrix11);
-      this.panel1.Controls.Add(this.textMatrix10);
-      this.panel1.Controls.Add(this.textMatrix02);
-      this.panel1.Controls.Add(this.textMatrix01);
-      this.panel1.Controls.Add(this.textMatrix00);
-      this.panel1.Controls.Add(this.buttonMerge);
-      this.panel1.Location = new System.Drawing.Point(219, 6);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(167, 113);
-      this.panel1.TabIndex = 11;
+      this.panelHomoMatrix.BackColor = System.Drawing.Color.CadetBlue;
+      this.panelHomoMatrix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.panelHomoMatrix.Controls.Add(this.buttonRestore);
+      this.panelHomoMatrix.Controls.Add(this.buttonMerge);
+      this.panelHomoMatrix.Location = new System.Drawing.Point(219, 6);
+      this.panelHomoMatrix.Name = "panelHomoMatrix";
+      this.panelHomoMatrix.Size = new System.Drawing.Size(167, 113);
+      this.panelHomoMatrix.TabIndex = 11;
       // 
       // buttonRestore
       // 
@@ -148,69 +131,6 @@
       this.buttonRestore.Text = "Restore";
       this.buttonRestore.UseVisualStyleBackColor = true;
       this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
-      // 
-      // textMatrix22
-      // 
-      this.textMatrix22.Location = new System.Drawing.Point(111, 55);
-      this.textMatrix22.Name = "textMatrix22";
-      this.textMatrix22.Size = new System.Drawing.Size(38, 20);
-      this.textMatrix22.TabIndex = 22;
-      // 
-      // textMatrix21
-      // 
-      this.textMatrix21.Location = new System.Drawing.Point(67, 55);
-      this.textMatrix21.Name = "textMatrix21";
-      this.textMatrix21.Size = new System.Drawing.Size(38, 20);
-      this.textMatrix21.TabIndex = 21;
-      // 
-      // textMatrix20
-      // 
-      this.textMatrix20.Location = new System.Drawing.Point(23, 55);
-      this.textMatrix20.Name = "textMatrix20";
-      this.textMatrix20.Size = new System.Drawing.Size(38, 20);
-      this.textMatrix20.TabIndex = 20;
-      // 
-      // textMatrix12
-      // 
-      this.textMatrix12.Location = new System.Drawing.Point(111, 29);
-      this.textMatrix12.Name = "textMatrix12";
-      this.textMatrix12.Size = new System.Drawing.Size(38, 20);
-      this.textMatrix12.TabIndex = 19;
-      // 
-      // textMatrix11
-      // 
-      this.textMatrix11.Location = new System.Drawing.Point(67, 29);
-      this.textMatrix11.Name = "textMatrix11";
-      this.textMatrix11.Size = new System.Drawing.Size(38, 20);
-      this.textMatrix11.TabIndex = 18;
-      // 
-      // textMatrix10
-      // 
-      this.textMatrix10.Location = new System.Drawing.Point(23, 29);
-      this.textMatrix10.Name = "textMatrix10";
-      this.textMatrix10.Size = new System.Drawing.Size(38, 20);
-      this.textMatrix10.TabIndex = 17;
-      // 
-      // textMatrix02
-      // 
-      this.textMatrix02.Location = new System.Drawing.Point(111, 3);
-      this.textMatrix02.Name = "textMatrix02";
-      this.textMatrix02.Size = new System.Drawing.Size(38, 20);
-      this.textMatrix02.TabIndex = 16;
-      // 
-      // textMatrix01
-      // 
-      this.textMatrix01.Location = new System.Drawing.Point(67, 3);
-      this.textMatrix01.Name = "textMatrix01";
-      this.textMatrix01.Size = new System.Drawing.Size(38, 20);
-      this.textMatrix01.TabIndex = 15;
-      // 
-      // textMatrix00
-      // 
-      this.textMatrix00.Location = new System.Drawing.Point(23, 3);
-      this.textMatrix00.Name = "textMatrix00";
-      this.textMatrix00.Size = new System.Drawing.Size(38, 20);
-      this.textMatrix00.TabIndex = 14;
       // 
       // buttonMerge
       // 
@@ -227,7 +147,7 @@
       this.pictureMerged.BackColor = System.Drawing.SystemColors.Control;
       this.pictureMerged.Location = new System.Drawing.Point(8, 125);
       this.pictureMerged.Name = "pictureMerged";
-      this.pictureMerged.Size = new System.Drawing.Size(650, 384);
+      this.pictureMerged.Size = new System.Drawing.Size(650, 361);
       this.pictureMerged.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
       this.pictureMerged.TabIndex = 10;
       this.pictureMerged.TabStop = false;
@@ -359,15 +279,24 @@
       // tabPageMerging
       // 
       this.tabPageMerging.BackColor = System.Drawing.Color.CadetBlue;
+      this.tabPageMerging.Controls.Add(this.scrollFeaturesLimitForMerging);
       this.tabPageMerging.Controls.Add(this.buttonSavePan);
       this.tabPageMerging.Controls.Add(this.pictureMerged);
-      this.tabPageMerging.Controls.Add(this.panel1);
+      this.tabPageMerging.Controls.Add(this.panelHomoMatrix);
       this.tabPageMerging.Location = new System.Drawing.Point(4, 22);
       this.tabPageMerging.Name = "tabPageMerging";
       this.tabPageMerging.Padding = new System.Windows.Forms.Padding(3);
       this.tabPageMerging.Size = new System.Drawing.Size(664, 515);
       this.tabPageMerging.TabIndex = 1;
       this.tabPageMerging.Text = "Merging";
+      // 
+      // scrollFeaturesLimitForMerging
+      // 
+      this.scrollFeaturesLimitForMerging.Location = new System.Drawing.Point(8, 489);
+      this.scrollFeaturesLimitForMerging.Name = "scrollFeaturesLimitForMerging";
+      this.scrollFeaturesLimitForMerging.Size = new System.Drawing.Size(650, 21);
+      this.scrollFeaturesLimitForMerging.TabIndex = 13;
+      this.scrollFeaturesLimitForMerging.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollFeaturesLimitForMerging_Scroll);
       // 
       // buttonSavePan
       // 
@@ -390,8 +319,7 @@
       this.Controls.Add(this.textTimer);
       this.Name = "TransformatorForm";
       this.Text = "Image Transformator";
-      this.panel1.ResumeLayout(false);
-      this.panel1.PerformLayout();
+      this.panelHomoMatrix.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.pictureMerged)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMatches)).EndInit();
       this.tabControlMain.ResumeLayout(false);
@@ -422,17 +350,8 @@
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.TextBox textTimer;
     private System.Windows.Forms.PictureBox pictureMerged;
-    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel panelHomoMatrix;
     private System.Windows.Forms.Button buttonMerge;
-    private System.Windows.Forms.TextBox textMatrix22;
-    private System.Windows.Forms.TextBox textMatrix21;
-    private System.Windows.Forms.TextBox textMatrix20;
-    private System.Windows.Forms.TextBox textMatrix12;
-    private System.Windows.Forms.TextBox textMatrix11;
-    private System.Windows.Forms.TextBox textMatrix10;
-    private System.Windows.Forms.TextBox textMatrix02;
-    private System.Windows.Forms.TextBox textMatrix01;
-    private System.Windows.Forms.TextBox textMatrix00;
     private System.Windows.Forms.Button buttonRestore;
     private System.Windows.Forms.SaveFileDialog savePanDialog;
     private System.Windows.Forms.TabControl tabControlMain;
@@ -446,6 +365,7 @@
     private System.Windows.Forms.Button buttonAddSegments;
     private System.Windows.Forms.Button buttonSavePan;
     private System.Windows.Forms.Button buttonUseMatches;
+    private System.Windows.Forms.HScrollBar scrollFeaturesLimitForMerging;
   }
 }
 

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Emgu.CV.Features2D;
 
-namespace TransformatorExample {
-  class MatchesPresenter {
+namespace Matcher {
+  public class MatchesPresenter {
     FeaturedImage image_left, image_right;
     PictureBox picture;
     Bitmap common_template;

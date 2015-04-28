@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using Emgu.CV.Features2D;
 using Emgu.CV.Structure;
 
-namespace TransformatorExample {
-  class FeaturedImage {
+namespace Matcher {
+  public class FeaturedImage {
     public Image Image { get; protected set; }
 
     public FeaturedImage(String filename) {

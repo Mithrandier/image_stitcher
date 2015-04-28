@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using Emgu.CV;
 using Emgu.CV.Structure;
 
-namespace TransformatorExample {
-  class Morpher {
+namespace Morpher {
+  public class Morpher {
     Bitmap image_src, image_dest;
     HomographyMatrix matrix;
 

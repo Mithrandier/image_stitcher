@@ -5,9 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Emgu.CV.Features2D;
 
-namespace TransformatorExample.Matchers {
-
-  class FlannMatcher {
+namespace Matcher {
+  public class FlannMatcher {
     const int BEST_MATCHES_COUNT = 20;
     const int KNN = 1;
     const int SEARCH_ITERATIONS_COUNT = 24;
