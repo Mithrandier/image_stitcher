@@ -121,5 +121,15 @@ namespace TransformatorExample {
       matrix_presenter.Display(transform);
       MergeImages();
     }
+
+    private void buttonAddSeg_Click(object sender, EventArgs e) {
+      var dialog = addSegmentsDialog;
+      if (dialog.ShowDialog() != DialogResult.OK || dialog.FileNames.Length < 3) {
+        return;
+      }
+      var segments = dialog.FileNames.Select((f) => new FeaturedImage(f)).ToArray();
+      var transformations = new SegmentsMatcher(segments).ComputeTransformations();
+      return;
+    }
   }
 }

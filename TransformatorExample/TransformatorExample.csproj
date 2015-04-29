@@ -53,7 +53,9 @@
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BrowseablePicture.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="SegmentsMatcher.cs" />
     <Compile Include="TransformatorForm.cs">
       <SubType>Form</SubType>
     </Compile>

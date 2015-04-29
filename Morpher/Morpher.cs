@@ -29,7 +29,7 @@ namespace Morpher {
       int width = Math.Max(image_dest.Width, image_src.Width) + (int)Math.Abs(matrix[0,2]);
       int height = Math.Max(image_dest.Height, image_src.Height) + (int)Math.Abs(matrix[1,2]);
       var template = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-      var g = Graphics.FromImage(template);
+      var g = Graphics.FromImage(image_dest);
       int x_base = 0;
       if (matrix[0, 2] < 0) {
         x_base -= (int)matrix[0, 2];
