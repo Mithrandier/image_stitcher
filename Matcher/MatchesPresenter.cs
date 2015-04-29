@@ -21,7 +21,7 @@ namespace Matcher {
     }
 
     public void Render(KeyPointsPair[] matches) {
-      float x_offset = image_left.Image.Width;
+      float x_offset = image_left.Width;
       var template = (Bitmap)common_template.Clone();
       var g = Graphics.FromImage(template);
       DrawFeatures(g, image_left, 0);
@@ -36,11 +36,11 @@ namespace Matcher {
     }
 
     Bitmap GenerateCommonTemplate() {
-      float x_offset = image_left.Image.Width;
-      var image_template = new Bitmap(image_left.Image.Width + image_right.Image.Width, Math.Max(image_left.Image.Height, image_right.Image.Height));
+      float x_offset = image_left.Width;
+      var image_template = new Bitmap(image_left.Width + image_right.Width, Math.Max(image_left.Height, image_right.Height));
       var g = Graphics.FromImage(image_template);
-      g.DrawImage(image_left.Image, 0, 0, image_left.Image.Width, image_left.Image.Height);
-      g.DrawImage(image_right.Image, x_offset, 0, image_right.Image.Width, image_right.Image.Height);
+      g.DrawImage(image_left.Image, 0, 0, image_left.Width, image_left.Height);
+      g.DrawImage(image_right.Image, x_offset, 0, image_right.Width, image_right.Height);
       return image_template;
     }
 

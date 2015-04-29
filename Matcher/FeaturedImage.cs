@@ -9,12 +9,16 @@ using Emgu.CV.Structure;
 
 namespace Matcher {
   public class FeaturedImage {
-    public Image Image { get; protected set; }
+    public Bitmap Image { get; protected set; }
+    public int Width { get; private set; }
+    public int Height { get; private set; }
 
     public FeaturedImage(String filename) {
-      this.Image = Image.FromFile(filename);
+      this.Image = (Bitmap)Bitmap.FromFile(filename);
+      this.Width = Image.Width;
+      this.Height = Image.Height;
       var detector = new Emgu.CV.Features2D.SIFTDetector();
-      _features = detector.DetectFeatures(new Emgu.CV.Image<Gray, byte>((Bitmap)Image), null);
+      _features = detector.DetectFeatures(new Emgu.CV.Image<Gray, byte>(Image), null);
     }
 
     Emgu.CV.Features2D.ImageFeature<float>[] _features;

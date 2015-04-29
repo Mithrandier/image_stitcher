@@ -12,9 +12,9 @@ namespace Morpher {
     Bitmap image_src, image_dest;
     HomographyMatrix matrix;
 
-    public Morpher(Image image_src, Image image_dest, HomographyMatrix matrix) {
-      this.image_src = (Bitmap)image_src;
-      this.image_dest = (Bitmap)image_dest;
+    public Morpher(Bitmap image_src, Bitmap image_dest, HomographyMatrix matrix) {
+      this.image_src = image_src;
+      this.image_dest = image_dest;
       this.matrix = matrix;
     }
 
