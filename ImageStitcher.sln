@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matcher", "Matcher\Matcher.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morpher", "Morpher\Morpher.csproj", "{0A91BE6F-D8E1-490C-8839-0222665F221C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormTools", "FormTools\FormTools.csproj", "{BC5DD25B-0799-4B12-8F12-E40B99C9B138}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0A91BE6F-D8E1-490C-8839-0222665F221C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A91BE6F-D8E1-490C-8839-0222665F221C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A91BE6F-D8E1-490C-8839-0222665F221C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5DD25B-0799-4B12-8F12-E40B99C9B138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5DD25B-0799-4B12-8F12-E40B99C9B138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5DD25B-0799-4B12-8F12-E40B99C9B138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5DD25B-0799-4B12-8F12-E40B99C9B138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

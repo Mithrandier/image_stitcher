@@ -158,14 +158,11 @@
       // pictureMatches
       // 
       this.pictureMatches.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.pictureMatches.Image = global::TransformatorExample.Properties.Resources.result;
       this.pictureMatches.Location = new System.Drawing.Point(0, 0);
       this.pictureMatches.Name = "pictureMatches";
       this.pictureMatches.Size = new System.Drawing.Size(658, 413);
-      this.pictureMatches.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.pictureMatches.TabIndex = 4;
       this.pictureMatches.TabStop = false;
-      new BrowseablePicture(this, this.pictureMatches);
       // 
       // tabControlMain
       // 

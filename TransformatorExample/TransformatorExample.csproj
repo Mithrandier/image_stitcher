@@ -53,7 +53,6 @@
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BrowseablePicture.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="SegmentsMatcher.cs" />
     <Compile Include="TransformatorForm.cs">
@@ -100,6 +99,10 @@
     <None Include="Resources\Save-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FormTools\FormTools.csproj">
+      <Project>{bc5dd25b-0799-4b12-8f12-e40b99c9b138}</Project>
+      <Name>FormTools</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Matcher\Matcher.csproj">
       <Project>{49ac4807-089e-4a4f-805b-ef0421c6e25e}</Project>
       <Name>Matcher</Name>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Matcher;
 using Morpher;
+using FormTools;
 
 namespace TransformatorExample {
   public partial class TransformatorForm : BaseForm {
@@ -17,10 +18,13 @@ namespace TransformatorExample {
     MatchesPresenter matches_presenter;
     Emgu.CV.HomographyMatrix transform;
     MatrixPresenter matrix_presenter;
+    BrowseablePicture picturebox_matching, picturebox_merging;
 
     public TransformatorForm() {
       InitializeComponent();
       matrix_presenter = new MatrixPresenter(panelHomoMatrix);
+      picturebox_matching = new BrowseablePicture(this, this.pictureMatches);
+      picturebox_merging = new BrowseablePicture(this, this.pictureMerged);
     }
 
     //
@@ -57,7 +61,7 @@ namespace TransformatorExample {
         scrollLimit.Enabled = true;
       });
       LogTime("Rendering matches", () => {
-        this.matches_presenter = new MatchesPresenter(image_left, image_right, pictureMatches);
+        this.matches_presenter = new MatchesPresenter(image_left, image_right);
         RenderMatches();
       });
       tabControlMain.SelectedTab = tabPageMatching;
@@ -68,7 +72,7 @@ namespace TransformatorExample {
     //
 
     void RenderMatches() {
-      matches_presenter.Render(CurrentMatches());
+      picturebox_matching.Image =  matches_presenter.Render(CurrentMatches());
     }
 
     private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
@@ -101,7 +105,7 @@ namespace TransformatorExample {
       LogTime("Merging images", () => {
         var current_matrix = matrix_presenter.FixCurrentMatrix(transform);
         var result = new Morpher.Morpher(image_left.Image, image_right.Image, transform).Transform(current_matrix);
-        pictureMerged.Image = result;
+        picturebox_merging.Image = result;
       });
     }
 

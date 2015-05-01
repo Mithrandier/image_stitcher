@@ -10,17 +10,15 @@ using Emgu.CV.Features2D;
 namespace Matcher {
   public class MatchesPresenter {
     FeaturedImage image_left, image_right;
-    PictureBox picture;
     Bitmap common_template;
 
-    public MatchesPresenter(FeaturedImage image_left, FeaturedImage image_right, PictureBox picture) {
+    public MatchesPresenter(FeaturedImage image_left, FeaturedImage image_right) {
       this.image_left = image_left;
       this.image_right = image_right;
-      this.picture = picture;
       this.common_template = GenerateCommonTemplate();
     }
 
-    public void Render(KeyPointsPair[] matches) {
+    public Image Render(KeyPointsPair[] matches) {
       float x_offset = image_left.Width;
       var template = (Bitmap)common_template.Clone();
       var g = Graphics.FromImage(template);
@@ -32,7 +30,7 @@ namespace Matcher {
         g.DrawLine(Pens.Blue, point1.X, point1.Y, point2.X + x_offset, point2.Y);
       }
       g.Save();
-      picture.Image = template;
+      return template;
     }
 
     Bitmap GenerateCommonTemplate() {
