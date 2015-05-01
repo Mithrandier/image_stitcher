@@ -1,53 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Emgu.CV.Features2D;
 
-namespace Matcher {
+namespace Panoramas.Matching {
   public class FlannMatcher {
-    const int BEST_MATCHES_COUNT = 20;
     const int KNN = 1;
     const int SEARCH_ITERATIONS_COUNT = 24;
 
-    public bool Matched { get; private set; }
-    Emgu.CV.Matrix<int> indices;
-    Emgu.CV.Matrix<float> distances;
-    public KeyPointsPair[] Matches { get; private set; }
-    FeaturedImage image_base, image_query;
+    FeaturedImage ImageBase;
+    FeaturedImage ImageQuery;
 
     public FlannMatcher(FeaturedImage image_base, FeaturedImage image_query) {
-      this.image_base = image_base;
-      this.image_query = image_query;
+      this.ImageBase = image_base;
+      this.ImageQuery = image_query;
     }
+    public FlannMatcher(Bitmap bitmap_base, Bitmap bitmap_query) :
+      this(new FeaturedImage(bitmap_base), new FeaturedImage(bitmap_query)) { }
 
-    public void Match() {
-      var index = new Emgu.CV.Flann.Index(FeaturesToMatrix(image_base.Features));
-      var query = FeaturesToMatrix(image_query.Features);
-      int features_count = image_query.Features.Length;
-      this.indices = new Emgu.CV.Matrix<int>(features_count, 1);
-      this.distances = new Emgu.CV.Matrix<float>(features_count, 1);
+    public KeyPointsPair[] Match() {
+      var index = new Emgu.CV.Flann.Index(FeaturesToMatrix(ImageBase.Features));
+      var query = FeaturesToMatrix(ImageQuery.Features);
+      int features_count = ImageQuery.Features.Length;
+      var indices = new Emgu.CV.Matrix<int>(features_count, 1);
+      var distances = new Emgu.CV.Matrix<float>(features_count, 1);
       index.KnnSearch(query, indices, distances, KNN, SEARCH_ITERATIONS_COUNT);
-      this.Matches = new KeyPointsPair[features_count];
+      var matches = new KeyPointsPair[features_count];
       for (int iQueryFeature = 0; iQueryFeature < features_count; iQueryFeature++) {
         var iBaseFeature = indices[iQueryFeature, 0];
-        Matches[iQueryFeature] = new KeyPointsPair(
-          image_base.Features[iBaseFeature], 
-          image_query.Features[iQueryFeature], 
+        matches[iQueryFeature] = new KeyPointsPair(
+          ImageBase.Features[iBaseFeature], 
+          ImageQuery.Features[iQueryFeature], 
           distances[iQueryFeature, 0]);
       }
-      Matches = Matches.OrderBy((pair) => { return pair.Distance; }).ToArray();
-      this.Matched = true;
-      return;
+      return matches.OrderBy((pair) => { return pair.Distance; }).ToArray();
     }
 
-    public Emgu.CV.HomographyMatrix DefineHomography(int matches_count = BEST_MATCHES_COUNT) {
-      var best_matches = Matches.OrderBy((p) => p.Distance).Take(matches_count);
-      var points_src = best_matches.Select((m) => m.FeatureLeft.KeyPoint.Point).ToArray();
-      var points_dst = best_matches.Select((m) => m.FeatureRight.KeyPoint.Point).ToArray();
+    public Emgu.CV.HomographyMatrix DefineHomography(KeyPointsPair[] matches) {
+      var points_src = matches.Select((m) => m.FeatureLeft.KeyPoint.Point).ToArray();
+      var points_dst = matches.Select((m) => m.FeatureRight.KeyPoint.Point).ToArray();
       var matrix = Emgu.CV.CameraCalibration.FindHomography(
-        points_src, points_dst, Emgu.CV.CvEnum.HOMOGRAPHY_METHOD.RANSAC, 2
+        points_src, 
+        points_dst, 
+        Emgu.CV.CvEnum.HOMOGRAPHY_METHOD.RANSAC, 
+        2 // RANSAC reprojection error
         );
       return matrix;
     }

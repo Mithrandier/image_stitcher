@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Morpher {
+namespace Panoramas.Morphing {
   public class MatrixPresenter {
     Panel panel;
     private System.Windows.Forms.TextBox textMatrix22;

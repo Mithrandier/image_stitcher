@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 using Emgu.CV;
 using Emgu.CV.Structure;
 
-namespace Morpher {
+namespace Panoramas.Morphing {
   public class Morpher {
     Bitmap image_src, image_dest;
-    HomographyMatrix matrix;
 
-    public Morpher(Bitmap image_src, Bitmap image_dest, HomographyMatrix matrix) {
+    public Morpher(Bitmap image_src, Bitmap image_dest) {
       this.image_src = image_src;
       this.image_dest = image_dest;
-      this.matrix = matrix;
     }
 
     public Image Transform(Emgu.CV.HomographyMatrix current_matrix) {

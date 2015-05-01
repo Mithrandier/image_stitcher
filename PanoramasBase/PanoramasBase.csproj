@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6BB02AC-6234-4CB2-AC26-9349C568F2FE}</ProjectGuid>
+    <ProjectGuid>{8D32515F-9658-4995-8479-0E70D7C518DD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Stitcher</RootNamespace>
-    <AssemblyName>Stitcher</AssemblyName>
+    <RootNamespace>Panoramas</RootNamespace>
+    <AssemblyName>PanoramasBase</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,51 +20,26 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Emgu.CV">
       <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2010">
-      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.DebuggerVisualizers.VS2010.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.GPU, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.GPU.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.ML">
-      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.ML.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.OCR">
-      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.OCR.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.Stitching, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.Stitching.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.UI">
-      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.Util, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Emgu.Util">
       <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.Util.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,9 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmguStitcher.cs" />
-    <Compile Include="IStitcher.cs" />
+    <Compile Include="MatchesPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Segment.cs" />
+    <Compile Include="SegmentsMap.cs" />
+    <Compile Include="SegmentsMatch.cs" />
+    <Compile Include="Stitcher.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Matcher\Matching.csproj">
+      <Project>{49ac4807-089e-4a4f-805b-ef0421c6e25e}</Project>
+      <Name>Matching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Morpher\Morphing.csproj">
+      <Project>{0a91be6f-d8e1-490c-8839-0222665f221c}</Project>
+      <Name>Morphing</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

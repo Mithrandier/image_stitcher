@@ -32,10 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV">
+    <Reference Include="Emgu.CV, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.Util">
+    <Reference Include="Emgu.Util, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.Util.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -54,7 +56,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Logger.cs" />
-    <Compile Include="SegmentsMatcher.cs" />
     <Compile Include="TransformatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,13 +104,17 @@
       <Project>{bc5dd25b-0799-4b12-8f12-e40b99c9b138}</Project>
       <Name>FormTools</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Matcher\Matcher.csproj">
+    <ProjectReference Include="..\Matcher\Matching.csproj">
       <Project>{49ac4807-089e-4a4f-805b-ef0421c6e25e}</Project>
-      <Name>Matcher</Name>
+      <Name>Matching</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Morpher\Morpher.csproj">
+    <ProjectReference Include="..\Morpher\Morphing.csproj">
       <Project>{0a91be6f-d8e1-490c-8839-0222665f221c}</Project>
-      <Name>Morpher</Name>
+      <Name>Morphing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PanoramasBase\PanoramasBase.csproj">
+      <Project>{8d32515f-9658-4995-8479-0e70d7c518dd}</Project>
+      <Name>PanoramasBase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

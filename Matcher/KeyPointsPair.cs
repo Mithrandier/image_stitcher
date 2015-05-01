@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Emgu.CV.Features2D;
 
-namespace Matcher {
+namespace Panoramas.Matching {
   public class KeyPointsPair {
     public ImageFeature<float> FeatureLeft { get; private set; }
     public ImageFeature<float> FeatureRight { get; private set; }

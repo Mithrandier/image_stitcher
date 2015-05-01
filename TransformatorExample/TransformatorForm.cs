@@ -7,22 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Matcher;
-using Morpher;
+using Panoramas;
+using Panoramas.Matching;
+using Panoramas.Morphing;
 using FormTools;
 
 namespace TransformatorExample {
   public partial class TransformatorForm : BaseForm {
-    FeaturedImage image_left, image_right;
-    FlannMatcher matcher;
-    MatchesPresenter matches_presenter;
-    Emgu.CV.HomographyMatrix transform;
     MatrixPresenter matrix_presenter;
     BrowseablePicture picturebox_matching, picturebox_merging;
+    Segment[] segments;
 
     public TransformatorForm() {
       InitializeComponent();
-      matrix_presenter = new MatrixPresenter(panelHomoMatrix);
+      matrix_presenter = new MatrixPresenter(this.panelHomoMatrix);
       picturebox_matching = new BrowseablePicture(this, this.pictureMatches);
       picturebox_merging = new BrowseablePicture(this, this.pictureMerged);
     }
@@ -30,6 +28,61 @@ namespace TransformatorExample {
     //
     // SEGMENTS
     //
+
+    const int MINIMUM_SEGMENTS = 2;
+    private void buttonAddSegments_Click(object sender, EventArgs e) {
+      var dialog = addSegmentsDialog;
+      if (dialog.ShowDialog() != DialogResult.OK)
+        return;
+      var filenames = dialog.FileNames;
+      if (filenames.Length < MINIMUM_SEGMENTS)
+        return;
+      this.segments = filenames.Select((f) => new Segment(f)).ToArray();
+      InitStitcher();
+      RenderMatches();
+      scrollLimit.Enabled = true;
+      tabControlMain.SelectedTab = tabPageMatching;
+    }
+
+    //
+    // MATCHING
+    //
+
+    private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
+      if (!StitcherReady())
+        return;
+      SetLimit(scrollLimit.Value);
+      RenderMatches();
+    }
+
+    private void buttonUseMatches_Click(object sender, EventArgs e) {
+      if (!StitcherReady())
+        return;
+      RenderMatrix();
+      MergeImages();
+      tabControlMain.SelectedTab = tabPageMerging;
+    }
+
+    //
+    // MERGING
+    //
+
+    private void buttonMerge_Click(object sender, EventArgs e) {
+      if (!StitcherReady())
+        return;
+      MergeImages();
+    }
+
+    private void buttonRestore_Click(object sender, EventArgs e) {
+      RenderMatrix();
+    }
+
+    private void scrollFeaturesLimitForMerging_Scroll(object sender, ScrollEventArgs e) {
+      if (!StitcherReady())
+        return;
+      SetLimit(scrollFeaturesLimitForMerging.Value);
+      MergeImages();
+    }
 
     private void buttonSavePan_Click(object sender, EventArgs e) {
       if (pictureMerged.Image == null)
@@ -39,101 +92,33 @@ namespace TransformatorExample {
       pictureMerged.Image.Save(savePanDialog.FileName);
     }
 
-    private void buttonAddSegments_Click(object sender, EventArgs e) {
-      String[] filenames = new String[2];
-      for (int iFile = 0; iFile < filenames.Length; iFile++) {
-        if (loadImagesDialog.ShowDialog() != DialogResult.OK)
-          return;
-        else
-          filenames[iFile] = loadImagesDialog.FileName;
-      }
-      LogTime("Loading images", () => {
-        image_left = new FeaturedImage(filenames[0]);
-        image_right = new FeaturedImage(filenames[1]);
-      });
-      LogTime("Defining features", () => {
-        textFeaturesNum1.Text = image_left.Features.Length.ToString();
-        textFeaturesNum2.Text = image_right.Features.Length.ToString();
-      });
-      LogTime("Matching images", () => {
-        this.matcher = new FlannMatcher(image_left, image_right);
-        matcher.Match();
-        scrollLimit.Enabled = true;
-      });
-      LogTime("Rendering matches", () => {
-        this.matches_presenter = new MatchesPresenter(image_left, image_right);
-        RenderMatches();
-      });
-      tabControlMain.SelectedTab = tabPageMatching;
+    //
+    // STITCHER STUFF
+    //
+
+    Stitcher stitcher;
+    void InitStitcher() {
+      this.stitcher = new Stitcher(segments);
     }
 
-    //
-    // MATCHING
-    //
+    bool StitcherReady() {
+      return stitcher != null;
+    }
 
     void RenderMatches() {
-      picturebox_matching.Image =  matches_presenter.Render(CurrentMatches());
+      picturebox_matching.Image = stitcher.MatchTwo(segments[0], segments[1]);
     }
 
-    private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
-      if (!matcher.Matched)
-        return;
-      RenderMatches();
-    }
-
-    KeyPointsPair[] CurrentMatches() {
-      int limit = Math.Max(matcher.Matches.Length * scrollLimit.Value / 100, 10);
-      return matcher.Matches.Take(limit).ToArray();
-    }
-
-    private void buttonUseMatches_Click(object sender, EventArgs e) {
-      tabControlMain.SelectedTab = tabPageMerging;
-      RedefineHomography();
-    }
-
-    //
-    // MERGING
-    //
-
-    private void buttonMerge_Click(object sender, EventArgs e) {
-      if (transform == null)
-        return;
-      MergeImages();
+    void SetLimit(int percent) {
+      stitcher.SetLimit(segments[0], segments[1], percent);
     }
 
     void MergeImages() {
-      LogTime("Merging images", () => {
-        var current_matrix = matrix_presenter.FixCurrentMatrix(transform);
-        var result = new Morpher.Morpher(image_left.Image, image_right.Image, transform).Transform(current_matrix);
-        picturebox_merging.Image = result;
-      });
+      picturebox_merging.Image = stitcher.StitchTwo(segments[0], segments[1]);
     }
 
-    private void buttonRestore_Click(object sender, EventArgs e) {
-      matrix_presenter.Display(transform);
-    }
-
-    private void scrollFeaturesLimitForMerging_Scroll(object sender, ScrollEventArgs e) {
-      if (!matcher.Matched)
-        return;
-      scrollLimit.Value = scrollFeaturesLimitForMerging.Value;
-      RedefineHomography();
-    }
-
-    void RedefineHomography() {
-      this.transform = matcher.DefineHomography(CurrentMatches().Length);
-      matrix_presenter.Display(transform);
-      MergeImages();
-    }
-
-    private void buttonAddSeg_Click(object sender, EventArgs e) {
-      var dialog = addSegmentsDialog;
-      if (dialog.ShowDialog() != DialogResult.OK || dialog.FileNames.Length < 3) {
-        return;
-      }
-      var segments = dialog.FileNames.Select((f) => new FeaturedImage(f)).ToArray();
-      var transformations = new SegmentsMatcher(segments).ComputeTransformations();
-      return;
+    void RenderMatrix() {
+      matrix_presenter.Display(stitcher.GetTransformation(segments[0], segments[1]));
     }
   }
 }

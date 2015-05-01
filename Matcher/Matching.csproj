@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A91BE6F-D8E1-490C-8839-0222665F221C}</ProjectGuid>
+    <ProjectGuid>{49AC4807-089E-4A4F-805B-EF0421C6E25E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Morpher</RootNamespace>
-    <AssemblyName>Morpher</AssemblyName>
+    <RootNamespace>Panoramas.Matching</RootNamespace>
+    <AssemblyName>Matcher</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,8 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MatrixPresenter.cs" />
-    <Compile Include="Morpher.cs" />
+    <Compile Include="FeaturedImage.cs" />
+    <Compile Include="FlannMatcher.cs" />
+    <Compile Include="KeyPointsPair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

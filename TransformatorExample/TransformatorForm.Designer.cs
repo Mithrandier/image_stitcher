@@ -25,7 +25,6 @@
     private void InitializeComponent() {
       this.textFeaturesNum1 = new System.Windows.Forms.TextBox();
       this.label1 = new System.Windows.Forms.Label();
-      this.loadImagesDialog = new System.Windows.Forms.OpenFileDialog();
       this.scrollLimit = new System.Windows.Forms.HScrollBar();
       this.label3 = new System.Windows.Forms.Label();
       this.textTimer = new System.Windows.Forms.TextBox();
@@ -37,11 +36,9 @@
       this.pictureMatches = new System.Windows.Forms.PictureBox();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageSegments = new System.Windows.Forms.TabPage();
-      this.buttonAddSeg = new System.Windows.Forms.Button();
       this.buttonAddSegments = new System.Windows.Forms.Button();
       this.tabPageMatching = new System.Windows.Forms.TabPage();
       this.splitContainerMatching = new System.Windows.Forms.SplitContainer();
-      this.textDistanceX = new System.Windows.Forms.Label();
       this.buttonUseMatches = new System.Windows.Forms.Button();
       this.textFeaturesNum2 = new System.Windows.Forms.TextBox();
       this.label4 = new System.Windows.Forms.Label();
@@ -82,11 +79,6 @@
       this.label1.Size = new System.Drawing.Size(61, 13);
       this.label1.TabIndex = 3;
       this.label1.Text = "features #1";
-      // 
-      // loadImagesDialog
-      // 
-      this.loadImagesDialog.FileName = "openFileDialog1";
-      this.loadImagesDialog.Filter = "Images |*.jpeg;*.png;*.jpg;*.gif";
       // 
       // scrollLimit
       // 
@@ -179,7 +171,6 @@
       // tabPageSegments
       // 
       this.tabPageSegments.BackColor = System.Drawing.Color.Silver;
-      this.tabPageSegments.Controls.Add(this.buttonAddSeg);
       this.tabPageSegments.Controls.Add(this.buttonAddSegments);
       this.tabPageSegments.Location = new System.Drawing.Point(4, 22);
       this.tabPageSegments.Name = "tabPageSegments";
@@ -188,20 +179,6 @@
       this.tabPageSegments.TabIndex = 2;
       this.tabPageSegments.Text = "Segments";
       // 
-      // buttonAddSeg
-      // 
-      this.buttonAddSeg.BackColor = System.Drawing.Color.DarkCyan;
-      this.buttonAddSeg.BackgroundImage = global::TransformatorExample.Properties.Resources.folder_open_icon;
-      this.buttonAddSeg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.buttonAddSeg.ForeColor = System.Drawing.Color.Transparent;
-      this.buttonAddSeg.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-      this.buttonAddSeg.Location = new System.Drawing.Point(379, 122);
-      this.buttonAddSeg.Name = "buttonAddSeg";
-      this.buttonAddSeg.Size = new System.Drawing.Size(265, 227);
-      this.buttonAddSeg.TabIndex = 1;
-      this.buttonAddSeg.UseVisualStyleBackColor = false;
-      this.buttonAddSeg.Click += new System.EventHandler(this.buttonAddSeg_Click);
-      // 
       // buttonAddSegments
       // 
       this.buttonAddSegments.BackColor = System.Drawing.Color.Transparent;
@@ -209,7 +186,7 @@
       this.buttonAddSegments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.buttonAddSegments.ForeColor = System.Drawing.Color.Transparent;
       this.buttonAddSegments.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-      this.buttonAddSegments.Location = new System.Drawing.Point(20, 122);
+      this.buttonAddSegments.Location = new System.Drawing.Point(187, 65);
       this.buttonAddSegments.Name = "buttonAddSegments";
       this.buttonAddSegments.Size = new System.Drawing.Size(265, 227);
       this.buttonAddSegments.TabIndex = 0;
@@ -236,7 +213,6 @@
       // 
       // splitContainerMatching.Panel1
       // 
-      this.splitContainerMatching.Panel1.Controls.Add(this.textDistanceX);
       this.splitContainerMatching.Panel1.Controls.Add(this.buttonUseMatches);
       this.splitContainerMatching.Panel1.Controls.Add(this.textFeaturesNum1);
       this.splitContainerMatching.Panel1.Controls.Add(this.label1);
@@ -249,15 +225,6 @@
       this.splitContainerMatching.Size = new System.Drawing.Size(658, 509);
       this.splitContainerMatching.SplitterDistance = 61;
       this.splitContainerMatching.TabIndex = 10;
-      // 
-      // textDistanceX
-      // 
-      this.textDistanceX.AutoSize = true;
-      this.textDistanceX.Location = new System.Drawing.Point(299, 24);
-      this.textDistanceX.Name = "textDistanceX";
-      this.textDistanceX.Size = new System.Drawing.Size(13, 13);
-      this.textDistanceX.TabIndex = 5;
-      this.textDistanceX.Text = "0";
       // 
       // buttonUseMatches
       // 
@@ -376,7 +343,6 @@
 
     private System.Windows.Forms.TextBox textFeaturesNum1;
     private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.OpenFileDialog loadImagesDialog;
     private System.Windows.Forms.PictureBox pictureMatches;
     private System.Windows.Forms.HScrollBar scrollLimit;
     private System.Windows.Forms.Label label3;
@@ -398,9 +364,7 @@
     private System.Windows.Forms.Button buttonSavePan;
     private System.Windows.Forms.Button buttonUseMatches;
     private System.Windows.Forms.HScrollBar scrollFeaturesLimitForMerging;
-    private System.Windows.Forms.Button buttonAddSeg;
     private System.Windows.Forms.OpenFileDialog addSegmentsDialog;
-    private System.Windows.Forms.Label textDistanceX;
   }
 }
 
