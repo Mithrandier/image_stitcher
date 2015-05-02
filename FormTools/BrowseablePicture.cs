@@ -22,8 +22,8 @@ namespace FormTools {
           return;
         var new_image = (Bitmap)value.Clone();
         this._image = new_image;
-        this.current_location = new Point(0, 0);
         this.current_scale = ShrinkFrameTo(this.box.Size, new_image.Size);
+        this.current_location = new Point((box.Size.Width - current_scale.Width) / 2, (box.Size.Height - current_scale.Height) / 2);
         RefreshPicture();
       }
     }

@@ -39,6 +39,7 @@ namespace TransformatorExample {
         return;
       this.segments = filenames.Select((f) => new Segment(f)).ToArray();
       InitStitcher();
+      SetLimit(scrollLimit.Value);
       RenderMatches();
       scrollLimit.Enabled = true;
       tabControlMain.SelectedTab = tabPageMatching;
@@ -70,18 +71,12 @@ namespace TransformatorExample {
     private void buttonMerge_Click(object sender, EventArgs e) {
       if (!StitcherReady())
         return;
+      SetLimit(scrollFeaturesLimitForMerging.Value);
       MergeImages();
     }
 
     private void buttonRestore_Click(object sender, EventArgs e) {
       RenderMatrix();
-    }
-
-    private void scrollFeaturesLimitForMerging_Scroll(object sender, ScrollEventArgs e) {
-      if (!StitcherReady())
-        return;
-      SetLimit(scrollFeaturesLimitForMerging.Value);
-      MergeImages();
     }
 
     private void buttonSavePan_Click(object sender, EventArgs e) {

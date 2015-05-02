@@ -140,6 +140,7 @@
       // pictureMerged
       // 
       this.pictureMerged.BackColor = System.Drawing.SystemColors.Control;
+      this.pictureMerged.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.pictureMerged.Location = new System.Drawing.Point(8, 125);
       this.pictureMerged.Name = "pictureMerged";
       this.pictureMerged.Size = new System.Drawing.Size(650, 361);
@@ -149,6 +150,7 @@
       // 
       // pictureMatches
       // 
+      this.pictureMatches.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.pictureMatches.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureMatches.Location = new System.Drawing.Point(0, 0);
       this.pictureMatches.Name = "pictureMatches";
@@ -290,7 +292,6 @@
       this.scrollFeaturesLimitForMerging.Name = "scrollFeaturesLimitForMerging";
       this.scrollFeaturesLimitForMerging.Size = new System.Drawing.Size(650, 21);
       this.scrollFeaturesLimitForMerging.TabIndex = 13;
-      this.scrollFeaturesLimitForMerging.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollFeaturesLimitForMerging_Scroll);
       // 
       // buttonSavePan
       // 
