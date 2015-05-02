@@ -25,7 +25,7 @@ namespace Panoramas.Morphing {
       return cropped_result;      
     }
 
-    Bitmap GenerateTemplate(HomographyMatrix matrix) {
+    Bitmap GenerateTemplate(HomographyMatrix matrix) {      
       int width = Math.Max(image_dest.Width, image_src.Width) + (int)Math.Abs(matrix[0,2]);
       int height = Math.Max(image_dest.Height, image_src.Height) + (int)Math.Abs(matrix[1,2]);
       var template = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);

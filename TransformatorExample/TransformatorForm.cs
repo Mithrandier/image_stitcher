@@ -43,6 +43,36 @@ namespace TransformatorExample {
       RenderMatches();
       scrollLimit.Enabled = true;
       tabControlMain.SelectedTab = tabPageMatching;
+
+      foreach (var segment in segments) {
+        listSegmentsMatchLeft.Items.Add(segment.Filename);
+        listSegmentsMatchRight.Items.Add(segment.Filename);
+      }
+    }
+
+    Segment CurrentSegment {
+      get { return segments[listSegmentsMatchLeft.SelectedIndex]; }
+    }
+
+    Segment MatchedSegment {
+      get { return segments[listSegmentsMatchRight.SelectedIndex]; }
+    }
+
+    void UpdateMatchedSegmentIndex() {
+      int current_index = listSegmentsMatchRight.SelectedIndex;
+      while (current_index == listSegmentsMatchLeft.SelectedIndex) {
+        current_index = (current_index + 1) % segments.Length;
+        listSegmentsMatchRight.SelectedIndex = current_index;
+      }
+    }
+
+    private void listSegmentsMatchLeft_SelectedIndexChanged(object sender, EventArgs e) {
+      UpdateMatchedSegmentIndex();
+      RenderMatches();
+    }
+
+    private void listSegmentsMatchRight_SelectedIndexChanged(object sender, EventArgs e) {
+      UpdateMatchedSegmentIndex();
     }
 
     //
@@ -101,19 +131,19 @@ namespace TransformatorExample {
     }
 
     void RenderMatches() {
-      picturebox_matching.Image = stitcher.MatchTwo(segments[0], segments[1]);
+      picturebox_matching.Image = stitcher.MatchTwo(CurrentSegment, MatchedSegment);
     }
 
     void SetLimit(int percent) {
-      stitcher.SetLimit(segments[0], segments[1], percent);
+      stitcher.SetLimit(CurrentSegment, MatchedSegment, percent);
     }
 
     void MergeImages() {
-      picturebox_merging.Image = stitcher.StitchTwo(segments[0], segments[1]);
+      picturebox_merging.Image = stitcher.StitchTwo(CurrentSegment, MatchedSegment);
     }
 
     void RenderMatrix() {
-      matrix_presenter.Display(stitcher.GetTransformation(segments[0], segments[1]));
+      matrix_presenter.Display(stitcher.GetTransformation(CurrentSegment, MatchedSegment));
     }
   }
 }

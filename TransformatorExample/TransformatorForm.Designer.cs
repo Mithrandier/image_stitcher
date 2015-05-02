@@ -38,6 +38,8 @@
       this.tabPageSegments = new System.Windows.Forms.TabPage();
       this.buttonAddSegments = new System.Windows.Forms.Button();
       this.tabPageMatching = new System.Windows.Forms.TabPage();
+      this.listSegmentsMatchRight = new System.Windows.Forms.ListBox();
+      this.listSegmentsMatchLeft = new System.Windows.Forms.ListBox();
       this.splitContainerMatching = new System.Windows.Forms.SplitContainer();
       this.buttonUseMatches = new System.Windows.Forms.Button();
       this.textFeaturesNum2 = new System.Windows.Forms.TextBox();
@@ -86,7 +88,7 @@
       this.scrollLimit.Enabled = false;
       this.scrollLimit.Location = new System.Drawing.Point(0, 0);
       this.scrollLimit.Name = "scrollLimit";
-      this.scrollLimit.Size = new System.Drawing.Size(658, 27);
+      this.scrollLimit.Size = new System.Drawing.Size(556, 27);
       this.scrollLimit.TabIndex = 9;
       this.scrollLimit.Scroll += new System.Windows.Forms.ScrollEventHandler(this.scrollLimit_Scroll);
       // 
@@ -154,7 +156,7 @@
       this.pictureMatches.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pictureMatches.Location = new System.Drawing.Point(0, 0);
       this.pictureMatches.Name = "pictureMatches";
-      this.pictureMatches.Size = new System.Drawing.Size(658, 413);
+      this.pictureMatches.Size = new System.Drawing.Size(556, 413);
       this.pictureMatches.TabIndex = 4;
       this.pictureMatches.TabStop = false;
       // 
@@ -167,7 +169,7 @@
       this.tabControlMain.Location = new System.Drawing.Point(0, 0);
       this.tabControlMain.Name = "tabControlMain";
       this.tabControlMain.SelectedIndex = 0;
-      this.tabControlMain.Size = new System.Drawing.Size(672, 541);
+      this.tabControlMain.Size = new System.Drawing.Size(865, 541);
       this.tabControlMain.TabIndex = 1;
       // 
       // tabPageSegments
@@ -177,7 +179,7 @@
       this.tabPageSegments.Location = new System.Drawing.Point(4, 22);
       this.tabPageSegments.Name = "tabPageSegments";
       this.tabPageSegments.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageSegments.Size = new System.Drawing.Size(664, 515);
+      this.tabPageSegments.Size = new System.Drawing.Size(857, 515);
       this.tabPageSegments.TabIndex = 2;
       this.tabPageSegments.Text = "Segments";
       // 
@@ -197,19 +199,38 @@
       // 
       // tabPageMatching
       // 
+      this.tabPageMatching.Controls.Add(this.listSegmentsMatchRight);
+      this.tabPageMatching.Controls.Add(this.listSegmentsMatchLeft);
       this.tabPageMatching.Controls.Add(this.splitContainerMatching);
       this.tabPageMatching.Location = new System.Drawing.Point(4, 22);
       this.tabPageMatching.Name = "tabPageMatching";
       this.tabPageMatching.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageMatching.Size = new System.Drawing.Size(664, 515);
+      this.tabPageMatching.Size = new System.Drawing.Size(857, 515);
       this.tabPageMatching.TabIndex = 0;
       this.tabPageMatching.Text = "Matching";
       this.tabPageMatching.UseVisualStyleBackColor = true;
       // 
+      // listSegmentsMatchRight
+      // 
+      this.listSegmentsMatchRight.FormattingEnabled = true;
+      this.listSegmentsMatchRight.Location = new System.Drawing.Point(712, 5);
+      this.listSegmentsMatchRight.Name = "listSegmentsMatchRight";
+      this.listSegmentsMatchRight.Size = new System.Drawing.Size(138, 329);
+      this.listSegmentsMatchRight.TabIndex = 14;
+      this.listSegmentsMatchRight.SelectedIndexChanged += new System.EventHandler(this.listSegmentsMatchRight_SelectedIndexChanged);
+      // 
+      // listSegmentsMatchLeft
+      // 
+      this.listSegmentsMatchLeft.FormattingEnabled = true;
+      this.listSegmentsMatchLeft.Location = new System.Drawing.Point(6, 5);
+      this.listSegmentsMatchLeft.Name = "listSegmentsMatchLeft";
+      this.listSegmentsMatchLeft.Size = new System.Drawing.Size(138, 329);
+      this.listSegmentsMatchLeft.TabIndex = 13;
+      this.listSegmentsMatchLeft.SelectedIndexChanged += new System.EventHandler(this.listSegmentsMatchLeft_SelectedIndexChanged);
+      // 
       // splitContainerMatching
       // 
-      this.splitContainerMatching.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.splitContainerMatching.Location = new System.Drawing.Point(3, 3);
+      this.splitContainerMatching.Location = new System.Drawing.Point(150, 0);
       this.splitContainerMatching.Name = "splitContainerMatching";
       this.splitContainerMatching.Orientation = System.Windows.Forms.Orientation.Horizontal;
       // 
@@ -224,13 +245,13 @@
       // splitContainerMatching.Panel2
       // 
       this.splitContainerMatching.Panel2.Controls.Add(this.splitContainerDisplay);
-      this.splitContainerMatching.Size = new System.Drawing.Size(658, 509);
+      this.splitContainerMatching.Size = new System.Drawing.Size(556, 509);
       this.splitContainerMatching.SplitterDistance = 61;
       this.splitContainerMatching.TabIndex = 10;
       // 
       // buttonUseMatches
       // 
-      this.buttonUseMatches.Location = new System.Drawing.Point(565, 12);
+      this.buttonUseMatches.Location = new System.Drawing.Point(440, 9);
       this.buttonUseMatches.Name = "buttonUseMatches";
       this.buttonUseMatches.Size = new System.Drawing.Size(75, 37);
       this.buttonUseMatches.TabIndex = 4;
@@ -268,7 +289,7 @@
       // splitContainerDisplay.Panel2
       // 
       this.splitContainerDisplay.Panel2.Controls.Add(this.scrollLimit);
-      this.splitContainerDisplay.Size = new System.Drawing.Size(658, 444);
+      this.splitContainerDisplay.Size = new System.Drawing.Size(556, 444);
       this.splitContainerDisplay.SplitterDistance = 413;
       this.splitContainerDisplay.TabIndex = 0;
       // 
@@ -282,7 +303,7 @@
       this.tabPageMerging.Location = new System.Drawing.Point(4, 22);
       this.tabPageMerging.Name = "tabPageMerging";
       this.tabPageMerging.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageMerging.Size = new System.Drawing.Size(664, 515);
+      this.tabPageMerging.Size = new System.Drawing.Size(857, 515);
       this.tabPageMerging.TabIndex = 1;
       this.tabPageMerging.Text = "Merging";
       // 
@@ -313,7 +334,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(672, 541);
+      this.ClientSize = new System.Drawing.Size(865, 541);
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.label3);
       this.Controls.Add(this.textTimer);
@@ -366,6 +387,8 @@
     private System.Windows.Forms.Button buttonUseMatches;
     private System.Windows.Forms.HScrollBar scrollFeaturesLimitForMerging;
     private System.Windows.Forms.OpenFileDialog addSegmentsDialog;
+    private System.Windows.Forms.ListBox listSegmentsMatchLeft;
+    private System.Windows.Forms.ListBox listSegmentsMatchRight;
   }
 }
 
