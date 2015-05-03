@@ -26,6 +26,7 @@ namespace Panoramas {
       this.matcher = new FlannMatcher(base_segment.Bitmap, query.Bitmap);
       this.Matches = matcher.Match();
       this.all_matches = Matches;
+      LimitMatchesBy(0);
     }
 
     public void LimitMatchesBy(int percent) {

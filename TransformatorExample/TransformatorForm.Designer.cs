@@ -23,8 +23,6 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      this.textFeaturesNum1 = new System.Windows.Forms.TextBox();
-      this.label1 = new System.Windows.Forms.Label();
       this.scrollLimit = new System.Windows.Forms.HScrollBar();
       this.label3 = new System.Windows.Forms.Label();
       this.textTimer = new System.Windows.Forms.TextBox();
@@ -42,13 +40,14 @@
       this.listSegmentsMatchLeft = new System.Windows.Forms.ListBox();
       this.splitContainerMatching = new System.Windows.Forms.SplitContainer();
       this.buttonUseMatches = new System.Windows.Forms.Button();
-      this.textFeaturesNum2 = new System.Windows.Forms.TextBox();
-      this.label4 = new System.Windows.Forms.Label();
       this.splitContainerDisplay = new System.Windows.Forms.SplitContainer();
       this.tabPageMerging = new System.Windows.Forms.TabPage();
       this.scrollFeaturesLimitForMerging = new System.Windows.Forms.HScrollBar();
       this.buttonSavePan = new System.Windows.Forms.Button();
       this.addSegmentsDialog = new System.Windows.Forms.OpenFileDialog();
+      this.textMatchDistance = new System.Windows.Forms.TextBox();
+      this.label1 = new System.Windows.Forms.Label();
+      this.checkBoxOverlap = new System.Windows.Forms.CheckBox();
       this.panelHomoMatrix.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMerged)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMatches)).BeginInit();
@@ -65,22 +64,6 @@
       this.splitContainerDisplay.SuspendLayout();
       this.tabPageMerging.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // textFeaturesNum1
-      // 
-      this.textFeaturesNum1.Location = new System.Drawing.Point(18, 26);
-      this.textFeaturesNum1.Name = "textFeaturesNum1";
-      this.textFeaturesNum1.Size = new System.Drawing.Size(100, 20);
-      this.textFeaturesNum1.TabIndex = 2;
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(15, 12);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(61, 13);
-      this.label1.TabIndex = 3;
-      this.label1.Text = "features #1";
       // 
       // scrollLimit
       // 
@@ -236,11 +219,10 @@
       // 
       // splitContainerMatching.Panel1
       // 
-      this.splitContainerMatching.Panel1.Controls.Add(this.buttonUseMatches);
-      this.splitContainerMatching.Panel1.Controls.Add(this.textFeaturesNum1);
+      this.splitContainerMatching.Panel1.Controls.Add(this.checkBoxOverlap);
       this.splitContainerMatching.Panel1.Controls.Add(this.label1);
-      this.splitContainerMatching.Panel1.Controls.Add(this.textFeaturesNum2);
-      this.splitContainerMatching.Panel1.Controls.Add(this.label4);
+      this.splitContainerMatching.Panel1.Controls.Add(this.textMatchDistance);
+      this.splitContainerMatching.Panel1.Controls.Add(this.buttonUseMatches);
       // 
       // splitContainerMatching.Panel2
       // 
@@ -258,22 +240,6 @@
       this.buttonUseMatches.Text = "User current matches";
       this.buttonUseMatches.UseVisualStyleBackColor = true;
       this.buttonUseMatches.Click += new System.EventHandler(this.buttonUseMatches_Click);
-      // 
-      // textFeaturesNum2
-      // 
-      this.textFeaturesNum2.Location = new System.Drawing.Point(141, 26);
-      this.textFeaturesNum2.Name = "textFeaturesNum2";
-      this.textFeaturesNum2.Size = new System.Drawing.Size(100, 20);
-      this.textFeaturesNum2.TabIndex = 2;
-      // 
-      // label4
-      // 
-      this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(138, 10);
-      this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(61, 13);
-      this.label4.TabIndex = 3;
-      this.label4.Text = "features #2";
       // 
       // splitContainerDisplay
       // 
@@ -330,6 +296,32 @@
       this.addSegmentsDialog.FileName = "openFileDialog1";
       this.addSegmentsDialog.Multiselect = true;
       // 
+      // textMatchDistance
+      // 
+      this.textMatchDistance.Location = new System.Drawing.Point(73, 15);
+      this.textMatchDistance.Name = "textMatchDistance";
+      this.textMatchDistance.Size = new System.Drawing.Size(100, 20);
+      this.textMatchDistance.TabIndex = 5;
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(15, 18);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(52, 13);
+      this.label1.TabIndex = 6;
+      this.label1.Text = "Distance:";
+      // 
+      // checkBoxOverlap
+      // 
+      this.checkBoxOverlap.AutoSize = true;
+      this.checkBoxOverlap.Location = new System.Drawing.Point(73, 41);
+      this.checkBoxOverlap.Name = "checkBoxOverlap";
+      this.checkBoxOverlap.Size = new System.Drawing.Size(69, 17);
+      this.checkBoxOverlap.TabIndex = 7;
+      this.checkBoxOverlap.Text = "Overlap?";
+      this.checkBoxOverlap.UseVisualStyleBackColor = true;
+      // 
       // TransformatorForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,8 +355,6 @@
 
     #endregion
 
-    private System.Windows.Forms.TextBox textFeaturesNum1;
-    private System.Windows.Forms.Label label1;
     private System.Windows.Forms.PictureBox pictureMatches;
     private System.Windows.Forms.HScrollBar scrollLimit;
     private System.Windows.Forms.Label label3;
@@ -376,8 +366,6 @@
     private System.Windows.Forms.SaveFileDialog savePanDialog;
     private System.Windows.Forms.TabControl tabControlMain;
     private System.Windows.Forms.TabPage tabPageMatching;
-    private System.Windows.Forms.TextBox textFeaturesNum2;
-    private System.Windows.Forms.Label label4;
     private System.Windows.Forms.TabPage tabPageMerging;
     private System.Windows.Forms.TabPage tabPageSegments;
     private System.Windows.Forms.SplitContainer splitContainerMatching;
@@ -389,6 +377,9 @@
     private System.Windows.Forms.OpenFileDialog addSegmentsDialog;
     private System.Windows.Forms.ListBox listSegmentsMatchLeft;
     private System.Windows.Forms.ListBox listSegmentsMatchRight;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.TextBox textMatchDistance;
+    private System.Windows.Forms.CheckBox checkBoxOverlap;
   }
 }
 

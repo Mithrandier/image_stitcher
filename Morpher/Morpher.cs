@@ -11,6 +11,8 @@ namespace Panoramas.Morphing {
   public class Morpher {
     Bitmap image_src, image_dest;
 
+    public Morpher() { }
+
     public Morpher(Bitmap image_src, Bitmap image_dest) {
       this.image_src = image_src;
       this.image_dest = image_dest;
@@ -45,7 +47,7 @@ namespace Panoramas.Morphing {
       return template;
     }
 
-    Bitmap AutoCrop(Bitmap image) {
+    protected Bitmap AutoCrop(Bitmap image) {
       var integration_matrix = ExtractIntegrationMatrix(image);
       int bottom_y = -1;
       double current_value, down_value;
@@ -82,7 +84,7 @@ namespace Panoramas.Morphing {
       return cropped_image;
     }
 
-    double[,] ExtractIntegrationMatrix(Bitmap image) {
+    protected double[,] ExtractIntegrationMatrix(Bitmap image) {
       double[,] intergation_matrix = new double[image.Width, image.Height];
       for (int x = 0; x < image.Width; x++) {
         double column_sum = 0;

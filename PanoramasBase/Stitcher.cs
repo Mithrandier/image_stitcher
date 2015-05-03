@@ -34,5 +34,13 @@ namespace Panoramas {
       var transformation = segments_map.MatchFor(image_base, image_matched).Transformation;
       return new Morpher(image_base.Bitmap, image_matched.Bitmap).Transform(transformation);
     }
+
+    public Image StitchAll() {
+      return new MassMorpher(segments_map, segments_map.CoreSegment()).Stitch();
+    }
+
+    public double DistanceBetween(Segment image_base, Segment image_matched) {
+      return segments_map.MatchFor(image_base, image_matched).Distance();
+    }
   }
 }

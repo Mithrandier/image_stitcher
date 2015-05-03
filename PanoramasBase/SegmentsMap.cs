@@ -13,7 +13,6 @@ namespace Panoramas {
       this.Segments = segments;
       this.Matches = new List<SegmentsMatch>();
       DefineMatches();
-      OnlyBestMatches();
     }
 
     void DefineMatches() {
@@ -43,7 +42,16 @@ namespace Panoramas {
     }
 
     public SegmentsMatch MatchFor(Segment base_segment, Segment query_segment) {
-      return Matches.Find((m) => m.Includes(base_segment) && m.Includes(query_segment));
+      return Matches.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);
+    }
+
+    public Segment CoreSegment() {
+      var x = Segments.OrderBy((s) => DistancesFor(s)).First();
+      return x;
+    }
+
+    double DistancesFor(Segment segment) {
+      return Matches.Sum((m) => m.QuerySegment == segment ? m.Distance() : 0);
     }
   }
 }

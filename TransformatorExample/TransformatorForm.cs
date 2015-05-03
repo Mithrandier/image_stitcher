@@ -37,17 +37,26 @@ namespace TransformatorExample {
       var filenames = dialog.FileNames;
       if (filenames.Length < MINIMUM_SEGMENTS)
         return;
+      this.stitcher = null;
       this.segments = filenames.Select((f) => new Segment(f)).ToArray();
+      InitializeSegmentsList();
       InitStitcher();
       SetLimit(scrollLimit.Value);
       RenderMatches();
       scrollLimit.Enabled = true;
       tabControlMain.SelectedTab = tabPageMatching;
 
+    }
+
+    void InitializeSegmentsList() {
+      listSegmentsMatchLeft.Items.Clear();
+      listSegmentsMatchRight.Items.Clear();
       foreach (var segment in segments) {
         listSegmentsMatchLeft.Items.Add(segment.Filename);
         listSegmentsMatchRight.Items.Add(segment.Filename);
       }
+      listSegmentsMatchLeft.SelectedIndex = 0;
+      listSegmentsMatchRight.SelectedIndex = 1;
     }
 
     Segment CurrentSegment {
@@ -67,12 +76,19 @@ namespace TransformatorExample {
     }
 
     private void listSegmentsMatchLeft_SelectedIndexChanged(object sender, EventArgs e) {
-      UpdateMatchedSegmentIndex();
-      RenderMatches();
+      UpdateCurrentMatch();
     }
 
     private void listSegmentsMatchRight_SelectedIndexChanged(object sender, EventArgs e) {
+      UpdateCurrentMatch();
+    }
+
+    void UpdateCurrentMatch() {
+      if (stitcher == null)
+        return;
       UpdateMatchedSegmentIndex();
+      RenderMatches();
+      OutputMatchDistance();
     }
 
     //
@@ -102,6 +118,7 @@ namespace TransformatorExample {
       if (!StitcherReady())
         return;
       SetLimit(scrollFeaturesLimitForMerging.Value);
+      OutputMatchDistance();
       MergeImages();
     }
 
@@ -130,16 +147,21 @@ namespace TransformatorExample {
       return stitcher != null;
     }
 
-    void RenderMatches() {
+    void RenderMatches() {    
       picturebox_matching.Image = stitcher.MatchTwo(CurrentSegment, MatchedSegment);
     }
 
     void SetLimit(int percent) {
-      stitcher.SetLimit(CurrentSegment, MatchedSegment, percent);
+      stitcher.SetLimit(CurrentSegment, MatchedSegment, percent);      
+    }
+
+    void OutputMatchDistance() {
+      textMatchDistance.Text = stitcher.DistanceBetween(CurrentSegment, MatchedSegment).ToString();
     }
 
     void MergeImages() {
-      picturebox_merging.Image = stitcher.StitchTwo(CurrentSegment, MatchedSegment);
+      picturebox_merging.Image = stitcher.StitchAll();
+      //picturebox_merging.Image = stitcher.StitchTwo(CurrentSegment, MatchedSegment);
     }
 
     void RenderMatrix() {
