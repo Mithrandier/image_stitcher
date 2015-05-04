@@ -28,7 +28,7 @@ namespace Panoramas.Morphing {
         var segments = map.Segments.Where((s) => s != core);
         foreach (var segment in segments) {
           var formatted_segment = new Emgu.CV.Image<Bgr, int>(segment.Bitmap);
-          var transformation = map.MatchBetween(segment, core).Transformation.Clone();
+          var transformation = map.MatchBetween(segment, core).Transformation().Matrix.Clone();
           transformation[0, 2] += core.Bitmap.Width;
           transformation[1, 2] += core.Bitmap.Height;
           Emgu.CV.CvInvoke.cvWarpPerspective(formatted_segment.Ptr, result.Ptr, transformation.Ptr, (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, new MCvScalar(0, 0, 0));

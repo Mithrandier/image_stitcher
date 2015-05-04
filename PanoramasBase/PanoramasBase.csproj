@@ -64,6 +64,7 @@
     <Compile Include="SegmentsMap.cs" />
     <Compile Include="SegmentsMatch.cs" />
     <Compile Include="Stitcher.cs" />
+    <Compile Include="Transformation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Logger\Logger.csproj">

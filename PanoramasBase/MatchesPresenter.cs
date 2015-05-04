@@ -21,7 +21,7 @@ namespace Panoramas {
     }
 
     public Image Render() {
-      var matches = match.Matches;
+      var matches = match.Matches();
       float x_offset = ImageBase.Width;
       var template = (Bitmap)common_template.Clone();
       var g = Graphics.FromImage(template);

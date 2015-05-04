@@ -7,34 +7,46 @@ using Panoramas.Matching;
 
 namespace Panoramas {
   public class SegmentsMatch {
+    public const int MIN_MATCHES_COUNT = 10;
+
     public Segment BaseSegment { get; private set; }
     public Segment QuerySegment { get; private set; }
-    public KeyPointsPair[] Matches;
-    public Emgu.CV.HomographyMatrix Transformation {
-      get {
-        return matcher.DefineHomography(Matches);
-      }
-    }
 
-    KeyPointsPair[] all_matches;
     FlannMatcher matcher;    
 
     public SegmentsMatch(Segment base_segment, Segment query, FlannMatcher matcher = null) {
       this.BaseSegment = base_segment;
       this.QuerySegment = query;
       this.matcher = matcher != null ? matcher : new FlannMatcher(base_segment.Bitmap, query.Bitmap);
-      this.Matches = matcher.Match();
-      this.all_matches = Matches;
-      LimitMatchesBy(0);
+    }
+
+    double? distance;
+    public double Distance() {
+      if (distance == null)
+        distance = Matches().Sum((m) => m.Distance);
+      return (double)distance;
+    }
+
+    KeyPointsPair[] all_matches;
+    KeyPointsPair[] matches;
+    public KeyPointsPair[] Matches() {
+      if (all_matches == null) {
+        this.all_matches = this.matcher.Match();
+        LimitMatchesBy(0);
+      }
+      return matches;
+    }
+
+    Transformation transformation;
+    public Transformation Transformation() {
+      if (transformation == null)
+        transformation = new Transformation(matcher.DefineHomography(Matches()));
+      return transformation;
     }
 
     public void LimitMatchesBy(int percent) {
-      var matches_count = Math.Max(10, all_matches.Length * percent / 100);
-      this.Matches = all_matches.Take(matches_count).ToArray();
-    }
-
-    public double Distance() {
-      return Matches.Sum((m) => m.Distance);
+      var matches_count = Math.Max(MIN_MATCHES_COUNT, all_matches.Length * percent / 100);
+      this.matches = all_matches.Take(matches_count).ToArray();
     }
 
     public bool Includes(Segment segment) {
