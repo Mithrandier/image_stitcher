@@ -33,6 +33,15 @@
     <Reference Include="Emgu.CV">
       <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.dll</HintPath>
     </Reference>
+    <Reference Include="Emgu.CV.GPU">
+      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.GPU.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.ML">
+      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.ML.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.OCR">
+      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.OCR.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.Util">
       <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.Util.dll</HintPath>
     </Reference>
@@ -47,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cropper.cs" />
     <Compile Include="MassMorpher.cs" />
     <Compile Include="MatchesPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,6 +66,10 @@
     <Compile Include="Stitcher.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{641dc2ae-318f-4a98-9364-993789e7d3a6}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Matcher\Matching.csproj">
       <Project>{49ac4807-089e-4a4f-805b-ef0421c6e25e}</Project>
       <Name>Matching</Name>

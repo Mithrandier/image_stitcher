@@ -25,7 +25,6 @@
     private void InitializeComponent() {
       this.scrollLimit = new System.Windows.Forms.HScrollBar();
       this.label3 = new System.Windows.Forms.Label();
-      this.textTimer = new System.Windows.Forms.TextBox();
       this.panelHomoMatrix = new System.Windows.Forms.Panel();
       this.buttonRestore = new System.Windows.Forms.Button();
       this.buttonMerge = new System.Windows.Forms.Button();
@@ -39,15 +38,16 @@
       this.listSegmentsMatchRight = new System.Windows.Forms.ListBox();
       this.listSegmentsMatchLeft = new System.Windows.Forms.ListBox();
       this.splitContainerMatching = new System.Windows.Forms.SplitContainer();
+      this.checkBoxOverlap = new System.Windows.Forms.CheckBox();
+      this.label1 = new System.Windows.Forms.Label();
+      this.textMatchDistance = new System.Windows.Forms.TextBox();
       this.buttonUseMatches = new System.Windows.Forms.Button();
       this.splitContainerDisplay = new System.Windows.Forms.SplitContainer();
       this.tabPageMerging = new System.Windows.Forms.TabPage();
       this.scrollFeaturesLimitForMerging = new System.Windows.Forms.HScrollBar();
       this.buttonSavePan = new System.Windows.Forms.Button();
       this.addSegmentsDialog = new System.Windows.Forms.OpenFileDialog();
-      this.textMatchDistance = new System.Windows.Forms.TextBox();
-      this.label1 = new System.Windows.Forms.Label();
-      this.checkBoxOverlap = new System.Windows.Forms.CheckBox();
+      this.textTimer = new System.Windows.Forms.TextBox();
       this.panelHomoMatrix.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMerged)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMatches)).BeginInit();
@@ -83,13 +83,6 @@
       this.label3.Size = new System.Drawing.Size(20, 13);
       this.label3.TabIndex = 8;
       this.label3.Text = "ms";
-      // 
-      // textTimer
-      // 
-      this.textTimer.Location = new System.Drawing.Point(323, 15);
-      this.textTimer.Name = "textTimer";
-      this.textTimer.Size = new System.Drawing.Size(67, 20);
-      this.textTimer.TabIndex = 4;
       // 
       // panelHomoMatrix
       // 
@@ -173,7 +166,7 @@
       this.buttonAddSegments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.buttonAddSegments.ForeColor = System.Drawing.Color.Transparent;
       this.buttonAddSegments.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-      this.buttonAddSegments.Location = new System.Drawing.Point(187, 65);
+      this.buttonAddSegments.Location = new System.Drawing.Point(297, 111);
       this.buttonAddSegments.Name = "buttonAddSegments";
       this.buttonAddSegments.Size = new System.Drawing.Size(265, 227);
       this.buttonAddSegments.TabIndex = 0;
@@ -219,6 +212,7 @@
       // 
       // splitContainerMatching.Panel1
       // 
+      this.splitContainerMatching.Panel1.Controls.Add(this.textTimer);
       this.splitContainerMatching.Panel1.Controls.Add(this.checkBoxOverlap);
       this.splitContainerMatching.Panel1.Controls.Add(this.label1);
       this.splitContainerMatching.Panel1.Controls.Add(this.textMatchDistance);
@@ -230,6 +224,32 @@
       this.splitContainerMatching.Size = new System.Drawing.Size(556, 509);
       this.splitContainerMatching.SplitterDistance = 61;
       this.splitContainerMatching.TabIndex = 10;
+      // 
+      // checkBoxOverlap
+      // 
+      this.checkBoxOverlap.AutoSize = true;
+      this.checkBoxOverlap.Location = new System.Drawing.Point(73, 41);
+      this.checkBoxOverlap.Name = "checkBoxOverlap";
+      this.checkBoxOverlap.Size = new System.Drawing.Size(69, 17);
+      this.checkBoxOverlap.TabIndex = 7;
+      this.checkBoxOverlap.Text = "Overlap?";
+      this.checkBoxOverlap.UseVisualStyleBackColor = true;
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(15, 18);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(52, 13);
+      this.label1.TabIndex = 6;
+      this.label1.Text = "Distance:";
+      // 
+      // textMatchDistance
+      // 
+      this.textMatchDistance.Location = new System.Drawing.Point(73, 15);
+      this.textMatchDistance.Name = "textMatchDistance";
+      this.textMatchDistance.Size = new System.Drawing.Size(100, 20);
+      this.textMatchDistance.TabIndex = 5;
       // 
       // buttonUseMatches
       // 
@@ -296,31 +316,12 @@
       this.addSegmentsDialog.FileName = "openFileDialog1";
       this.addSegmentsDialog.Multiselect = true;
       // 
-      // textMatchDistance
+      // textTimer
       // 
-      this.textMatchDistance.Location = new System.Drawing.Point(73, 15);
-      this.textMatchDistance.Name = "textMatchDistance";
-      this.textMatchDistance.Size = new System.Drawing.Size(100, 20);
-      this.textMatchDistance.TabIndex = 5;
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(15, 18);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(52, 13);
-      this.label1.TabIndex = 6;
-      this.label1.Text = "Distance:";
-      // 
-      // checkBoxOverlap
-      // 
-      this.checkBoxOverlap.AutoSize = true;
-      this.checkBoxOverlap.Location = new System.Drawing.Point(73, 41);
-      this.checkBoxOverlap.Name = "checkBoxOverlap";
-      this.checkBoxOverlap.Size = new System.Drawing.Size(69, 17);
-      this.checkBoxOverlap.TabIndex = 7;
-      this.checkBoxOverlap.Text = "Overlap?";
-      this.checkBoxOverlap.UseVisualStyleBackColor = true;
+      this.textTimer.Location = new System.Drawing.Point(289, 15);
+      this.textTimer.Name = "textTimer";
+      this.textTimer.Size = new System.Drawing.Size(56, 20);
+      this.textTimer.TabIndex = 8;
       // 
       // TransformatorForm
       // 
@@ -329,7 +330,6 @@
       this.ClientSize = new System.Drawing.Size(865, 541);
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.label3);
-      this.Controls.Add(this.textTimer);
       this.Name = "TransformatorForm";
       this.Text = "Image Transformator";
       this.panelHomoMatrix.ResumeLayout(false);
@@ -358,7 +358,6 @@
     private System.Windows.Forms.PictureBox pictureMatches;
     private System.Windows.Forms.HScrollBar scrollLimit;
     private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.TextBox textTimer;
     private System.Windows.Forms.PictureBox pictureMerged;
     private System.Windows.Forms.Panel panelHomoMatrix;
     private System.Windows.Forms.Button buttonMerge;
@@ -380,6 +379,7 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.TextBox textMatchDistance;
     private System.Windows.Forms.CheckBox checkBoxOverlap;
+    private System.Windows.Forms.TextBox textTimer;
   }
 }
 

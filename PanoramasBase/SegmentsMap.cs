@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Panoramas.Matching;
 
 namespace Panoramas {
   public class SegmentsMap {
@@ -11,37 +12,23 @@ namespace Panoramas {
 
     public SegmentsMap(Segment[] segments) {
       this.Segments = segments;
-      this.Matches = new List<SegmentsMatch>();
-      DefineMatches();
+      GenerateMatches();
     }
 
-    void DefineMatches() {
-      foreach (var segment_base in Segments) {
-        foreach (var segment_query in Segments) {
-          if (segment_base == segment_query)
+    void GenerateMatches() {
+      var featured_segments = Segments.Select((s) => new FeaturedImage(s.Bitmap)).ToArray();
+      var matches = new List<SegmentsMatch>();
+      for (int iBase = 0; iBase < Segments.Length; iBase++)
+        for (int iQuery = 0; iQuery < Segments.Length; iQuery++) {
+          if (iBase == iQuery)
             continue;
-          Matches.Add(new SegmentsMatch(segment_base, segment_query));
+          var matcher = new FlannMatcher(featured_segments[iBase], featured_segments[iQuery]);
+          matches.Add(new SegmentsMatch(Segments[iBase], Segments[iQuery], matcher));
         }
-      }
+      this.Matches = matches;
     }
 
-    void OnlyBestMatches() {
-      var ordered_matches = Matches.OrderBy((m) => m.Distance()).ToList();
-      var best_matches = new List<SegmentsMatch>();
-      best_matches.Add(ordered_matches.First());
-      while (best_matches.Count < Segments.Length - 1) {
-        foreach (var match in ordered_matches)
-          if (!best_matches.Any((m) => m.Includes(match.BaseSegment)))
-            best_matches.Add(match);
-      }
-      this.Matches = best_matches;
-    }
-
-    public SegmentsMatch MatchFor(Segment segment) {
-      return Matches.First((m) => m.Includes(segment));
-    }
-
-    public SegmentsMatch MatchFor(Segment base_segment, Segment query_segment) {
+    public SegmentsMatch MatchBetween(Segment base_segment, Segment query_segment) {
       return Matches.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);
     }
 

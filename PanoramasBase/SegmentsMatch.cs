@@ -17,13 +17,12 @@ namespace Panoramas {
     }
 
     KeyPointsPair[] all_matches;
-    FlannMatcher matcher;
-    
+    FlannMatcher matcher;    
 
-    public SegmentsMatch(Segment base_segment, Segment query) {
+    public SegmentsMatch(Segment base_segment, Segment query, FlannMatcher matcher = null) {
       this.BaseSegment = base_segment;
       this.QuerySegment = query;
-      this.matcher = new FlannMatcher(base_segment.Bitmap, query.Bitmap);
+      this.matcher = matcher != null ? matcher : new FlannMatcher(base_segment.Bitmap, query.Bitmap);
       this.Matches = matcher.Match();
       this.all_matches = Matches;
       LimitMatchesBy(0);

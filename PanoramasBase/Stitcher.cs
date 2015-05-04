@@ -18,21 +18,16 @@ namespace Panoramas {
     }
 
     public void SetLimit(Segment image_base, Segment image_matched, int percent) {
-      segments_map.MatchFor(image_base, image_matched).LimitMatchesBy(percent);
+      segments_map.MatchBetween(image_base, image_matched).LimitMatchesBy(percent);
     }
 
     public Image MatchTwo(Segment image_base, Segment image_matched) {
-      var presenter = new MatchesPresenter(segments_map.MatchFor(image_base, image_matched));
+      var presenter = new MatchesPresenter(segments_map.MatchBetween(image_base, image_matched));
       return presenter.Render();
     }
 
     public Emgu.CV.HomographyMatrix GetTransformation(Segment image_base, Segment image_matched) {
-      return segments_map.MatchFor(image_base, image_matched).Transformation;
-    }
-
-    public Image StitchTwo(Segment image_base, Segment image_matched) {
-      var transformation = segments_map.MatchFor(image_base, image_matched).Transformation;
-      return new Morpher(image_base.Bitmap, image_matched.Bitmap).Transform(transformation);
+      return segments_map.MatchBetween(image_base, image_matched).Transformation;
     }
 
     public Image StitchAll() {
@@ -40,7 +35,7 @@ namespace Panoramas {
     }
 
     public double DistanceBetween(Segment image_base, Segment image_matched) {
-      return segments_map.MatchFor(image_base, image_matched).Distance();
+      return segments_map.MatchBetween(image_base, image_matched).Distance();
     }
   }
 }

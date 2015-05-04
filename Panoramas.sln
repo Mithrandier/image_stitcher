@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormTools", "FormTools\Form
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanoramasBase", "PanoramasBase\PanoramasBase.csproj", "{8D32515F-9658-4995-8479-0E70D7C518DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{641DC2AE-318F-4A98-9364-993789E7D3A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8D32515F-9658-4995-8479-0E70D7C518DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D32515F-9658-4995-8479-0E70D7C518DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D32515F-9658-4995-8479-0E70D7C518DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{641DC2AE-318F-4A98-9364-993789E7D3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{641DC2AE-318F-4A98-9364-993789E7D3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{641DC2AE-318F-4A98-9364-993789E7D3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{641DC2AE-318F-4A98-9364-993789E7D3A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

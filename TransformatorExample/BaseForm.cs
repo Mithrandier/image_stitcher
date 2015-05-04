@@ -7,21 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Panoramas.Logger;
 
 namespace TransformatorExample {
   public partial class BaseForm : Form {
-    protected delegate void Procedure();
-    protected long UseTimer(Procedure proc) {
+    public void LogTime(String operation_info, Procedure proc) {
       this.Cursor = Cursors.WaitCursor;
-      var timer = System.Diagnostics.Stopwatch.StartNew();
-      proc.Invoke();
-      timer.Stop();
+      Logger.LogTime(operation_info, proc);
       this.Cursor = Cursors.Default;
-      return timer.ElapsedMilliseconds;
-    }
-    protected void LogTime(String operation_info, Procedure proc) {
-      var time = UseTimer(proc);
-      Logger.Info(String.Format("{0} - {1} ms", operation_info, time));
     }
   }
 }

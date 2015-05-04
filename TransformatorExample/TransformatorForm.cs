@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Panoramas;
+using Panoramas.Logger;
 using Panoramas.Matching;
 using Panoramas.Morphing;
 using FormTools;
@@ -19,6 +20,7 @@ namespace TransformatorExample {
     Segment[] segments;
 
     public TransformatorForm() {
+      Logger.Info(String.Format("\n\n****************Application started at {0}*************\n\n", DateTime.Now));
       InitializeComponent();
       matrix_presenter = new MatrixPresenter(this.panelHomoMatrix);
       picturebox_matching = new BrowseablePicture(this, this.pictureMatches);
@@ -45,7 +47,6 @@ namespace TransformatorExample {
       RenderMatches();
       scrollLimit.Enabled = true;
       tabControlMain.SelectedTab = tabPageMatching;
-
     }
 
     void InitializeSegmentsList() {
@@ -84,7 +85,7 @@ namespace TransformatorExample {
     }
 
     void UpdateCurrentMatch() {
-      if (stitcher == null)
+      if (!StitcherReady())
         return;
       UpdateMatchedSegmentIndex();
       RenderMatches();
@@ -140,15 +141,19 @@ namespace TransformatorExample {
 
     Stitcher stitcher;
     void InitStitcher() {
-      this.stitcher = new Stitcher(segments);
+      LogTime("InitStitcher", () => {
+        this.stitcher = new Stitcher(segments);
+      });
     }
 
     bool StitcherReady() {
       return stitcher != null;
     }
 
-    void RenderMatches() {    
-      picturebox_matching.Image = stitcher.MatchTwo(CurrentSegment, MatchedSegment);
+    void RenderMatches() {
+      LogTime("RenderMatches", () => {
+        picturebox_matching.Image = stitcher.MatchTwo(CurrentSegment, MatchedSegment);
+      });
     }
 
     void SetLimit(int percent) {
@@ -156,16 +161,21 @@ namespace TransformatorExample {
     }
 
     void OutputMatchDistance() {
-      textMatchDistance.Text = stitcher.DistanceBetween(CurrentSegment, MatchedSegment).ToString();
+      LogTime("OutputMatchDistance", () => {
+        textMatchDistance.Text = stitcher.DistanceBetween(CurrentSegment, MatchedSegment).ToString();
+      });
     }
 
     void MergeImages() {
-      picturebox_merging.Image = stitcher.StitchAll();
-      //picturebox_merging.Image = stitcher.StitchTwo(CurrentSegment, MatchedSegment);
+      LogTime("MergeImages", () => {
+        picturebox_merging.Image = stitcher.StitchAll();
+      });
     }
 
     void RenderMatrix() {
-      matrix_presenter.Display(stitcher.GetTransformation(CurrentSegment, MatchedSegment));
+      LogTime("RenderMatrix", () => {
+        matrix_presenter.Display(stitcher.GetTransformation(CurrentSegment, MatchedSegment));
+      });
     }
   }
 }
