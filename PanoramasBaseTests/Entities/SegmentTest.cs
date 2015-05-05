@@ -29,6 +29,13 @@ namespace PanoramasBaseTests {
     }
 
     [TestMethod]
+    public void ItContainsTransformation() {
+      var transformation = Factory.ASegment().Transformation;
+      Assert.IsNotNull(transformation);
+      Assert.IsInstanceOfType(transformation, typeof(Transformation));
+    }
+
+    [TestMethod]
     public void ItCanBeComparedToOtherSegment() {
       var the_segment = Factory.ASegment();
       Assert.AreEqual(the_segment, the_segment);

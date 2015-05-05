@@ -19,11 +19,6 @@ namespace Panoramas {
       return Matches.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);
     }
 
-    public Segment CoreSegment() {
-      var x = Segments.OrderBy((s) => DistancesFor(s)).First();
-      return x;
-    }
-
     void GenerateMatches() {
       var featured_segments = Segments.Select((s) => new FeaturedImage(s.Bitmap)).ToArray();
       var matches = new List<SegmentsMatch>();
@@ -35,6 +30,28 @@ namespace Panoramas {
           matches.Add(new SegmentsMatch(Segments[iBase], Segments[iQuery], matcher));
         }
       this.Matches = matches;
+    }
+
+    public Segment CoreSegment() {
+      return Segments.OrderBy((s) => DistancesFor(s)).First();
+    }
+
+    public Segment ClosestTo(Segment segment) {
+      return Matches.
+        Where((m) => m.Includes(segment)).
+        OrderBy((m) => m.Distance()).
+        First().
+        PairOf(segment);
+    }
+
+    public Segment ClosestTo(Segment segment, Segment[] domain) {
+      if (domain.Contains(segment))
+        throw new ArgumentException();
+      return Matches.
+        Where((m) => m.Includes(segment) && domain.Contains(m.PairOf(segment))).
+        OrderBy((m) => m.Distance()).
+        First().
+        PairOf(segment);
     }
 
     double DistancesFor(Segment segment) {

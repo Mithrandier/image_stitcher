@@ -27,7 +27,7 @@ namespace Panoramas {
     }
 
     public double[,] GetTransformation(Segment image_base, Segment image_matched) {
-      return segments_map.MatchBetween(image_base, image_matched).Transformation().Matrix();
+      return segments_map.MatchBetween(image_base, image_matched).GenerateTransformation().Matrix();
     }
 
     public Image StitchAll() {

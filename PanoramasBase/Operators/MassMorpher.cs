@@ -30,7 +30,7 @@ namespace Panoramas.Morphing {
         core_distortion.TransformOn(core.Bitmap, result);
         var segments = map.Segments.Where((s) => s != core);
         foreach (var segment in segments) {
-          var transformation = map.MatchBetween(core, segment).Transformation();
+          var transformation = map.MatchBetween(core, segment).GenerateTransformation();
           transformation.TransformWithin(segment.Bitmap, result, core_distortion);
         }
       });

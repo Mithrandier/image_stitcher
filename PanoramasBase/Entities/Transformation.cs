@@ -15,8 +15,8 @@ namespace Panoramas {
       this.homography_matrix = NewHomography();
     }
 
-    public Transformation(KeyPointsPair[] matches) {
-      this.homography_matrix = DefineHomography(matches);
+    public Transformation(Emgu.CV.HomographyMatrix matrix) {
+      this.homography_matrix = matrix.Clone();
     }
 
     public Transformation(Transformation transformation) {
@@ -77,18 +77,6 @@ namespace Panoramas {
       matrix[2, 2] = 1;
       matrix[2, 0] = 0.0;
       matrix[0, 1] = 0.0;
-      return matrix;
-    }
-
-    Emgu.CV.HomographyMatrix DefineHomography(KeyPointsPair[] matches) {
-      var points_dst = matches.Select((m) => m.FeatureLeft.KeyPoint.Point).ToArray();
-      var points_src = matches.Select((m) => m.FeatureRight.KeyPoint.Point).ToArray();
-      var matrix = Emgu.CV.CameraCalibration.FindHomography(
-        points_src,
-        points_dst,
-        Emgu.CV.CvEnum.HOMOGRAPHY_METHOD.RANSAC,
-        2 // RANSAC reprojection error
-        );
       return matrix;
     }
   }

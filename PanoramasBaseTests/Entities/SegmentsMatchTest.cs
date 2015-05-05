@@ -39,7 +39,7 @@ namespace PanoramasBaseTests {
 
     [TestMethod]
     public void ItProvidesTransformationBetweenSegments() {
-      var transformation = Factory.ASegmentsMatch().Transformation();
+      var transformation = Factory.ASegmentsMatch().GenerateTransformation();
       Assert.IsNotNull(transformation);
       Assert.IsInstanceOfType(transformation, typeof(Transformation));
     }
@@ -51,6 +51,26 @@ namespace PanoramasBaseTests {
       match.LimitMatchesBy(100);
       var more_matches = match.Matches();
       Assert.IsTrue(first_matches.Length < more_matches.Length);
+    }
+
+    [TestMethod]
+    public void ItAllowsToCheckSegmentPresence() {
+      var present_segment = Factory.ASegment();
+      var match = new SegmentsMatch(present_segment, Factory.ASegment());
+      var not_present_segment = Factory.ASegment();
+      Assert.IsTrue(match.Includes(present_segment));
+      Assert.IsFalse(match.Includes(not_present_segment));
+      var both_segment = new Segment[] { present_segment, not_present_segment };
+      Assert.IsTrue(match.IncludesAnyOf(both_segment));
+    }
+
+    [TestMethod]
+    public void ItProvidesOpponentSegment() {
+      var segment_query = Factory.ASegment();
+      var segment_pair = Factory.ASegment();
+      var match = new SegmentsMatch(segment_query, segment_pair);
+      Assert.AreEqual(match.PairOf(segment_query), segment_pair);
+      Assert.AreEqual(match.PairOf(segment_pair), segment_query);
     }
   }
 }
