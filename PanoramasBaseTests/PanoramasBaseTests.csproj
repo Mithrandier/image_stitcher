@@ -62,15 +62,18 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Factory.cs" />
+    <Compile Include="MassMorpherTest.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SegmentsMatchTest.cs" />
-    <Compile Include="SegmentTest.cs" />
+    <Compile Include="Entities\SegmentsMatchTest.cs" />
+    <Compile Include="Entities\SegmentTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransformationTest.cs" />
+    <Compile Include="Entities\TransformationTest.cs" />
+    <Compile Include="Operators\CropperTest.cs" />
+    <Compile Include="SegmentsMapTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Matcher\Matching.csproj">

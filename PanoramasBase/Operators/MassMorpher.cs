@@ -13,9 +13,9 @@ namespace Panoramas.Morphing {
     Segment core;
     Bitmap template;
 
-    public MassMorpher(SegmentsMap map, Segment core_segment) {
+    public MassMorpher(SegmentsMap map) {
       this.map = map;
-      this.core = core_segment;
+      this.core = map.CoreSegment();
       Logger.Logger.LogTime("GenerateTemplate", () => {
         this.template = GenerateTemplate();
       });
@@ -25,13 +25,13 @@ namespace Panoramas.Morphing {
       Emgu.CV.Image<Bgr, int> result = null;
       Logger.Logger.LogTime("Stitch", () => {
         result = new Emgu.CV.Image<Bgr, int>((Bitmap)template.Clone());
-        var core_distortion = new Transformation(core.Bitmap);
+        var core_distortion = new Transformation();
         core_distortion.Move(core.Bitmap.Width, core.Bitmap.Height);
-        core_distortion.TransformOn(result);
+        core_distortion.TransformOn(core.Bitmap, result);
         var segments = map.Segments.Where((s) => s != core);
         foreach (var segment in segments) {
           var transformation = map.MatchBetween(core, segment).Transformation();
-          transformation.TransformWithin(result, core_distortion);
+          transformation.TransformWithin(segment.Bitmap, result, core_distortion);
         }
       });
       Bitmap full_result = result.ToBitmap();

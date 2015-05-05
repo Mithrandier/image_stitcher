@@ -24,7 +24,12 @@ namespace PanoramasBaseTests {
     }
 
     public static Transformation ATransformation() {
-      return new Transformation(ABitmap());
+      return new Transformation();
+    }
+
+    public static SegmentsMap ASegmentsMap() {
+      var segments = new Segment[] { ASegment(), ASegment() };
+      return new SegmentsMap(segments);
     }
   }
 }

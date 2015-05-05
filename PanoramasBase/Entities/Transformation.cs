@@ -9,34 +9,20 @@ using Panoramas.Matching;
 
 namespace Panoramas {
   public class Transformation {
-    Bitmap image;
+    Emgu.CV.HomographyMatrix homography_matrix;
 
-    public Transformation(Bitmap image) {
-      this.image = image;
+    public Transformation() {
+      this.homography_matrix = NewHomography();
     }
 
-    public Transformation(Bitmap image, KeyPointsPair[] matches) :
-      this(image)
-    {
+    public Transformation(KeyPointsPair[] matches) {
       this.homography_matrix = DefineHomography(matches);
     }
 
     public Transformation(Transformation transformation) {
       this.homography_matrix = transformation.homography_matrix.Clone();
-      this.image = transformation.image;
     }
 
-    Emgu.CV.HomographyMatrix _homography_matrix;
-    Emgu.CV.HomographyMatrix homography_matrix {
-      get {
-        if (_homography_matrix == null)
-          _homography_matrix = NewHomography();
-        return _homography_matrix;
-      }
-      set {
-        this._homography_matrix = value;
-      }
-    }
     public double[,] Matrix() {
       return (double[,])homography_matrix.Data.Clone();
     }
@@ -50,18 +36,18 @@ namespace Panoramas {
       homography_matrix[1, 2] += outer_transformation.homography_matrix[1, 2];
     }
 
-    public Bitmap Transform() {
+    public Bitmap Transform(Bitmap image) {
       var formatted_result = new Emgu.CV.Image<Bgr, int>(image);
-      return TransformOn(formatted_result);
+      return TransformOn(image, formatted_result);
     }
 
-    public Bitmap TransformOn(Emgu.CV.Image<Bgr, int> template) {
+    public Bitmap TransformOn(Bitmap image, Emgu.CV.Image<Bgr, int> template) {
       var formatted_segment = new Emgu.CV.Image<Bgr, int>(image);
       Emgu.CV.CvInvoke.cvWarpPerspective(formatted_segment.Ptr, template.Ptr, homography_matrix.Ptr, (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, new MCvScalar(0, 0, 0));
       return template.ToBitmap();
     }
 
-    public Bitmap TransformWithin(Emgu.CV.Image<Bgr, int> template, Transformation accum_transform) {
+    public Bitmap TransformWithin(Bitmap image, Emgu.CV.Image<Bgr, int> template, Transformation accum_transform) {
       var self_clone = new Transformation(this);
       self_clone.Distort(accum_transform);
       var formatted_segment = new Emgu.CV.Image<Bgr, int>(image);

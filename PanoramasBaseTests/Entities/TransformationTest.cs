@@ -7,8 +7,8 @@ namespace PanoramasBaseTests {
   [TestClass]
   public class TransformationTest {
     [TestMethod]
-    public void ItCanBeCreatedWithTwoBitmaps() {
-      new Transformation(Factory.ABitmap());
+    public void ItCanBeCreated() {
+      new Transformation();
     }
 
     [TestMethod]
@@ -50,7 +50,7 @@ namespace PanoramasBaseTests {
 
     [TestMethod]
     public void ItTransformsSegment() {
-      var result = Factory.ATransformation().Transform();
+      var result = Factory.ATransformation().Transform(Factory.ABitmap());
       Assert.IsNotNull(result);
       Assert.IsInstanceOfType(result, typeof(System.Drawing.Bitmap));
     }

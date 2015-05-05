@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Emgu.CV.Structure;
 
 namespace Panoramas {
-  class Cropper {
+  public class Cropper {
     Bitmap image;
     Emgu.CV.Image<Bgr, double> integral;
 

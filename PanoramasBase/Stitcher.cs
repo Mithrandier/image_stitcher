@@ -31,7 +31,7 @@ namespace Panoramas {
     }
 
     public Image StitchAll() {
-      return new MassMorpher(segments_map, segments_map.CoreSegment()).Stitch();
+      return new MassMorpher(segments_map).Stitch();
     }
 
     public double DistanceBetween(Segment image_base, Segment image_matched) {

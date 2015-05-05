@@ -40,7 +40,7 @@ namespace Panoramas {
     Transformation transformation;
     public Transformation Transformation() {
       if (transformation == null)
-        transformation = new Transformation(this.QuerySegment.Bitmap, Matches());
+        transformation = new Transformation(Matches());
       return transformation;
     }
 
