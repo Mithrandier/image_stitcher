@@ -13,6 +13,10 @@ namespace Panoramas {
       this.segments = new List<Segment>();
     }
 
+    public Panorama(Segment[] segments) {
+      this.segments = segments.ToList();
+    }
+
     public bool HasSegment(Segment segment) {
       return segments.Contains(segment);
     }

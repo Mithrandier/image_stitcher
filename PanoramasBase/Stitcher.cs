@@ -11,10 +11,12 @@ namespace Panoramas {
   public class Stitcher {
     Segment[] images;
     SegmentsMap segments_map;
+    Panorama pan;
 
     public Stitcher(Segment[] images) {
       this.images = images;
       this.segments_map = new SegmentsMap(images);
+      this.pan = new Panorama(images);
     }
 
     public void SetLimit(Segment image_base, Segment image_matched, int percent) {

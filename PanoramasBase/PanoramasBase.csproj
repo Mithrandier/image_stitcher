@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Operators\Cropper.cs" />
     <Compile Include="Operators\MassMorpher.cs" />
+    <Compile Include="Operators\TreeBuilder.cs" />
     <Compile Include="Panorama.cs" />
     <Compile Include="Presenters\MatchesPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

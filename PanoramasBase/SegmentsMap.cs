@@ -54,6 +54,10 @@ namespace Panoramas {
         PairOf(segment);
     }
 
+    public Segment[] DomainOf(Segment segment) {
+      return Segments.Where((s) => ClosestTo(s) == segment).ToArray();
+    }
+
     double DistancesFor(Segment segment) {
       return Matches.Sum((m) => m.QuerySegment == segment ? m.Distance() : 0);
     }

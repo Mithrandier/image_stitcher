@@ -10,6 +10,7 @@ namespace Panoramas {
     public System.Drawing.Bitmap Bitmap { get; private set; }
     public String Filename { get; private set; }
     public Transformation Transformation { get; private set; }
+    public bool BelongsToPan = false;
 
     public Segment(String filename) {
       this.Filename = filename;

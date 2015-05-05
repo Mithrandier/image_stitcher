@@ -25,13 +25,13 @@ namespace Panoramas.Morphing {
       Emgu.CV.Image<Bgr, int> result = null;
       Logger.Logger.LogTime("Stitch", () => {
         result = new Emgu.CV.Image<Bgr, int>((Bitmap)template.Clone());
-        var core_distortion = new Transformation();
-        core_distortion.Move(core.Bitmap.Width, core.Bitmap.Height);
-        core_distortion.TransformOn(core.Bitmap, result);
+        core.Transformation.Move(core.Bitmap.Width, core.Bitmap.Height);
+        core.Transformation.TransformOn(core.Bitmap, result);
         var segments = map.Segments.Where((s) => s != core);
         foreach (var segment in segments) {
-          var transformation = map.MatchBetween(core, segment).GenerateTransformation();
-          transformation.TransformWithin(segment.Bitmap, result, core_distortion);
+          segment.Transformation.Distort(core.Transformation);
+          segment.Transformation.Distort(map.MatchBetween(core, segment).GenerateTransformation());
+          segment.Transformation.TransformOn(segment.Bitmap, result);
         }
       });
       Bitmap full_result = result.ToBitmap();
