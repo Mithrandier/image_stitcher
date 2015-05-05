@@ -39,18 +39,6 @@ namespace Panoramas.Matching {
       return matches.OrderBy((pair) => { return pair.Distance; }).ToArray();
     }
 
-    public Emgu.CV.HomographyMatrix DefineHomography(KeyPointsPair[] matches) {
-      var points_src = matches.Select((m) => m.FeatureLeft.KeyPoint.Point).ToArray();
-      var points_dst = matches.Select((m) => m.FeatureRight.KeyPoint.Point).ToArray();
-      var matrix = Emgu.CV.CameraCalibration.FindHomography(
-        points_src, 
-        points_dst, 
-        Emgu.CV.CvEnum.HOMOGRAPHY_METHOD.RANSAC, 
-        2 // RANSAC reprojection error
-        );
-      return matrix;
-    }
-
     Emgu.CV.Matrix<float> FeaturesToMatrix(ImageFeature<float>[] features) {
       float[,] matrix = new float[features.Length, features[0].Descriptor.Length];
       for (int iFeature = 0; iFeature < features.Length; iFeature++) {

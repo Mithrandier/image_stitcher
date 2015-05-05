@@ -40,17 +40,14 @@ namespace Panoramas {
     Transformation transformation;
     public Transformation Transformation() {
       if (transformation == null)
-        transformation = new Transformation(matcher.DefineHomography(Matches()));
+        transformation = new Transformation(this.QuerySegment.Bitmap, Matches());
       return transformation;
     }
 
     public void LimitMatchesBy(int percent) {
+      this.Matches();
       var matches_count = Math.Max(MIN_MATCHES_COUNT, all_matches.Length * percent / 100);
       this.matches = all_matches.Take(matches_count).ToArray();
-    }
-
-    public bool Includes(Segment segment) {
-      return BaseSegment == segment || QuerySegment == segment;
     }
   }
 }

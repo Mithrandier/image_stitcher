@@ -16,50 +16,41 @@ namespace PanoramasBaseTests {
 
     [TestMethod]
     public void ItCanBeCreatedWithTwoSegments() {
-      ASegmentsMatch();
+      Factory.ASegmentsMatch();
     }
 
     [TestMethod]
     [ExpectedException(typeof(NullReferenceException))]
     public void ItRequiresSegmentsToBePresent() {
-      new SegmentsMatch(SegmentTest.ASegment(), null);
+      new SegmentsMatch(Factory.ASegment(), null);
     }
 
     [TestMethod]
     public void ItProvidesDistanceBetweenSegments() {
-      Assert.IsTrue(ASegmentsMatch().Distance() >= 0);
+      Assert.IsTrue(Factory.ASegmentsMatch().Distance() >= 0);
     }
 
     [TestMethod]
     public void ItProvidesMatchesBetweenSegments() {
-      var matches = ASegmentsMatch().Matches();
+      var matches = Factory.ASegmentsMatch().Matches();
       Assert.IsInstanceOfType(matches, typeof(KeyPointsPair[]));
       Assert.AreEqual(matches.Length, SegmentsMatch.MIN_MATCHES_COUNT);
     }
 
     [TestMethod]
     public void ItProvidesTransformationBetweenSegments() {
-      var transformation = ASegmentsMatch().Transformation();
+      var transformation = Factory.ASegmentsMatch().Transformation();
       Assert.IsNotNull(transformation);
       Assert.IsInstanceOfType(transformation, typeof(Transformation));
     }
 
     [TestMethod]
     public void ItAllowsToUseMoreMatches() {
-      var match = ASegmentsMatch();
+      var match = Factory.ASegmentsMatch();
       var first_matches = match.Matches();
       match.LimitMatchesBy(100);
       var more_matches = match.Matches();
       Assert.IsTrue(first_matches.Length < more_matches.Length);
-    }
-
-    [TestMethod]
-    public void ItIndicatesIfItHasSegment() {
-
-    }
-
-    public static SegmentsMatch ASegmentsMatch() {
-      return new SegmentsMatch(SegmentTest.ASegment(), SegmentTest.ASegment());
     }
   }
 }

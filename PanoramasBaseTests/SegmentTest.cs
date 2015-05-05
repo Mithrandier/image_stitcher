@@ -6,24 +6,20 @@ using Panoramas;
 namespace PanoramasBaseTests {
   [TestClass]
   public class SegmentTest {
-    const string VALID_FILE_NAME = "..\\..\\Resources\\vt.png";
-    const string INVALID_FILE_NAME = "..\\..\\Resources\\?.jpg";
-
     [TestMethod]
     public void ItCanBeCreatedWithFileName() {
-      ASegment();
-      new Segment(VALID_FILE_NAME);
+      Factory.ASegment();
     }
 
     [TestMethod]
     [ExpectedException(typeof(FileNotFoundException))]
     public void ItRaisesErrorIfFileNotFound() {
-      new Segment(INVALID_FILE_NAME);
+      new Segment(Factory.INVALID_FILE_NAME);
     }
 
     [TestMethod]
     public void ItCanBeCreatedWithAnotherSegment() {
-      new Segment(ASegment());
+      new Segment(Factory.ASegment());
     }
 
     [TestMethod]
@@ -34,7 +30,7 @@ namespace PanoramasBaseTests {
 
     [TestMethod]
     public void ItCanBeComparedToOtherSegment() {
-      var the_segment = ASegment();
+      var the_segment = Factory.ASegment();
       Assert.AreEqual(the_segment, the_segment);
       Assert.AreNotEqual(the_segment, new Segment(the_segment));
       Assert.AreNotEqual(the_segment, AnotherSegment());
@@ -42,11 +38,7 @@ namespace PanoramasBaseTests {
 
     [TestMethod]
     public void ItGivesAccessToBitmap() {
-      Assert.IsInstanceOfType(ASegment().Bitmap, typeof(System.Drawing.Bitmap));
-    }
-
-    public static Segment ASegment() {
-      return new Segment(VALID_FILE_NAME);
+      Assert.IsInstanceOfType(Factory.ASegment().Bitmap, typeof(System.Drawing.Bitmap));
     }
     public static Segment AnotherSegment() {
       return new Segment("..\\..\\Resources\\vt (2).png");

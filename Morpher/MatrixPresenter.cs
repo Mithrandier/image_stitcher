@@ -103,7 +103,7 @@ namespace Panoramas.Morphing {
       this.panel.Controls.Add(this.textMatrix00);
     }
 
-    public void Display(Emgu.CV.HomographyMatrix matrix) {
+    public void Display(double[,] matrix) {
       textMatrix00.Text = matrix[0, 0].ToString();
       textMatrix10.Text = matrix[1, 0].ToString();
       textMatrix20.Text = matrix[2, 0].ToString();
@@ -118,7 +118,7 @@ namespace Panoramas.Morphing {
     }
 
     public void DisplayCurrent(Emgu.CV.HomographyMatrix original_matrix) {
-      Display(this.FixCurrentMatrix(original_matrix));
+      Display(this.FixCurrentMatrix(original_matrix).Data);
     }
 
     public Emgu.CV.HomographyMatrix FixCurrentMatrix(Emgu.CV.HomographyMatrix original_matrix) {

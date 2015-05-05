@@ -26,8 +26,8 @@ namespace Panoramas {
       return presenter.Render();
     }
 
-    public Emgu.CV.HomographyMatrix GetTransformation(Segment image_base, Segment image_matched) {
-      return segments_map.MatchBetween(image_base, image_matched).Transformation().Matrix;
+    public double[,] GetTransformation(Segment image_base, Segment image_matched) {
+      return segments_map.MatchBetween(image_base, image_matched).Transformation().Matrix();
     }
 
     public Image StitchAll() {
