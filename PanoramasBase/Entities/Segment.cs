@@ -29,5 +29,9 @@ namespace Panoramas {
     public void ResetTransformation() {
       this.Transformation = new Transformation();
     }
+
+    public override string ToString() {
+      return Path.GetFileName(Filename);
+    }
   }
 }

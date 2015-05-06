@@ -53,32 +53,26 @@ namespace TransformatorExample {
 
     void InitializeSegmentsList() {
       listSegmentsMatchLeft.Items.Clear();
-      listSegmentsMatchRight.Items.Clear();
       foreach (var segment in segments) {
-        listSegmentsMatchLeft.Items.Add(segment.Filename);
-        listSegmentsMatchRight.Items.Add(segment.Filename);
+        listSegmentsMatchLeft.Items.Add(segment);
       }
       listSegmentsMatchLeft.SelectedIndex = 0;
-      listSegmentsMatchRight.SelectedIndex = 1;
     }
 
     Segment CurrentSegment {
-      get { return segments[listSegmentsMatchLeft.SelectedIndex]; }
+      get { return (Segment)listSegmentsMatchLeft.SelectedItem; }
     }
 
     Segment MatchedSegment {
-      get { return segments[listSegmentsMatchRight.SelectedIndex]; }
-    }
-
-    void UpdateMatchedSegmentIndex() {
-      int current_index = listSegmentsMatchRight.SelectedIndex;
-      while (current_index == listSegmentsMatchLeft.SelectedIndex) {
-        current_index = (current_index + 1) % segments.Length;
-        listSegmentsMatchRight.SelectedIndex = current_index;
-      }
+      get { return (Segment)listSegmentsMatchRight.SelectedItem; }
     }
 
     private void listSegmentsMatchLeft_SelectedIndexChanged(object sender, EventArgs e) {
+      listSegmentsMatchRight.Items.Clear();
+      for (var i_item = 0; i_item < listSegmentsMatchLeft.Items.Count; i_item++)
+        if (i_item != listSegmentsMatchLeft.SelectedIndex)
+          listSegmentsMatchRight.Items.Add(listSegmentsMatchLeft.Items[i_item]);
+      listSegmentsMatchRight.SelectedIndex = 0;
       UpdateCurrentMatch();
     }
 
@@ -89,7 +83,6 @@ namespace TransformatorExample {
     void UpdateCurrentMatch() {
       if (!StitcherReady())
         return;
-      UpdateMatchedSegmentIndex();
       RenderMatches();
       OutputMatchDistance();
     }
@@ -119,13 +112,6 @@ namespace TransformatorExample {
     //
     // MERGING
     //
-
-    private void buttonMerge_Click(object sender, EventArgs e) {
-      if (!StitcherReady())
-        return;
-      OutputMatchDistance();
-      MergeImages();
-    }
 
     private void buttonSavePan_Click(object sender, EventArgs e) {
       if (pictureMerged.Image == null)

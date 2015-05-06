@@ -29,7 +29,7 @@ namespace Panoramas {
     double? distance;
     public double Distance() {
       if (distance == null)
-        distance = Matches().Sum((m) => m.Distance);
+        distance = Matches().Sum((m) => m.Distance) / Matches().Length;
       return (double)distance;
     }
 

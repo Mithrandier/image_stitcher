@@ -25,7 +25,6 @@
     private void InitializeComponent() {
       this.scrollLimit = new System.Windows.Forms.HScrollBar();
       this.label3 = new System.Windows.Forms.Label();
-      this.buttonMerge = new System.Windows.Forms.Button();
       this.savePanDialog = new System.Windows.Forms.SaveFileDialog();
       this.pictureMerged = new System.Windows.Forms.PictureBox();
       this.tabControlMain = new System.Windows.Forms.TabControl();
@@ -70,17 +69,6 @@
       this.label3.Size = new System.Drawing.Size(20, 13);
       this.label3.TabIndex = 8;
       this.label3.Text = "ms";
-      // 
-      // buttonMerge
-      // 
-      this.buttonMerge.Font = new System.Drawing.Font("Magneto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonMerge.Location = new System.Drawing.Point(8, 6);
-      this.buttonMerge.Name = "buttonMerge";
-      this.buttonMerge.Size = new System.Drawing.Size(86, 81);
-      this.buttonMerge.TabIndex = 11;
-      this.buttonMerge.Text = "Merge";
-      this.buttonMerge.UseVisualStyleBackColor = true;
-      this.buttonMerge.Click += new System.EventHandler(this.buttonMerge_Click);
       // 
       // pictureMerged
       // 
@@ -180,7 +168,7 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(576, 25);
+      this.label2.Location = new System.Drawing.Point(31, 363);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(33, 13);
       this.label2.TabIndex = 15;
@@ -189,16 +177,16 @@
       // pictureMatches
       // 
       this.pictureMatches.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-      this.pictureMatches.Location = new System.Drawing.Point(150, 67);
+      this.pictureMatches.Location = new System.Drawing.Point(150, 6);
       this.pictureMatches.Name = "pictureMatches";
-      this.pictureMatches.Size = new System.Drawing.Size(699, 413);
+      this.pictureMatches.Size = new System.Drawing.Size(699, 474);
       this.pictureMatches.TabIndex = 4;
       this.pictureMatches.TabStop = false;
       // 
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(378, 25);
+      this.label1.Location = new System.Drawing.Point(12, 337);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(52, 13);
       this.label1.TabIndex = 6;
@@ -206,24 +194,24 @@
       // 
       // textTimer
       // 
-      this.textTimer.Location = new System.Drawing.Point(615, 22);
+      this.textTimer.Location = new System.Drawing.Point(70, 360);
       this.textTimer.Name = "textTimer";
       this.textTimer.Size = new System.Drawing.Size(56, 20);
       this.textTimer.TabIndex = 8;
       // 
       // textMatchDistance
       // 
-      this.textMatchDistance.Location = new System.Drawing.Point(436, 22);
+      this.textMatchDistance.Location = new System.Drawing.Point(70, 334);
       this.textMatchDistance.Name = "textMatchDistance";
-      this.textMatchDistance.Size = new System.Drawing.Size(100, 20);
+      this.textMatchDistance.Size = new System.Drawing.Size(74, 20);
       this.textMatchDistance.TabIndex = 5;
       // 
       // listSegmentsMatchRight
       // 
       this.listSegmentsMatchRight.FormattingEnabled = true;
-      this.listSegmentsMatchRight.Location = new System.Drawing.Point(6, 274);
+      this.listSegmentsMatchRight.Location = new System.Drawing.Point(6, 158);
       this.listSegmentsMatchRight.Name = "listSegmentsMatchRight";
-      this.listSegmentsMatchRight.Size = new System.Drawing.Size(138, 238);
+      this.listSegmentsMatchRight.Size = new System.Drawing.Size(138, 160);
       this.listSegmentsMatchRight.TabIndex = 14;
       this.listSegmentsMatchRight.SelectedIndexChanged += new System.EventHandler(this.listSegmentsMatchRight_SelectedIndexChanged);
       // 
@@ -232,16 +220,16 @@
       this.listSegmentsMatchLeft.FormattingEnabled = true;
       this.listSegmentsMatchLeft.Location = new System.Drawing.Point(6, 5);
       this.listSegmentsMatchLeft.Name = "listSegmentsMatchLeft";
-      this.listSegmentsMatchLeft.Size = new System.Drawing.Size(138, 264);
+      this.listSegmentsMatchLeft.Size = new System.Drawing.Size(138, 147);
       this.listSegmentsMatchLeft.TabIndex = 13;
       this.listSegmentsMatchLeft.SelectedIndexChanged += new System.EventHandler(this.listSegmentsMatchLeft_SelectedIndexChanged);
       // 
       // buttonGotoMerge
       // 
       this.buttonGotoMerge.Font = new System.Drawing.Font("Magneto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonGotoMerge.Location = new System.Drawing.Point(150, 6);
+      this.buttonGotoMerge.Location = new System.Drawing.Point(31, 410);
       this.buttonGotoMerge.Name = "buttonGotoMerge";
-      this.buttonGotoMerge.Size = new System.Drawing.Size(65, 55);
+      this.buttonGotoMerge.Size = new System.Drawing.Size(82, 70);
       this.buttonGotoMerge.TabIndex = 4;
       this.buttonGotoMerge.Text = "Next";
       this.buttonGotoMerge.UseVisualStyleBackColor = true;
@@ -250,7 +238,6 @@
       // tabPageMerging
       // 
       this.tabPageMerging.BackColor = System.Drawing.SystemColors.AppWorkspace;
-      this.tabPageMerging.Controls.Add(this.buttonMerge);
       this.tabPageMerging.Controls.Add(this.buttonSavePan);
       this.tabPageMerging.Controls.Add(this.pictureMerged);
       this.tabPageMerging.Location = new System.Drawing.Point(4, 22);
@@ -265,7 +252,7 @@
       this.buttonSavePan.BackgroundImage = global::TransformatorExample.Properties.Resources.Save_icon;
       this.buttonSavePan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.buttonSavePan.Font = new System.Drawing.Font("Magneto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonSavePan.Location = new System.Drawing.Point(8, 93);
+      this.buttonSavePan.Location = new System.Drawing.Point(6, 6);
       this.buttonSavePan.Name = "buttonSavePan";
       this.buttonSavePan.Size = new System.Drawing.Size(86, 83);
       this.buttonSavePan.TabIndex = 12;
@@ -305,7 +292,6 @@
     private System.Windows.Forms.HScrollBar scrollLimit;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.PictureBox pictureMerged;
-    private System.Windows.Forms.Button buttonMerge;
     private System.Windows.Forms.SaveFileDialog savePanDialog;
     private System.Windows.Forms.TabControl tabControlMain;
     private System.Windows.Forms.TabPage tabPageMatching;
