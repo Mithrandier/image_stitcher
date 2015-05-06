@@ -32,9 +32,15 @@ namespace Panoramas {
     }
 
     public void Distort(Transformation outer_transformation) {
-      this.homography_matrix = outer_transformation.homography_matrix.Clone();
-      //homography_matrix[0, 2] += outer_transformation.homography_matrix[0, 2];
-      //homography_matrix[1, 2] += outer_transformation.homography_matrix[1, 2];
+      var multiplied = this.homography_matrix.Mul(outer_transformation.homography_matrix);
+      this.homography_matrix.Data = multiplied.Data;
+    }
+
+    public Transformation Multiply(Transformation transformation) {
+      var multiplied = this.homography_matrix.Mul(transformation.homography_matrix);
+      var result = new Transformation();
+      result.homography_matrix.Data = multiplied.Data;
+      return result;
     }
 
     public Bitmap Transform(Bitmap image) {
@@ -45,12 +51,21 @@ namespace Panoramas {
     public Bitmap TransformOn(Bitmap image, Emgu.CV.Image<Bgr, int> template) {
       var formatted_segment = new Emgu.CV.Image<Bgr, int>(image);
       Emgu.CV.CvInvoke.cvWarpPerspective(formatted_segment.Ptr, template.Ptr, homography_matrix.Ptr, (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, new MCvScalar(0, 0, 0));
+
       return template.ToBitmap();
     }
 
     public Bitmap TransformWithin(Bitmap image, Emgu.CV.Image<Bgr, int> template, Transformation accum_transform) {
       var self_clone = new Transformation(this);
       self_clone.Distort(accum_transform);
+      var formatted_segment = new Emgu.CV.Image<Bgr, int>(image);
+      Emgu.CV.CvInvoke.cvWarpPerspective(formatted_segment.Ptr, template.Ptr, self_clone.homography_matrix.Ptr, (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, new MCvScalar(0, 0, 0));
+      return template.ToBitmap();
+    }
+
+    public Bitmap TransformWithin(Bitmap image, Emgu.CV.Image<Bgr, int> template, int x_offset, int y_offset) {
+      var self_clone = new Transformation(this);
+      self_clone.Move(x_offset, y_offset);
       var formatted_segment = new Emgu.CV.Image<Bgr, int>(image);
       Emgu.CV.CvInvoke.cvWarpPerspective(formatted_segment.Ptr, template.Ptr, self_clone.homography_matrix.Ptr, (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, new MCvScalar(0, 0, 0));
       return template.ToBitmap();

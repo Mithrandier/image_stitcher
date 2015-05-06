@@ -18,12 +18,19 @@ namespace Panoramas.Presenters {
     public Bitmap Render() {
       var template = GenerateTemplate(tree.Segment.Bitmap);
       var result = new Emgu.CV.Image<Emgu.CV.Structure.Bgr, int>((Bitmap)template.Clone());
-      var rest_segments = pan.segments.Where((s) => s != tree.Segment);
-      foreach (var segment in rest_segments) {
-        segment.Transformation.TransformOn(segment.Bitmap, result);
-      }
-      tree.Segment.Transformation.TransformOn(tree.Segment.Bitmap, result);
-      return result.ToBitmap();
+      var offset = new Transformation();
+      offset.Move(tree.Segment.Bitmap.Width, tree.Segment.Bitmap.Height);
+      RenderNode(tree, offset, result);
+      var result_bitmap = result.ToBitmap();
+      result_bitmap = new Cropper(result_bitmap).AutoCrop();
+      return result_bitmap;
+    }
+
+    void RenderNode(TreeNode node, Transformation context, Emgu.CV.Image<Emgu.CV.Structure.Bgr, int> template) {
+      var transformation = node.Transformation(context);
+      transformation.TransformOn(node.Segment.Bitmap, template);
+      foreach (var child in node.Children)
+        RenderNode(child, context, template);
     }
 
     Bitmap GenerateTemplate(Bitmap core_image) {
@@ -31,6 +38,10 @@ namespace Panoramas.Presenters {
       int height = core_image.Height * 3;
       var template = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
       return template;
+    }
+
+    Size Offset {
+      get { return tree.Segment.Bitmap.Size; }
     }
   }
 }

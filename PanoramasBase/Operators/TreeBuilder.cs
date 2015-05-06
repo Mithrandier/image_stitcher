@@ -29,7 +29,6 @@ namespace Panoramas {
     TreeNode AddNodeToTree(Segment segment, TreeNode parent = null) {
       TreeNode node = null;
       if (parent != null) {
-        segment.Transformation.Distort(parent.Segment.Transformation);
         segment.Transformation.Distort(map.MatchBetween(parent.Segment, segment).GenerateTransformation());
         node = parent.AddChild(segment);
       } else {

@@ -42,5 +42,21 @@ namespace Panoramas {
         child.CollectSegments(segments);
       return segments.ToArray();
     }
+
+    public Transformation Transformation(Transformation context) {
+      List<Transformation> transformations = new List<Transformation>();
+      var node = this;
+      do {
+        transformations.Add(node.Segment.Transformation);
+        node = node.Parent;
+      } while (node != null);
+      transformations.Reverse();
+      Transformation result = new Transformation();
+      foreach (var step_transform in transformations)
+        result = result.Multiply(step_transform);
+      if (context != null)
+        result = context.Multiply(result);
+      return result;
+    }
   }
 }

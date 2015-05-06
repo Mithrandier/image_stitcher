@@ -14,7 +14,7 @@ namespace Panoramas {
     public Cropper(Bitmap image) {
       this.image = image;
 
-      this.integral = new Emgu.CV.Image<Bgr, double>((Bitmap)image.Clone()).Integral();
+      this.integral = new Emgu.CV.Image<Bgr, double>(image).Integral();
     }
 
     public Bitmap AutoCrop() {

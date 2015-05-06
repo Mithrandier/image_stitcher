@@ -22,9 +22,9 @@ namespace TransformatorExample {
     public TransformatorForm() {
       Logger.Info(String.Format("\n\n****************Application started at {0}*************\n\n", DateTime.Now));
       InitializeComponent();
-      matrix_presenter = new MatrixPresenter(this.panelHomoMatrix);
       picturebox_matching = new BrowseablePicture(this, this.pictureMatches);
       picturebox_merging = new BrowseablePicture(this, this.pictureMerged);
+      return;
     }
 
     //
@@ -39,6 +39,9 @@ namespace TransformatorExample {
       var filenames = dialog.FileNames;
       if (filenames.Length < MINIMUM_SEGMENTS)
         return;
+      listFiles.Items.Clear();
+      foreach (var filename in filenames)
+        listFiles.Items.Add(filename);
       this.stitcher = null;
       this.segments = filenames.Select((f) => new Segment(f)).ToArray();
       InitializeSegmentsList();
@@ -46,7 +49,6 @@ namespace TransformatorExample {
       SetLimit(scrollLimit.Value);
       RenderMatches();
       scrollLimit.Enabled = true;
-      tabControlMain.SelectedTab = tabPageMatching;
     }
 
     void InitializeSegmentsList() {
@@ -92,6 +94,10 @@ namespace TransformatorExample {
       OutputMatchDistance();
     }
 
+    private void buttonGotoMatching_Click(object sender, EventArgs e) {
+      tabControlMain.SelectedTab = tabPageMatching;
+    }
+
     //
     // MATCHING
     //
@@ -106,7 +112,6 @@ namespace TransformatorExample {
     private void buttonUseMatches_Click(object sender, EventArgs e) {
       if (!StitcherReady())
         return;
-      RenderMatrix();
       MergeImages();
       tabControlMain.SelectedTab = tabPageMerging;
     }
@@ -118,13 +123,8 @@ namespace TransformatorExample {
     private void buttonMerge_Click(object sender, EventArgs e) {
       if (!StitcherReady())
         return;
-      SetLimit(scrollFeaturesLimitForMerging.Value);
       OutputMatchDistance();
       MergeImages();
-    }
-
-    private void buttonRestore_Click(object sender, EventArgs e) {
-      RenderMatrix();
     }
 
     private void buttonSavePan_Click(object sender, EventArgs e) {
@@ -169,12 +169,6 @@ namespace TransformatorExample {
     void MergeImages() {
       LogTime("MergeImages", () => {
         picturebox_merging.Image = stitcher.StitchAll();
-      });
-    }
-
-    void RenderMatrix() {
-      LogTime("RenderMatrix", () => {
-        matrix_presenter.Display(stitcher.GetTransformation(CurrentSegment, MatchedSegment));
       });
     }
   }
