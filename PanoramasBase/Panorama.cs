@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Panoramas {
   public class Panorama {
-    List<Segment> segments;
+    public List<Segment> segments {get; private set;}
 
     public Panorama() {
       this.segments = new List<Segment>();

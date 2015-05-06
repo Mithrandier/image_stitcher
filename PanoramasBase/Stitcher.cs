@@ -33,7 +33,9 @@ namespace Panoramas {
     }
 
     public Image StitchAll() {
-      return new MassMorpher(segments_map).Stitch();
+      var tree_builder = new TreeBuilder(segments_map);
+      var tree = tree_builder.Generate();
+      return new Presenters.PanoramaPresenter(pan, tree).Render();
     }
 
     public double DistanceBetween(Segment image_base, Segment image_matched) {

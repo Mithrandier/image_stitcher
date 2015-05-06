@@ -62,7 +62,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Factory.cs" />
-    <Compile Include="MassMorpherTest.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,6 +73,8 @@
     <Compile Include="Entities\TransformationTest.cs" />
     <Compile Include="Operators\CropperTest.cs" />
     <Compile Include="SegmentsMapTest.cs" />
+    <Compile Include="TreeBuilderTest.cs" />
+    <Compile Include="TreeNodeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Matcher\Matching.csproj">

@@ -31,5 +31,9 @@ namespace PanoramasBaseTests {
       var segments = new Segment[] { ASegment(), ASegment() };
       return new SegmentsMap(segments);
     }
+
+    public static TreeNode ATreeNode() {
+      return new TreeNode(Factory.ASegment());
+    }
   }
 }

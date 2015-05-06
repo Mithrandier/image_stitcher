@@ -20,6 +20,12 @@ namespace Panoramas {
       this.matcher = matcher != null ? matcher : new FlannMatcher(base_segment.Bitmap, query.Bitmap);
     }
 
+    public Segment[] Segments {
+      get {
+        return new Segment[] { BaseSegment, QuerySegment };
+      }
+    }
+
     double? distance;
     public double Distance() {
       if (distance == null)

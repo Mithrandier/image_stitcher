@@ -32,8 +32,9 @@ namespace Panoramas {
     }
 
     public void Distort(Transformation outer_transformation) {
-      homography_matrix[0, 2] += outer_transformation.homography_matrix[0, 2];
-      homography_matrix[1, 2] += outer_transformation.homography_matrix[1, 2];
+      this.homography_matrix = outer_transformation.homography_matrix.Clone();
+      //homography_matrix[0, 2] += outer_transformation.homography_matrix[0, 2];
+      //homography_matrix[1, 2] += outer_transformation.homography_matrix[1, 2];
     }
 
     public Bitmap Transform(Bitmap image) {

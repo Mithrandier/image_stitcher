@@ -7,33 +7,35 @@ using Panoramas.Matching;
 
 namespace Panoramas {
   public class SegmentsMap {
-    public Segment[] Segments { get; private set; }
+    public Segment[] AllSegments { get; private set; }
     public List<SegmentsMatch> Matches { get; private set; }
 
     public SegmentsMap(Segment[] segments) {
-      this.Segments = segments;
-      GenerateMatches();
+      this.AllSegments = segments;
+      this.Matches = GenerateMatches(segments);
     }
 
     public SegmentsMatch MatchBetween(Segment base_segment, Segment query_segment) {
       return Matches.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);
     }
 
-    void GenerateMatches() {
-      var featured_segments = Segments.Select((s) => new FeaturedImage(s.Bitmap)).ToArray();
+    static List<SegmentsMatch> GenerateMatches(Segment[] segments) {
+      var featured_segments = segments.Select((s) => new FeaturedImage(s.Bitmap)).ToArray();
       var matches = new List<SegmentsMatch>();
-      for (int iBase = 0; iBase < Segments.Length; iBase++)
-        for (int iQuery = 0; iQuery < Segments.Length; iQuery++) {
+      for (int iBase = 0; iBase < segments.Length; iBase++)
+        for (int iQuery = 0; iQuery < segments.Length; iQuery++) {
           if (iBase == iQuery)
             continue;
           var matcher = new FlannMatcher(featured_segments[iBase], featured_segments[iQuery]);
-          matches.Add(new SegmentsMatch(Segments[iBase], Segments[iQuery], matcher));
+          matches.Add(new SegmentsMatch(segments[iBase], segments[iQuery], matcher));
         }
-      this.Matches = matches;
+      return matches;
     }
 
-    public Segment CoreSegment() {
-      return Segments.OrderBy((s) => DistancesFor(s)).First();
+    public Segment CoreSegment(Segment[] domain = null) {
+      if (domain == null)
+        domain = AllSegments;
+      return domain.OrderBy((s) => DistancesFor(s)).First();
     }
 
     public Segment ClosestTo(Segment segment) {
@@ -44,9 +46,11 @@ namespace Panoramas {
         PairOf(segment);
     }
 
-    public Segment ClosestTo(Segment segment, Segment[] domain) {
+    public Segment ClosestTo(Segment segment, Segment[] domain = null) {
       if (domain.Contains(segment))
         throw new ArgumentException();
+      if (domain == null)
+        domain = AllSegments;
       return Matches.
         Where((m) => m.Includes(segment) && domain.Contains(m.PairOf(segment))).
         OrderBy((m) => m.Distance()).
@@ -54,8 +58,24 @@ namespace Panoramas {
         PairOf(segment);
     }
 
-    public Segment[] DomainOf(Segment segment) {
-      return Segments.Where((s) => ClosestTo(s) == segment).ToArray();
+    public void ClosestTo(Segment[] group, Segment[] domain, out Segment closest, out Segment closest_from_group) {
+      if (domain.Intersect(group).Count() > 0)
+        throw new ArgumentException();
+      if (domain == null)
+        domain = AllSegments;
+      var match = Matches.
+        Where((m) => m.Segments.Intersect(group).Count() > 0).
+        Where((m) => m.Segments.Intersect(domain).Count() > 0).
+        OrderBy((m) => m.Distance()).
+        First();
+      closest = match.Segments.Except(group).First();
+      closest_from_group = match.Segments.Except(domain).First();
+    }
+
+    public Segment[] NeighboursOf(Segment segment, Segment[] domain = null) {
+      if (domain == null)
+        domain = AllSegments;
+      return domain.Where((s) => ClosestTo(s) == segment).ToArray();
     }
 
     double DistancesFor(Segment segment) {
