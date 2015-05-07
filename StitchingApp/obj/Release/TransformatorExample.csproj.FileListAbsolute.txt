@@ -1,0 +1,13 @@
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\bin\Release\TransformatorExample.exe.config
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\bin\Release\TransformatorExample.exe
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\bin\Release\TransformatorExample.pdb
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\bin\Release\Emgu.CV.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\bin\Release\Emgu.Util.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\bin\Release\Emgu.CV.xml
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\bin\Release\Emgu.Util.xml
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\obj\Release\TransformatorExample.Properties.Resources.resources
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\obj\Release\TransformatorExample.TransformatorForm.resources
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\obj\Release\TransformatorExample.csproj.GenerateResource.Cache
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\obj\Release\TransformatorExample.exe
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\obj\Release\TransformatorExample.pdb
+C:\Users\Andrew\Documents\Work\image_stitcher\TransformatorExample\obj\Release\TransformatorExample.csprojResolveAssemblyReference.cache

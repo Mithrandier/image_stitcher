@@ -1,0 +1,17 @@
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\ImageStitchingExample.exe.config
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\obj\Debug\ImageStitchingExample.exe
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\obj\Debug\ImageStitchingExample.pdb
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\ImageStitchingExample.exe
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\ImageStitchingExample.pdb
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\Emgu.CV.Stitching.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\Emgu.CV.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\Emgu.Util.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\Emgu.CV.GPU.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\Emgu.CV.Stitching.xml
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\Emgu.CV.xml
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\Emgu.Util.xml
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\bin\Debug\Emgu.CV.GPU.xml
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\obj\Debug\StitchingExample.csprojResolveAssemblyReference.cache
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\obj\Debug\ImageStitchingExample.MainStitchingForm.resources
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\obj\Debug\ImageStitchingExample.Properties.Resources.resources
+C:\Users\Andrew\Documents\Work\image_stitcher\ImageStitchingExample\obj\Debug\StitchingExample.csproj.GenerateResource.Cache
