@@ -1,0 +1,8 @@
+C:\Users\Andrew\Documents\Work\image_stitcher\FormTools\bin\Debug\FormTools.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\FormTools\bin\Debug\FormTools.pdb
+C:\Users\Andrew\Documents\Work\image_stitcher\FormTools\obj\Debug\FormTools.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\FormTools\obj\Debug\FormTools.pdb
+C:\Users\Andrew\Documents\Work\image_stitcher\Lib\FormTools\bin\Debug\FormTools.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\Lib\FormTools\bin\Debug\FormTools.pdb
+C:\Users\Andrew\Documents\Work\image_stitcher\Lib\FormTools\obj\Debug\FormTools.dll
+C:\Users\Andrew\Documents\Work\image_stitcher\Lib\FormTools\obj\Debug\FormTools.pdb

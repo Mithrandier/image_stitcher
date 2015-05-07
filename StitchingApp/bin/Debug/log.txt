@@ -1,0 +1,3673 @@
+
+5/4/2015 8:45:23 AM:
+segments = ... - 556 ms
+
+5/4/2015 8:45:23 AM:
+InitializeSegmentsList - 20 ms
+
+5/4/2015 8:45:43 AM:
+InitStitcher - 16289 ms
+
+5/4/2015 8:45:43 AM:
+SetLimit - 5 ms
+
+5/4/2015 8:45:44 AM:
+RenderMatches - 173 ms
+
+5/4/2015 9:10:08 AM:
+
+
+****************Application started at 5/4/2015 9:10:08 AM*************
+
+
+
+5/4/2015 9:10:17 AM:
+segments = ... - 47 ms
+
+5/4/2015 9:10:17 AM:
+InitializeSegmentsList - 3 ms
+
+5/4/2015 9:10:24 AM:
+InitStitcher - 6173 ms
+
+5/4/2015 9:10:24 AM:
+SetLimit - 4 ms
+
+5/4/2015 9:10:24 AM:
+RenderMatches - 142 ms
+
+5/4/2015 9:10:49 AM:
+segments = ... - 64 ms
+
+5/4/2015 9:10:49 AM:
+InitializeSegmentsList - 1 ms
+
+5/4/2015 9:10:53 AM:
+InitStitcher - 3796 ms
+
+5/4/2015 9:10:53 AM:
+SetLimit - 0 ms
+
+5/4/2015 9:10:53 AM:
+RenderMatches - 91 ms
+5/4/2015 9:17:33 AM: 
+
+****************Application started at 5/4/2015 9:17:33 AM*************
+
+
+5/4/2015 9:20:28 AM: InitStitcher - 9806 ms
+5/4/2015 9:20:28 AM: RenderMatches - 57 ms
+5/4/2015 9:20:33 AM: RenderMatches - 159 ms
+5/4/2015 9:20:33 AM: OutputMatchDistance - 203 ms
+5/4/2015 9:20:34 AM: RenderMatches - 230 ms
+5/4/2015 9:20:34 AM: OutputMatchDistance - 0 ms
+5/4/2015 9:20:34 AM: RenderMatches - 130 ms
+5/4/2015 9:20:34 AM: OutputMatchDistance - 0 ms
+5/4/2015 9:20:35 AM: RenderMatches - 497 ms
+5/4/2015 9:20:35 AM: OutputMatchDistance - 0 ms
+5/4/2015 9:20:42 AM: RenderMatches - 217 ms
+5/4/2015 9:20:42 AM: OutputMatchDistance - 0 ms
+5/4/2015 9:20:44 AM: RenderMatches - 176 ms
+5/4/2015 9:20:44 AM: OutputMatchDistance - 0 ms
+5/4/2015 9:20:45 AM: RenderMatches - 48 ms
+5/4/2015 9:20:45 AM: OutputMatchDistance - 0 ms
+5/4/2015 9:20:47 AM: RenderMatches - 167 ms
+5/4/2015 9:20:47 AM: OutputMatchDistance - 0 ms
+5/4/2015 9:20:49 AM: RenderMatrix - 159 ms
+5/4/2015 9:20:56 AM: MergeImages - 6471 ms
+5/4/2015 9:21:09 AM: InitStitcher - 5497 ms
+5/4/2015 9:21:09 AM: RenderMatches - 312 ms
+5/4/2015 9:21:12 AM: RenderMatrix - 2 ms
+5/4/2015 9:21:55 AM: MergeImages - 42201 ms
+5/4/2015 9:39:40 AM: 
+
+****************Application started at 5/4/2015 9:39:40 AM*************
+
+
+5/4/2015 9:41:49 AM: 
+
+****************Application started at 5/4/2015 9:41:48 AM*************
+
+
+5/4/2015 9:42:13 AM: InitStitcher - 5118 ms
+5/4/2015 9:42:13 AM: RenderMatches - 27 ms
+5/4/2015 9:42:15 AM: RenderMatrix - 66 ms
+5/4/2015 9:42:15 AM: GenerateTemplate - 8 ms
+5/4/2015 9:42:16 AM: Stitch - 498 ms
+5/4/2015 9:42:21 AM: AutoCrop - 5037 ms
+5/4/2015 9:42:21 AM: MergeImages - 5599 ms
+5/4/2015 10:06:48 AM: 
+
+****************Application started at 5/4/2015 10:06:48 AM*************
+
+
+5/4/2015 10:06:56 AM: InitStitcher - 3689 ms
+5/4/2015 10:06:56 AM: RenderMatches - 24 ms
+5/4/2015 10:06:59 AM: RenderMatrix - 45 ms
+5/4/2015 10:06:59 AM: GenerateTemplate - 14 ms
+5/4/2015 10:06:59 AM: Stitch - 313 ms
+5/4/2015 10:07:04 AM: ExtractIntegrationMatrix - 4772 ms
+5/4/2015 10:07:04 AM: Cropping - 39 ms
+5/4/2015 10:07:04 AM: AutoCrop - 4975 ms
+5/4/2015 10:07:04 AM: MergeImages - 5342 ms
+5/4/2015 10:15:13 AM: 
+
+****************Application started at 5/4/2015 10:15:13 AM*************
+
+
+5/4/2015 10:15:26 AM: InitStitcher - 2938 ms
+5/4/2015 10:15:26 AM: RenderMatches - 46 ms
+5/4/2015 10:15:29 AM: RenderMatrix - 68 ms
+5/4/2015 10:15:29 AM: GenerateTemplate - 11 ms
+5/4/2015 10:15:30 AM: Stitch - 670 ms
+5/4/2015 10:15:38 AM: ExtractIntegrationMatrix - 5998 ms
+5/4/2015 10:16:35 AM: 
+
+****************Application started at 5/4/2015 10:16:35 AM*************
+
+
+5/4/2015 10:16:41 AM: InitStitcher - 1358 ms
+5/4/2015 10:16:41 AM: RenderMatches - 39 ms
+5/4/2015 10:16:42 AM: RenderMatrix - 32 ms
+5/4/2015 10:16:42 AM: GenerateTemplate - 7 ms
+5/4/2015 10:16:42 AM: Stitch - 165 ms
+5/4/2015 10:16:47 AM: ExtractIntegrationMatrix - 6465 ms
+5/4/2015 10:28:12 AM: 
+
+****************Application started at 5/4/2015 10:28:12 AM*************
+
+
+5/4/2015 10:28:18 AM: InitStitcher - 2995 ms
+5/4/2015 10:28:18 AM: RenderMatches - 47 ms
+5/4/2015 10:28:20 AM: RenderMatrix - 41 ms
+5/4/2015 10:28:20 AM: GenerateTemplate - 7 ms
+5/4/2015 10:28:20 AM: Stitch - 243 ms
+5/4/2015 10:31:15 AM: 
+
+****************Application started at 5/4/2015 10:31:15 AM*************
+
+
+5/4/2015 10:31:53 AM: InitStitcher - 1164 ms
+5/4/2015 10:31:53 AM: RenderMatches - 64 ms
+5/4/2015 10:31:56 AM: RenderMatrix - 56 ms
+5/4/2015 10:31:56 AM: GenerateTemplate - 5 ms
+5/4/2015 10:31:56 AM: Stitch - 252 ms
+5/4/2015 10:34:41 AM: 
+
+****************Application started at 5/4/2015 10:34:41 AM*************
+
+
+5/4/2015 10:34:52 AM: InitStitcher - 1336 ms
+5/4/2015 10:34:52 AM: RenderMatches - 80 ms
+5/4/2015 10:34:56 AM: RenderMatrix - 55 ms
+5/4/2015 10:34:56 AM: GenerateTemplate - 5 ms
+5/4/2015 10:34:56 AM: Stitch - 234 ms
+5/4/2015 10:36:06 AM: 
+
+****************Application started at 5/4/2015 10:36:06 AM*************
+
+
+5/4/2015 10:36:12 AM: InitStitcher - 1300 ms
+5/4/2015 10:36:12 AM: RenderMatches - 113 ms
+5/4/2015 10:36:13 AM: RenderMatrix - 68 ms
+5/4/2015 10:36:13 AM: GenerateTemplate - 7 ms
+5/4/2015 10:36:14 AM: Stitch - 250 ms
+5/4/2015 10:37:52 AM: Cropping - 84218 ms
+5/4/2015 10:37:52 AM: AutoCrop - 84537 ms
+5/4/2015 10:37:52 AM: MergeImages - 84971 ms
+5/4/2015 10:38:51 AM: 
+
+****************Application started at 5/4/2015 10:38:51 AM*************
+
+
+5/4/2015 10:38:56 AM: InitStitcher - 914 ms
+5/4/2015 10:38:56 AM: RenderMatches - 63 ms
+5/4/2015 10:38:58 AM: RenderMatrix - 66 ms
+5/4/2015 10:38:58 AM: GenerateTemplate - 9 ms
+5/4/2015 10:38:58 AM: Stitch - 154 ms
+5/4/2015 10:38:58 AM: AutoCrop - 309 ms
+5/4/2015 10:38:58 AM: MergeImages - 557 ms
+5/4/2015 10:39:26 AM: 
+
+****************Application started at 5/4/2015 10:39:26 AM*************
+
+
+5/4/2015 10:39:32 AM: InitStitcher - 1473 ms
+5/4/2015 10:39:32 AM: RenderMatches - 58 ms
+5/4/2015 10:39:34 AM: RenderMatrix - 32 ms
+5/4/2015 10:39:34 AM: GenerateTemplate - 4 ms
+5/4/2015 10:39:34 AM: Stitch - 70 ms
+5/4/2015 10:39:34 AM: Cropping - 18 ms
+5/4/2015 10:39:34 AM: AutoCrop - 196 ms
+5/4/2015 10:39:34 AM: MergeImages - 303 ms
+5/4/2015 10:41:28 AM: 
+
+****************Application started at 5/4/2015 10:41:28 AM*************
+
+
+5/4/2015 10:41:33 AM: InitStitcher - 1096 ms
+5/4/2015 10:41:34 AM: RenderMatches - 63 ms
+5/4/2015 10:41:35 AM: RenderMatrix - 49 ms
+5/4/2015 10:41:35 AM: GenerateTemplate - 9 ms
+5/4/2015 10:41:35 AM: Stitch - 331 ms
+5/4/2015 10:42:12 AM: 
+
+****************Application started at 5/4/2015 10:42:12 AM*************
+
+
+5/4/2015 10:42:18 AM: InitStitcher - 913 ms
+5/4/2015 10:42:18 AM: RenderMatches - 75 ms
+5/4/2015 10:42:19 AM: RenderMatrix - 40 ms
+5/4/2015 10:42:19 AM: GenerateTemplate - 9 ms
+5/4/2015 10:42:20 AM: Stitch - 191 ms
+5/4/2015 10:43:31 AM: 
+
+****************Application started at 5/4/2015 10:43:31 AM*************
+
+
+5/4/2015 10:43:42 AM: InitStitcher - 1376 ms
+5/4/2015 10:43:43 AM: RenderMatches - 52 ms
+5/4/2015 10:43:45 AM: RenderMatrix - 77 ms
+5/4/2015 10:43:45 AM: GenerateTemplate - 7 ms
+5/4/2015 10:43:45 AM: Stitch - 376 ms
+5/4/2015 10:55:29 AM: 
+
+****************Application started at 5/4/2015 10:55:29 AM*************
+
+
+5/4/2015 10:55:35 AM: InitStitcher - 988 ms
+5/4/2015 10:55:35 AM: RenderMatches - 68 ms
+5/4/2015 10:55:37 AM: RenderMatrix - 49 ms
+5/4/2015 10:55:37 AM: GenerateTemplate - 7 ms
+5/4/2015 10:55:37 AM: Stitch - 107 ms
+5/4/2015 11:02:57 AM: 
+
+****************Application started at 5/4/2015 11:02:56 AM*************
+
+
+5/4/2015 11:03:04 AM: InitStitcher - 994 ms
+5/4/2015 11:03:04 AM: RenderMatches - 49 ms
+5/4/2015 11:03:07 AM: RenderMatrix - 56 ms
+5/4/2015 11:03:07 AM: GenerateTemplate - 5 ms
+5/4/2015 11:03:07 AM: Stitch - 258 ms
+5/4/2015 11:04:36 AM: AutoCrop - 103184 ms
+5/4/2015 11:04:36 AM: MergeImages - 103652 ms
+5/4/2015 11:04:57 AM: OutputMatchDistance - 2 ms
+5/4/2015 11:04:57 AM: GenerateTemplate - 9 ms
+5/4/2015 11:04:57 AM: Stitch - 193 ms
+5/4/2015 11:05:00 AM: AutoCrop - 2277 ms
+5/4/2015 11:05:00 AM: MergeImages - 2837 ms
+5/4/2015 11:05:34 AM: OutputMatchDistance - 0 ms
+5/4/2015 11:05:34 AM: GenerateTemplate - 12 ms
+5/4/2015 11:05:34 AM: Stitch - 178 ms
+5/4/2015 11:14:04 AM: AutoCrop - 509449 ms
+5/4/2015 11:14:04 AM: MergeImages - 509778 ms
+5/4/2015 11:15:20 AM: 
+
+****************Application started at 5/4/2015 11:15:20 AM*************
+
+
+5/4/2015 11:15:48 AM: InitStitcher - 2576 ms
+5/4/2015 11:15:49 AM: RenderMatches - 144 ms
+5/4/2015 11:15:51 AM: RenderMatrix - 64 ms
+5/4/2015 11:15:51 AM: GenerateTemplate - 165 ms
+5/4/2015 11:15:51 AM: Stitch - 292 ms
+5/4/2015 11:15:51 AM: Cropping - 44 ms
+5/4/2015 11:15:51 AM: AutoCrop - 471 ms
+5/4/2015 11:15:52 AM: MergeImages - 996 ms
+5/4/2015 11:17:13 AM: OutputMatchDistance - 1 ms
+5/4/2015 11:17:13 AM: GenerateTemplate - 2 ms
+5/4/2015 11:17:13 AM: Stitch - 106 ms
+5/4/2015 11:19:18 AM: 
+
+****************Application started at 5/4/2015 11:19:18 AM*************
+
+
+5/4/2015 11:19:24 AM: InitStitcher - 814 ms
+5/4/2015 11:19:24 AM: RenderMatches - 33 ms
+5/4/2015 11:19:26 AM: RenderMatrix - 44 ms
+5/4/2015 11:19:26 AM: GenerateTemplate - 3 ms
+5/4/2015 11:19:26 AM: Stitch - 66 ms
+5/4/2015 11:19:26 AM: Cropping - 11 ms
+5/4/2015 11:19:26 AM: AutoCrop - 172 ms
+5/4/2015 11:19:26 AM: MergeImages - 266 ms
+5/4/2015 11:19:34 AM: OutputMatchDistance - 4 ms
+5/4/2015 11:19:34 AM: GenerateTemplate - 3 ms
+5/4/2015 11:19:34 AM: Stitch - 99 ms
+5/4/2015 11:19:34 AM: Cropping - 8 ms
+5/4/2015 11:19:34 AM: AutoCrop - 143 ms
+5/4/2015 11:19:34 AM: MergeImages - 322 ms
+5/4/2015 11:20:13 AM: RenderMatrix - 3 ms
+5/4/2015 11:20:13 AM: GenerateTemplate - 4 ms
+5/4/2015 11:20:13 AM: Stitch - 88 ms
+5/4/2015 11:20:14 AM: Cropping - 14 ms
+5/4/2015 11:20:14 AM: AutoCrop - 297 ms
+5/4/2015 11:20:14 AM: MergeImages - 417 ms
+5/4/2015 11:20:55 AM: InitStitcher - 3373 ms
+5/4/2015 11:20:55 AM: RenderMatches - 88 ms
+5/4/2015 11:20:57 AM: RenderMatrix - 3 ms
+5/4/2015 11:20:57 AM: GenerateTemplate - 15 ms
+5/4/2015 11:20:57 AM: Stitch - 409 ms
+5/4/2015 11:20:58 AM: Cropping - 69 ms
+5/4/2015 11:20:58 AM: AutoCrop - 621 ms
+5/4/2015 11:20:58 AM: MergeImages - 1099 ms
+5/4/2015 9:43:59 PM: 
+
+****************Application started at 5/4/2015 9:43:59 PM*************
+
+
+5/4/2015 9:44:31 PM: InitStitcher - 16158 ms
+5/4/2015 9:44:32 PM: RenderMatches - 108 ms
+5/4/2015 9:44:39 PM: RenderMatches - 195 ms
+5/4/2015 9:44:39 PM: OutputMatchDistance - 69 ms
+5/4/2015 9:44:41 PM: RenderMatches - 75 ms
+5/4/2015 9:44:41 PM: OutputMatchDistance - 0 ms
+5/4/2015 9:44:46 PM: RenderMatches - 457 ms
+5/4/2015 9:44:46 PM: OutputMatchDistance - 0 ms
+5/4/2015 9:44:46 PM: RenderMatches - 75 ms
+5/4/2015 9:44:46 PM: OutputMatchDistance - 8 ms
+5/4/2015 9:44:48 PM: RenderMatrix - 341 ms
+5/4/2015 9:44:48 PM: GenerateTemplate - 381 ms
+5/4/2015 9:44:53 PM: Stitch - 4585 ms
+5/4/2015 9:46:21 PM: 
+
+****************Application started at 5/4/2015 9:46:20 PM*************
+
+
+5/4/2015 9:46:43 PM: InitStitcher - 9692 ms
+5/4/2015 9:46:43 PM: RenderMatches - 44 ms
+5/4/2015 9:46:45 PM: RenderMatrix - 138 ms
+5/4/2015 9:46:45 PM: GenerateTemplate - 76 ms
+5/4/2015 9:46:47 PM: Stitch - 2213 ms
+5/4/2015 9:48:29 PM: 
+
+****************Application started at 5/4/2015 9:48:29 PM*************
+
+
+5/5/2015 10:58:01 AM: 
+
+****************Application started at 5/5/2015 10:58:01 AM*************
+
+
+5/5/2015 10:58:20 AM: InitStitcher - 2126 ms
+5/5/2015 10:59:38 AM: 
+
+****************Application started at 5/5/2015 10:59:38 AM*************
+
+
+5/5/2015 11:00:09 AM: 
+
+****************Application started at 5/5/2015 11:00:09 AM*************
+
+
+5/5/2015 11:00:16 AM: InitStitcher - 884 ms
+5/5/2015 11:00:16 AM: RenderMatches - 53 ms
+5/5/2015 11:00:34 AM: RenderMatrix - 108 ms
+5/5/2015 11:00:34 AM: GenerateTemplate - 5 ms
+5/5/2015 11:00:35 AM: Stitch - 450 ms
+5/5/2015 11:00:35 AM: Cropping - 44 ms
+5/5/2015 11:00:35 AM: AutoCrop - 298 ms
+5/5/2015 11:00:35 AM: MergeImages - 942 ms
+5/5/2015 11:04:30 AM: 
+
+****************Application started at 5/5/2015 11:04:30 AM*************
+
+
+5/5/2015 11:06:48 AM: InitStitcher - 1379 ms
+5/5/2015 11:06:48 AM: RenderMatches - 138 ms
+5/5/2015 11:06:52 AM: RenderMatrix - 84 ms
+5/5/2015 11:06:52 AM: GenerateTemplate - 2 ms
+5/5/2015 11:06:53 AM: Stitch - 342 ms
+5/5/2015 11:06:53 AM: Cropping - 24 ms
+5/5/2015 11:06:53 AM: AutoCrop - 246 ms
+5/5/2015 11:06:53 AM: MergeImages - 675 ms
+5/5/2015 11:07:59 AM: 
+
+****************Application started at 5/5/2015 11:07:59 AM*************
+
+
+5/5/2015 11:08:07 AM: InitStitcher - 1432 ms
+5/5/2015 11:08:08 AM: RenderMatches - 82 ms
+5/5/2015 11:08:09 AM: RenderMatrix - 64 ms
+5/5/2015 11:08:09 AM: GenerateTemplate - 3 ms
+5/5/2015 11:08:09 AM: Stitch - 365 ms
+5/5/2015 11:08:10 AM: MergeImages - 663 ms
+5/5/2015 11:08:51 AM: 
+
+****************Application started at 5/5/2015 11:08:51 AM*************
+
+
+5/5/2015 11:08:57 AM: InitStitcher - 1089 ms
+5/5/2015 11:08:57 AM: RenderMatches - 38 ms
+5/5/2015 11:08:58 AM: RenderMatrix - 62 ms
+5/5/2015 11:08:58 AM: GenerateTemplate - 5 ms
+5/5/2015 11:08:59 AM: Stitch - 235 ms
+5/5/2015 11:08:59 AM: MergeImages - 451 ms
+5/5/2015 11:09:51 AM: 
+
+****************Application started at 5/5/2015 11:09:51 AM*************
+
+
+5/5/2015 11:09:57 AM: InitStitcher - 1169 ms
+5/5/2015 11:09:57 AM: RenderMatches - 92 ms
+5/5/2015 11:09:58 AM: RenderMatrix - 107 ms
+5/5/2015 11:09:59 AM: GenerateTemplate - 42 ms
+5/5/2015 11:09:59 AM: Stitch - 578 ms
+5/5/2015 11:09:59 AM: MergeImages - 910 ms
+5/5/2015 11:12:09 AM: 
+
+****************Application started at 5/5/2015 11:12:09 AM*************
+
+
+5/5/2015 11:12:16 AM: InitStitcher - 1259 ms
+5/5/2015 11:12:16 AM: RenderMatches - 42 ms
+5/5/2015 11:12:18 AM: RenderMatrix - 71 ms
+5/5/2015 11:12:18 AM: GenerateTemplate - 5 ms
+5/5/2015 11:12:18 AM: Stitch - 483 ms
+5/5/2015 11:12:18 AM: MergeImages - 751 ms
+5/5/2015 11:19:54 AM: 
+
+****************Application started at 5/5/2015 11:19:54 AM*************
+
+
+5/5/2015 11:19:59 AM: InitStitcher - 1383 ms
+5/5/2015 11:19:59 AM: RenderMatches - 42 ms
+5/5/2015 11:20:00 AM: RenderMatrix - 75 ms
+5/5/2015 11:20:01 AM: GenerateTemplate - 8 ms
+5/5/2015 11:20:01 AM: Stitch - 447 ms
+5/5/2015 11:20:01 AM: MergeImages - 692 ms
+5/5/2015 11:20:18 AM: 
+
+****************Application started at 5/5/2015 11:20:18 AM*************
+
+
+5/5/2015 11:20:26 AM: InitStitcher - 1371 ms
+5/5/2015 11:20:26 AM: RenderMatches - 37 ms
+5/5/2015 11:20:27 AM: RenderMatrix - 66 ms
+5/5/2015 11:20:28 AM: GenerateTemplate - 11 ms
+5/5/2015 11:20:28 AM: Stitch - 603 ms
+5/5/2015 11:20:29 AM: MergeImages - 975 ms
+5/5/2015 11:21:40 AM: 
+
+****************Application started at 5/5/2015 11:21:40 AM*************
+
+
+5/5/2015 11:21:45 AM: InitStitcher - 1078 ms
+5/5/2015 11:21:45 AM: RenderMatches - 53 ms
+5/5/2015 11:21:46 AM: RenderMatrix - 63 ms
+5/5/2015 11:21:46 AM: GenerateTemplate - 11 ms
+5/5/2015 11:21:46 AM: Stitch - 81 ms
+5/5/2015 11:21:46 AM: MergeImages - 538 ms
+5/5/2015 11:22:08 AM: 
+
+****************Application started at 5/5/2015 11:22:08 AM*************
+
+
+5/5/2015 11:22:14 AM: InitStitcher - 1474 ms
+5/5/2015 11:22:14 AM: RenderMatches - 96 ms
+5/5/2015 11:22:15 AM: RenderMatrix - 58 ms
+5/5/2015 11:22:15 AM: GenerateTemplate - 12 ms
+5/5/2015 11:24:02 AM: 
+
+****************Application started at 5/5/2015 11:24:02 AM*************
+
+
+5/5/2015 11:24:06 AM: InitStitcher - 1371 ms
+5/5/2015 11:24:06 AM: RenderMatches - 51 ms
+5/5/2015 11:24:07 AM: RenderMatrix - 67 ms
+5/5/2015 11:24:07 AM: GenerateTemplate - 7 ms
+5/5/2015 11:24:07 AM: Stitch - 319 ms
+5/5/2015 11:24:07 AM: MergeImages - 573 ms
+5/5/2015 11:25:22 AM: 
+
+****************Application started at 5/5/2015 11:25:22 AM*************
+
+
+5/5/2015 11:25:30 AM: InitStitcher - 1200 ms
+5/5/2015 11:25:30 AM: RenderMatches - 41 ms
+5/5/2015 11:25:32 AM: RenderMatrix - 73 ms
+5/5/2015 11:25:32 AM: GenerateTemplate - 7 ms
+5/5/2015 11:25:32 AM: Stitch - 259 ms
+5/5/2015 11:25:32 AM: MergeImages - 501 ms
+5/5/2015 11:26:27 AM: 
+
+****************Application started at 5/5/2015 11:26:27 AM*************
+
+
+5/5/2015 11:26:35 AM: InitStitcher - 1103 ms
+5/5/2015 11:26:35 AM: RenderMatches - 77 ms
+5/5/2015 11:26:36 AM: RenderMatrix - 56 ms
+5/5/2015 11:26:37 AM: GenerateTemplate - 12 ms
+5/5/2015 11:26:37 AM: Stitch - 431 ms
+5/5/2015 11:26:37 AM: MergeImages - 750 ms
+5/5/2015 11:26:59 AM: 
+
+****************Application started at 5/5/2015 11:26:59 AM*************
+
+
+5/5/2015 11:27:07 AM: InitStitcher - 1368 ms
+5/5/2015 11:27:07 AM: RenderMatches - 69 ms
+5/5/2015 11:27:09 AM: RenderMatrix - 60 ms
+5/5/2015 11:27:09 AM: GenerateTemplate - 3 ms
+5/5/2015 11:27:10 AM: Stitch - 524 ms
+5/5/2015 11:27:10 AM: MergeImages - 1030 ms
+5/5/2015 11:30:32 AM: 
+
+****************Application started at 5/5/2015 11:30:32 AM*************
+
+
+5/5/2015 11:30:59 AM: 
+
+****************Application started at 5/5/2015 11:30:59 AM*************
+
+
+5/5/2015 11:31:07 AM: InitStitcher - 401 ms
+5/5/2015 11:31:07 AM: RenderMatches - 65 ms
+5/5/2015 11:31:34 AM: InitStitcher - 5428 ms
+5/5/2015 11:31:35 AM: RenderMatches - 160 ms
+5/5/2015 11:31:58 AM: InitStitcher - 669 ms
+5/5/2015 11:31:58 AM: RenderMatches - 79 ms
+5/5/2015 11:32:49 AM: 
+
+****************Application started at 5/5/2015 11:32:49 AM*************
+
+
+5/5/2015 11:32:56 AM: InitStitcher - 1360 ms
+5/5/2015 11:32:56 AM: RenderMatches - 77 ms
+5/5/2015 11:32:57 AM: RenderMatrix - 59 ms
+5/5/2015 11:32:57 AM: GenerateTemplate - 3 ms
+5/5/2015 11:32:58 AM: Stitch - 279 ms
+5/5/2015 11:32:58 AM: MergeImages - 545 ms
+5/5/2015 11:33:21 AM: 
+
+****************Application started at 5/5/2015 11:33:21 AM*************
+
+
+5/5/2015 11:33:28 AM: InitStitcher - 1582 ms
+5/5/2015 11:33:29 AM: RenderMatches - 57 ms
+5/5/2015 11:33:29 AM: RenderMatrix - 60 ms
+5/5/2015 11:33:30 AM: GenerateTemplate - 4 ms
+5/5/2015 11:33:30 AM: Stitch - 591 ms
+5/5/2015 11:33:30 AM: MergeImages - 945 ms
+5/5/2015 11:34:07 AM: 
+
+****************Application started at 5/5/2015 11:34:07 AM*************
+
+
+5/5/2015 11:34:13 AM: InitStitcher - 981 ms
+5/5/2015 11:34:13 AM: RenderMatches - 72 ms
+5/5/2015 11:34:15 AM: RenderMatrix - 59 ms
+5/5/2015 11:34:15 AM: GenerateTemplate - 3 ms
+5/5/2015 11:34:16 AM: Stitch - 686 ms
+5/5/2015 11:34:16 AM: MergeImages - 975 ms
+5/5/2015 11:36:24 AM: 
+
+****************Application started at 5/5/2015 11:36:24 AM*************
+
+
+5/5/2015 11:36:30 AM: InitStitcher - 1202 ms
+5/5/2015 11:36:30 AM: RenderMatches - 140 ms
+5/5/2015 11:36:32 AM: RenderMatrix - 59 ms
+5/5/2015 11:36:32 AM: GenerateTemplate - 3 ms
+5/5/2015 11:38:48 AM: 
+
+****************Application started at 5/5/2015 11:38:48 AM*************
+
+
+5/5/2015 11:38:54 AM: InitStitcher - 1105 ms
+5/5/2015 11:38:54 AM: RenderMatches - 72 ms
+5/5/2015 11:38:55 AM: RenderMatrix - 73 ms
+5/5/2015 11:38:56 AM: GenerateTemplate - 6 ms
+5/5/2015 11:44:40 AM: 
+
+****************Application started at 5/5/2015 11:44:40 AM*************
+
+
+5/5/2015 11:45:10 AM: InitStitcher - 900 ms
+5/5/2015 11:45:10 AM: RenderMatches - 38 ms
+5/5/2015 11:45:12 AM: RenderMatrix - 60 ms
+5/5/2015 11:45:12 AM: GenerateTemplate - 8 ms
+5/5/2015 11:45:13 AM: Stitch - 826 ms
+5/5/2015 11:45:13 AM: MergeImages - 1069 ms
+5/5/2015 11:46:32 AM: 
+
+****************Application started at 5/5/2015 11:46:32 AM*************
+
+
+5/5/2015 11:46:38 AM: InitStitcher - 883 ms
+5/5/2015 11:46:38 AM: RenderMatches - 35 ms
+5/5/2015 11:46:39 AM: RenderMatrix - 60 ms
+5/5/2015 11:46:39 AM: GenerateTemplate - 3 ms
+5/5/2015 11:47:21 AM: Stitch - 39577 ms
+5/5/2015 11:47:21 AM: MergeImages - 39948 ms
+5/5/2015 11:47:33 AM: InitStitcher - 764 ms
+5/5/2015 11:47:34 AM: RenderMatches - 72 ms
+5/5/2015 11:47:35 AM: RenderMatrix - 36 ms
+5/5/2015 11:47:35 AM: GenerateTemplate - 6 ms
+5/5/2015 11:48:01 AM: Stitch - 17498 ms
+5/5/2015 11:48:01 AM: MergeImages - 18063 ms
+5/5/2015 11:49:32 AM: 
+
+****************Application started at 5/5/2015 11:49:32 AM*************
+
+
+5/5/2015 11:49:37 AM: InitStitcher - 1003 ms
+5/5/2015 11:49:37 AM: RenderMatches - 37 ms
+5/5/2015 11:49:38 AM: RenderMatrix - 110 ms
+5/5/2015 11:49:38 AM: GenerateTemplate - 3 ms
+5/5/2015 11:49:44 AM: Stitch - 7309 ms
+5/5/2015 11:49:45 AM: MergeImages - 7596 ms
+5/5/2015 11:49:58 AM: OutputMatchDistance - 2 ms
+5/5/2015 11:49:58 AM: GenerateTemplate - 2 ms
+5/5/2015 11:49:58 AM: Stitch - 419 ms
+5/5/2015 11:49:58 AM: MergeImages - 747 ms
+5/5/2015 11:50:01 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:50:01 AM: GenerateTemplate - 2 ms
+5/5/2015 11:50:01 AM: Stitch - 356 ms
+5/5/2015 11:50:01 AM: MergeImages - 576 ms
+5/5/2015 11:50:02 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:50:02 AM: GenerateTemplate - 2 ms
+5/5/2015 11:50:02 AM: Stitch - 339 ms
+5/5/2015 11:50:02 AM: MergeImages - 624 ms
+5/5/2015 11:50:03 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:50:03 AM: GenerateTemplate - 2 ms
+5/5/2015 11:50:03 AM: Stitch - 364 ms
+5/5/2015 11:50:04 AM: MergeImages - 632 ms
+5/5/2015 11:50:37 AM: 
+
+****************Application started at 5/5/2015 11:50:37 AM*************
+
+
+5/5/2015 11:50:49 AM: InitStitcher - 1058 ms
+5/5/2015 11:50:49 AM: RenderMatches - 74 ms
+5/5/2015 11:50:51 AM: RenderMatrix - 65 ms
+5/5/2015 11:50:51 AM: GenerateTemplate - 6 ms
+5/5/2015 11:50:52 AM: Stitch - 471 ms
+5/5/2015 11:50:52 AM: MergeImages - 742 ms
+5/5/2015 11:51:00 AM: OutputMatchDistance - 1 ms
+5/5/2015 11:51:00 AM: GenerateTemplate - 3 ms
+5/5/2015 11:51:00 AM: Stitch - 376 ms
+5/5/2015 11:51:01 AM: MergeImages - 648 ms
+5/5/2015 11:51:12 AM: RenderMatrix - 0 ms
+5/5/2015 11:51:12 AM: GenerateTemplate - 2 ms
+5/5/2015 11:51:13 AM: Stitch - 357 ms
+5/5/2015 11:51:13 AM: MergeImages - 516 ms
+5/5/2015 11:51:22 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:51:22 AM: GenerateTemplate - 2 ms
+5/5/2015 11:51:23 AM: Stitch - 350 ms
+5/5/2015 11:51:23 AM: MergeImages - 642 ms
+5/5/2015 11:51:39 AM: InitStitcher - 1879 ms
+5/5/2015 11:51:40 AM: RenderMatches - 113 ms
+5/5/2015 11:51:43 AM: RenderMatches - 197 ms
+5/5/2015 11:51:43 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:51:44 AM: RenderMatches - 195 ms
+5/5/2015 11:51:44 AM: OutputMatchDistance - 1 ms
+5/5/2015 11:51:45 AM: RenderMatches - 54 ms
+5/5/2015 11:51:45 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:51:46 AM: RenderMatrix - 39 ms
+5/5/2015 11:51:48 AM: GenerateTemplate - 24 ms
+5/5/2015 11:51:53 AM: Stitch - 5047 ms
+5/5/2015 11:51:55 AM: MergeImages - 8636 ms
+5/5/2015 11:52:49 AM: 
+
+****************Application started at 5/5/2015 11:52:49 AM*************
+
+
+5/5/2015 11:53:05 AM: InitStitcher - 5285 ms
+5/5/2015 11:53:05 AM: RenderMatches - 26 ms
+5/5/2015 11:53:06 AM: RenderMatrix - 68 ms
+5/5/2015 11:53:09 AM: GenerateTemplate - 3 ms
+5/5/2015 11:53:09 AM: Stitch - 695 ms
+5/5/2015 11:53:10 AM: Cropping - 50 ms
+5/5/2015 11:53:10 AM: AutoCrop - 220 ms
+5/5/2015 11:53:10 AM: MergeImages - 3095 ms
+5/5/2015 11:53:14 AM: OutputMatchDistance - 1 ms
+5/5/2015 11:53:14 AM: GenerateTemplate - 4 ms
+5/5/2015 11:53:15 AM: Stitch - 999 ms
+5/5/2015 11:53:15 AM: Cropping - 28 ms
+5/5/2015 11:53:15 AM: AutoCrop - 147 ms
+5/5/2015 11:53:15 AM: MergeImages - 1321 ms
+5/5/2015 11:54:55 AM: 
+
+****************Application started at 5/5/2015 11:54:55 AM*************
+
+
+5/5/2015 11:55:01 AM: InitStitcher - 1421 ms
+5/5/2015 11:55:02 AM: RenderMatches - 111 ms
+5/5/2015 11:55:02 AM: RenderMatrix - 62 ms
+5/5/2015 11:55:03 AM: GenerateTemplate - 3 ms
+5/5/2015 11:55:03 AM: Stitch - 443 ms
+5/5/2015 11:55:03 AM: Cropping - 38 ms
+5/5/2015 11:55:03 AM: AutoCrop - 200 ms
+5/5/2015 11:55:03 AM: MergeImages - 937 ms
+5/5/2015 11:55:07 AM: OutputMatchDistance - 1 ms
+5/5/2015 11:55:07 AM: GenerateTemplate - 4 ms
+5/5/2015 11:55:08 AM: Stitch - 635 ms
+5/5/2015 11:55:08 AM: Cropping - 19 ms
+5/5/2015 11:55:08 AM: AutoCrop - 102 ms
+5/5/2015 11:55:08 AM: MergeImages - 905 ms
+5/5/2015 11:55:09 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:55:09 AM: GenerateTemplate - 2 ms
+5/5/2015 11:55:09 AM: Stitch - 465 ms
+5/5/2015 11:55:09 AM: Cropping - 22 ms
+5/5/2015 11:55:09 AM: AutoCrop - 134 ms
+5/5/2015 11:55:09 AM: MergeImages - 784 ms
+5/5/2015 11:55:10 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:55:10 AM: GenerateTemplate - 2 ms
+5/5/2015 11:55:11 AM: Stitch - 456 ms
+5/5/2015 11:55:11 AM: Cropping - 21 ms
+5/5/2015 11:55:11 AM: AutoCrop - 101 ms
+5/5/2015 11:55:11 AM: MergeImages - 792 ms
+5/5/2015 11:55:16 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:55:16 AM: GenerateTemplate - 3 ms
+5/5/2015 11:55:17 AM: Stitch - 678 ms
+5/5/2015 11:55:18 AM: Cropping - 52 ms
+5/5/2015 11:55:18 AM: AutoCrop - 351 ms
+5/5/2015 11:55:18 AM: MergeImages - 1377 ms
+5/5/2015 11:55:44 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:55:44 AM: GenerateTemplate - 3 ms
+5/5/2015 11:56:12 AM: Stitch - 22666 ms
+5/5/2015 11:56:50 AM: 
+
+****************Application started at 5/5/2015 11:56:50 AM*************
+
+
+5/5/2015 11:56:58 AM: InitStitcher - 1900 ms
+5/5/2015 11:56:58 AM: RenderMatches - 72 ms
+5/5/2015 11:57:00 AM: RenderMatrix - 54 ms
+5/5/2015 11:57:00 AM: GenerateTemplate - 7 ms
+5/5/2015 11:57:05 AM: Stitch - 5379 ms
+5/5/2015 11:57:06 AM: Cropping - 22 ms
+5/5/2015 11:57:06 AM: AutoCrop - 188 ms
+5/5/2015 11:57:06 AM: MergeImages - 5968 ms
+5/5/2015 11:57:08 AM: OutputMatchDistance - 2 ms
+5/5/2015 11:57:08 AM: GenerateTemplate - 2 ms
+5/5/2015 11:57:08 AM: Stitch - 369 ms
+5/5/2015 11:57:08 AM: Cropping - 12 ms
+5/5/2015 11:57:08 AM: AutoCrop - 108 ms
+5/5/2015 11:57:08 AM: MergeImages - 633 ms
+5/5/2015 11:57:09 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:57:09 AM: GenerateTemplate - 2 ms
+5/5/2015 11:57:09 AM: Stitch - 257 ms
+5/5/2015 11:57:09 AM: Cropping - 20 ms
+5/5/2015 11:57:09 AM: AutoCrop - 123 ms
+5/5/2015 11:57:09 AM: MergeImages - 685 ms
+5/5/2015 11:57:10 AM: OutputMatchDistance - 0 ms
+5/5/2015 11:57:10 AM: GenerateTemplate - 2 ms
+5/5/2015 11:57:10 AM: Stitch - 453 ms
+5/5/2015 11:57:11 AM: Cropping - 27 ms
+5/5/2015 11:57:11 AM: AutoCrop - 179 ms
+5/5/2015 11:57:11 AM: MergeImages - 915 ms
+5/5/2015 8:49:24 PM: 
+
+****************Application started at 5/5/2015 8:49:24 PM*************
+
+
+5/5/2015 8:49:55 PM: InitStitcher - 9837 ms
+5/5/2015 8:49:55 PM: RenderMatches - 191 ms
+5/5/2015 8:49:58 PM: RenderMatrix - 349 ms
+5/5/2015 8:49:59 PM: GenerateTemplate - 3 ms
+5/5/2015 8:50:00 PM: Stitch - 633 ms
+5/5/2015 8:50:00 PM: Cropping - 22 ms
+5/5/2015 8:50:00 PM: AutoCrop - 163 ms
+5/5/2015 8:50:00 PM: MergeImages - 2648 ms
+5/5/2015 8:50:11 PM: RenderMatches - 222 ms
+5/5/2015 8:50:11 PM: OutputMatchDistance - 2 ms
+5/5/2015 8:50:11 PM: RenderMatches - 511 ms
+5/5/2015 8:50:11 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:11 PM: RenderMatches - 193 ms
+5/5/2015 8:50:11 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:12 PM: RenderMatches - 249 ms
+5/5/2015 8:50:12 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:13 PM: RenderMatches - 60 ms
+5/5/2015 8:50:13 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:13 PM: RenderMatches - 52 ms
+5/5/2015 8:50:13 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:13 PM: RenderMatches - 102 ms
+5/5/2015 8:50:13 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:16 PM: RenderMatches - 56 ms
+5/5/2015 8:50:17 PM: RenderMatches - 89 ms
+5/5/2015 8:50:17 PM: RenderMatches - 114 ms
+5/5/2015 8:50:17 PM: RenderMatches - 110 ms
+5/5/2015 8:50:17 PM: RenderMatches - 163 ms
+5/5/2015 8:50:17 PM: RenderMatches - 58 ms
+5/5/2015 8:50:17 PM: RenderMatches - 102 ms
+5/5/2015 8:50:17 PM: RenderMatches - 85 ms
+5/5/2015 8:50:17 PM: RenderMatches - 88 ms
+5/5/2015 8:50:18 PM: RenderMatches - 97 ms
+5/5/2015 8:50:18 PM: RenderMatches - 108 ms
+5/5/2015 8:50:18 PM: RenderMatches - 59 ms
+5/5/2015 8:50:18 PM: RenderMatches - 76 ms
+5/5/2015 8:50:19 PM: RenderMatches - 100 ms
+5/5/2015 8:50:19 PM: RenderMatches - 120 ms
+5/5/2015 8:50:19 PM: RenderMatches - 125 ms
+5/5/2015 8:50:19 PM: RenderMatches - 72 ms
+5/5/2015 8:50:19 PM: RenderMatches - 99 ms
+5/5/2015 8:50:19 PM: RenderMatches - 109 ms
+5/5/2015 8:50:19 PM: RenderMatches - 101 ms
+5/5/2015 8:50:19 PM: RenderMatches - 88 ms
+5/5/2015 8:50:20 PM: RenderMatches - 63 ms
+5/5/2015 8:50:20 PM: RenderMatches - 116 ms
+5/5/2015 8:50:20 PM: RenderMatches - 130 ms
+5/5/2015 8:50:20 PM: RenderMatches - 138 ms
+5/5/2015 8:50:20 PM: RenderMatches - 125 ms
+5/5/2015 8:50:20 PM: RenderMatches - 64 ms
+5/5/2015 8:50:20 PM: RenderMatches - 105 ms
+5/5/2015 8:50:20 PM: RenderMatches - 98 ms
+5/5/2015 8:50:20 PM: RenderMatches - 95 ms
+5/5/2015 8:50:20 PM: RenderMatches - 87 ms
+5/5/2015 8:50:20 PM: RenderMatches - 66 ms
+5/5/2015 8:50:21 PM: RenderMatches - 65 ms
+5/5/2015 8:50:21 PM: RenderMatches - 59 ms
+5/5/2015 8:50:21 PM: RenderMatches - 66 ms
+5/5/2015 8:50:21 PM: RenderMatches - 48 ms
+5/5/2015 8:50:21 PM: RenderMatches - 66 ms
+5/5/2015 8:50:21 PM: RenderMatches - 54 ms
+5/5/2015 8:50:21 PM: RenderMatches - 78 ms
+5/5/2015 8:50:25 PM: RenderMatches - 355 ms
+5/5/2015 8:50:25 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:25 PM: RenderMatches - 351 ms
+5/5/2015 8:50:25 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:26 PM: RenderMatches - 160 ms
+5/5/2015 8:50:26 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:26 PM: RenderMatches - 107 ms
+5/5/2015 8:50:26 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:27 PM: RenderMatches - 22 ms
+5/5/2015 8:50:27 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:29 PM: RenderMatches - 64 ms
+5/5/2015 8:50:29 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:29 PM: RenderMatches - 73 ms
+5/5/2015 8:50:29 PM: OutputMatchDistance - 0 ms
+5/5/2015 8:50:33 PM: RenderMatches - 47 ms
+5/5/2015 8:50:33 PM: RenderMatches - 66 ms
+5/5/2015 8:50:33 PM: RenderMatches - 127 ms
+5/5/2015 8:50:33 PM: RenderMatches - 101 ms
+5/5/2015 8:50:33 PM: RenderMatches - 94 ms
+5/5/2015 8:50:33 PM: RenderMatches - 74 ms
+5/5/2015 8:50:34 PM: RenderMatches - 59 ms
+5/5/2015 8:50:34 PM: RenderMatches - 95 ms
+5/5/2015 8:50:34 PM: RenderMatches - 83 ms
+5/5/2015 8:50:34 PM: RenderMatches - 95 ms
+5/5/2015 8:50:34 PM: RenderMatches - 83 ms
+5/5/2015 8:50:34 PM: RenderMatches - 60 ms
+5/5/2015 8:50:34 PM: RenderMatches - 82 ms
+5/5/2015 8:50:34 PM: RenderMatches - 164 ms
+5/5/2015 8:50:34 PM: RenderMatches - 104 ms
+5/5/2015 8:50:35 PM: RenderMatches - 117 ms
+5/5/2015 8:50:35 PM: RenderMatches - 133 ms
+5/5/2015 8:50:35 PM: RenderMatches - 157 ms
+5/5/2015 8:50:35 PM: RenderMatches - 116 ms
+5/5/2015 8:50:35 PM: RenderMatches - 111 ms
+5/5/2015 8:50:35 PM: RenderMatches - 97 ms
+5/5/2015 8:50:35 PM: RenderMatches - 74 ms
+5/5/2015 8:50:35 PM: RenderMatches - 76 ms
+5/5/2015 8:50:35 PM: RenderMatches - 76 ms
+5/5/2015 8:50:35 PM: RenderMatches - 76 ms
+5/5/2015 8:50:36 PM: RenderMatches - 80 ms
+5/5/2015 8:50:36 PM: RenderMatches - 79 ms
+5/5/2015 8:50:36 PM: RenderMatches - 83 ms
+5/5/2015 8:50:36 PM: RenderMatches - 79 ms
+5/5/2015 8:50:36 PM: RenderMatches - 80 ms
+5/5/2015 8:50:36 PM: RenderMatches - 103 ms
+5/5/2015 8:50:36 PM: RenderMatches - 108 ms
+5/5/2015 8:50:37 PM: RenderMatches - 90 ms
+5/5/2015 8:50:37 PM: RenderMatches - 123 ms
+5/5/2015 8:50:37 PM: RenderMatches - 115 ms
+5/5/2015 8:50:37 PM: RenderMatches - 156 ms
+5/5/2015 8:50:37 PM: RenderMatches - 105 ms
+5/5/2015 8:50:37 PM: RenderMatches - 97 ms
+5/5/2015 8:50:37 PM: RenderMatches - 93 ms
+5/5/2015 8:50:38 PM: RenderMatches - 82 ms
+5/5/2015 8:50:38 PM: RenderMatches - 63 ms
+5/5/2015 8:50:38 PM: RenderMatches - 60 ms
+5/5/2015 8:50:38 PM: RenderMatches - 43 ms
+5/5/2015 8:50:38 PM: RenderMatches - 48 ms
+5/5/2015 8:50:38 PM: RenderMatches - 68 ms
+5/5/2015 8:50:38 PM: RenderMatches - 42 ms
+5/5/2015 8:50:38 PM: RenderMatches - 48 ms
+5/5/2015 8:50:38 PM: RenderMatches - 48 ms
+5/5/2015 8:50:38 PM: RenderMatches - 41 ms
+5/5/2015 8:50:38 PM: RenderMatches - 45 ms
+5/5/2015 8:50:38 PM: RenderMatches - 47 ms
+5/5/2015 8:50:38 PM: RenderMatches - 38 ms
+5/5/2015 8:50:38 PM: RenderMatches - 41 ms
+5/5/2015 8:50:39 PM: RenderMatches - 59 ms
+5/5/2015 8:50:39 PM: RenderMatches - 45 ms
+5/5/2015 8:50:39 PM: RenderMatches - 90 ms
+5/5/2015 8:50:39 PM: OutputMatchDistance - 0 ms
+5/5/2015 9:33:49 PM: 
+
+****************Application started at 5/5/2015 9:33:49 PM*************
+
+
+5/5/2015 9:34:10 PM: InitStitcher - 5602 ms
+5/5/2015 9:34:11 PM: RenderMatches - 76 ms
+5/5/2015 9:34:13 PM: RenderMatches - 795 ms
+5/5/2015 9:34:13 PM: OutputMatchDistance - 47 ms
+5/5/2015 9:34:13 PM: RenderMatches - 169 ms
+5/5/2015 9:34:13 PM: OutputMatchDistance - 0 ms
+5/5/2015 9:34:15 PM: RenderMatches - 650 ms
+5/5/2015 9:34:15 PM: OutputMatchDistance - 0 ms
+5/5/2015 9:34:15 PM: RenderMatches - 265 ms
+5/5/2015 9:34:15 PM: OutputMatchDistance - 0 ms
+5/5/2015 9:34:16 PM: RenderMatrix - 135 ms
+5/5/2015 9:34:17 PM: GenerateTemplate - 5 ms
+5/5/2015 9:34:18 PM: Stitch - 711 ms
+5/5/2015 9:34:20 PM: Cropping - 71 ms
+5/5/2015 9:34:20 PM: AutoCrop - 1546 ms
+5/5/2015 9:34:20 PM: MergeImages - 3306 ms
+5/5/2015 10:16:46 PM: 
+
+****************Application started at 5/5/2015 10:16:46 PM*************
+
+
+5/5/2015 10:17:04 PM: InitStitcher - 4639 ms
+5/5/2015 10:17:05 PM: RenderMatches - 115 ms
+5/5/2015 10:17:08 PM: RenderMatches - 33 ms
+5/5/2015 10:17:08 PM: RenderMatches - 51 ms
+5/5/2015 10:17:08 PM: RenderMatches - 45 ms
+5/5/2015 10:17:08 PM: RenderMatches - 86 ms
+5/5/2015 10:17:08 PM: RenderMatches - 86 ms
+5/5/2015 10:17:08 PM: RenderMatches - 44 ms
+5/5/2015 10:17:08 PM: RenderMatches - 31 ms
+5/5/2015 10:17:08 PM: RenderMatches - 42 ms
+5/5/2015 10:17:08 PM: RenderMatches - 40 ms
+5/5/2015 10:17:09 PM: RenderMatches - 66 ms
+5/5/2015 10:17:09 PM: RenderMatches - 58 ms
+5/5/2015 10:17:09 PM: RenderMatches - 40 ms
+5/5/2015 10:17:09 PM: RenderMatches - 96 ms
+5/5/2015 10:17:09 PM: RenderMatches - 171 ms
+5/5/2015 10:17:09 PM: RenderMatches - 169 ms
+5/5/2015 10:17:09 PM: RenderMatches - 144 ms
+5/5/2015 10:17:10 PM: RenderMatches - 78 ms
+5/5/2015 10:17:10 PM: RenderMatches - 109 ms
+5/5/2015 10:17:10 PM: RenderMatches - 125 ms
+5/5/2015 10:17:10 PM: RenderMatches - 151 ms
+5/5/2015 10:17:10 PM: RenderMatches - 108 ms
+5/5/2015 10:17:10 PM: RenderMatches - 84 ms
+5/5/2015 10:17:11 PM: RenderMatches - 85 ms
+5/5/2015 10:17:12 PM: RenderMatches - 155 ms
+5/5/2015 10:17:12 PM: RenderMatches - 148 ms
+5/5/2015 10:17:12 PM: RenderMatches - 176 ms
+5/5/2015 10:17:13 PM: RenderMatches - 154 ms
+5/5/2015 10:17:13 PM: RenderMatches - 169 ms
+5/5/2015 10:17:13 PM: RenderMatches - 63 ms
+5/5/2015 10:17:13 PM: RenderMatches - 82 ms
+5/5/2015 10:17:13 PM: RenderMatches - 86 ms
+5/5/2015 10:17:14 PM: RenderMatches - 55 ms
+5/5/2015 10:17:14 PM: RenderMatches - 70 ms
+5/5/2015 10:17:14 PM: RenderMatches - 109 ms
+5/5/2015 10:17:14 PM: RenderMatches - 45 ms
+5/5/2015 10:17:14 PM: RenderMatches - 60 ms
+5/5/2015 10:17:14 PM: RenderMatches - 58 ms
+5/5/2015 10:17:14 PM: RenderMatches - 74 ms
+5/5/2015 10:17:15 PM: RenderMatches - 51 ms
+5/5/2015 10:17:15 PM: RenderMatches - 45 ms
+5/5/2015 10:17:15 PM: RenderMatches - 53 ms
+5/5/2015 10:17:16 PM: RenderMatches - 41 ms
+5/5/2015 10:17:16 PM: RenderMatches - 79 ms
+5/5/2015 10:17:16 PM: RenderMatches - 78 ms
+5/5/2015 10:17:16 PM: RenderMatches - 71 ms
+5/5/2015 10:17:16 PM: RenderMatches - 54 ms
+5/5/2015 10:17:16 PM: RenderMatches - 95 ms
+5/5/2015 10:17:16 PM: RenderMatches - 163 ms
+5/5/2015 10:17:17 PM: RenderMatches - 209 ms
+5/5/2015 10:17:17 PM: RenderMatches - 124 ms
+5/5/2015 10:17:17 PM: RenderMatches - 131 ms
+5/5/2015 10:17:17 PM: RenderMatches - 290 ms
+5/5/2015 10:17:17 PM: RenderMatches - 188 ms
+5/5/2015 10:17:18 PM: RenderMatches - 143 ms
+5/5/2015 10:17:19 PM: RenderMatrix - 336 ms
+5/5/2015 10:17:21 PM: GenerateTemplate - 32 ms
+5/5/2015 10:17:32 PM: Stitch - 11586 ms
+5/6/2015 10:49:59 AM: 
+
+****************Application started at 5/6/2015 10:49:59 AM*************
+
+
+5/6/2015 10:50:10 AM: InitStitcher - 2205 ms
+5/6/2015 10:50:11 AM: RenderMatches - 116 ms
+5/6/2015 10:50:12 AM: RenderMatches - 39 ms
+5/6/2015 10:50:12 AM: OutputMatchDistance - 41 ms
+5/6/2015 10:50:12 AM: RenderMatches - 20 ms
+5/6/2015 10:50:12 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:50:13 AM: RenderMatches - 30 ms
+5/6/2015 10:50:13 AM: OutputMatchDistance - 1 ms
+5/6/2015 10:50:13 AM: RenderMatches - 19 ms
+5/6/2015 10:50:13 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:50:15 AM: RenderMatrix - 38 ms
+5/6/2015 10:50:15 AM: MergeImages - 199 ms
+5/6/2015 10:51:43 AM: 
+
+****************Application started at 5/6/2015 10:51:43 AM*************
+
+
+5/6/2015 10:51:47 AM: InitStitcher - 294 ms
+5/6/2015 10:51:48 AM: RenderMatches - 13 ms
+5/6/2015 10:51:48 AM: RenderMatrix - 14 ms
+5/6/2015 10:51:49 AM: MergeImages - 199 ms
+5/6/2015 10:53:05 AM: 
+
+****************Application started at 5/6/2015 10:53:05 AM*************
+
+
+5/6/2015 10:53:09 AM: InitStitcher - 791 ms
+5/6/2015 10:53:09 AM: RenderMatches - 15 ms
+5/6/2015 10:53:10 AM: RenderMatrix - 15 ms
+5/6/2015 10:53:10 AM: MergeImages - 166 ms
+5/6/2015 10:53:29 AM: OutputMatchDistance - 1 ms
+5/6/2015 10:53:54 AM: MergeImages - 25367 ms
+5/6/2015 10:54:16 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:52 AM: 
+
+****************Application started at 5/6/2015 10:55:52 AM*************
+
+
+5/6/2015 10:55:57 AM: InitStitcher - 165 ms
+5/6/2015 10:55:58 AM: RenderMatches - 12 ms
+5/6/2015 10:55:59 AM: RenderMatrix - 11 ms
+5/6/2015 10:55:59 AM: MergeImages - 144 ms
+5/6/2015 10:56:09 AM: OutputMatchDistance - 2 ms
+5/6/2015 10:56:09 AM: MergeImages - 121 ms
+5/6/2015 10:56:16 AM: InitStitcher - 521 ms
+5/6/2015 10:56:16 AM: RenderMatches - 11 ms
+5/6/2015 10:56:18 AM: RenderMatrix - 4 ms
+5/6/2015 10:56:18 AM: MergeImages - 680 ms
+5/6/2015 10:56:40 AM: RenderMatches - 53 ms
+5/6/2015 10:56:40 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:40 AM: RenderMatches - 53 ms
+5/6/2015 10:56:40 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:43 AM: RenderMatches - 68 ms
+5/6/2015 10:56:43 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:44 AM: RenderMatches - 156 ms
+5/6/2015 10:56:44 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:44 AM: RenderMatches - 59 ms
+5/6/2015 10:56:44 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:44 AM: RenderMatches - 110 ms
+5/6/2015 10:56:44 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:44 AM: RenderMatches - 50 ms
+5/6/2015 10:56:44 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:46 AM: RenderMatches - 64 ms
+5/6/2015 10:56:46 AM: OutputMatchDistance - 1 ms
+5/6/2015 10:56:47 AM: RenderMatches - 62 ms
+5/6/2015 10:56:47 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:48 AM: RenderMatches - 19 ms
+5/6/2015 10:56:48 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:49 AM: RenderMatches - 52 ms
+5/6/2015 10:56:49 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:49 AM: RenderMatches - 22 ms
+5/6/2015 10:56:49 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:49 AM: RenderMatches - 13 ms
+5/6/2015 10:56:49 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:57:09 AM: 
+
+****************Application started at 5/6/2015 10:57:09 AM*************
+
+
+5/6/2015 10:57:21 AM: InitStitcher - 1652 ms
+5/6/2015 10:57:21 AM: RenderMatches - 13 ms
+5/6/2015 10:57:29 AM: RenderMatrix - 9 ms
+5/6/2015 10:57:58 AM: MergeImages - 28935 ms
+5/6/2015 10:58:08 AM: RenderMatches - 53 ms
+5/6/2015 10:58:08 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:58:12 AM: RenderMatches - 24 ms
+5/6/2015 10:58:12 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:58:14 AM: RenderMatches - 50 ms
+5/6/2015 10:58:14 AM: OutputMatchDistance - 0 ms
+5/6/2015 10:58:16 AM: RenderMatches - 18 ms
+5/6/2015 10:58:16 AM: OutputMatchDistance - 0 ms
+5/6/2015 6:57:45 PM: 
+
+****************Application started at 5/6/2015 6:57:45 PM*************
+
+
+5/6/2015 6:57:56 PM: InitStitcher - 683 ms
+5/6/2015 6:57:56 PM: RenderMatches - 158 ms
+5/6/2015 6:57:59 PM: RenderMatrix - 13 ms
+5/6/2015 6:58:05 PM: MergeImages - 6334 ms
+5/6/2015 7:04:04 PM: 
+
+****************Application started at 5/6/2015 7:04:04 PM*************
+
+
+5/6/2015 7:04:07 PM: InitStitcher - 188 ms
+5/6/2015 7:04:08 PM: RenderMatches - 183 ms
+5/6/2015 7:04:09 PM: RenderMatrix - 12 ms
+5/6/2015 7:09:31 PM: MergeImages - 319703 ms
+5/6/2015 7:12:13 PM: 
+
+****************Application started at 5/6/2015 7:12:13 PM*************
+
+
+5/6/2015 7:26:49 PM: 
+
+****************Application started at 5/6/2015 7:26:49 PM*************
+
+
+5/6/2015 7:42:46 PM: 
+
+****************Application started at 5/6/2015 7:42:46 PM*************
+
+
+5/6/2015 7:43:00 PM: InitStitcher - 3141 ms
+5/6/2015 7:43:00 PM: RenderMatches - 48 ms
+5/6/2015 7:43:01 PM: RenderMatrix - 11 ms
+5/6/2015 7:43:02 PM: MergeImages - 239 ms
+5/6/2015 7:43:29 PM: 
+
+****************Application started at 5/6/2015 7:43:29 PM*************
+
+
+5/6/2015 7:43:33 PM: InitStitcher - 272 ms
+5/6/2015 7:43:33 PM: RenderMatches - 13 ms
+5/6/2015 7:43:34 PM: RenderMatrix - 20 ms
+5/6/2015 7:43:34 PM: MergeImages - 153 ms
+5/6/2015 7:43:42 PM: 
+
+****************Application started at 5/6/2015 7:43:42 PM*************
+
+
+5/6/2015 7:43:45 PM: InitStitcher - 179 ms
+5/6/2015 7:43:45 PM: RenderMatches - 11 ms
+5/6/2015 7:43:46 PM: RenderMatrix - 13 ms
+5/6/2015 7:43:47 PM: MergeImages - 142 ms
+5/6/2015 7:43:51 PM: InitStitcher - 618 ms
+5/6/2015 7:43:51 PM: RenderMatches - 15 ms
+5/6/2015 7:43:52 PM: RenderMatrix - 4 ms
+5/6/2015 7:43:53 PM: MergeImages - 736 ms
+5/6/2015 7:44:00 PM: InitStitcher - 559 ms
+5/6/2015 7:44:00 PM: RenderMatches - 10 ms
+5/6/2015 7:44:01 PM: RenderMatrix - 1 ms
+5/6/2015 7:44:27 PM: MergeImages - 27138 ms
+5/6/2015 7:44:40 PM: RenderMatches - 55 ms
+5/6/2015 7:44:40 PM: OutputMatchDistance - 0 ms
+5/6/2015 7:44:41 PM: RenderMatches - 25 ms
+5/6/2015 7:44:41 PM: OutputMatchDistance - 0 ms
+5/6/2015 7:44:51 PM: RenderMatches - 20 ms
+5/6/2015 7:44:51 PM: OutputMatchDistance - 0 ms
+5/6/2015 7:44:59 PM: RenderMatches - 44 ms
+5/6/2015 7:44:59 PM: OutputMatchDistance - 0 ms
+5/6/2015 7:45:09 PM: OutputMatchDistance - 0 ms
+5/6/2015 7:45:12 PM: MergeImages - 2320 ms
+5/6/2015 7:45:20 PM: RenderMatches - 20 ms
+5/6/2015 7:45:20 PM: OutputMatchDistance - 0 ms
+5/6/2015 7:45:22 PM: RenderMatches - 18 ms
+5/6/2015 7:45:22 PM: OutputMatchDistance - 0 ms
+5/6/2015 7:45:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 7:45:28 PM: MergeImages - 2487 ms
+5/6/2015 7:48:07 PM: 
+
+****************Application started at 5/6/2015 7:48:07 PM*************
+
+
+5/6/2015 7:48:22 PM: InitStitcher - 3510 ms
+5/6/2015 7:48:22 PM: RenderMatches - 68 ms
+5/6/2015 7:48:24 PM: RenderMatrix - 37 ms
+5/6/2015 7:48:30 PM: MergeImages - 5658 ms
+5/6/2015 7:50:12 PM: 
+
+****************Application started at 5/6/2015 7:50:12 PM*************
+
+
+5/6/2015 7:50:17 PM: InitStitcher - 1292 ms
+5/6/2015 7:50:17 PM: RenderMatches - 14 ms
+5/6/2015 7:50:18 PM: RenderMatrix - 14 ms
+5/6/2015 7:50:20 PM: MergeImages - 1603 ms
+5/6/2015 7:50:43 PM: InitStitcher - 596 ms
+5/6/2015 7:50:43 PM: RenderMatches - 13 ms
+5/6/2015 7:50:45 PM: RenderMatrix - 2 ms
+5/6/2015 7:50:48 PM: MergeImages - 3230 ms
+5/6/2015 7:53:05 PM: 
+
+****************Application started at 5/6/2015 7:53:05 PM*************
+
+
+5/6/2015 7:53:11 PM: InitStitcher - 236 ms
+5/6/2015 7:53:11 PM: RenderMatches - 17 ms
+5/6/2015 7:53:12 PM: RenderMatrix - 18 ms
+5/6/2015 7:53:12 PM: MergeImages - 310 ms
+5/6/2015 7:53:17 PM: InitStitcher - 498 ms
+5/6/2015 7:53:17 PM: RenderMatches - 10 ms
+5/6/2015 7:53:18 PM: RenderMatrix - 0 ms
+5/6/2015 7:53:19 PM: MergeImages - 652 ms
+5/6/2015 7:53:25 PM: InitStitcher - 545 ms
+5/6/2015 7:53:25 PM: RenderMatches - 9 ms
+5/6/2015 7:53:26 PM: RenderMatrix - 0 ms
+5/6/2015 7:53:29 PM: MergeImages - 2943 ms
+5/6/2015 7:54:37 PM: 
+
+****************Application started at 5/6/2015 7:54:37 PM*************
+
+
+5/6/2015 7:54:41 PM: InitStitcher - 187 ms
+5/6/2015 7:54:41 PM: RenderMatches - 16 ms
+5/6/2015 7:54:43 PM: RenderMatrix - 12 ms
+5/6/2015 7:54:43 PM: MergeImages - 146 ms
+5/6/2015 7:54:56 PM: 
+
+****************Application started at 5/6/2015 7:54:56 PM*************
+
+
+5/6/2015 7:55:01 PM: InitStitcher - 475 ms
+5/6/2015 7:55:01 PM: RenderMatches - 16 ms
+5/6/2015 7:55:02 PM: RenderMatrix - 16 ms
+5/6/2015 7:55:02 PM: MergeImages - 173 ms
+5/6/2015 7:55:38 PM: InitStitcher - 495 ms
+5/6/2015 7:55:38 PM: RenderMatches - 9 ms
+5/6/2015 7:55:39 PM: RenderMatrix - 1 ms
+5/6/2015 7:55:39 PM: MergeImages - 649 ms
+5/6/2015 8:16:53 PM: 
+
+****************Application started at 5/6/2015 8:16:53 PM*************
+
+
+5/6/2015 8:16:57 PM: InitStitcher - 169 ms
+5/6/2015 8:16:57 PM: RenderMatches - 12 ms
+5/6/2015 8:16:58 PM: RenderMatrix - 15 ms
+5/6/2015 8:18:26 PM: 
+
+****************Application started at 5/6/2015 8:18:26 PM*************
+
+
+5/6/2015 8:18:32 PM: InitStitcher - 176 ms
+5/6/2015 8:18:32 PM: RenderMatches - 13 ms
+5/6/2015 8:18:33 PM: RenderMatrix - 15 ms
+5/6/2015 8:18:33 PM: MergeImages - 183 ms
+5/6/2015 8:18:40 PM: InitStitcher - 622 ms
+5/6/2015 8:18:40 PM: RenderMatches - 12 ms
+5/6/2015 8:18:42 PM: RenderMatrix - 1 ms
+5/6/2015 8:18:42 PM: MergeImages - 648 ms
+5/6/2015 8:25:55 PM: 
+
+****************Application started at 5/6/2015 8:25:55 PM*************
+
+
+5/6/2015 8:25:59 PM: InitStitcher - 171 ms
+5/6/2015 8:25:59 PM: RenderMatches - 12 ms
+5/6/2015 8:26:01 PM: RenderMatrix - 13 ms
+5/6/2015 8:27:13 PM: 
+
+****************Application started at 5/6/2015 8:27:13 PM*************
+
+
+5/6/2015 8:27:16 PM: InitStitcher - 195 ms
+5/6/2015 8:27:16 PM: RenderMatches - 14 ms
+5/6/2015 8:27:16 PM: RenderMatrix - 16 ms
+5/6/2015 8:27:17 PM: MergeImages - 202 ms
+5/6/2015 8:27:20 PM: InitStitcher - 528 ms
+5/6/2015 8:27:20 PM: RenderMatches - 10 ms
+5/6/2015 8:27:20 PM: RenderMatrix - 1 ms
+5/6/2015 8:27:21 PM: MergeImages - 795 ms
+5/6/2015 8:27:24 PM: InitStitcher - 576 ms
+5/6/2015 8:27:24 PM: RenderMatches - 9 ms
+5/6/2015 8:27:25 PM: RenderMatrix - 2 ms
+5/6/2015 8:27:28 PM: MergeImages - 4170 ms
+5/6/2015 8:28:11 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:32:13 PM: 
+
+****************Application started at 5/6/2015 8:32:13 PM*************
+
+
+5/6/2015 8:32:24 PM: InitStitcher - 2843 ms
+5/6/2015 8:32:24 PM: RenderMatches - 13 ms
+5/6/2015 8:32:25 PM: RenderMatrix - 52 ms
+5/6/2015 8:32:26 PM: MergeImages - 988 ms
+5/6/2015 8:32:32 PM: InitStitcher - 748 ms
+5/6/2015 8:32:32 PM: RenderMatches - 13 ms
+5/6/2015 8:32:33 PM: RenderMatrix - 2 ms
+5/6/2015 8:32:36 PM: MergeImages - 4399 ms
+5/6/2015 8:32:52 PM: OutputMatchDistance - 1 ms
+5/6/2015 8:32:55 PM: MergeImages - 2728 ms
+5/6/2015 8:32:58 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:33:00 PM: MergeImages - 2767 ms
+5/6/2015 8:34:35 PM: 
+
+****************Application started at 5/6/2015 8:34:35 PM*************
+
+
+5/6/2015 8:34:47 PM: InitStitcher - 3654 ms
+5/6/2015 8:34:47 PM: RenderMatches - 19 ms
+5/6/2015 8:34:48 PM: RenderMatrix - 33 ms
+5/6/2015 8:34:49 PM: MergeImages - 212 ms
+5/6/2015 8:34:53 PM: InitStitcher - 609 ms
+5/6/2015 8:34:53 PM: RenderMatches - 11 ms
+5/6/2015 8:34:54 PM: RenderMatrix - 2 ms
+5/6/2015 8:34:57 PM: MergeImages - 3013 ms
+5/6/2015 8:36:42 PM: 
+
+****************Application started at 5/6/2015 8:36:42 PM*************
+
+
+5/6/2015 8:36:47 PM: InitStitcher - 167 ms
+5/6/2015 8:36:47 PM: RenderMatches - 19 ms
+5/6/2015 8:36:48 PM: RenderMatrix - 18 ms
+5/6/2015 8:36:48 PM: Cropping - 37 ms
+5/6/2015 8:36:48 PM: MergeImages - 322 ms
+5/6/2015 8:36:55 PM: InitStitcher - 635 ms
+5/6/2015 8:36:55 PM: RenderMatches - 10 ms
+5/6/2015 8:36:56 PM: RenderMatrix - 3 ms
+5/6/2015 8:37:36 PM: 
+
+****************Application started at 5/6/2015 8:37:36 PM*************
+
+
+5/6/2015 8:37:40 PM: InitStitcher - 857 ms
+5/6/2015 8:37:40 PM: RenderMatches - 15 ms
+5/6/2015 8:37:41 PM: RenderMatrix - 9 ms
+5/6/2015 8:40:16 PM: 
+
+****************Application started at 5/6/2015 8:40:16 PM*************
+
+
+5/6/2015 8:40:31 PM: InitStitcher - 243 ms
+5/6/2015 8:40:31 PM: RenderMatches - 16 ms
+5/6/2015 8:40:33 PM: RenderMatches - 42 ms
+5/6/2015 8:40:33 PM: OutputMatchDistance - 1 ms
+5/6/2015 8:40:33 PM: RenderMatches - 20 ms
+5/6/2015 8:40:33 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:40:34 PM: RenderMatches - 35 ms
+5/6/2015 8:40:34 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:40:34 PM: RenderMatches - 16 ms
+5/6/2015 8:40:34 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:40:36 PM: RenderMatrix - 18 ms
+5/6/2015 8:40:36 PM: Cropping - 24 ms
+5/6/2015 8:40:36 PM: MergeImages - 499 ms
+5/6/2015 8:40:57 PM: InitStitcher - 173 ms
+5/6/2015 8:40:57 PM: RenderMatches - 17 ms
+5/6/2015 8:40:59 PM: RenderMatches - 31 ms
+5/6/2015 8:40:59 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:40:59 PM: RenderMatches - 15 ms
+5/6/2015 8:40:59 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:41:00 PM: RenderMatches - 35 ms
+5/6/2015 8:41:00 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:41:02 PM: RenderMatches - 30 ms
+5/6/2015 8:41:02 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:41:03 PM: RenderMatrix - 6 ms
+5/6/2015 8:41:03 PM: Cropping - 9 ms
+5/6/2015 8:41:03 PM: MergeImages - 496 ms
+5/6/2015 8:41:13 PM: InitStitcher - 261 ms
+5/6/2015 8:41:13 PM: RenderMatches - 14 ms
+5/6/2015 8:41:15 PM: RenderMatrix - 5 ms
+5/6/2015 8:41:16 PM: Cropping - 40 ms
+5/6/2015 8:41:16 PM: MergeImages - 1189 ms
+5/6/2015 8:41:28 PM: InitStitcher - 321 ms
+5/6/2015 8:41:28 PM: RenderMatches - 16 ms
+5/6/2015 8:41:29 PM: RenderMatrix - 2 ms
+5/6/2015 8:41:32 PM: Cropping - 28 ms
+5/6/2015 8:41:32 PM: MergeImages - 3315 ms
+5/6/2015 8:43:34 PM: InitStitcher - 208 ms
+5/6/2015 8:43:34 PM: RenderMatches - 15 ms
+5/6/2015 8:43:36 PM: RenderMatches - 23 ms
+5/6/2015 8:43:36 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:37 PM: RenderMatches - 29 ms
+5/6/2015 8:43:37 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:38 PM: RenderMatrix - 1 ms
+5/6/2015 8:43:38 PM: Cropping - 15 ms
+5/6/2015 8:43:38 PM: MergeImages - 438 ms
+5/6/2015 8:43:45 PM: RenderMatches - 21 ms
+5/6/2015 8:43:45 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:47 PM: RenderMatches - 19 ms
+5/6/2015 8:43:47 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:47 PM: RenderMatches - 16 ms
+5/6/2015 8:43:47 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:48 PM: RenderMatches - 17 ms
+5/6/2015 8:43:48 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:49 PM: RenderMatches - 19 ms
+5/6/2015 8:43:49 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:49 PM: RenderMatches - 23 ms
+5/6/2015 8:43:49 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:51 PM: RenderMatches - 20 ms
+5/6/2015 8:43:51 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:55 PM: RenderMatches - 17 ms
+5/6/2015 8:43:55 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:56 PM: RenderMatches - 22 ms
+5/6/2015 8:43:56 PM: OutputMatchDistance - 0 ms
+5/6/2015 8:43:58 PM: RenderMatrix - 1 ms
+5/6/2015 8:43:59 PM: Cropping - 16 ms
+5/6/2015 8:43:59 PM: MergeImages - 384 ms
+5/6/2015 8:44:05 PM: InitStitcher - 340 ms
+5/6/2015 8:44:05 PM: RenderMatches - 14 ms
+5/6/2015 8:44:06 PM: RenderMatrix - 2 ms
+5/6/2015 8:44:10 PM: Cropping - 367 ms
+5/6/2015 8:44:11 PM: MergeImages - 4480 ms
+5/6/2015 9:00:52 PM: 
+
+****************Application started at 5/6/2015 9:00:52 PM*************
+
+
+5/6/2015 9:01:08 PM: InitStitcher - 4269 ms
+5/6/2015 9:01:08 PM: RenderMatches - 17 ms
+5/6/2015 9:01:10 PM: RenderMatches - 23 ms
+5/6/2015 9:01:10 PM: RenderMatches - 29 ms
+5/6/2015 9:01:10 PM: RenderMatches - 22 ms
+5/6/2015 9:01:10 PM: RenderMatches - 21 ms
+5/6/2015 9:01:10 PM: RenderMatches - 20 ms
+5/6/2015 9:01:10 PM: RenderMatches - 19 ms
+5/6/2015 9:01:10 PM: RenderMatches - 19 ms
+5/6/2015 9:01:10 PM: RenderMatches - 52 ms
+5/6/2015 9:01:10 PM: RenderMatches - 19 ms
+5/6/2015 9:01:10 PM: RenderMatches - 19 ms
+5/6/2015 9:01:10 PM: RenderMatches - 20 ms
+5/6/2015 9:01:10 PM: RenderMatches - 18 ms
+5/6/2015 9:01:10 PM: RenderMatches - 18 ms
+5/6/2015 9:01:10 PM: RenderMatches - 26 ms
+5/6/2015 9:01:10 PM: RenderMatches - 23 ms
+5/6/2015 9:01:10 PM: RenderMatches - 17 ms
+5/6/2015 9:01:10 PM: RenderMatches - 18 ms
+5/6/2015 9:01:10 PM: RenderMatches - 20 ms
+5/6/2015 9:01:10 PM: RenderMatches - 19 ms
+5/6/2015 9:01:10 PM: RenderMatches - 19 ms
+5/6/2015 9:01:10 PM: RenderMatches - 18 ms
+5/6/2015 9:01:10 PM: RenderMatches - 19 ms
+5/6/2015 9:01:10 PM: RenderMatches - 21 ms
+5/6/2015 9:01:11 PM: RenderMatches - 18 ms
+5/6/2015 9:01:11 PM: RenderMatches - 30 ms
+5/6/2015 9:01:11 PM: RenderMatches - 20 ms
+5/6/2015 9:01:11 PM: RenderMatches - 19 ms
+5/6/2015 9:01:11 PM: RenderMatches - 37 ms
+5/6/2015 9:01:11 PM: RenderMatches - 19 ms
+5/6/2015 9:01:11 PM: RenderMatches - 19 ms
+5/6/2015 9:01:11 PM: RenderMatches - 32 ms
+5/6/2015 9:01:11 PM: RenderMatches - 25 ms
+5/6/2015 9:01:11 PM: RenderMatches - 25 ms
+5/6/2015 9:01:11 PM: RenderMatches - 27 ms
+5/6/2015 9:01:11 PM: RenderMatches - 24 ms
+5/6/2015 9:01:11 PM: RenderMatches - 22 ms
+5/6/2015 9:01:11 PM: RenderMatches - 22 ms
+5/6/2015 9:01:11 PM: RenderMatches - 22 ms
+5/6/2015 9:01:11 PM: RenderMatches - 21 ms
+5/6/2015 9:01:11 PM: RenderMatches - 48 ms
+5/6/2015 9:01:11 PM: RenderMatches - 21 ms
+5/6/2015 9:01:11 PM: RenderMatches - 21 ms
+5/6/2015 9:01:11 PM: RenderMatches - 20 ms
+5/6/2015 9:01:11 PM: RenderMatches - 21 ms
+5/6/2015 9:01:11 PM: RenderMatches - 39 ms
+5/6/2015 9:01:11 PM: RenderMatches - 21 ms
+5/6/2015 9:01:11 PM: RenderMatches - 20 ms
+5/6/2015 9:01:11 PM: RenderMatches - 20 ms
+5/6/2015 9:01:11 PM: RenderMatches - 22 ms
+5/6/2015 9:01:11 PM: RenderMatches - 20 ms
+5/6/2015 9:01:11 PM: RenderMatches - 21 ms
+5/6/2015 9:01:11 PM: RenderMatches - 21 ms
+5/6/2015 9:01:11 PM: RenderMatches - 20 ms
+5/6/2015 9:01:11 PM: RenderMatches - 19 ms
+5/6/2015 9:01:11 PM: RenderMatches - 22 ms
+5/6/2015 9:01:11 PM: RenderMatches - 18 ms
+5/6/2015 9:01:12 PM: RenderMatches - 20 ms
+5/6/2015 9:01:12 PM: RenderMatches - 20 ms
+5/6/2015 9:01:12 PM: RenderMatches - 21 ms
+5/6/2015 9:01:12 PM: RenderMatches - 20 ms
+5/6/2015 9:01:12 PM: RenderMatches - 19 ms
+5/6/2015 9:01:12 PM: RenderMatches - 20 ms
+5/6/2015 9:01:12 PM: RenderMatches - 20 ms
+5/6/2015 9:01:12 PM: RenderMatches - 58 ms
+5/6/2015 9:01:12 PM: RenderMatches - 25 ms
+5/6/2015 9:01:12 PM: RenderMatches - 37 ms
+5/6/2015 9:01:12 PM: RenderMatches - 56 ms
+5/6/2015 9:01:12 PM: RenderMatches - 22 ms
+5/6/2015 9:01:12 PM: RenderMatches - 21 ms
+5/6/2015 9:01:12 PM: RenderMatches - 21 ms
+5/6/2015 9:01:12 PM: RenderMatches - 41 ms
+5/6/2015 9:01:12 PM: RenderMatches - 20 ms
+5/6/2015 9:01:12 PM: RenderMatches - 20 ms
+5/6/2015 9:01:12 PM: RenderMatches - 20 ms
+5/6/2015 9:01:12 PM: RenderMatches - 18 ms
+5/6/2015 9:01:12 PM: RenderMatches - 36 ms
+5/6/2015 9:01:12 PM: RenderMatches - 23 ms
+5/6/2015 9:01:12 PM: RenderMatches - 21 ms
+5/6/2015 9:01:12 PM: RenderMatches - 17 ms
+5/6/2015 9:01:12 PM: RenderMatches - 50 ms
+5/6/2015 9:01:12 PM: RenderMatches - 25 ms
+5/6/2015 9:01:12 PM: RenderMatches - 23 ms
+5/6/2015 9:01:12 PM: RenderMatches - 23 ms
+5/6/2015 9:01:12 PM: RenderMatches - 50 ms
+5/6/2015 9:01:12 PM: RenderMatches - 21 ms
+5/6/2015 9:01:13 PM: RenderMatches - 21 ms
+5/6/2015 9:01:13 PM: RenderMatches - 20 ms
+5/6/2015 9:01:13 PM: RenderMatches - 20 ms
+5/6/2015 9:01:13 PM: RenderMatches - 40 ms
+5/6/2015 9:01:13 PM: RenderMatches - 20 ms
+5/6/2015 9:01:13 PM: RenderMatches - 20 ms
+5/6/2015 9:01:13 PM: RenderMatches - 20 ms
+5/6/2015 9:01:13 PM: RenderMatches - 36 ms
+5/6/2015 9:01:13 PM: RenderMatches - 22 ms
+5/6/2015 9:01:13 PM: RenderMatches - 22 ms
+5/6/2015 9:01:13 PM: RenderMatches - 30 ms
+5/6/2015 9:01:13 PM: RenderMatches - 22 ms
+5/6/2015 9:01:13 PM: RenderMatches - 27 ms
+5/6/2015 9:01:13 PM: RenderMatches - 18 ms
+5/6/2015 9:01:13 PM: RenderMatches - 19 ms
+5/6/2015 9:01:13 PM: RenderMatches - 18 ms
+5/6/2015 9:01:13 PM: RenderMatches - 20 ms
+5/6/2015 9:01:13 PM: RenderMatches - 19 ms
+5/6/2015 9:01:13 PM: RenderMatches - 18 ms
+5/6/2015 9:01:13 PM: RenderMatches - 19 ms
+5/6/2015 9:01:13 PM: RenderMatches - 18 ms
+5/6/2015 9:01:13 PM: RenderMatches - 32 ms
+5/6/2015 9:01:13 PM: RenderMatches - 18 ms
+5/6/2015 9:01:13 PM: RenderMatches - 17 ms
+5/6/2015 9:01:13 PM: RenderMatches - 17 ms
+5/6/2015 9:01:13 PM: RenderMatches - 17 ms
+5/6/2015 9:01:13 PM: RenderMatches - 17 ms
+5/6/2015 9:01:13 PM: RenderMatches - 35 ms
+5/6/2015 9:01:13 PM: RenderMatches - 16 ms
+5/6/2015 9:01:13 PM: RenderMatches - 17 ms
+5/6/2015 9:01:14 PM: RenderMatches - 20 ms
+5/6/2015 9:01:14 PM: RenderMatches - 17 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 17 ms
+5/6/2015 9:01:14 PM: RenderMatches - 18 ms
+5/6/2015 9:01:14 PM: RenderMatches - 18 ms
+5/6/2015 9:01:14 PM: RenderMatches - 17 ms
+5/6/2015 9:01:14 PM: RenderMatches - 20 ms
+5/6/2015 9:01:14 PM: RenderMatches - 18 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 31 ms
+5/6/2015 9:01:14 PM: RenderMatches - 45 ms
+5/6/2015 9:01:14 PM: RenderMatches - 20 ms
+5/6/2015 9:01:14 PM: RenderMatches - 18 ms
+5/6/2015 9:01:14 PM: RenderMatches - 18 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 18 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 20 ms
+5/6/2015 9:01:14 PM: RenderMatches - 20 ms
+5/6/2015 9:01:14 PM: RenderMatches - 21 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 25 ms
+5/6/2015 9:01:14 PM: RenderMatches - 20 ms
+5/6/2015 9:01:14 PM: RenderMatches - 19 ms
+5/6/2015 9:01:14 PM: RenderMatches - 20 ms
+5/6/2015 9:01:14 PM: RenderMatches - 20 ms
+5/6/2015 9:01:14 PM: RenderMatches - 20 ms
+5/6/2015 9:01:14 PM: RenderMatches - 32 ms
+5/6/2015 9:01:14 PM: RenderMatches - 21 ms
+5/6/2015 9:01:14 PM: RenderMatches - 21 ms
+5/6/2015 9:01:14 PM: RenderMatches - 41 ms
+5/6/2015 9:01:15 PM: RenderMatches - 23 ms
+5/6/2015 9:01:15 PM: RenderMatches - 19 ms
+5/6/2015 9:01:15 PM: RenderMatches - 21 ms
+5/6/2015 9:01:15 PM: RenderMatches - 20 ms
+5/6/2015 9:01:15 PM: RenderMatches - 23 ms
+5/6/2015 9:01:15 PM: RenderMatches - 21 ms
+5/6/2015 9:01:15 PM: RenderMatches - 19 ms
+5/6/2015 9:01:15 PM: RenderMatches - 20 ms
+5/6/2015 9:01:15 PM: RenderMatches - 19 ms
+5/6/2015 9:01:15 PM: RenderMatches - 24 ms
+5/6/2015 9:01:15 PM: RenderMatches - 19 ms
+5/6/2015 9:01:15 PM: RenderMatches - 20 ms
+5/6/2015 9:01:15 PM: RenderMatches - 19 ms
+5/6/2015 9:01:15 PM: RenderMatches - 20 ms
+5/6/2015 9:01:15 PM: RenderMatches - 31 ms
+5/6/2015 9:01:15 PM: RenderMatches - 19 ms
+5/6/2015 9:01:15 PM: RenderMatches - 19 ms
+5/6/2015 9:01:15 PM: RenderMatches - 22 ms
+5/6/2015 9:01:15 PM: RenderMatches - 27 ms
+5/6/2015 9:01:15 PM: RenderMatches - 19 ms
+5/6/2015 9:01:16 PM: RenderMatches - 20 ms
+5/6/2015 9:01:16 PM: RenderMatches - 20 ms
+5/6/2015 9:01:16 PM: RenderMatches - 33 ms
+5/6/2015 9:01:16 PM: RenderMatches - 19 ms
+5/6/2015 9:01:16 PM: RenderMatches - 19 ms
+5/6/2015 9:01:16 PM: RenderMatches - 19 ms
+5/6/2015 9:01:16 PM: RenderMatches - 20 ms
+5/6/2015 9:01:16 PM: RenderMatches - 66 ms
+5/6/2015 9:01:16 PM: RenderMatches - 19 ms
+5/6/2015 9:01:16 PM: RenderMatches - 19 ms
+5/6/2015 9:01:16 PM: RenderMatches - 19 ms
+5/6/2015 9:01:16 PM: RenderMatches - 19 ms
+5/6/2015 9:01:16 PM: RenderMatches - 18 ms
+5/6/2015 9:01:16 PM: RenderMatches - 25 ms
+5/6/2015 9:01:16 PM: RenderMatches - 21 ms
+5/6/2015 9:01:16 PM: RenderMatches - 16 ms
+5/6/2015 9:01:16 PM: RenderMatches - 32 ms
+5/6/2015 9:01:16 PM: RenderMatches - 21 ms
+5/6/2015 9:01:16 PM: RenderMatches - 32 ms
+5/6/2015 9:01:16 PM: RenderMatches - 21 ms
+5/6/2015 9:01:16 PM: RenderMatches - 65 ms
+5/6/2015 9:01:16 PM: RenderMatches - 20 ms
+5/6/2015 9:01:17 PM: RenderMatches - 21 ms
+5/6/2015 9:01:17 PM: RenderMatches - 21 ms
+5/6/2015 9:01:17 PM: RenderMatches - 21 ms
+5/6/2015 9:01:17 PM: RenderMatches - 21 ms
+5/6/2015 9:01:17 PM: RenderMatches - 20 ms
+5/6/2015 9:01:17 PM: RenderMatches - 20 ms
+5/6/2015 9:01:17 PM: RenderMatches - 22 ms
+5/6/2015 9:01:17 PM: RenderMatches - 21 ms
+5/6/2015 9:01:17 PM: RenderMatches - 21 ms
+5/6/2015 9:01:17 PM: RenderMatches - 35 ms
+5/6/2015 9:01:17 PM: RenderMatches - 22 ms
+5/6/2015 9:01:17 PM: RenderMatches - 18 ms
+5/6/2015 9:01:17 PM: RenderMatches - 21 ms
+5/6/2015 9:01:17 PM: RenderMatches - 21 ms
+5/6/2015 9:01:17 PM: RenderMatches - 22 ms
+5/6/2015 9:01:17 PM: RenderMatches - 20 ms
+5/6/2015 9:01:17 PM: RenderMatches - 19 ms
+5/6/2015 9:01:17 PM: RenderMatches - 18 ms
+5/6/2015 9:01:17 PM: RenderMatches - 20 ms
+5/6/2015 9:01:17 PM: RenderMatches - 22 ms
+5/6/2015 9:01:17 PM: RenderMatches - 19 ms
+5/6/2015 9:01:17 PM: RenderMatches - 20 ms
+5/6/2015 9:01:17 PM: RenderMatches - 19 ms
+5/6/2015 9:01:17 PM: RenderMatches - 19 ms
+5/6/2015 9:01:18 PM: RenderMatches - 39 ms
+5/6/2015 9:01:18 PM: OutputMatchDistance - 102 ms
+5/6/2015 9:01:19 PM: RenderMatches - 49 ms
+5/6/2015 9:01:19 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:01:20 PM: RenderMatches - 46 ms
+5/6/2015 9:01:20 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:01:21 PM: RenderMatches - 34 ms
+5/6/2015 9:01:21 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:01:21 PM: RenderMatches - 34 ms
+5/6/2015 9:01:21 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:01:22 PM: RenderMatches - 20 ms
+5/6/2015 9:01:22 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:01:23 PM: RenderMatches - 26 ms
+5/6/2015 9:01:23 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:01:24 PM: RenderMatches - 23 ms
+5/6/2015 9:01:24 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:01:27 PM: Cropping - 13 ms
+5/6/2015 9:01:27 PM: MergeImages - 1724 ms
+5/6/2015 9:02:00 PM: RenderMatches - 25 ms
+5/6/2015 9:02:00 PM: RenderMatches - 19 ms
+5/6/2015 9:02:00 PM: RenderMatches - 21 ms
+5/6/2015 9:02:00 PM: RenderMatches - 20 ms
+5/6/2015 9:02:00 PM: RenderMatches - 20 ms
+5/6/2015 9:02:00 PM: RenderMatches - 19 ms
+5/6/2015 9:02:00 PM: RenderMatches - 20 ms
+5/6/2015 9:02:00 PM: RenderMatches - 20 ms
+5/6/2015 9:02:00 PM: RenderMatches - 20 ms
+5/6/2015 9:02:00 PM: RenderMatches - 21 ms
+5/6/2015 9:02:00 PM: RenderMatches - 21 ms
+5/6/2015 9:02:00 PM: RenderMatches - 19 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 19 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 23 ms
+5/6/2015 9:02:01 PM: RenderMatches - 18 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 19 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 19 ms
+5/6/2015 9:02:01 PM: RenderMatches - 21 ms
+5/6/2015 9:02:01 PM: RenderMatches - 21 ms
+5/6/2015 9:02:01 PM: RenderMatches - 19 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 22 ms
+5/6/2015 9:02:01 PM: RenderMatches - 24 ms
+5/6/2015 9:02:01 PM: RenderMatches - 21 ms
+5/6/2015 9:02:01 PM: RenderMatches - 22 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 21 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 24 ms
+5/6/2015 9:02:01 PM: RenderMatches - 20 ms
+5/6/2015 9:02:01 PM: RenderMatches - 21 ms
+5/6/2015 9:02:01 PM: RenderMatches - 21 ms
+5/6/2015 9:02:01 PM: RenderMatches - 32 ms
+5/6/2015 9:02:01 PM: RenderMatches - 39 ms
+5/6/2015 9:02:01 PM: RenderMatches - 22 ms
+5/6/2015 9:02:01 PM: RenderMatches - 21 ms
+5/6/2015 9:02:01 PM: RenderMatches - 21 ms
+5/6/2015 9:02:01 PM: RenderMatches - 45 ms
+5/6/2015 9:02:01 PM: RenderMatches - 22 ms
+5/6/2015 9:02:01 PM: RenderMatches - 21 ms
+5/6/2015 9:02:02 PM: RenderMatches - 22 ms
+5/6/2015 9:02:02 PM: RenderMatches - 26 ms
+5/6/2015 9:02:02 PM: RenderMatches - 23 ms
+5/6/2015 9:02:02 PM: RenderMatches - 22 ms
+5/6/2015 9:02:02 PM: RenderMatches - 22 ms
+5/6/2015 9:02:02 PM: RenderMatches - 22 ms
+5/6/2015 9:02:02 PM: RenderMatches - 22 ms
+5/6/2015 9:02:02 PM: RenderMatches - 33 ms
+5/6/2015 9:02:02 PM: RenderMatches - 20 ms
+5/6/2015 9:02:02 PM: RenderMatches - 21 ms
+5/6/2015 9:02:02 PM: RenderMatches - 43 ms
+5/6/2015 9:02:02 PM: RenderMatches - 20 ms
+5/6/2015 9:02:02 PM: RenderMatches - 20 ms
+5/6/2015 9:02:02 PM: RenderMatches - 20 ms
+5/6/2015 9:02:02 PM: RenderMatches - 25 ms
+5/6/2015 9:02:02 PM: RenderMatches - 20 ms
+5/6/2015 9:02:02 PM: RenderMatches - 19 ms
+5/6/2015 9:02:02 PM: RenderMatches - 21 ms
+5/6/2015 9:02:02 PM: RenderMatches - 18 ms
+5/6/2015 9:02:02 PM: RenderMatches - 33 ms
+5/6/2015 9:02:02 PM: RenderMatches - 26 ms
+5/6/2015 9:02:02 PM: RenderMatches - 24 ms
+5/6/2015 9:02:03 PM: RenderMatches - 30 ms
+5/6/2015 9:02:03 PM: RenderMatches - 23 ms
+5/6/2015 9:02:03 PM: RenderMatches - 23 ms
+5/6/2015 9:02:03 PM: RenderMatches - 24 ms
+5/6/2015 9:02:04 PM: RenderMatches - 24 ms
+5/6/2015 9:02:05 PM: RenderMatches - 25 ms
+5/6/2015 9:02:05 PM: RenderMatches - 25 ms
+5/6/2015 9:02:05 PM: RenderMatches - 24 ms
+5/6/2015 9:02:05 PM: RenderMatches - 24 ms
+5/6/2015 9:02:05 PM: RenderMatches - 28 ms
+5/6/2015 9:02:05 PM: RenderMatches - 22 ms
+5/6/2015 9:02:05 PM: RenderMatches - 23 ms
+5/6/2015 9:02:05 PM: RenderMatches - 22 ms
+5/6/2015 9:02:05 PM: RenderMatches - 21 ms
+5/6/2015 9:02:05 PM: RenderMatches - 22 ms
+5/6/2015 9:02:05 PM: RenderMatches - 22 ms
+5/6/2015 9:02:05 PM: RenderMatches - 23 ms
+5/6/2015 9:02:05 PM: RenderMatches - 21 ms
+5/6/2015 9:02:05 PM: RenderMatches - 21 ms
+5/6/2015 9:02:05 PM: RenderMatches - 22 ms
+5/6/2015 9:02:05 PM: RenderMatches - 22 ms
+5/6/2015 9:02:05 PM: RenderMatches - 25 ms
+5/6/2015 9:02:06 PM: RenderMatches - 24 ms
+5/6/2015 9:02:06 PM: RenderMatches - 44 ms
+5/6/2015 9:02:06 PM: RenderMatches - 24 ms
+5/6/2015 9:02:07 PM: RenderMatches - 1278 ms
+5/6/2015 9:02:07 PM: RenderMatches - 182 ms
+5/6/2015 9:02:07 PM: RenderMatches - 33 ms
+5/6/2015 9:02:07 PM: RenderMatches - 28 ms
+5/6/2015 9:02:08 PM: RenderMatches - 34 ms
+5/6/2015 9:02:09 PM: RenderMatches - 38 ms
+5/6/2015 9:02:09 PM: RenderMatches - 32 ms
+5/6/2015 9:02:09 PM: RenderMatches - 30 ms
+5/6/2015 9:02:09 PM: RenderMatches - 27 ms
+5/6/2015 9:02:09 PM: RenderMatches - 25 ms
+5/6/2015 9:02:09 PM: RenderMatches - 24 ms
+5/6/2015 9:02:09 PM: RenderMatches - 24 ms
+5/6/2015 9:02:09 PM: RenderMatches - 25 ms
+5/6/2015 9:02:09 PM: RenderMatches - 30 ms
+5/6/2015 9:02:09 PM: RenderMatches - 22 ms
+5/6/2015 9:02:09 PM: RenderMatches - 24 ms
+5/6/2015 9:02:09 PM: RenderMatches - 23 ms
+5/6/2015 9:02:09 PM: RenderMatches - 24 ms
+5/6/2015 9:02:09 PM: RenderMatches - 32 ms
+5/6/2015 9:02:10 PM: RenderMatches - 34 ms
+5/6/2015 9:02:10 PM: RenderMatches - 28 ms
+5/6/2015 9:02:10 PM: RenderMatches - 20 ms
+5/6/2015 9:02:10 PM: RenderMatches - 22 ms
+5/6/2015 9:02:10 PM: RenderMatches - 22 ms
+5/6/2015 9:02:10 PM: RenderMatches - 47 ms
+5/6/2015 9:02:10 PM: RenderMatches - 22 ms
+5/6/2015 9:02:11 PM: RenderMatches - 27 ms
+5/6/2015 9:02:11 PM: RenderMatches - 18 ms
+5/6/2015 9:02:11 PM: RenderMatches - 25 ms
+5/6/2015 9:02:11 PM: RenderMatches - 29 ms
+5/6/2015 9:02:11 PM: RenderMatches - 45 ms
+5/6/2015 9:02:12 PM: RenderMatches - 29 ms
+5/6/2015 9:02:12 PM: RenderMatches - 42 ms
+5/6/2015 9:02:12 PM: RenderMatches - 27 ms
+5/6/2015 9:02:12 PM: RenderMatches - 33 ms
+5/6/2015 9:02:12 PM: RenderMatches - 26 ms
+5/6/2015 9:02:12 PM: RenderMatches - 27 ms
+5/6/2015 9:02:13 PM: RenderMatches - 35 ms
+5/6/2015 9:02:13 PM: RenderMatches - 23 ms
+5/6/2015 9:02:13 PM: RenderMatches - 33 ms
+5/6/2015 9:02:13 PM: RenderMatches - 24 ms
+5/6/2015 9:02:13 PM: RenderMatches - 23 ms
+5/6/2015 9:02:13 PM: RenderMatches - 28 ms
+5/6/2015 9:02:14 PM: RenderMatches - 24 ms
+5/6/2015 9:02:14 PM: RenderMatches - 22 ms
+5/6/2015 9:02:14 PM: RenderMatches - 29 ms
+5/6/2015 9:02:14 PM: RenderMatches - 166 ms
+5/6/2015 9:02:14 PM: RenderMatches - 27 ms
+5/6/2015 9:02:14 PM: RenderMatches - 23 ms
+5/6/2015 9:02:14 PM: RenderMatches - 24 ms
+5/6/2015 9:02:14 PM: RenderMatches - 89 ms
+5/6/2015 9:02:14 PM: RenderMatches - 28 ms
+5/6/2015 9:02:14 PM: RenderMatches - 46 ms
+5/6/2015 9:02:14 PM: RenderMatches - 28 ms
+5/6/2015 9:02:14 PM: RenderMatches - 43 ms
+5/6/2015 9:02:14 PM: RenderMatches - 55 ms
+5/6/2015 9:02:15 PM: RenderMatches - 131 ms
+5/6/2015 9:02:15 PM: RenderMatches - 156 ms
+5/6/2015 9:02:15 PM: RenderMatches - 35 ms
+5/6/2015 9:02:15 PM: RenderMatches - 40 ms
+5/6/2015 9:02:15 PM: RenderMatches - 31 ms
+5/6/2015 9:02:15 PM: RenderMatches - 30 ms
+5/6/2015 9:02:15 PM: RenderMatches - 29 ms
+5/6/2015 9:02:15 PM: RenderMatches - 27 ms
+5/6/2015 9:02:15 PM: RenderMatches - 26 ms
+5/6/2015 9:02:15 PM: RenderMatches - 54 ms
+5/6/2015 9:02:15 PM: RenderMatches - 66 ms
+5/6/2015 9:02:15 PM: RenderMatches - 29 ms
+5/6/2015 9:02:15 PM: RenderMatches - 98 ms
+5/6/2015 9:02:15 PM: RenderMatches - 27 ms
+5/6/2015 9:02:15 PM: RenderMatches - 23 ms
+5/6/2015 9:02:16 PM: RenderMatches - 23 ms
+5/6/2015 9:02:16 PM: RenderMatches - 26 ms
+5/6/2015 9:02:16 PM: RenderMatches - 36 ms
+5/6/2015 9:02:16 PM: RenderMatches - 30 ms
+5/6/2015 9:02:17 PM: RenderMatches - 27 ms
+5/6/2015 9:02:17 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:02:18 PM: RenderMatches - 28 ms
+5/6/2015 9:02:18 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:02:18 PM: RenderMatches - 23 ms
+5/6/2015 9:02:18 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:02:18 PM: RenderMatches - 29 ms
+5/6/2015 9:02:18 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:02:19 PM: RenderMatches - 31 ms
+5/6/2015 9:02:19 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:02:20 PM: RenderMatches - 26 ms
+5/6/2015 9:02:20 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:07:06 PM: 
+
+****************Application started at 5/6/2015 9:07:06 PM*************
+
+
+5/6/2015 9:07:12 PM: InitStitcher - 427 ms
+5/6/2015 9:07:12 PM: RenderMatches - 19 ms
+5/6/2015 9:07:31 PM: RenderMatches - 24 ms
+5/6/2015 9:07:32 PM: RenderMatches - 19 ms
+5/6/2015 9:07:32 PM: RenderMatches - 20 ms
+5/6/2015 9:07:33 PM: RenderMatches - 33 ms
+5/6/2015 9:07:33 PM: RenderMatches - 26 ms
+5/6/2015 9:07:33 PM: RenderMatches - 21 ms
+5/6/2015 9:08:06 PM: RenderMatches - 35 ms
+5/6/2015 9:08:06 PM: OutputMatchDistance - 2 ms
+5/6/2015 9:08:06 PM: RenderMatches - 18 ms
+5/6/2015 9:08:06 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:10 PM: RenderMatches - 43 ms
+5/6/2015 9:08:10 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:10 PM: RenderMatches - 24 ms
+5/6/2015 9:08:10 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:12 PM: RenderMatches - 50 ms
+5/6/2015 9:08:12 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:13 PM: RenderMatches - 46 ms
+5/6/2015 9:08:13 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:13 PM: RenderMatches - 25 ms
+5/6/2015 9:08:13 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:16 PM: RenderMatches - 37 ms
+5/6/2015 9:08:16 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:16 PM: RenderMatches - 25 ms
+5/6/2015 9:08:16 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:20 PM: RenderMatches - 43 ms
+5/6/2015 9:08:20 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:21 PM: RenderMatches - 23 ms
+5/6/2015 9:08:21 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:22 PM: RenderMatches - 27 ms
+5/6/2015 9:08:22 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:22 PM: RenderMatches - 20 ms
+5/6/2015 9:08:22 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:23 PM: RenderMatches - 29 ms
+5/6/2015 9:08:23 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:26 PM: RenderMatches - 28 ms
+5/6/2015 9:08:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:26 PM: RenderMatches - 59 ms
+5/6/2015 9:08:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:26 PM: RenderMatches - 32 ms
+5/6/2015 9:08:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:28 PM: RenderMatches - 32 ms
+5/6/2015 9:08:28 PM: RenderMatches - 22 ms
+5/6/2015 9:08:28 PM: RenderMatches - 25 ms
+5/6/2015 9:08:28 PM: RenderMatches - 21 ms
+5/6/2015 9:08:28 PM: RenderMatches - 22 ms
+5/6/2015 9:08:28 PM: RenderMatches - 23 ms
+5/6/2015 9:08:28 PM: RenderMatches - 28 ms
+5/6/2015 9:08:28 PM: RenderMatches - 20 ms
+5/6/2015 9:08:28 PM: RenderMatches - 30 ms
+5/6/2015 9:08:28 PM: RenderMatches - 28 ms
+5/6/2015 9:08:28 PM: RenderMatches - 28 ms
+5/6/2015 9:08:28 PM: RenderMatches - 23 ms
+5/6/2015 9:08:28 PM: RenderMatches - 23 ms
+5/6/2015 9:08:28 PM: RenderMatches - 37 ms
+5/6/2015 9:08:28 PM: RenderMatches - 36 ms
+5/6/2015 9:08:28 PM: RenderMatches - 23 ms
+5/6/2015 9:08:29 PM: RenderMatches - 33 ms
+5/6/2015 9:08:29 PM: RenderMatches - 34 ms
+5/6/2015 9:08:29 PM: RenderMatches - 24 ms
+5/6/2015 9:08:29 PM: RenderMatches - 24 ms
+5/6/2015 9:08:29 PM: RenderMatches - 31 ms
+5/6/2015 9:08:29 PM: RenderMatches - 30 ms
+5/6/2015 9:08:29 PM: RenderMatches - 31 ms
+5/6/2015 9:08:29 PM: RenderMatches - 29 ms
+5/6/2015 9:08:29 PM: RenderMatches - 26 ms
+5/6/2015 9:08:29 PM: RenderMatches - 29 ms
+5/6/2015 9:08:30 PM: RenderMatches - 24 ms
+5/6/2015 9:08:31 PM: RenderMatches - 22 ms
+5/6/2015 9:08:31 PM: RenderMatches - 28 ms
+5/6/2015 9:08:31 PM: RenderMatches - 22 ms
+5/6/2015 9:08:31 PM: RenderMatches - 31 ms
+5/6/2015 9:08:31 PM: RenderMatches - 24 ms
+5/6/2015 9:08:31 PM: RenderMatches - 23 ms
+5/6/2015 9:08:31 PM: RenderMatches - 29 ms
+5/6/2015 9:08:31 PM: RenderMatches - 24 ms
+5/6/2015 9:08:31 PM: RenderMatches - 29 ms
+5/6/2015 9:08:31 PM: RenderMatches - 22 ms
+5/6/2015 9:08:31 PM: RenderMatches - 28 ms
+5/6/2015 9:08:31 PM: RenderMatches - 24 ms
+5/6/2015 9:08:31 PM: RenderMatches - 34 ms
+5/6/2015 9:08:31 PM: RenderMatches - 56 ms
+5/6/2015 9:08:31 PM: RenderMatches - 27 ms
+5/6/2015 9:08:32 PM: RenderMatches - 22 ms
+5/6/2015 9:08:32 PM: RenderMatches - 29 ms
+5/6/2015 9:08:32 PM: RenderMatches - 27 ms
+5/6/2015 9:08:32 PM: RenderMatches - 28 ms
+5/6/2015 9:08:32 PM: RenderMatches - 29 ms
+5/6/2015 9:08:32 PM: RenderMatches - 25 ms
+5/6/2015 9:08:32 PM: RenderMatches - 27 ms
+5/6/2015 9:08:32 PM: RenderMatches - 22 ms
+5/6/2015 9:08:32 PM: RenderMatches - 24 ms
+5/6/2015 9:08:32 PM: RenderMatches - 27 ms
+5/6/2015 9:08:32 PM: RenderMatches - 25 ms
+5/6/2015 9:08:32 PM: RenderMatches - 31 ms
+5/6/2015 9:08:32 PM: RenderMatches - 24 ms
+5/6/2015 9:08:32 PM: RenderMatches - 25 ms
+5/6/2015 9:08:32 PM: RenderMatches - 26 ms
+5/6/2015 9:08:32 PM: RenderMatches - 25 ms
+5/6/2015 9:08:32 PM: RenderMatches - 97 ms
+5/6/2015 9:08:32 PM: RenderMatches - 24 ms
+5/6/2015 9:08:32 PM: RenderMatches - 26 ms
+5/6/2015 9:08:32 PM: RenderMatches - 25 ms
+5/6/2015 9:08:32 PM: RenderMatches - 57 ms
+5/6/2015 9:08:32 PM: RenderMatches - 25 ms
+5/6/2015 9:08:32 PM: RenderMatches - 24 ms
+5/6/2015 9:08:32 PM: RenderMatches - 25 ms
+5/6/2015 9:08:33 PM: RenderMatches - 49 ms
+5/6/2015 9:08:33 PM: RenderMatches - 25 ms
+5/6/2015 9:08:33 PM: RenderMatches - 49 ms
+5/6/2015 9:08:33 PM: RenderMatches - 33 ms
+5/6/2015 9:08:33 PM: RenderMatches - 32 ms
+5/6/2015 9:08:33 PM: RenderMatches - 30 ms
+5/6/2015 9:08:33 PM: RenderMatches - 44 ms
+5/6/2015 9:08:33 PM: RenderMatches - 32 ms
+5/6/2015 9:08:33 PM: RenderMatches - 32 ms
+5/6/2015 9:08:33 PM: RenderMatches - 65 ms
+5/6/2015 9:08:33 PM: RenderMatches - 30 ms
+5/6/2015 9:08:33 PM: RenderMatches - 34 ms
+5/6/2015 9:08:33 PM: RenderMatches - 28 ms
+5/6/2015 9:08:33 PM: RenderMatches - 32 ms
+5/6/2015 9:08:33 PM: RenderMatches - 26 ms
+5/6/2015 9:08:33 PM: RenderMatches - 27 ms
+5/6/2015 9:08:33 PM: RenderMatches - 27 ms
+5/6/2015 9:08:33 PM: RenderMatches - 28 ms
+5/6/2015 9:08:33 PM: RenderMatches - 27 ms
+5/6/2015 9:08:33 PM: RenderMatches - 26 ms
+5/6/2015 9:08:33 PM: RenderMatches - 24 ms
+5/6/2015 9:08:33 PM: RenderMatches - 50 ms
+5/6/2015 9:08:33 PM: RenderMatches - 25 ms
+5/6/2015 9:08:33 PM: RenderMatches - 26 ms
+5/6/2015 9:08:33 PM: RenderMatches - 25 ms
+5/6/2015 9:08:33 PM: RenderMatches - 50 ms
+5/6/2015 9:08:33 PM: RenderMatches - 25 ms
+5/6/2015 9:08:34 PM: RenderMatches - 25 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 23 ms
+5/6/2015 9:08:34 PM: RenderMatches - 25 ms
+5/6/2015 9:08:34 PM: RenderMatches - 22 ms
+5/6/2015 9:08:34 PM: RenderMatches - 23 ms
+5/6/2015 9:08:34 PM: RenderMatches - 23 ms
+5/6/2015 9:08:34 PM: RenderMatches - 23 ms
+5/6/2015 9:08:34 PM: RenderMatches - 56 ms
+5/6/2015 9:08:34 PM: RenderMatches - 23 ms
+5/6/2015 9:08:34 PM: RenderMatches - 23 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 30 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 21 ms
+5/6/2015 9:08:34 PM: RenderMatches - 24 ms
+5/6/2015 9:08:34 PM: RenderMatches - 78 ms
+5/6/2015 9:08:34 PM: RenderMatches - 30 ms
+5/6/2015 9:08:34 PM: RenderMatches - 29 ms
+5/6/2015 9:08:34 PM: RenderMatches - 33 ms
+5/6/2015 9:08:34 PM: RenderMatches - 25 ms
+5/6/2015 9:08:35 PM: RenderMatches - 31 ms
+5/6/2015 9:08:35 PM: RenderMatches - 27 ms
+5/6/2015 9:08:35 PM: RenderMatches - 22 ms
+5/6/2015 9:08:35 PM: RenderMatches - 27 ms
+5/6/2015 9:08:35 PM: RenderMatches - 38 ms
+5/6/2015 9:08:35 PM: RenderMatches - 28 ms
+5/6/2015 9:08:35 PM: RenderMatches - 23 ms
+5/6/2015 9:08:35 PM: RenderMatches - 66 ms
+5/6/2015 9:08:35 PM: RenderMatches - 26 ms
+5/6/2015 9:08:35 PM: RenderMatches - 25 ms
+5/6/2015 9:08:35 PM: RenderMatches - 30 ms
+5/6/2015 9:08:35 PM: RenderMatches - 59 ms
+5/6/2015 9:08:35 PM: RenderMatches - 24 ms
+5/6/2015 9:08:35 PM: RenderMatches - 26 ms
+5/6/2015 9:08:35 PM: RenderMatches - 21 ms
+5/6/2015 9:08:35 PM: RenderMatches - 22 ms
+5/6/2015 9:08:35 PM: RenderMatches - 20 ms
+5/6/2015 9:08:35 PM: RenderMatches - 24 ms
+5/6/2015 9:08:35 PM: RenderMatches - 24 ms
+5/6/2015 9:08:35 PM: RenderMatches - 20 ms
+5/6/2015 9:08:35 PM: RenderMatches - 20 ms
+5/6/2015 9:08:35 PM: RenderMatches - 20 ms
+5/6/2015 9:08:35 PM: RenderMatches - 19 ms
+5/6/2015 9:08:35 PM: RenderMatches - 21 ms
+5/6/2015 9:08:35 PM: RenderMatches - 20 ms
+5/6/2015 9:08:35 PM: RenderMatches - 21 ms
+5/6/2015 9:08:36 PM: RenderMatches - 26 ms
+5/6/2015 9:08:36 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:36 PM: RenderMatches - 22 ms
+5/6/2015 9:08:36 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:38 PM: RenderMatches - 23 ms
+5/6/2015 9:08:38 PM: RenderMatches - 21 ms
+5/6/2015 9:08:38 PM: RenderMatches - 22 ms
+5/6/2015 9:08:38 PM: RenderMatches - 21 ms
+5/6/2015 9:08:38 PM: RenderMatches - 22 ms
+5/6/2015 9:08:38 PM: RenderMatches - 22 ms
+5/6/2015 9:08:38 PM: RenderMatches - 22 ms
+5/6/2015 9:08:38 PM: RenderMatches - 22 ms
+5/6/2015 9:08:38 PM: RenderMatches - 44 ms
+5/6/2015 9:08:38 PM: RenderMatches - 27 ms
+5/6/2015 9:08:38 PM: RenderMatches - 29 ms
+5/6/2015 9:08:38 PM: RenderMatches - 22 ms
+5/6/2015 9:08:38 PM: RenderMatches - 22 ms
+5/6/2015 9:08:38 PM: RenderMatches - 26 ms
+5/6/2015 9:08:38 PM: RenderMatches - 24 ms
+5/6/2015 9:08:38 PM: RenderMatches - 25 ms
+5/6/2015 9:08:38 PM: RenderMatches - 32 ms
+5/6/2015 9:08:39 PM: RenderMatches - 26 ms
+5/6/2015 9:08:39 PM: RenderMatches - 28 ms
+5/6/2015 9:08:39 PM: RenderMatches - 21 ms
+5/6/2015 9:08:39 PM: RenderMatches - 30 ms
+5/6/2015 9:08:39 PM: RenderMatches - 27 ms
+5/6/2015 9:08:39 PM: RenderMatches - 24 ms
+5/6/2015 9:08:39 PM: RenderMatches - 20 ms
+5/6/2015 9:08:39 PM: RenderMatches - 26 ms
+5/6/2015 9:08:39 PM: RenderMatches - 26 ms
+5/6/2015 9:08:39 PM: RenderMatches - 27 ms
+5/6/2015 9:08:39 PM: RenderMatches - 34 ms
+5/6/2015 9:08:39 PM: RenderMatches - 21 ms
+5/6/2015 9:08:39 PM: RenderMatches - 21 ms
+5/6/2015 9:08:39 PM: RenderMatches - 21 ms
+5/6/2015 9:08:39 PM: RenderMatches - 22 ms
+5/6/2015 9:08:40 PM: RenderMatches - 26 ms
+5/6/2015 9:08:40 PM: RenderMatches - 21 ms
+5/6/2015 9:08:40 PM: RenderMatches - 22 ms
+5/6/2015 9:08:40 PM: RenderMatches - 22 ms
+5/6/2015 9:08:40 PM: RenderMatches - 47 ms
+5/6/2015 9:08:40 PM: RenderMatches - 23 ms
+5/6/2015 9:08:40 PM: RenderMatches - 23 ms
+5/6/2015 9:08:40 PM: RenderMatches - 22 ms
+5/6/2015 9:08:40 PM: RenderMatches - 24 ms
+5/6/2015 9:08:40 PM: RenderMatches - 24 ms
+5/6/2015 9:08:40 PM: RenderMatches - 24 ms
+5/6/2015 9:08:40 PM: RenderMatches - 24 ms
+5/6/2015 9:08:40 PM: RenderMatches - 25 ms
+5/6/2015 9:08:40 PM: RenderMatches - 24 ms
+5/6/2015 9:08:40 PM: RenderMatches - 32 ms
+5/6/2015 9:08:40 PM: RenderMatches - 26 ms
+5/6/2015 9:08:40 PM: RenderMatches - 28 ms
+5/6/2015 9:08:40 PM: RenderMatches - 27 ms
+5/6/2015 9:08:40 PM: RenderMatches - 28 ms
+5/6/2015 9:08:40 PM: RenderMatches - 29 ms
+5/6/2015 9:08:40 PM: RenderMatches - 29 ms
+5/6/2015 9:08:40 PM: RenderMatches - 28 ms
+5/6/2015 9:08:40 PM: RenderMatches - 29 ms
+5/6/2015 9:08:40 PM: RenderMatches - 29 ms
+5/6/2015 9:08:40 PM: RenderMatches - 29 ms
+5/6/2015 9:08:40 PM: RenderMatches - 30 ms
+5/6/2015 9:08:40 PM: RenderMatches - 31 ms
+5/6/2015 9:08:40 PM: RenderMatches - 29 ms
+5/6/2015 9:08:40 PM: RenderMatches - 33 ms
+5/6/2015 9:08:40 PM: RenderMatches - 29 ms
+5/6/2015 9:08:40 PM: RenderMatches - 28 ms
+5/6/2015 9:08:40 PM: RenderMatches - 59 ms
+5/6/2015 9:08:40 PM: RenderMatches - 26 ms
+5/6/2015 9:08:40 PM: RenderMatches - 25 ms
+5/6/2015 9:08:40 PM: RenderMatches - 24 ms
+5/6/2015 9:08:40 PM: RenderMatches - 48 ms
+5/6/2015 9:08:40 PM: RenderMatches - 23 ms
+5/6/2015 9:08:41 PM: RenderMatches - 24 ms
+5/6/2015 9:08:41 PM: RenderMatches - 20 ms
+5/6/2015 9:08:41 PM: RenderMatches - 19 ms
+5/6/2015 9:08:41 PM: RenderMatches - 22 ms
+5/6/2015 9:08:41 PM: RenderMatches - 24 ms
+5/6/2015 9:08:41 PM: RenderMatches - 24 ms
+5/6/2015 9:08:41 PM: RenderMatches - 27 ms
+5/6/2015 9:08:41 PM: RenderMatches - 32 ms
+5/6/2015 9:08:41 PM: RenderMatches - 27 ms
+5/6/2015 9:08:41 PM: RenderMatches - 28 ms
+5/6/2015 9:08:41 PM: RenderMatches - 63 ms
+5/6/2015 9:08:41 PM: RenderMatches - 28 ms
+5/6/2015 9:08:41 PM: RenderMatches - 30 ms
+5/6/2015 9:08:41 PM: RenderMatches - 30 ms
+5/6/2015 9:08:41 PM: RenderMatches - 30 ms
+5/6/2015 9:08:41 PM: RenderMatches - 31 ms
+5/6/2015 9:08:41 PM: RenderMatches - 32 ms
+5/6/2015 9:08:41 PM: RenderMatches - 31 ms
+5/6/2015 9:08:41 PM: RenderMatches - 33 ms
+5/6/2015 9:08:41 PM: RenderMatches - 31 ms
+5/6/2015 9:08:41 PM: RenderMatches - 33 ms
+5/6/2015 9:08:41 PM: RenderMatches - 33 ms
+5/6/2015 9:08:41 PM: RenderMatches - 33 ms
+5/6/2015 9:08:41 PM: RenderMatches - 34 ms
+5/6/2015 9:08:41 PM: RenderMatches - 38 ms
+5/6/2015 9:08:41 PM: RenderMatches - 32 ms
+5/6/2015 9:08:41 PM: RenderMatches - 32 ms
+5/6/2015 9:08:41 PM: RenderMatches - 29 ms
+5/6/2015 9:08:41 PM: RenderMatches - 30 ms
+5/6/2015 9:08:41 PM: RenderMatches - 34 ms
+5/6/2015 9:08:41 PM: RenderMatches - 29 ms
+5/6/2015 9:08:42 PM: RenderMatches - 27 ms
+5/6/2015 9:08:42 PM: RenderMatches - 23 ms
+5/6/2015 9:08:42 PM: RenderMatches - 23 ms
+5/6/2015 9:08:42 PM: RenderMatches - 24 ms
+5/6/2015 9:08:42 PM: RenderMatches - 24 ms
+5/6/2015 9:08:42 PM: RenderMatches - 23 ms
+5/6/2015 9:08:42 PM: RenderMatches - 26 ms
+5/6/2015 9:08:42 PM: RenderMatches - 20 ms
+5/6/2015 9:08:43 PM: RenderMatches - 49 ms
+5/6/2015 9:08:43 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:43 PM: RenderMatches - 40 ms
+5/6/2015 9:08:43 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:45 PM: RenderMatches - 26 ms
+5/6/2015 9:08:45 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:46 PM: RenderMatches - 19 ms
+5/6/2015 9:08:46 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:47 PM: RenderMatches - 21 ms
+5/6/2015 9:08:47 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:47 PM: RenderMatches - 23 ms
+5/6/2015 9:08:47 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:47 PM: RenderMatches - 32 ms
+5/6/2015 9:08:48 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:48 PM: RenderMatches - 35 ms
+5/6/2015 9:08:48 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:49 PM: RenderMatches - 56 ms
+5/6/2015 9:08:49 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:50 PM: RenderMatches - 27 ms
+5/6/2015 9:08:50 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:51 PM: RenderMatches - 25 ms
+5/6/2015 9:08:51 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:51 PM: RenderMatches - 31 ms
+5/6/2015 9:08:51 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:51 PM: RenderMatches - 26 ms
+5/6/2015 9:08:51 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:52 PM: RenderMatches - 24 ms
+5/6/2015 9:08:52 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:52 PM: RenderMatches - 24 ms
+5/6/2015 9:08:52 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:52 PM: RenderMatches - 20 ms
+5/6/2015 9:08:52 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:53 PM: RenderMatches - 32 ms
+5/6/2015 9:08:53 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:08:53 PM: RenderMatches - 19 ms
+5/6/2015 9:08:53 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:13:04 PM: Cropping - 14 ms
+5/6/2015 9:13:04 PM: MergeImages - 1130 ms
+5/6/2015 9:39:24 PM: 
+
+****************Application started at 5/6/2015 9:39:24 PM*************
+
+
+5/6/2015 9:39:30 PM: InitStitcher - 523 ms
+5/6/2015 9:39:30 PM: RenderMatches - 22 ms
+5/6/2015 9:40:20 PM: 
+
+****************Application started at 5/6/2015 9:40:20 PM*************
+
+
+5/6/2015 9:40:26 PM: InitStitcher - 365 ms
+5/6/2015 9:40:26 PM: RenderMatches - 25 ms
+5/6/2015 9:40:34 PM: RenderMatches - 28 ms
+5/6/2015 9:40:34 PM: OutputMatchDistance - 4 ms
+5/6/2015 9:40:34 PM: RenderMatches - 15 ms
+5/6/2015 9:40:34 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:34 PM: RenderMatches - 41 ms
+5/6/2015 9:40:34 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:34 PM: RenderMatches - 22 ms
+5/6/2015 9:40:34 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:35 PM: RenderMatches - 46 ms
+5/6/2015 9:40:35 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:36 PM: RenderMatches - 43 ms
+5/6/2015 9:40:36 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:36 PM: RenderMatches - 22 ms
+5/6/2015 9:40:36 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:37 PM: RenderMatches - 49 ms
+5/6/2015 9:40:37 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:37 PM: RenderMatches - 36 ms
+5/6/2015 9:40:37 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:41 PM: RenderMatches - 27 ms
+5/6/2015 9:40:41 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:41 PM: RenderMatches - 26 ms
+5/6/2015 9:40:41 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:42 PM: RenderMatches - 42 ms
+5/6/2015 9:40:42 PM: OutputMatchDistance - 0 ms
+5/6/2015 9:40:44 PM: Cropping - 25 ms
+5/6/2015 9:40:44 PM: MergeImages - 834 ms
+5/6/2015 10:50:42 PM: 
+
+****************Application started at 5/6/2015 10:50:42 PM*************
+
+
+5/6/2015 10:50:54 PM: InitStitcher - 3333 ms
+5/6/2015 10:50:54 PM: RenderMatches - 116 ms
+5/6/2015 10:51:00 PM: RenderMatches - 46 ms
+5/6/2015 10:51:00 PM: OutputMatchDistance - 63 ms
+5/6/2015 10:51:00 PM: RenderMatches - 29 ms
+5/6/2015 10:51:00 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:02 PM: RenderMatches - 54 ms
+5/6/2015 10:51:02 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:02 PM: RenderMatches - 32 ms
+5/6/2015 10:51:02 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:03 PM: RenderMatches - 32 ms
+5/6/2015 10:51:03 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:03 PM: RenderMatches - 22 ms
+5/6/2015 10:51:03 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:04 PM: RenderMatches - 114 ms
+5/6/2015 10:51:04 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:04 PM: RenderMatches - 28 ms
+5/6/2015 10:51:04 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:04 PM: RenderMatches - 32 ms
+5/6/2015 10:51:04 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:04 PM: RenderMatches - 23 ms
+5/6/2015 10:51:04 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:05 PM: RenderMatches - 28 ms
+5/6/2015 10:51:05 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:05 PM: RenderMatches - 22 ms
+5/6/2015 10:51:05 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:05 PM: RenderMatches - 38 ms
+5/6/2015 10:51:05 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:05 PM: RenderMatches - 22 ms
+5/6/2015 10:51:05 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:06 PM: RenderMatches - 30 ms
+5/6/2015 10:51:06 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:06 PM: RenderMatches - 27 ms
+5/6/2015 10:51:06 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:06 PM: RenderMatches - 30 ms
+5/6/2015 10:51:06 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:51:06 PM: RenderMatches - 22 ms
+5/6/2015 10:51:06 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:52:46 PM: 
+
+****************Application started at 5/6/2015 10:52:46 PM*************
+
+
+5/6/2015 10:52:54 PM: InitStitcher - 329 ms
+5/6/2015 10:52:54 PM: RenderMatches - 35 ms
+5/6/2015 10:52:58 PM: RenderMatches - 35 ms
+5/6/2015 10:52:58 PM: OutputMatchDistance - 2 ms
+5/6/2015 10:52:58 PM: RenderMatches - 21 ms
+5/6/2015 10:52:58 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:52:59 PM: RenderMatches - 40 ms
+5/6/2015 10:52:59 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:52:59 PM: RenderMatches - 22 ms
+5/6/2015 10:52:59 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:00 PM: RenderMatches - 35 ms
+5/6/2015 10:53:00 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:00 PM: RenderMatches - 21 ms
+5/6/2015 10:53:00 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:01 PM: RenderMatches - 25 ms
+5/6/2015 10:53:01 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:02 PM: RenderMatches - 45 ms
+5/6/2015 10:53:02 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:02 PM: RenderMatches - 42 ms
+5/6/2015 10:53:02 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:03 PM: RenderMatches - 23 ms
+5/6/2015 10:53:03 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:03 PM: RenderMatches - 22 ms
+5/6/2015 10:53:03 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:04 PM: RenderMatches - 22 ms
+5/6/2015 10:53:04 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:05 PM: RenderMatches - 23 ms
+5/6/2015 10:53:05 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:05 PM: RenderMatches - 42 ms
+5/6/2015 10:53:05 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:07 PM: RenderMatches - 46 ms
+5/6/2015 10:53:07 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:11 PM: RenderMatches - 43 ms
+5/6/2015 10:53:11 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:11 PM: RenderMatches - 43 ms
+5/6/2015 10:53:11 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:15 PM: RenderMatches - 27 ms
+5/6/2015 10:53:15 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:17 PM: RenderMatches - 28 ms
+5/6/2015 10:53:17 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:18 PM: RenderMatches - 23 ms
+5/6/2015 10:53:18 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:19 PM: RenderMatches - 26 ms
+5/6/2015 10:53:19 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:19 PM: RenderMatches - 31 ms
+5/6/2015 10:53:19 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:20 PM: RenderMatches - 28 ms
+5/6/2015 10:53:20 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:20 PM: RenderMatches - 29 ms
+5/6/2015 10:53:20 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:21 PM: RenderMatches - 23 ms
+5/6/2015 10:53:21 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:22 PM: RenderMatches - 33 ms
+5/6/2015 10:53:22 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:22 PM: RenderMatches - 49 ms
+5/6/2015 10:53:22 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:23 PM: RenderMatches - 24 ms
+5/6/2015 10:53:23 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:23 PM: RenderMatches - 22 ms
+5/6/2015 10:53:23 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:24 PM: RenderMatches - 29 ms
+5/6/2015 10:53:24 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:24 PM: RenderMatches - 25 ms
+5/6/2015 10:53:24 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:25 PM: RenderMatches - 48 ms
+5/6/2015 10:53:25 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:25 PM: RenderMatches - 28 ms
+5/6/2015 10:53:25 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:25 PM: RenderMatches - 29 ms
+5/6/2015 10:53:25 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:25 PM: RenderMatches - 24 ms
+5/6/2015 10:53:25 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:26 PM: RenderMatches - 25 ms
+5/6/2015 10:53:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:26 PM: RenderMatches - 24 ms
+5/6/2015 10:53:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:26 PM: RenderMatches - 27 ms
+5/6/2015 10:53:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:26 PM: RenderMatches - 22 ms
+5/6/2015 10:53:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:27 PM: RenderMatches - 32 ms
+5/6/2015 10:53:27 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:27 PM: RenderMatches - 25 ms
+5/6/2015 10:53:27 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:27 PM: RenderMatches - 19 ms
+5/6/2015 10:53:27 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:27 PM: RenderMatches - 25 ms
+5/6/2015 10:53:27 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:28 PM: RenderMatches - 33 ms
+5/6/2015 10:53:28 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:28 PM: RenderMatches - 37 ms
+5/6/2015 10:53:28 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:28 PM: RenderMatches - 29 ms
+5/6/2015 10:53:28 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:28 PM: RenderMatches - 26 ms
+5/6/2015 10:53:28 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:29 PM: RenderMatches - 34 ms
+5/6/2015 10:53:29 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:29 PM: RenderMatches - 26 ms
+5/6/2015 10:53:29 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:29 PM: RenderMatches - 29 ms
+5/6/2015 10:53:30 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:30 PM: RenderMatches - 26 ms
+5/6/2015 10:53:30 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:30 PM: RenderMatches - 30 ms
+5/6/2015 10:53:30 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:30 PM: RenderMatches - 25 ms
+5/6/2015 10:53:30 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:31 PM: RenderMatches - 27 ms
+5/6/2015 10:53:31 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:31 PM: RenderMatches - 23 ms
+5/6/2015 10:53:31 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:31 PM: RenderMatches - 25 ms
+5/6/2015 10:53:31 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:31 PM: RenderMatches - 22 ms
+5/6/2015 10:53:31 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:32 PM: RenderMatches - 29 ms
+5/6/2015 10:53:32 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:32 PM: RenderMatches - 25 ms
+5/6/2015 10:53:32 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:32 PM: RenderMatches - 25 ms
+5/6/2015 10:53:32 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:32 PM: RenderMatches - 22 ms
+5/6/2015 10:53:32 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:33 PM: RenderMatches - 37 ms
+5/6/2015 10:53:33 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:33 PM: RenderMatches - 26 ms
+5/6/2015 10:53:33 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:33 PM: RenderMatches - 28 ms
+5/6/2015 10:53:33 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:33 PM: RenderMatches - 23 ms
+5/6/2015 10:53:33 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:34 PM: RenderMatches - 30 ms
+5/6/2015 10:53:34 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:34 PM: RenderMatches - 24 ms
+5/6/2015 10:53:34 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:34 PM: RenderMatches - 33 ms
+5/6/2015 10:53:34 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:34 PM: RenderMatches - 26 ms
+5/6/2015 10:53:34 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:35 PM: RenderMatches - 26 ms
+5/6/2015 10:53:35 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:35 PM: RenderMatches - 23 ms
+5/6/2015 10:53:35 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:35 PM: RenderMatches - 25 ms
+5/6/2015 10:53:35 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:53:35 PM: RenderMatches - 23 ms
+5/6/2015 10:53:35 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:12 PM: 
+
+****************Application started at 5/6/2015 10:55:12 PM*************
+
+
+5/6/2015 10:55:16 PM: InitStitcher - 379 ms
+5/6/2015 10:55:16 PM: RenderMatches - 22 ms
+5/6/2015 10:55:20 PM: RenderMatches - 49 ms
+5/6/2015 10:55:20 PM: OutputMatchDistance - 1 ms
+5/6/2015 10:55:20 PM: RenderMatches - 26 ms
+5/6/2015 10:55:20 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:21 PM: RenderMatches - 42 ms
+5/6/2015 10:55:21 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:21 PM: RenderMatches - 26 ms
+5/6/2015 10:55:21 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:24 PM: RenderMatches - 55 ms
+5/6/2015 10:55:24 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:24 PM: RenderMatches - 29 ms
+5/6/2015 10:55:24 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:26 PM: RenderMatches - 30 ms
+5/6/2015 10:55:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:26 PM: RenderMatches - 23 ms
+5/6/2015 10:55:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:26 PM: RenderMatches - 24 ms
+5/6/2015 10:55:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:26 PM: RenderMatches - 24 ms
+5/6/2015 10:55:26 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:27 PM: RenderMatches - 30 ms
+5/6/2015 10:55:27 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:27 PM: RenderMatches - 21 ms
+5/6/2015 10:55:27 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:28 PM: RenderMatches - 22 ms
+5/6/2015 10:55:28 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:28 PM: RenderMatches - 21 ms
+5/6/2015 10:55:28 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:29 PM: RenderMatches - 44 ms
+5/6/2015 10:55:29 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:31 PM: RenderMatches - 40 ms
+5/6/2015 10:55:31 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:32 PM: RenderMatches - 49 ms
+5/6/2015 10:55:32 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:34 PM: RenderMatches - 33 ms
+5/6/2015 10:55:34 PM: RenderMatches - 25 ms
+5/6/2015 10:55:34 PM: RenderMatches - 28 ms
+5/6/2015 10:55:35 PM: RenderMatches - 24 ms
+5/6/2015 10:55:35 PM: RenderMatches - 23 ms
+5/6/2015 10:55:35 PM: RenderMatches - 30 ms
+5/6/2015 10:55:35 PM: RenderMatches - 34 ms
+5/6/2015 10:55:36 PM: RenderMatches - 29 ms
+5/6/2015 10:55:37 PM: RenderMatches - 26 ms
+5/6/2015 10:55:38 PM: RenderMatches - 31 ms
+5/6/2015 10:55:38 PM: RenderMatches - 30 ms
+5/6/2015 10:55:38 PM: RenderMatches - 23 ms
+5/6/2015 10:55:38 PM: RenderMatches - 26 ms
+5/6/2015 10:55:38 PM: RenderMatches - 28 ms
+5/6/2015 10:55:38 PM: RenderMatches - 29 ms
+5/6/2015 10:55:38 PM: RenderMatches - 31 ms
+5/6/2015 10:55:38 PM: RenderMatches - 28 ms
+5/6/2015 10:55:38 PM: RenderMatches - 27 ms
+5/6/2015 10:55:38 PM: RenderMatches - 31 ms
+5/6/2015 10:55:38 PM: RenderMatches - 30 ms
+5/6/2015 10:55:38 PM: RenderMatches - 28 ms
+5/6/2015 10:55:38 PM: RenderMatches - 24 ms
+5/6/2015 10:55:38 PM: RenderMatches - 28 ms
+5/6/2015 10:55:38 PM: RenderMatches - 24 ms
+5/6/2015 10:55:38 PM: RenderMatches - 27 ms
+5/6/2015 10:55:38 PM: RenderMatches - 25 ms
+5/6/2015 10:55:39 PM: RenderMatches - 29 ms
+5/6/2015 10:55:39 PM: RenderMatches - 30 ms
+5/6/2015 10:55:39 PM: RenderMatches - 25 ms
+5/6/2015 10:55:39 PM: RenderMatches - 26 ms
+5/6/2015 10:55:39 PM: RenderMatches - 25 ms
+5/6/2015 10:55:39 PM: RenderMatches - 26 ms
+5/6/2015 10:55:39 PM: RenderMatches - 27 ms
+5/6/2015 10:55:39 PM: RenderMatches - 25 ms
+5/6/2015 10:55:39 PM: RenderMatches - 27 ms
+5/6/2015 10:55:39 PM: RenderMatches - 30 ms
+5/6/2015 10:55:39 PM: RenderMatches - 28 ms
+5/6/2015 10:55:39 PM: RenderMatches - 32 ms
+5/6/2015 10:55:39 PM: RenderMatches - 29 ms
+5/6/2015 10:55:39 PM: RenderMatches - 30 ms
+5/6/2015 10:55:39 PM: RenderMatches - 28 ms
+5/6/2015 10:55:39 PM: RenderMatches - 31 ms
+5/6/2015 10:55:39 PM: RenderMatches - 30 ms
+5/6/2015 10:55:39 PM: RenderMatches - 29 ms
+5/6/2015 10:55:39 PM: RenderMatches - 31 ms
+5/6/2015 10:55:39 PM: RenderMatches - 46 ms
+5/6/2015 10:55:39 PM: RenderMatches - 34 ms
+5/6/2015 10:55:39 PM: RenderMatches - 33 ms
+5/6/2015 10:55:39 PM: RenderMatches - 30 ms
+5/6/2015 10:55:39 PM: RenderMatches - 32 ms
+5/6/2015 10:55:39 PM: RenderMatches - 32 ms
+5/6/2015 10:55:39 PM: RenderMatches - 55 ms
+5/6/2015 10:55:39 PM: RenderMatches - 38 ms
+5/6/2015 10:55:39 PM: RenderMatches - 36 ms
+5/6/2015 10:55:40 PM: RenderMatches - 34 ms
+5/6/2015 10:55:40 PM: RenderMatches - 64 ms
+5/6/2015 10:55:40 PM: RenderMatches - 38 ms
+5/6/2015 10:55:40 PM: RenderMatches - 37 ms
+5/6/2015 10:55:40 PM: RenderMatches - 52 ms
+5/6/2015 10:55:40 PM: RenderMatches - 35 ms
+5/6/2015 10:55:40 PM: RenderMatches - 38 ms
+5/6/2015 10:55:40 PM: RenderMatches - 36 ms
+5/6/2015 10:55:40 PM: RenderMatches - 42 ms
+5/6/2015 10:55:40 PM: RenderMatches - 38 ms
+5/6/2015 10:55:40 PM: RenderMatches - 36 ms
+5/6/2015 10:55:40 PM: RenderMatches - 37 ms
+5/6/2015 10:55:40 PM: RenderMatches - 110 ms
+5/6/2015 10:55:40 PM: RenderMatches - 43 ms
+5/6/2015 10:55:40 PM: RenderMatches - 34 ms
+5/6/2015 10:55:40 PM: RenderMatches - 51 ms
+5/6/2015 10:55:40 PM: RenderMatches - 35 ms
+5/6/2015 10:55:40 PM: RenderMatches - 33 ms
+5/6/2015 10:55:40 PM: RenderMatches - 34 ms
+5/6/2015 10:55:40 PM: RenderMatches - 34 ms
+5/6/2015 10:55:41 PM: RenderMatches - 33 ms
+5/6/2015 10:55:41 PM: RenderMatches - 32 ms
+5/6/2015 10:55:41 PM: RenderMatches - 33 ms
+5/6/2015 10:55:41 PM: RenderMatches - 31 ms
+5/6/2015 10:55:41 PM: RenderMatches - 30 ms
+5/6/2015 10:55:41 PM: RenderMatches - 31 ms
+5/6/2015 10:55:41 PM: RenderMatches - 30 ms
+5/6/2015 10:55:41 PM: RenderMatches - 31 ms
+5/6/2015 10:55:41 PM: RenderMatches - 31 ms
+5/6/2015 10:55:41 PM: RenderMatches - 28 ms
+5/6/2015 10:55:41 PM: RenderMatches - 31 ms
+5/6/2015 10:55:41 PM: RenderMatches - 36 ms
+5/6/2015 10:55:41 PM: RenderMatches - 29 ms
+5/6/2015 10:55:41 PM: RenderMatches - 29 ms
+5/6/2015 10:55:41 PM: RenderMatches - 31 ms
+5/6/2015 10:55:41 PM: RenderMatches - 30 ms
+5/6/2015 10:55:41 PM: RenderMatches - 31 ms
+5/6/2015 10:55:41 PM: RenderMatches - 32 ms
+5/6/2015 10:55:41 PM: RenderMatches - 31 ms
+5/6/2015 10:55:41 PM: RenderMatches - 32 ms
+5/6/2015 10:55:41 PM: RenderMatches - 32 ms
+5/6/2015 10:55:41 PM: RenderMatches - 48 ms
+5/6/2015 10:55:41 PM: RenderMatches - 33 ms
+5/6/2015 10:55:41 PM: RenderMatches - 34 ms
+5/6/2015 10:55:42 PM: RenderMatches - 36 ms
+5/6/2015 10:55:42 PM: RenderMatches - 33 ms
+5/6/2015 10:55:42 PM: RenderMatches - 35 ms
+5/6/2015 10:55:42 PM: RenderMatches - 34 ms
+5/6/2015 10:55:42 PM: RenderMatches - 35 ms
+5/6/2015 10:55:42 PM: RenderMatches - 34 ms
+5/6/2015 10:55:42 PM: RenderMatches - 35 ms
+5/6/2015 10:55:42 PM: RenderMatches - 34 ms
+5/6/2015 10:55:42 PM: RenderMatches - 79 ms
+5/6/2015 10:55:42 PM: RenderMatches - 38 ms
+5/6/2015 10:55:42 PM: RenderMatches - 42 ms
+5/6/2015 10:55:42 PM: RenderMatches - 36 ms
+5/6/2015 10:55:42 PM: RenderMatches - 35 ms
+5/6/2015 10:55:42 PM: RenderMatches - 35 ms
+5/6/2015 10:55:42 PM: RenderMatches - 35 ms
+5/6/2015 10:55:42 PM: RenderMatches - 34 ms
+5/6/2015 10:55:43 PM: RenderMatches - 51 ms
+5/6/2015 10:55:43 PM: RenderMatches - 34 ms
+5/6/2015 10:55:43 PM: RenderMatches - 39 ms
+5/6/2015 10:55:43 PM: RenderMatches - 35 ms
+5/6/2015 10:55:43 PM: RenderMatches - 37 ms
+5/6/2015 10:55:43 PM: RenderMatches - 35 ms
+5/6/2015 10:55:43 PM: RenderMatches - 33 ms
+5/6/2015 10:55:43 PM: RenderMatches - 42 ms
+5/6/2015 10:55:43 PM: RenderMatches - 35 ms
+5/6/2015 10:55:43 PM: RenderMatches - 33 ms
+5/6/2015 10:55:43 PM: RenderMatches - 34 ms
+5/6/2015 10:55:43 PM: RenderMatches - 32 ms
+5/6/2015 10:55:43 PM: RenderMatches - 32 ms
+5/6/2015 10:55:43 PM: RenderMatches - 34 ms
+5/6/2015 10:55:43 PM: RenderMatches - 35 ms
+5/6/2015 10:55:43 PM: RenderMatches - 34 ms
+5/6/2015 10:55:43 PM: RenderMatches - 34 ms
+5/6/2015 10:55:43 PM: RenderMatches - 33 ms
+5/6/2015 10:55:43 PM: RenderMatches - 32 ms
+5/6/2015 10:55:43 PM: RenderMatches - 32 ms
+5/6/2015 10:55:43 PM: RenderMatches - 32 ms
+5/6/2015 10:55:43 PM: RenderMatches - 31 ms
+5/6/2015 10:55:44 PM: RenderMatches - 29 ms
+5/6/2015 10:55:44 PM: RenderMatches - 31 ms
+5/6/2015 10:55:44 PM: RenderMatches - 31 ms
+5/6/2015 10:55:44 PM: RenderMatches - 102 ms
+5/6/2015 10:55:44 PM: RenderMatches - 41 ms
+5/6/2015 10:55:44 PM: RenderMatches - 77 ms
+5/6/2015 10:55:44 PM: RenderMatches - 40 ms
+5/6/2015 10:55:44 PM: RenderMatches - 40 ms
+5/6/2015 10:55:44 PM: RenderMatches - 40 ms
+5/6/2015 10:55:44 PM: RenderMatches - 39 ms
+5/6/2015 10:55:44 PM: RenderMatches - 41 ms
+5/6/2015 10:55:44 PM: RenderMatches - 34 ms
+5/6/2015 10:55:44 PM: RenderMatches - 37 ms
+5/6/2015 10:55:44 PM: RenderMatches - 35 ms
+5/6/2015 10:55:44 PM: RenderMatches - 34 ms
+5/6/2015 10:55:44 PM: RenderMatches - 34 ms
+5/6/2015 10:55:44 PM: RenderMatches - 32 ms
+5/6/2015 10:55:44 PM: RenderMatches - 30 ms
+5/6/2015 10:55:44 PM: RenderMatches - 30 ms
+5/6/2015 10:55:45 PM: RenderMatches - 30 ms
+5/6/2015 10:55:45 PM: RenderMatches - 29 ms
+5/6/2015 10:55:45 PM: RenderMatches - 28 ms
+5/6/2015 10:55:45 PM: RenderMatches - 28 ms
+5/6/2015 10:55:45 PM: RenderMatches - 26 ms
+5/6/2015 10:55:45 PM: RenderMatches - 26 ms
+5/6/2015 10:55:45 PM: RenderMatches - 25 ms
+5/6/2015 10:55:45 PM: RenderMatches - 25 ms
+5/6/2015 10:55:45 PM: RenderMatches - 24 ms
+5/6/2015 10:55:45 PM: RenderMatches - 23 ms
+5/6/2015 10:55:45 PM: RenderMatches - 24 ms
+5/6/2015 10:55:45 PM: RenderMatches - 65 ms
+5/6/2015 10:55:45 PM: RenderMatches - 33 ms
+5/6/2015 10:55:45 PM: RenderMatches - 27 ms
+5/6/2015 10:55:45 PM: RenderMatches - 27 ms
+5/6/2015 10:55:45 PM: RenderMatches - 25 ms
+5/6/2015 10:55:45 PM: RenderMatches - 26 ms
+5/6/2015 10:55:45 PM: RenderMatches - 26 ms
+5/6/2015 10:55:45 PM: RenderMatches - 27 ms
+5/6/2015 10:55:45 PM: RenderMatches - 27 ms
+5/6/2015 10:55:45 PM: RenderMatches - 29 ms
+5/6/2015 10:55:45 PM: RenderMatches - 34 ms
+5/6/2015 10:55:45 PM: RenderMatches - 34 ms
+5/6/2015 10:55:45 PM: RenderMatches - 34 ms
+5/6/2015 10:55:45 PM: RenderMatches - 35 ms
+5/6/2015 10:55:45 PM: RenderMatches - 36 ms
+5/6/2015 10:55:45 PM: RenderMatches - 41 ms
+5/6/2015 10:55:45 PM: RenderMatches - 34 ms
+5/6/2015 10:55:46 PM: RenderMatches - 32 ms
+5/6/2015 10:55:46 PM: RenderMatches - 33 ms
+5/6/2015 10:55:46 PM: RenderMatches - 33 ms
+5/6/2015 10:55:46 PM: RenderMatches - 28 ms
+5/6/2015 10:55:46 PM: RenderMatches - 27 ms
+5/6/2015 10:55:46 PM: RenderMatches - 27 ms
+5/6/2015 10:55:46 PM: RenderMatches - 27 ms
+5/6/2015 10:55:46 PM: RenderMatches - 26 ms
+5/6/2015 10:55:46 PM: RenderMatches - 27 ms
+5/6/2015 10:55:46 PM: RenderMatches - 27 ms
+5/6/2015 10:55:46 PM: RenderMatches - 24 ms
+5/6/2015 10:55:46 PM: RenderMatches - 24 ms
+5/6/2015 10:55:46 PM: RenderMatches - 25 ms
+5/6/2015 10:55:46 PM: RenderMatches - 28 ms
+5/6/2015 10:55:46 PM: RenderMatches - 26 ms
+5/6/2015 10:55:46 PM: RenderMatches - 25 ms
+5/6/2015 10:55:46 PM: RenderMatches - 25 ms
+5/6/2015 10:55:46 PM: RenderMatches - 27 ms
+5/6/2015 10:55:46 PM: RenderMatches - 25 ms
+5/6/2015 10:55:46 PM: RenderMatches - 24 ms
+5/6/2015 10:55:46 PM: RenderMatches - 25 ms
+5/6/2015 10:55:46 PM: RenderMatches - 26 ms
+5/6/2015 10:55:46 PM: RenderMatches - 24 ms
+5/6/2015 10:55:46 PM: RenderMatches - 26 ms
+5/6/2015 10:55:46 PM: RenderMatches - 25 ms
+5/6/2015 10:55:46 PM: RenderMatches - 45 ms
+5/6/2015 10:55:47 PM: RenderMatches - 33 ms
+5/6/2015 10:55:47 PM: RenderMatches - 26 ms
+5/6/2015 10:55:48 PM: RenderMatches - 25 ms
+5/6/2015 10:55:48 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:48 PM: RenderMatches - 19 ms
+5/6/2015 10:55:48 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:50 PM: RenderMatches - 24 ms
+5/6/2015 10:55:50 PM: RenderMatches - 22 ms
+5/6/2015 10:55:50 PM: RenderMatches - 26 ms
+5/6/2015 10:55:50 PM: RenderMatches - 24 ms
+5/6/2015 10:55:50 PM: RenderMatches - 23 ms
+5/6/2015 10:55:50 PM: RenderMatches - 23 ms
+5/6/2015 10:55:50 PM: RenderMatches - 23 ms
+5/6/2015 10:55:50 PM: RenderMatches - 22 ms
+5/6/2015 10:55:51 PM: RenderMatches - 23 ms
+5/6/2015 10:55:51 PM: RenderMatches - 26 ms
+5/6/2015 10:55:51 PM: RenderMatches - 23 ms
+5/6/2015 10:55:51 PM: RenderMatches - 21 ms
+5/6/2015 10:55:51 PM: RenderMatches - 24 ms
+5/6/2015 10:55:51 PM: RenderMatches - 22 ms
+5/6/2015 10:55:51 PM: RenderMatches - 24 ms
+5/6/2015 10:55:51 PM: RenderMatches - 26 ms
+5/6/2015 10:55:51 PM: RenderMatches - 29 ms
+5/6/2015 10:55:51 PM: RenderMatches - 23 ms
+5/6/2015 10:55:51 PM: RenderMatches - 28 ms
+5/6/2015 10:55:51 PM: RenderMatches - 28 ms
+5/6/2015 10:55:51 PM: RenderMatches - 26 ms
+5/6/2015 10:55:51 PM: RenderMatches - 29 ms
+5/6/2015 10:55:51 PM: RenderMatches - 21 ms
+5/6/2015 10:55:51 PM: RenderMatches - 24 ms
+5/6/2015 10:55:52 PM: RenderMatches - 25 ms
+5/6/2015 10:55:52 PM: RenderMatches - 27 ms
+5/6/2015 10:55:52 PM: RenderMatches - 25 ms
+5/6/2015 10:55:52 PM: RenderMatches - 23 ms
+5/6/2015 10:55:52 PM: RenderMatches - 28 ms
+5/6/2015 10:55:52 PM: RenderMatches - 20 ms
+5/6/2015 10:55:52 PM: RenderMatches - 21 ms
+5/6/2015 10:55:52 PM: RenderMatches - 28 ms
+5/6/2015 10:55:52 PM: RenderMatches - 23 ms
+5/6/2015 10:55:52 PM: RenderMatches - 22 ms
+5/6/2015 10:55:52 PM: RenderMatches - 25 ms
+5/6/2015 10:55:52 PM: RenderMatches - 22 ms
+5/6/2015 10:55:52 PM: RenderMatches - 22 ms
+5/6/2015 10:55:52 PM: RenderMatches - 20 ms
+5/6/2015 10:55:52 PM: RenderMatches - 22 ms
+5/6/2015 10:55:52 PM: RenderMatches - 26 ms
+5/6/2015 10:55:52 PM: RenderMatches - 29 ms
+5/6/2015 10:55:52 PM: RenderMatches - 26 ms
+5/6/2015 10:55:52 PM: RenderMatches - 24 ms
+5/6/2015 10:55:52 PM: RenderMatches - 22 ms
+5/6/2015 10:55:52 PM: RenderMatches - 23 ms
+5/6/2015 10:55:52 PM: RenderMatches - 28 ms
+5/6/2015 10:55:52 PM: RenderMatches - 31 ms
+5/6/2015 10:55:52 PM: RenderMatches - 21 ms
+5/6/2015 10:55:52 PM: RenderMatches - 30 ms
+5/6/2015 10:55:52 PM: RenderMatches - 21 ms
+5/6/2015 10:55:53 PM: RenderMatches - 28 ms
+5/6/2015 10:55:53 PM: RenderMatches - 23 ms
+5/6/2015 10:55:53 PM: RenderMatches - 25 ms
+5/6/2015 10:55:53 PM: RenderMatches - 22 ms
+5/6/2015 10:55:53 PM: RenderMatches - 23 ms
+5/6/2015 10:55:53 PM: RenderMatches - 21 ms
+5/6/2015 10:55:53 PM: RenderMatches - 23 ms
+5/6/2015 10:55:53 PM: RenderMatches - 27 ms
+5/6/2015 10:55:53 PM: RenderMatches - 26 ms
+5/6/2015 10:55:53 PM: RenderMatches - 28 ms
+5/6/2015 10:55:53 PM: RenderMatches - 29 ms
+5/6/2015 10:55:53 PM: RenderMatches - 22 ms
+5/6/2015 10:55:53 PM: RenderMatches - 30 ms
+5/6/2015 10:55:53 PM: RenderMatches - 23 ms
+5/6/2015 10:55:53 PM: RenderMatches - 31 ms
+5/6/2015 10:55:53 PM: RenderMatches - 25 ms
+5/6/2015 10:55:53 PM: RenderMatches - 26 ms
+5/6/2015 10:55:53 PM: RenderMatches - 27 ms
+5/6/2015 10:55:53 PM: RenderMatches - 24 ms
+5/6/2015 10:55:53 PM: RenderMatches - 25 ms
+5/6/2015 10:55:53 PM: RenderMatches - 27 ms
+5/6/2015 10:55:53 PM: RenderMatches - 25 ms
+5/6/2015 10:55:53 PM: RenderMatches - 26 ms
+5/6/2015 10:55:53 PM: RenderMatches - 26 ms
+5/6/2015 10:55:53 PM: RenderMatches - 41 ms
+5/6/2015 10:55:54 PM: RenderMatches - 26 ms
+5/6/2015 10:55:54 PM: RenderMatches - 26 ms
+5/6/2015 10:55:54 PM: RenderMatches - 25 ms
+5/6/2015 10:55:54 PM: RenderMatches - 27 ms
+5/6/2015 10:55:54 PM: RenderMatches - 27 ms
+5/6/2015 10:55:54 PM: RenderMatches - 29 ms
+5/6/2015 10:55:54 PM: RenderMatches - 28 ms
+5/6/2015 10:55:54 PM: RenderMatches - 29 ms
+5/6/2015 10:55:54 PM: RenderMatches - 28 ms
+5/6/2015 10:55:54 PM: RenderMatches - 31 ms
+5/6/2015 10:55:54 PM: RenderMatches - 31 ms
+5/6/2015 10:55:54 PM: RenderMatches - 29 ms
+5/6/2015 10:55:54 PM: RenderMatches - 38 ms
+5/6/2015 10:55:54 PM: RenderMatches - 57 ms
+5/6/2015 10:55:54 PM: RenderMatches - 36 ms
+5/6/2015 10:55:54 PM: RenderMatches - 35 ms
+5/6/2015 10:55:54 PM: RenderMatches - 27 ms
+5/6/2015 10:55:54 PM: RenderMatches - 29 ms
+5/6/2015 10:55:54 PM: RenderMatches - 31 ms
+5/6/2015 10:55:54 PM: RenderMatches - 31 ms
+5/6/2015 10:55:54 PM: RenderMatches - 29 ms
+5/6/2015 10:55:54 PM: RenderMatches - 69 ms
+5/6/2015 10:55:54 PM: RenderMatches - 39 ms
+5/6/2015 10:55:54 PM: RenderMatches - 28 ms
+5/6/2015 10:55:54 PM: RenderMatches - 25 ms
+5/6/2015 10:55:55 PM: RenderMatches - 24 ms
+5/6/2015 10:55:55 PM: RenderMatches - 20 ms
+5/6/2015 10:55:56 PM: RenderMatches - 33 ms
+5/6/2015 10:55:56 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:55:57 PM: RenderMatches - 21 ms
+5/6/2015 10:55:57 PM: RenderMatches - 11 ms
+5/6/2015 10:55:57 PM: RenderMatches - 11 ms
+5/6/2015 10:55:57 PM: RenderMatches - 20 ms
+5/6/2015 10:55:57 PM: RenderMatches - 13 ms
+5/6/2015 10:55:57 PM: RenderMatches - 12 ms
+5/6/2015 10:55:57 PM: RenderMatches - 13 ms
+5/6/2015 10:55:57 PM: RenderMatches - 13 ms
+5/6/2015 10:55:57 PM: RenderMatches - 13 ms
+5/6/2015 10:55:57 PM: RenderMatches - 13 ms
+5/6/2015 10:55:57 PM: RenderMatches - 18 ms
+5/6/2015 10:55:57 PM: RenderMatches - 22 ms
+5/6/2015 10:55:57 PM: RenderMatches - 15 ms
+5/6/2015 10:55:57 PM: RenderMatches - 15 ms
+5/6/2015 10:55:57 PM: RenderMatches - 15 ms
+5/6/2015 10:55:57 PM: RenderMatches - 15 ms
+5/6/2015 10:55:57 PM: RenderMatches - 15 ms
+5/6/2015 10:55:57 PM: RenderMatches - 18 ms
+5/6/2015 10:55:57 PM: RenderMatches - 17 ms
+5/6/2015 10:55:57 PM: RenderMatches - 22 ms
+5/6/2015 10:55:57 PM: RenderMatches - 16 ms
+5/6/2015 10:55:58 PM: RenderMatches - 20 ms
+5/6/2015 10:55:58 PM: RenderMatches - 12 ms
+5/6/2015 10:55:58 PM: RenderMatches - 14 ms
+5/6/2015 10:55:58 PM: RenderMatches - 13 ms
+5/6/2015 10:55:58 PM: RenderMatches - 14 ms
+5/6/2015 10:55:58 PM: RenderMatches - 15 ms
+5/6/2015 10:55:58 PM: RenderMatches - 17 ms
+5/6/2015 10:55:58 PM: RenderMatches - 14 ms
+5/6/2015 10:55:58 PM: RenderMatches - 15 ms
+5/6/2015 10:55:58 PM: RenderMatches - 13 ms
+5/6/2015 10:55:58 PM: RenderMatches - 14 ms
+5/6/2015 10:55:58 PM: RenderMatches - 14 ms
+5/6/2015 10:55:58 PM: RenderMatches - 14 ms
+5/6/2015 10:55:58 PM: RenderMatches - 19 ms
+5/6/2015 10:55:58 PM: RenderMatches - 15 ms
+5/6/2015 10:55:58 PM: RenderMatches - 13 ms
+5/6/2015 10:55:58 PM: RenderMatches - 14 ms
+5/6/2015 10:55:58 PM: RenderMatches - 13 ms
+5/6/2015 10:55:58 PM: RenderMatches - 21 ms
+5/6/2015 10:55:58 PM: RenderMatches - 10 ms
+5/6/2015 10:55:58 PM: RenderMatches - 20 ms
+5/6/2015 10:55:58 PM: RenderMatches - 12 ms
+5/6/2015 10:55:58 PM: RenderMatches - 14 ms
+5/6/2015 10:55:59 PM: RenderMatches - 14 ms
+5/6/2015 10:55:59 PM: RenderMatches - 14 ms
+5/6/2015 10:55:59 PM: RenderMatches - 13 ms
+5/6/2015 10:55:59 PM: RenderMatches - 16 ms
+5/6/2015 10:55:59 PM: RenderMatches - 15 ms
+5/6/2015 10:55:59 PM: RenderMatches - 15 ms
+5/6/2015 10:55:59 PM: RenderMatches - 15 ms
+5/6/2015 10:55:59 PM: RenderMatches - 15 ms
+5/6/2015 10:55:59 PM: RenderMatches - 14 ms
+5/6/2015 10:55:59 PM: RenderMatches - 44 ms
+5/6/2015 10:55:59 PM: RenderMatches - 23 ms
+5/6/2015 10:55:59 PM: RenderMatches - 22 ms
+5/6/2015 10:55:59 PM: RenderMatches - 21 ms
+5/6/2015 10:55:59 PM: RenderMatches - 37 ms
+5/6/2015 10:55:59 PM: RenderMatches - 23 ms
+5/6/2015 10:55:59 PM: RenderMatches - 22 ms
+5/6/2015 10:55:59 PM: RenderMatches - 21 ms
+5/6/2015 10:55:59 PM: RenderMatches - 38 ms
+5/6/2015 10:55:59 PM: RenderMatches - 21 ms
+5/6/2015 10:55:59 PM: RenderMatches - 21 ms
+5/6/2015 10:55:59 PM: RenderMatches - 23 ms
+5/6/2015 10:55:59 PM: RenderMatches - 22 ms
+5/6/2015 10:55:59 PM: RenderMatches - 20 ms
+5/6/2015 10:55:59 PM: RenderMatches - 21 ms
+5/6/2015 10:55:59 PM: RenderMatches - 20 ms
+5/6/2015 10:55:59 PM: RenderMatches - 21 ms
+5/6/2015 10:55:59 PM: RenderMatches - 25 ms
+5/6/2015 10:56:00 PM: RenderMatches - 25 ms
+5/6/2015 10:56:00 PM: RenderMatches - 26 ms
+5/6/2015 10:56:00 PM: RenderMatches - 20 ms
+5/6/2015 10:56:00 PM: RenderMatches - 21 ms
+5/6/2015 10:56:00 PM: RenderMatches - 20 ms
+5/6/2015 10:56:00 PM: RenderMatches - 22 ms
+5/6/2015 10:56:00 PM: RenderMatches - 23 ms
+5/6/2015 10:56:00 PM: RenderMatches - 22 ms
+5/6/2015 10:56:00 PM: RenderMatches - 22 ms
+5/6/2015 10:56:00 PM: RenderMatches - 21 ms
+5/6/2015 10:56:00 PM: RenderMatches - 29 ms
+5/6/2015 10:56:00 PM: RenderMatches - 25 ms
+5/6/2015 10:56:00 PM: RenderMatches - 26 ms
+5/6/2015 10:56:00 PM: RenderMatches - 28 ms
+5/6/2015 10:56:00 PM: RenderMatches - 26 ms
+5/6/2015 10:56:00 PM: RenderMatches - 20 ms
+5/6/2015 10:56:00 PM: RenderMatches - 20 ms
+5/6/2015 10:56:00 PM: RenderMatches - 17 ms
+5/6/2015 10:56:00 PM: RenderMatches - 18 ms
+5/6/2015 10:56:00 PM: RenderMatches - 17 ms
+5/6/2015 10:56:00 PM: RenderMatches - 16 ms
+5/6/2015 10:56:00 PM: RenderMatches - 16 ms
+5/6/2015 10:56:00 PM: RenderMatches - 15 ms
+5/6/2015 10:56:00 PM: RenderMatches - 16 ms
+5/6/2015 10:56:00 PM: RenderMatches - 17 ms
+5/6/2015 10:56:00 PM: RenderMatches - 17 ms
+5/6/2015 10:56:00 PM: RenderMatches - 11 ms
+5/6/2015 10:56:01 PM: RenderMatches - 25 ms
+5/6/2015 10:56:01 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:02 PM: RenderMatches - 16 ms
+5/6/2015 10:56:02 PM: RenderMatches - 21 ms
+5/6/2015 10:56:02 PM: RenderMatches - 11 ms
+5/6/2015 10:56:02 PM: RenderMatches - 17 ms
+5/6/2015 10:56:02 PM: RenderMatches - 18 ms
+5/6/2015 10:56:02 PM: RenderMatches - 18 ms
+5/6/2015 10:56:02 PM: RenderMatches - 19 ms
+5/6/2015 10:56:02 PM: RenderMatches - 21 ms
+5/6/2015 10:56:02 PM: RenderMatches - 13 ms
+5/6/2015 10:56:02 PM: RenderMatches - 11 ms
+5/6/2015 10:56:02 PM: RenderMatches - 12 ms
+5/6/2015 10:56:02 PM: RenderMatches - 20 ms
+5/6/2015 10:56:03 PM: RenderMatches - 18 ms
+5/6/2015 10:56:03 PM: RenderMatches - 12 ms
+5/6/2015 10:56:03 PM: RenderMatches - 13 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 14 ms
+5/6/2015 10:56:03 PM: RenderMatches - 14 ms
+5/6/2015 10:56:03 PM: RenderMatches - 24 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 21 ms
+5/6/2015 10:56:03 PM: RenderMatches - 18 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 15 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 23 ms
+5/6/2015 10:56:03 PM: RenderMatches - 13 ms
+5/6/2015 10:56:03 PM: RenderMatches - 15 ms
+5/6/2015 10:56:03 PM: RenderMatches - 15 ms
+5/6/2015 10:56:03 PM: RenderMatches - 15 ms
+5/6/2015 10:56:03 PM: RenderMatches - 13 ms
+5/6/2015 10:56:03 PM: RenderMatches - 17 ms
+5/6/2015 10:56:03 PM: RenderMatches - 15 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 15 ms
+5/6/2015 10:56:03 PM: RenderMatches - 14 ms
+5/6/2015 10:56:03 PM: RenderMatches - 21 ms
+5/6/2015 10:56:03 PM: RenderMatches - 14 ms
+5/6/2015 10:56:03 PM: RenderMatches - 20 ms
+5/6/2015 10:56:03 PM: RenderMatches - 18 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:03 PM: RenderMatches - 17 ms
+5/6/2015 10:56:03 PM: RenderMatches - 21 ms
+5/6/2015 10:56:03 PM: RenderMatches - 16 ms
+5/6/2015 10:56:04 PM: RenderMatches - 16 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 18 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 18 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 18 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 19 ms
+5/6/2015 10:56:04 PM: RenderMatches - 18 ms
+5/6/2015 10:56:04 PM: RenderMatches - 20 ms
+5/6/2015 10:56:04 PM: RenderMatches - 19 ms
+5/6/2015 10:56:04 PM: RenderMatches - 21 ms
+5/6/2015 10:56:04 PM: RenderMatches - 24 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 35 ms
+5/6/2015 10:56:04 PM: RenderMatches - 16 ms
+5/6/2015 10:56:04 PM: RenderMatches - 15 ms
+5/6/2015 10:56:04 PM: RenderMatches - 13 ms
+5/6/2015 10:56:04 PM: RenderMatches - 14 ms
+5/6/2015 10:56:04 PM: RenderMatches - 14 ms
+5/6/2015 10:56:04 PM: RenderMatches - 15 ms
+5/6/2015 10:56:04 PM: RenderMatches - 17 ms
+5/6/2015 10:56:04 PM: RenderMatches - 10 ms
+5/6/2015 10:56:05 PM: RenderMatches - 38 ms
+5/6/2015 10:56:05 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:06 PM: RenderMatches - 21 ms
+5/6/2015 10:56:06 PM: RenderMatches - 20 ms
+5/6/2015 10:56:06 PM: RenderMatches - 20 ms
+5/6/2015 10:56:06 PM: RenderMatches - 26 ms
+5/6/2015 10:56:06 PM: RenderMatches - 21 ms
+5/6/2015 10:56:06 PM: RenderMatches - 21 ms
+5/6/2015 10:56:06 PM: RenderMatches - 21 ms
+5/6/2015 10:56:06 PM: RenderMatches - 24 ms
+5/6/2015 10:56:06 PM: RenderMatches - 22 ms
+5/6/2015 10:56:06 PM: RenderMatches - 22 ms
+5/6/2015 10:56:06 PM: RenderMatches - 22 ms
+5/6/2015 10:56:06 PM: RenderMatches - 35 ms
+5/6/2015 10:56:06 PM: RenderMatches - 22 ms
+5/6/2015 10:56:06 PM: RenderMatches - 23 ms
+5/6/2015 10:56:07 PM: RenderMatches - 29 ms
+5/6/2015 10:56:07 PM: RenderMatches - 20 ms
+5/6/2015 10:56:07 PM: RenderMatches - 22 ms
+5/6/2015 10:56:07 PM: RenderMatches - 26 ms
+5/6/2015 10:56:07 PM: RenderMatches - 18 ms
+5/6/2015 10:56:07 PM: RenderMatches - 23 ms
+5/6/2015 10:56:07 PM: RenderMatches - 21 ms
+5/6/2015 10:56:07 PM: RenderMatches - 21 ms
+5/6/2015 10:56:07 PM: RenderMatches - 22 ms
+5/6/2015 10:56:07 PM: RenderMatches - 20 ms
+5/6/2015 10:56:07 PM: RenderMatches - 25 ms
+5/6/2015 10:56:07 PM: RenderMatches - 20 ms
+5/6/2015 10:56:07 PM: RenderMatches - 25 ms
+5/6/2015 10:56:07 PM: RenderMatches - 18 ms
+5/6/2015 10:56:08 PM: RenderMatches - 21 ms
+5/6/2015 10:56:08 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:08 PM: RenderMatches - 20 ms
+5/6/2015 10:56:08 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:10 PM: RenderMatches - 26 ms
+5/6/2015 10:56:10 PM: RenderMatches - 32 ms
+5/6/2015 10:56:10 PM: RenderMatches - 26 ms
+5/6/2015 10:56:10 PM: RenderMatches - 28 ms
+5/6/2015 10:56:10 PM: RenderMatches - 27 ms
+5/6/2015 10:56:10 PM: RenderMatches - 29 ms
+5/6/2015 10:56:10 PM: RenderMatches - 25 ms
+5/6/2015 10:56:10 PM: RenderMatches - 37 ms
+5/6/2015 10:56:10 PM: RenderMatches - 22 ms
+5/6/2015 10:56:11 PM: RenderMatches - 28 ms
+5/6/2015 10:56:11 PM: RenderMatches - 27 ms
+5/6/2015 10:56:11 PM: RenderMatches - 29 ms
+5/6/2015 10:56:11 PM: RenderMatches - 26 ms
+5/6/2015 10:56:11 PM: RenderMatches - 23 ms
+5/6/2015 10:56:11 PM: RenderMatches - 27 ms
+5/6/2015 10:56:12 PM: RenderMatches - 48 ms
+5/6/2015 10:56:12 PM: RenderMatches - 25 ms
+5/6/2015 10:56:12 PM: RenderMatches - 22 ms
+5/6/2015 10:56:14 PM: RenderMatches - 29 ms
+5/6/2015 10:56:14 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:16 PM: RenderMatches - 25 ms
+5/6/2015 10:56:16 PM: RenderMatches - 30 ms
+5/6/2015 10:56:17 PM: RenderMatches - 29 ms
+5/6/2015 10:56:17 PM: RenderMatches - 22 ms
+5/6/2015 10:56:17 PM: RenderMatches - 23 ms
+5/6/2015 10:56:17 PM: RenderMatches - 21 ms
+5/6/2015 10:56:17 PM: RenderMatches - 24 ms
+5/6/2015 10:56:17 PM: RenderMatches - 27 ms
+5/6/2015 10:56:17 PM: RenderMatches - 22 ms
+5/6/2015 10:56:18 PM: RenderMatches - 27 ms
+5/6/2015 10:56:18 PM: RenderMatches - 21 ms
+5/6/2015 10:56:18 PM: RenderMatches - 27 ms
+5/6/2015 10:56:18 PM: RenderMatches - 28 ms
+5/6/2015 10:56:18 PM: RenderMatches - 24 ms
+5/6/2015 10:56:18 PM: RenderMatches - 27 ms
+5/6/2015 10:56:18 PM: RenderMatches - 28 ms
+5/6/2015 10:56:18 PM: RenderMatches - 21 ms
+5/6/2015 10:56:19 PM: RenderMatches - 46 ms
+5/6/2015 10:56:19 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:56:21 PM: RenderMatches - 29 ms
+5/6/2015 10:56:21 PM: RenderMatches - 20 ms
+5/6/2015 10:56:21 PM: RenderMatches - 24 ms
+5/6/2015 10:56:21 PM: RenderMatches - 25 ms
+5/6/2015 10:56:21 PM: RenderMatches - 21 ms
+5/6/2015 10:56:21 PM: RenderMatches - 23 ms
+5/6/2015 10:56:21 PM: RenderMatches - 22 ms
+5/6/2015 10:56:21 PM: RenderMatches - 23 ms
+5/6/2015 10:56:21 PM: RenderMatches - 22 ms
+5/6/2015 10:56:22 PM: RenderMatches - 21 ms
+5/6/2015 10:56:22 PM: RenderMatches - 27 ms
+5/6/2015 10:56:22 PM: RenderMatches - 26 ms
+5/6/2015 10:56:22 PM: RenderMatches - 27 ms
+5/6/2015 10:56:22 PM: RenderMatches - 33 ms
+5/6/2015 10:56:22 PM: RenderMatches - 28 ms
+5/6/2015 10:56:22 PM: RenderMatches - 28 ms
+5/6/2015 10:56:22 PM: RenderMatches - 26 ms
+5/6/2015 10:56:22 PM: RenderMatches - 26 ms
+5/6/2015 10:56:22 PM: RenderMatches - 29 ms
+5/6/2015 10:56:22 PM: RenderMatches - 25 ms
+5/6/2015 10:56:22 PM: RenderMatches - 23 ms
+5/6/2015 10:56:22 PM: RenderMatches - 22 ms
+5/6/2015 10:56:22 PM: RenderMatches - 24 ms
+5/6/2015 10:56:22 PM: RenderMatches - 28 ms
+5/6/2015 10:56:22 PM: RenderMatches - 24 ms
+5/6/2015 10:56:22 PM: RenderMatches - 23 ms
+5/6/2015 10:56:22 PM: RenderMatches - 26 ms
+5/6/2015 10:56:23 PM: RenderMatches - 25 ms
+5/6/2015 10:56:23 PM: RenderMatches - 24 ms
+5/6/2015 10:56:23 PM: RenderMatches - 24 ms
+5/6/2015 10:56:23 PM: RenderMatches - 27 ms
+5/6/2015 10:56:23 PM: RenderMatches - 24 ms
+5/6/2015 10:56:23 PM: RenderMatches - 25 ms
+5/6/2015 10:56:23 PM: RenderMatches - 25 ms
+5/6/2015 10:56:23 PM: RenderMatches - 25 ms
+5/6/2015 10:56:23 PM: RenderMatches - 26 ms
+5/6/2015 10:56:23 PM: RenderMatches - 26 ms
+5/6/2015 10:56:23 PM: RenderMatches - 24 ms
+5/6/2015 10:56:23 PM: RenderMatches - 27 ms
+5/6/2015 10:56:23 PM: RenderMatches - 27 ms
+5/6/2015 10:56:23 PM: RenderMatches - 24 ms
+5/6/2015 10:56:23 PM: RenderMatches - 25 ms
+5/6/2015 10:56:23 PM: RenderMatches - 28 ms
+5/6/2015 10:56:23 PM: RenderMatches - 25 ms
+5/6/2015 10:56:23 PM: RenderMatches - 25 ms
+5/6/2015 10:56:23 PM: RenderMatches - 29 ms
+5/6/2015 10:56:23 PM: RenderMatches - 24 ms
+5/6/2015 10:56:23 PM: RenderMatches - 26 ms
+5/6/2015 10:56:23 PM: RenderMatches - 25 ms
+5/6/2015 10:56:23 PM: RenderMatches - 46 ms
+5/6/2015 10:56:23 PM: RenderMatches - 26 ms
+5/6/2015 10:56:23 PM: RenderMatches - 25 ms
+5/6/2015 10:56:23 PM: RenderMatches - 29 ms
+5/6/2015 10:56:23 PM: RenderMatches - 28 ms
+5/6/2015 10:56:23 PM: RenderMatches - 32 ms
+5/6/2015 10:56:23 PM: RenderMatches - 30 ms
+5/6/2015 10:56:23 PM: RenderMatches - 29 ms
+5/6/2015 10:56:23 PM: RenderMatches - 30 ms
+5/6/2015 10:56:23 PM: RenderMatches - 29 ms
+5/6/2015 10:56:23 PM: RenderMatches - 29 ms
+5/6/2015 10:56:23 PM: RenderMatches - 30 ms
+5/6/2015 10:56:24 PM: RenderMatches - 30 ms
+5/6/2015 10:56:24 PM: RenderMatches - 31 ms
+5/6/2015 10:56:24 PM: RenderMatches - 53 ms
+5/6/2015 10:56:24 PM: RenderMatches - 30 ms
+5/6/2015 10:56:24 PM: RenderMatches - 29 ms
+5/6/2015 10:56:24 PM: RenderMatches - 30 ms
+5/6/2015 10:56:24 PM: RenderMatches - 30 ms
+5/6/2015 10:56:24 PM: RenderMatches - 30 ms
+5/6/2015 10:56:24 PM: RenderMatches - 31 ms
+5/6/2015 10:56:24 PM: RenderMatches - 29 ms
+5/6/2015 10:56:24 PM: RenderMatches - 27 ms
+5/6/2015 10:56:24 PM: RenderMatches - 31 ms
+5/6/2015 10:56:24 PM: RenderMatches - 27 ms
+5/6/2015 10:56:24 PM: RenderMatches - 29 ms
+5/6/2015 10:56:24 PM: RenderMatches - 34 ms
+5/6/2015 10:56:24 PM: RenderMatches - 30 ms
+5/6/2015 10:56:24 PM: RenderMatches - 30 ms
+5/6/2015 10:56:24 PM: RenderMatches - 28 ms
+5/6/2015 10:56:24 PM: RenderMatches - 52 ms
+5/6/2015 10:56:24 PM: RenderMatches - 29 ms
+5/6/2015 10:56:24 PM: RenderMatches - 30 ms
+5/6/2015 10:56:24 PM: RenderMatches - 28 ms
+5/6/2015 10:56:24 PM: RenderMatches - 29 ms
+5/6/2015 10:56:24 PM: RenderMatches - 27 ms
+5/6/2015 10:56:24 PM: RenderMatches - 27 ms
+5/6/2015 10:56:24 PM: RenderMatches - 28 ms
+5/6/2015 10:56:24 PM: RenderMatches - 26 ms
+5/6/2015 10:56:24 PM: RenderMatches - 28 ms
+5/6/2015 10:56:24 PM: RenderMatches - 26 ms
+5/6/2015 10:56:25 PM: RenderMatches - 27 ms
+5/6/2015 10:56:25 PM: RenderMatches - 27 ms
+5/6/2015 10:56:25 PM: RenderMatches - 25 ms
+5/6/2015 10:56:25 PM: RenderMatches - 27 ms
+5/6/2015 10:56:25 PM: RenderMatches - 25 ms
+5/6/2015 10:56:25 PM: RenderMatches - 25 ms
+5/6/2015 10:56:25 PM: RenderMatches - 26 ms
+5/6/2015 10:56:25 PM: RenderMatches - 24 ms
+5/6/2015 10:56:25 PM: RenderMatches - 25 ms
+5/6/2015 10:56:25 PM: RenderMatches - 25 ms
+5/6/2015 10:56:25 PM: RenderMatches - 25 ms
+5/6/2015 10:56:25 PM: RenderMatches - 29 ms
+5/6/2015 10:56:25 PM: RenderMatches - 30 ms
+5/6/2015 10:56:25 PM: RenderMatches - 26 ms
+5/6/2015 10:56:25 PM: RenderMatches - 24 ms
+5/6/2015 10:56:25 PM: RenderMatches - 28 ms
+5/6/2015 10:56:25 PM: RenderMatches - 22 ms
+5/6/2015 10:56:25 PM: RenderMatches - 24 ms
+5/6/2015 10:56:25 PM: RenderMatches - 23 ms
+5/6/2015 10:56:25 PM: RenderMatches - 24 ms
+5/6/2015 10:56:25 PM: RenderMatches - 23 ms
+5/6/2015 10:56:25 PM: RenderMatches - 24 ms
+5/6/2015 10:56:25 PM: RenderMatches - 28 ms
+5/6/2015 10:56:26 PM: RenderMatches - 28 ms
+5/6/2015 10:56:26 PM: RenderMatches - 22 ms
+5/6/2015 10:56:26 PM: RenderMatches - 23 ms
+5/6/2015 10:56:26 PM: RenderMatches - 32 ms
+5/6/2015 10:56:26 PM: RenderMatches - 31 ms
+5/6/2015 10:56:26 PM: RenderMatches - 32 ms
+5/6/2015 10:56:27 PM: RenderMatches - 29 ms
+5/6/2015 10:56:27 PM: RenderMatches - 29 ms
+5/6/2015 10:56:27 PM: RenderMatches - 23 ms
+5/6/2015 10:56:27 PM: RenderMatches - 21 ms
+5/6/2015 10:56:27 PM: RenderMatches - 26 ms
+5/6/2015 10:56:27 PM: RenderMatches - 24 ms
+5/6/2015 10:56:27 PM: RenderMatches - 24 ms
+5/6/2015 10:56:27 PM: RenderMatches - 24 ms
+5/6/2015 10:56:27 PM: RenderMatches - 41 ms
+5/6/2015 10:56:27 PM: RenderMatches - 23 ms
+5/6/2015 10:56:27 PM: RenderMatches - 23 ms
+5/6/2015 10:56:27 PM: RenderMatches - 25 ms
+5/6/2015 10:56:27 PM: RenderMatches - 25 ms
+5/6/2015 10:56:28 PM: RenderMatches - 25 ms
+5/6/2015 10:56:28 PM: RenderMatches - 26 ms
+5/6/2015 10:56:28 PM: RenderMatches - 28 ms
+5/6/2015 10:56:28 PM: RenderMatches - 28 ms
+5/6/2015 10:56:28 PM: RenderMatches - 29 ms
+5/6/2015 10:56:28 PM: RenderMatches - 28 ms
+5/6/2015 10:56:28 PM: RenderMatches - 30 ms
+5/6/2015 10:56:28 PM: RenderMatches - 32 ms
+5/6/2015 10:56:28 PM: RenderMatches - 31 ms
+5/6/2015 10:56:28 PM: RenderMatches - 31 ms
+5/6/2015 10:56:28 PM: RenderMatches - 35 ms
+5/6/2015 10:56:28 PM: RenderMatches - 30 ms
+5/6/2015 10:56:28 PM: RenderMatches - 30 ms
+5/6/2015 10:56:28 PM: RenderMatches - 54 ms
+5/6/2015 10:56:28 PM: RenderMatches - 29 ms
+5/6/2015 10:56:28 PM: RenderMatches - 30 ms
+5/6/2015 10:56:28 PM: RenderMatches - 30 ms
+5/6/2015 10:56:28 PM: RenderMatches - 30 ms
+5/6/2015 10:56:28 PM: RenderMatches - 30 ms
+5/6/2015 10:56:28 PM: RenderMatches - 29 ms
+5/6/2015 10:56:29 PM: RenderMatches - 30 ms
+5/6/2015 10:56:29 PM: RenderMatches - 26 ms
+5/6/2015 10:56:30 PM: RenderMatches - 27 ms
+5/6/2015 10:56:30 PM: RenderMatches - 29 ms
+5/6/2015 10:56:30 PM: RenderMatches - 27 ms
+5/6/2015 10:56:30 PM: RenderMatches - 25 ms
+5/6/2015 10:56:30 PM: RenderMatches - 26 ms
+5/6/2015 10:56:30 PM: RenderMatches - 43 ms
+5/6/2015 10:56:30 PM: RenderMatches - 25 ms
+5/6/2015 10:56:30 PM: RenderMatches - 26 ms
+5/6/2015 10:56:30 PM: RenderMatches - 26 ms
+5/6/2015 10:56:30 PM: RenderMatches - 27 ms
+5/6/2015 10:56:30 PM: RenderMatches - 26 ms
+5/6/2015 10:56:30 PM: RenderMatches - 26 ms
+5/6/2015 10:56:30 PM: RenderMatches - 36 ms
+5/6/2015 10:56:30 PM: RenderMatches - 24 ms
+5/6/2015 10:56:30 PM: RenderMatches - 31 ms
+5/6/2015 10:56:30 PM: RenderMatches - 27 ms
+5/6/2015 10:56:30 PM: RenderMatches - 35 ms
+5/6/2015 10:56:30 PM: RenderMatches - 28 ms
+5/6/2015 10:56:30 PM: RenderMatches - 27 ms
+5/6/2015 10:56:30 PM: RenderMatches - 23 ms
+5/6/2015 10:56:30 PM: RenderMatches - 29 ms
+5/6/2015 10:56:30 PM: RenderMatches - 22 ms
+5/6/2015 10:56:30 PM: RenderMatches - 29 ms
+5/6/2015 10:56:30 PM: RenderMatches - 29 ms
+5/6/2015 10:56:30 PM: RenderMatches - 24 ms
+5/6/2015 10:56:30 PM: RenderMatches - 30 ms
+5/6/2015 10:56:31 PM: RenderMatches - 29 ms
+5/6/2015 10:56:31 PM: RenderMatches - 28 ms
+5/6/2015 10:56:31 PM: RenderMatches - 26 ms
+5/6/2015 10:56:31 PM: RenderMatches - 34 ms
+5/6/2015 10:56:31 PM: RenderMatches - 34 ms
+5/6/2015 10:56:31 PM: RenderMatches - 35 ms
+5/6/2015 10:56:31 PM: RenderMatches - 30 ms
+5/6/2015 10:56:31 PM: RenderMatches - 50 ms
+5/6/2015 10:56:31 PM: RenderMatches - 76 ms
+5/6/2015 10:56:31 PM: RenderMatches - 32 ms
+5/6/2015 10:56:31 PM: RenderMatches - 30 ms
+5/6/2015 10:56:32 PM: RenderMatches - 28 ms
+5/6/2015 10:56:32 PM: RenderMatches - 28 ms
+5/6/2015 10:56:32 PM: RenderMatches - 24 ms
+5/6/2015 10:56:32 PM: RenderMatches - 27 ms
+5/6/2015 10:56:32 PM: RenderMatches - 31 ms
+5/6/2015 10:56:32 PM: RenderMatches - 25 ms
+5/6/2015 10:56:32 PM: RenderMatches - 22 ms
+5/6/2015 10:56:32 PM: RenderMatches - 24 ms
+5/6/2015 10:56:32 PM: RenderMatches - 26 ms
+5/6/2015 10:56:32 PM: RenderMatches - 22 ms
+5/6/2015 10:56:32 PM: RenderMatches - 24 ms
+5/6/2015 10:56:32 PM: RenderMatches - 25 ms
+5/6/2015 10:56:32 PM: RenderMatches - 28 ms
+5/6/2015 10:56:32 PM: RenderMatches - 28 ms
+5/6/2015 10:56:32 PM: RenderMatches - 23 ms
+5/6/2015 10:56:32 PM: RenderMatches - 22 ms
+5/6/2015 10:56:32 PM: RenderMatches - 28 ms
+5/6/2015 10:56:32 PM: RenderMatches - 21 ms
+5/6/2015 10:56:32 PM: RenderMatches - 28 ms
+5/6/2015 10:56:32 PM: RenderMatches - 19 ms
+5/6/2015 10:56:32 PM: RenderMatches - 24 ms
+5/6/2015 10:56:32 PM: RenderMatches - 21 ms
+5/6/2015 10:56:32 PM: RenderMatches - 24 ms
+5/6/2015 10:56:33 PM: RenderMatches - 27 ms
+5/6/2015 10:56:33 PM: RenderMatches - 20 ms
+5/6/2015 10:56:33 PM: RenderMatches - 25 ms
+5/6/2015 10:56:33 PM: RenderMatches - 21 ms
+5/6/2015 10:56:33 PM: RenderMatches - 32 ms
+5/6/2015 10:56:33 PM: RenderMatches - 23 ms
+5/6/2015 10:56:33 PM: RenderMatches - 24 ms
+5/6/2015 10:56:33 PM: RenderMatches - 23 ms
+5/6/2015 10:56:33 PM: RenderMatches - 24 ms
+5/6/2015 10:56:33 PM: RenderMatches - 24 ms
+5/6/2015 10:56:33 PM: RenderMatches - 26 ms
+5/6/2015 10:56:33 PM: RenderMatches - 25 ms
+5/6/2015 10:56:33 PM: RenderMatches - 49 ms
+5/6/2015 10:56:33 PM: RenderMatches - 26 ms
+5/6/2015 10:56:33 PM: RenderMatches - 28 ms
+5/6/2015 10:56:33 PM: RenderMatches - 27 ms
+5/6/2015 10:56:34 PM: RenderMatches - 28 ms
+5/6/2015 10:56:34 PM: RenderMatches - 28 ms
+5/6/2015 10:56:34 PM: RenderMatches - 30 ms
+5/6/2015 10:56:34 PM: RenderMatches - 29 ms
+5/6/2015 10:56:34 PM: RenderMatches - 30 ms
+5/6/2015 10:56:34 PM: RenderMatches - 29 ms
+5/6/2015 10:56:34 PM: RenderMatches - 31 ms
+5/6/2015 10:56:34 PM: RenderMatches - 30 ms
+5/6/2015 10:56:34 PM: RenderMatches - 47 ms
+5/6/2015 10:56:34 PM: RenderMatches - 30 ms
+5/6/2015 10:56:34 PM: RenderMatches - 31 ms
+5/6/2015 10:56:34 PM: RenderMatches - 29 ms
+5/6/2015 10:56:34 PM: RenderMatches - 30 ms
+5/6/2015 10:56:34 PM: RenderMatches - 28 ms
+5/6/2015 10:56:34 PM: RenderMatches - 28 ms
+5/6/2015 10:56:34 PM: RenderMatches - 30 ms
+5/6/2015 10:56:34 PM: RenderMatches - 36 ms
+5/6/2015 10:56:34 PM: RenderMatches - 27 ms
+5/6/2015 10:56:34 PM: RenderMatches - 26 ms
+5/6/2015 10:56:34 PM: RenderMatches - 27 ms
+5/6/2015 10:56:34 PM: RenderMatches - 24 ms
+5/6/2015 10:56:34 PM: RenderMatches - 24 ms
+5/6/2015 10:56:34 PM: RenderMatches - 25 ms
+5/6/2015 10:56:34 PM: RenderMatches - 24 ms
+5/6/2015 10:56:34 PM: RenderMatches - 23 ms
+5/6/2015 10:56:34 PM: RenderMatches - 23 ms
+5/6/2015 10:56:34 PM: RenderMatches - 23 ms
+5/6/2015 10:56:34 PM: RenderMatches - 22 ms
+5/6/2015 10:56:34 PM: RenderMatches - 22 ms
+5/6/2015 10:56:34 PM: RenderMatches - 22 ms
+5/6/2015 10:56:34 PM: RenderMatches - 22 ms
+5/6/2015 10:56:34 PM: RenderMatches - 22 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 22 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 19 ms
+5/6/2015 10:56:35 PM: RenderMatches - 20 ms
+5/6/2015 10:56:35 PM: RenderMatches - 20 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 20 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 21 ms
+5/6/2015 10:56:35 PM: RenderMatches - 22 ms
+5/6/2015 10:56:35 PM: RenderMatches - 26 ms
+5/6/2015 10:56:35 PM: RenderMatches - 40 ms
+5/6/2015 10:56:35 PM: RenderMatches - 24 ms
+5/6/2015 10:56:35 PM: RenderMatches - 27 ms
+5/6/2015 10:56:35 PM: RenderMatches - 26 ms
+5/6/2015 10:56:35 PM: RenderMatches - 28 ms
+5/6/2015 10:56:35 PM: RenderMatches - 27 ms
+5/6/2015 10:56:35 PM: RenderMatches - 30 ms
+5/6/2015 10:56:35 PM: RenderMatches - 29 ms
+5/6/2015 10:56:35 PM: RenderMatches - 30 ms
+5/6/2015 10:56:36 PM: RenderMatches - 28 ms
+5/6/2015 10:57:52 PM: 
+
+****************Application started at 5/6/2015 10:57:52 PM*************
+
+
+5/6/2015 10:57:59 PM: InitStitcher - 462 ms
+5/6/2015 10:57:59 PM: RenderMatches - 23 ms
+5/6/2015 10:58:03 PM: RenderMatches - 49 ms
+5/6/2015 10:58:03 PM: OutputMatchDistance - 3 ms
+5/6/2015 10:58:08 PM: RenderMatches - 34 ms
+5/6/2015 10:58:08 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:58:08 PM: RenderMatches - 24 ms
+5/6/2015 10:58:08 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:58:09 PM: RenderMatches - 38 ms
+5/6/2015 10:58:09 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:58:09 PM: RenderMatches - 22 ms
+5/6/2015 10:58:09 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:58:12 PM: Cropping - 42 ms
+5/6/2015 10:58:13 PM: MergeImages - 3296 ms
+5/6/2015 10:58:20 PM: OutputMatchDistance - 0 ms
+5/6/2015 10:58:21 PM: Cropping - 14 ms
+5/6/2015 10:58:21 PM: MergeImages - 844 ms
+5/6/2015 10:59:14 PM: 
+
+****************Application started at 5/6/2015 10:59:14 PM*************
+
+
+5/6/2015 11:00:49 PM: InitStitcher - 2255 ms
+5/6/2015 11:00:49 PM: RenderMatches - 14 ms
+5/6/2015 11:00:54 PM: RenderMatches - 124 ms
+5/6/2015 11:00:54 PM: OutputMatchDistance - 36 ms
+5/6/2015 11:00:55 PM: RenderMatches - 37 ms
+5/6/2015 11:00:55 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:00:56 PM: RenderMatches - 33 ms
+5/6/2015 11:00:56 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:00:57 PM: RenderMatches - 17 ms
+5/6/2015 11:00:57 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:00:58 PM: RenderMatches - 237 ms
+5/6/2015 11:00:58 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:00:58 PM: RenderMatches - 41 ms
+5/6/2015 11:00:58 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:03:24 PM: 
+
+****************Application started at 5/6/2015 11:03:24 PM*************
+
+
+5/6/2015 11:03:41 PM: InitStitcher - 2317 ms
+5/6/2015 11:03:41 PM: RenderMatches - 62 ms
+5/6/2015 11:03:46 PM: RenderMatches - 340 ms
+5/6/2015 11:03:46 PM: OutputMatchDistance - 16 ms
+5/6/2015 11:03:48 PM: RenderMatches - 347 ms
+5/6/2015 11:03:48 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:03:51 PM: RenderMatches - 64 ms
+5/6/2015 11:03:51 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:03:51 PM: RenderMatches - 62 ms
+5/6/2015 11:03:51 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:03:52 PM: RenderMatches - 373 ms
+5/6/2015 11:03:52 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:03:52 PM: RenderMatches - 57 ms
+5/6/2015 11:03:52 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:03:52 PM: RenderMatches - 342 ms
+5/6/2015 11:03:52 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:03:52 PM: RenderMatches - 69 ms
+5/6/2015 11:03:52 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:04:00 PM: Cropping - 89 ms
+5/6/2015 11:04:01 PM: MergeImages - 8874 ms
+5/6/2015 11:04:51 PM: RenderMatches - 66 ms
+5/6/2015 11:04:51 PM: RenderMatches - 74 ms
+5/6/2015 11:04:51 PM: RenderMatches - 61 ms
+5/6/2015 11:04:51 PM: RenderMatches - 62 ms
+5/6/2015 11:04:51 PM: RenderMatches - 68 ms
+5/6/2015 11:04:51 PM: RenderMatches - 66 ms
+5/6/2015 11:04:51 PM: RenderMatches - 68 ms
+5/6/2015 11:04:52 PM: RenderMatches - 68 ms
+5/6/2015 11:04:52 PM: RenderMatches - 73 ms
+5/6/2015 11:04:53 PM: RenderMatches - 1941 ms
+5/6/2015 11:04:53 PM: RenderMatches - 91 ms
+5/6/2015 11:04:53 PM: RenderMatches - 90 ms
+5/6/2015 11:04:53 PM: RenderMatches - 84 ms
+5/6/2015 11:04:54 PM: RenderMatches - 66 ms
+5/6/2015 11:04:54 PM: RenderMatches - 67 ms
+5/6/2015 11:04:54 PM: RenderMatches - 69 ms
+5/6/2015 11:04:54 PM: RenderMatches - 67 ms
+5/6/2015 11:04:54 PM: RenderMatches - 95 ms
+5/6/2015 11:04:55 PM: RenderMatches - 309 ms
+5/6/2015 11:04:55 PM: RenderMatches - 130 ms
+5/6/2015 11:04:55 PM: RenderMatches - 98 ms
+5/6/2015 11:04:55 PM: RenderMatches - 89 ms
+5/6/2015 11:04:55 PM: RenderMatches - 99 ms
+5/6/2015 11:04:56 PM: RenderMatches - 88 ms
+5/6/2015 11:04:56 PM: RenderMatches - 113 ms
+5/6/2015 11:04:56 PM: RenderMatches - 97 ms
+5/6/2015 11:04:56 PM: RenderMatches - 96 ms
+5/6/2015 11:04:56 PM: RenderMatches - 91 ms
+5/6/2015 11:04:56 PM: RenderMatches - 93 ms
+5/6/2015 11:04:57 PM: RenderMatches - 1231 ms
+5/6/2015 11:04:57 PM: RenderMatches - 111 ms
+5/6/2015 11:04:57 PM: RenderMatches - 112 ms
+5/6/2015 11:04:57 PM: RenderMatches - 142 ms
+5/6/2015 11:04:58 PM: RenderMatches - 218 ms
+5/6/2015 11:04:58 PM: RenderMatches - 136 ms
+5/6/2015 11:04:58 PM: RenderMatches - 170 ms
+5/6/2015 11:04:58 PM: RenderMatches - 161 ms
+5/6/2015 11:04:58 PM: RenderMatches - 96 ms
+5/6/2015 11:04:58 PM: RenderMatches - 82 ms
+5/6/2015 11:04:58 PM: RenderMatches - 80 ms
+5/6/2015 11:04:59 PM: RenderMatches - 77 ms
+5/6/2015 11:04:59 PM: RenderMatches - 77 ms
+5/6/2015 11:04:59 PM: RenderMatches - 73 ms
+5/6/2015 11:04:59 PM: RenderMatches - 70 ms
+5/6/2015 11:04:59 PM: RenderMatches - 67 ms
+5/6/2015 11:04:59 PM: RenderMatches - 65 ms
+5/6/2015 11:04:59 PM: RenderMatches - 64 ms
+5/6/2015 11:04:59 PM: RenderMatches - 61 ms
+5/6/2015 11:04:59 PM: RenderMatches - 91 ms
+5/6/2015 11:04:59 PM: RenderMatches - 80 ms
+5/6/2015 11:04:59 PM: RenderMatches - 65 ms
+5/6/2015 11:05:00 PM: RenderMatches - 86 ms
+5/6/2015 11:05:00 PM: RenderMatches - 73 ms
+5/6/2015 11:05:01 PM: RenderMatches - 116 ms
+5/6/2015 11:05:01 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:05:01 PM: RenderMatches - 67 ms
+5/6/2015 11:05:01 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:05:06 PM: RenderMatches - 97 ms
+5/6/2015 11:05:06 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:05:06 PM: RenderMatches - 136 ms
+5/6/2015 11:05:06 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:05:07 PM: RenderMatches - 78 ms
+5/6/2015 11:05:07 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:05:07 PM: RenderMatches - 65 ms
+5/6/2015 11:05:07 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:05:10 PM: RenderMatches - 69 ms
+5/6/2015 11:05:10 PM: RenderMatches - 68 ms
+5/6/2015 11:05:10 PM: RenderMatches - 71 ms
+5/6/2015 11:05:10 PM: RenderMatches - 63 ms
+5/6/2015 11:05:10 PM: RenderMatches - 71 ms
+5/6/2015 11:05:10 PM: RenderMatches - 64 ms
+5/6/2015 11:05:10 PM: RenderMatches - 100 ms
+5/6/2015 11:05:10 PM: RenderMatches - 63 ms
+5/6/2015 11:05:11 PM: RenderMatches - 87 ms
+5/6/2015 11:05:11 PM: RenderMatches - 74 ms
+5/6/2015 11:05:11 PM: RenderMatches - 61 ms
+5/6/2015 11:05:11 PM: RenderMatches - 79 ms
+5/6/2015 11:05:11 PM: RenderMatches - 106 ms
+5/6/2015 11:05:11 PM: RenderMatches - 72 ms
+5/6/2015 11:05:11 PM: RenderMatches - 94 ms
+5/6/2015 11:05:12 PM: RenderMatches - 111 ms
+5/6/2015 11:05:12 PM: RenderMatches - 82 ms
+5/6/2015 11:05:12 PM: RenderMatches - 101 ms
+5/6/2015 11:05:12 PM: RenderMatches - 196 ms
+5/6/2015 11:05:12 PM: RenderMatches - 167 ms
+5/6/2015 11:05:13 PM: RenderMatches - 82 ms
+5/6/2015 11:05:13 PM: RenderMatches - 79 ms
+5/6/2015 11:05:13 PM: RenderMatches - 113 ms
+5/6/2015 11:05:13 PM: RenderMatches - 254 ms
+5/6/2015 11:05:13 PM: RenderMatches - 195 ms
+5/6/2015 11:05:14 PM: RenderMatches - 337 ms
+5/6/2015 11:05:14 PM: RenderMatches - 502 ms
+5/6/2015 11:05:14 PM: RenderMatches - 211 ms
+5/6/2015 11:05:15 PM: RenderMatches - 128 ms
+5/6/2015 11:05:15 PM: RenderMatches - 69 ms
+5/6/2015 11:05:15 PM: RenderMatches - 410 ms
+5/6/2015 11:05:15 PM: RenderMatches - 152 ms
+5/6/2015 11:05:16 PM: RenderMatches - 233 ms
+5/6/2015 11:05:16 PM: RenderMatches - 65 ms
+5/6/2015 11:05:16 PM: RenderMatches - 63 ms
+5/6/2015 11:05:16 PM: RenderMatches - 59 ms
+5/6/2015 11:05:16 PM: RenderMatches - 313 ms
+5/6/2015 11:05:16 PM: RenderMatches - 97 ms
+5/6/2015 11:05:17 PM: RenderMatches - 60 ms
+5/6/2015 11:05:17 PM: RenderMatches - 53 ms
+5/6/2015 11:05:34 PM: InitStitcher - 181 ms
+5/6/2015 11:05:34 PM: RenderMatches - 19 ms
+5/6/2015 11:05:39 PM: Cropping - 5 ms
+5/6/2015 11:05:39 PM: MergeImages - 388 ms
+5/6/2015 11:05:52 PM: RenderMatches - 33 ms
+5/6/2015 11:05:52 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:05:52 PM: RenderMatches - 25 ms
+5/6/2015 11:05:52 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:05:54 PM: RenderMatches - 30 ms
+5/6/2015 11:05:54 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:05:54 PM: RenderMatches - 24 ms
+5/6/2015 11:05:54 PM: OutputMatchDistance - 0 ms
+5/6/2015 11:06:00 PM: RenderMatches - 29 ms
+5/6/2015 11:06:00 PM: RenderMatches - 25 ms
+5/6/2015 11:06:00 PM: RenderMatches - 24 ms
+5/6/2015 11:06:00 PM: RenderMatches - 50 ms
+5/6/2015 11:06:00 PM: RenderMatches - 25 ms
+5/6/2015 11:06:00 PM: RenderMatches - 22 ms
+5/6/2015 11:06:00 PM: RenderMatches - 22 ms
+5/6/2015 11:06:00 PM: RenderMatches - 25 ms
+5/6/2015 11:06:00 PM: RenderMatches - 23 ms
+5/6/2015 11:06:01 PM: RenderMatches - 21 ms
+5/6/2015 11:06:01 PM: RenderMatches - 23 ms
+5/6/2015 11:06:01 PM: RenderMatches - 25 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:01 PM: RenderMatches - 35 ms
+5/6/2015 11:06:01 PM: RenderMatches - 23 ms
+5/6/2015 11:06:01 PM: RenderMatches - 24 ms
+5/6/2015 11:06:01 PM: RenderMatches - 23 ms
+5/6/2015 11:06:01 PM: RenderMatches - 26 ms
+5/6/2015 11:06:01 PM: RenderMatches - 21 ms
+5/6/2015 11:06:01 PM: RenderMatches - 23 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:01 PM: RenderMatches - 23 ms
+5/6/2015 11:06:01 PM: RenderMatches - 26 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:01 PM: RenderMatches - 24 ms
+5/6/2015 11:06:01 PM: RenderMatches - 23 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:01 PM: RenderMatches - 23 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:01 PM: RenderMatches - 21 ms
+5/6/2015 11:06:01 PM: RenderMatches - 22 ms
+5/6/2015 11:06:02 PM: RenderMatches - 47 ms
+5/6/2015 11:06:02 PM: RenderMatches - 22 ms
+5/6/2015 11:06:02 PM: RenderMatches - 23 ms
+5/6/2015 11:06:02 PM: RenderMatches - 21 ms
+5/6/2015 11:06:02 PM: RenderMatches - 22 ms
+5/6/2015 11:06:02 PM: RenderMatches - 22 ms
+5/6/2015 11:06:02 PM: RenderMatches - 23 ms
+5/6/2015 11:06:02 PM: RenderMatches - 23 ms
+5/6/2015 11:06:02 PM: RenderMatches - 23 ms
+5/6/2015 11:06:02 PM: RenderMatches - 23 ms
+5/6/2015 11:06:02 PM: RenderMatches - 24 ms
+5/6/2015 11:06:02 PM: RenderMatches - 23 ms
+5/6/2015 11:06:02 PM: RenderMatches - 22 ms
+5/6/2015 11:06:02 PM: RenderMatches - 23 ms
+5/6/2015 11:06:02 PM: RenderMatches - 23 ms
+5/6/2015 11:06:02 PM: RenderMatches - 22 ms
+5/6/2015 11:06:02 PM: RenderMatches - 38 ms
+5/6/2015 11:06:02 PM: RenderMatches - 29 ms
+5/6/2015 11:06:03 PM: RenderMatches - 32 ms
+5/6/2015 11:06:03 PM: RenderMatches - 35 ms
+5/6/2015 11:06:03 PM: RenderMatches - 41 ms
+5/6/2015 11:06:03 PM: RenderMatches - 27 ms
+5/6/2015 11:06:03 PM: RenderMatches - 28 ms
+5/6/2015 11:06:03 PM: RenderMatches - 111 ms
+5/6/2015 11:06:03 PM: RenderMatches - 27 ms
+5/6/2015 11:06:03 PM: RenderMatches - 25 ms
+5/6/2015 11:06:03 PM: RenderMatches - 72 ms
+5/6/2015 11:06:03 PM: RenderMatches - 81 ms
+5/6/2015 11:06:03 PM: RenderMatches - 23 ms
+5/6/2015 11:06:03 PM: RenderMatches - 22 ms
+5/6/2015 11:06:03 PM: RenderMatches - 22 ms
+5/6/2015 11:06:04 PM: RenderMatches - 21 ms
+5/6/2015 11:06:04 PM: RenderMatches - 23 ms
+5/6/2015 11:06:04 PM: RenderMatches - 22 ms
+5/6/2015 11:06:04 PM: RenderMatches - 22 ms
+5/6/2015 11:06:04 PM: RenderMatches - 22 ms
+5/6/2015 11:06:04 PM: RenderMatches - 21 ms
+5/6/2015 11:06:04 PM: RenderMatches - 24 ms
+5/6/2015 11:06:04 PM: RenderMatches - 42 ms
+5/6/2015 11:06:04 PM: RenderMatches - 30 ms
+5/6/2015 11:06:04 PM: RenderMatches - 30 ms
+5/6/2015 11:06:04 PM: RenderMatches - 26 ms
+5/6/2015 11:06:04 PM: RenderMatches - 26 ms
+5/6/2015 11:06:04 PM: RenderMatches - 31 ms
+5/6/2015 11:06:04 PM: RenderMatches - 43 ms
+5/6/2015 11:06:04 PM: RenderMatches - 27 ms
+5/6/2015 11:06:04 PM: RenderMatches - 30 ms
+5/6/2015 11:06:05 PM: RenderMatches - 120 ms
+5/6/2015 11:06:05 PM: RenderMatches - 41 ms
+5/6/2015 11:06:05 PM: RenderMatches - 68 ms
+5/6/2015 11:06:05 PM: RenderMatches - 52 ms
+5/6/2015 11:06:05 PM: RenderMatches - 28 ms
+5/6/2015 11:06:05 PM: RenderMatches - 30 ms
+5/6/2015 11:06:05 PM: RenderMatches - 23 ms
+5/6/2015 11:06:05 PM: RenderMatches - 23 ms
+5/6/2015 11:06:06 PM: RenderMatches - 24 ms
+5/6/2015 11:06:06 PM: RenderMatches - 24 ms
+5/6/2015 11:06:06 PM: RenderMatches - 24 ms
+5/6/2015 11:06:06 PM: RenderMatches - 25 ms
+5/6/2015 11:06:06 PM: RenderMatches - 31 ms
+5/6/2015 11:06:06 PM: RenderMatches - 23 ms
+5/6/2015 11:06:06 PM: RenderMatches - 21 ms
+5/6/2015 11:06:06 PM: RenderMatches - 25 ms
+5/6/2015 11:06:06 PM: RenderMatches - 23 ms
+5/6/2015 11:06:06 PM: RenderMatches - 21 ms
+5/6/2015 11:06:06 PM: RenderMatches - 27 ms
+5/6/2015 11:06:06 PM: RenderMatches - 23 ms
+5/6/2015 11:06:06 PM: RenderMatches - 26 ms
+5/6/2015 11:06:06 PM: RenderMatches - 30 ms
+5/6/2015 11:06:07 PM: RenderMatches - 33 ms
+5/6/2015 11:06:07 PM: RenderMatches - 29 ms
+5/6/2015 11:06:07 PM: RenderMatches - 25 ms
+5/6/2015 11:06:07 PM: RenderMatches - 24 ms
+5/6/2015 11:06:07 PM: RenderMatches - 25 ms
+5/6/2015 11:06:07 PM: RenderMatches - 25 ms
+5/6/2015 11:06:07 PM: RenderMatches - 24 ms
+5/6/2015 11:06:07 PM: RenderMatches - 23 ms
+5/6/2015 11:06:07 PM: RenderMatches - 24 ms
+5/6/2015 11:06:07 PM: RenderMatches - 25 ms
+5/6/2015 11:06:07 PM: RenderMatches - 24 ms
+5/6/2015 11:06:07 PM: RenderMatches - 23 ms
+5/6/2015 11:06:07 PM: RenderMatches - 24 ms
+5/6/2015 11:06:07 PM: RenderMatches - 25 ms
+5/6/2015 11:06:07 PM: RenderMatches - 22 ms
+5/6/2015 11:06:07 PM: RenderMatches - 22 ms
+5/6/2015 11:06:07 PM: RenderMatches - 23 ms
+5/6/2015 11:06:07 PM: RenderMatches - 35 ms
+5/6/2015 11:06:07 PM: RenderMatches - 27 ms
+5/6/2015 11:06:07 PM: RenderMatches - 25 ms
+5/6/2015 11:06:07 PM: RenderMatches - 23 ms
+5/6/2015 11:06:07 PM: RenderMatches - 24 ms
+5/6/2015 11:06:07 PM: RenderMatches - 23 ms
+5/6/2015 11:06:07 PM: RenderMatches - 24 ms
+5/6/2015 11:06:07 PM: RenderMatches - 25 ms
+5/6/2015 11:06:07 PM: RenderMatches - 26 ms
+5/6/2015 11:06:07 PM: RenderMatches - 23 ms
+5/6/2015 11:06:08 PM: RenderMatches - 22 ms
+5/6/2015 11:06:08 PM: RenderMatches - 19 ms
+5/6/2015 11:06:08 PM: RenderMatches - 22 ms
+5/6/2015 11:06:08 PM: RenderMatches - 21 ms
+5/6/2015 11:06:08 PM: RenderMatches - 19 ms
+5/6/2015 11:06:08 PM: RenderMatches - 25 ms
+5/6/2015 11:06:08 PM: RenderMatches - 26 ms
+5/6/2015 11:06:08 PM: RenderMatches - 26 ms
+5/6/2015 11:06:08 PM: RenderMatches - 26 ms
+5/6/2015 11:06:08 PM: RenderMatches - 21 ms
+5/6/2015 11:06:08 PM: RenderMatches - 26 ms
+5/6/2015 11:06:08 PM: RenderMatches - 23 ms
+5/6/2015 11:06:08 PM: RenderMatches - 37 ms
+5/6/2015 11:06:09 PM: RenderMatches - 25 ms
+5/6/2015 11:06:09 PM: RenderMatches - 31 ms
+5/6/2015 11:06:09 PM: RenderMatches - 119 ms
+5/6/2015 11:06:09 PM: RenderMatches - 66 ms
+5/6/2015 11:06:09 PM: RenderMatches - 24 ms
+5/6/2015 11:06:09 PM: RenderMatches - 25 ms
+5/6/2015 11:06:09 PM: RenderMatches - 45 ms
+5/6/2015 11:06:09 PM: RenderMatches - 50 ms
+5/6/2015 11:06:09 PM: RenderMatches - 26 ms
+5/6/2015 11:06:09 PM: RenderMatches - 23 ms
+5/6/2015 11:06:09 PM: RenderMatches - 21 ms
+5/6/2015 11:06:09 PM: RenderMatches - 21 ms
+5/6/2015 11:06:09 PM: RenderMatches - 21 ms
+5/6/2015 11:06:09 PM: RenderMatches - 18 ms
+5/6/2015 11:06:10 PM: RenderMatches - 18 ms
+5/6/2015 11:06:10 PM: RenderMatches - 19 ms
+5/6/2015 11:06:10 PM: RenderMatches - 23 ms
+5/6/2015 11:06:10 PM: RenderMatches - 26 ms
+5/6/2015 11:06:10 PM: RenderMatches - 33 ms
+5/6/2015 11:06:10 PM: RenderMatches - 27 ms
+5/6/2015 11:06:10 PM: RenderMatches - 25 ms
+5/6/2015 11:06:10 PM: RenderMatches - 30 ms
+5/6/2015 11:06:10 PM: RenderMatches - 24 ms
+5/6/2015 11:06:10 PM: RenderMatches - 25 ms
+5/6/2015 11:06:10 PM: RenderMatches - 22 ms
+5/6/2015 11:06:10 PM: RenderMatches - 46 ms
+5/6/2015 11:06:10 PM: RenderMatches - 22 ms
+5/6/2015 11:06:10 PM: RenderMatches - 23 ms
+5/6/2015 11:06:10 PM: RenderMatches - 25 ms
+5/6/2015 11:06:10 PM: RenderMatches - 21 ms
+5/6/2015 11:06:10 PM: RenderMatches - 34 ms
+5/6/2015 11:06:10 PM: RenderMatches - 27 ms
+5/6/2015 11:06:10 PM: RenderMatches - 24 ms
+5/6/2015 11:06:10 PM: RenderMatches - 20 ms
+5/6/2015 11:06:11 PM: RenderMatches - 27 ms
+5/6/2015 11:06:11 PM: RenderMatches - 25 ms
+5/6/2015 11:06:11 PM: RenderMatches - 22 ms
+5/6/2015 11:06:11 PM: RenderMatches - 20 ms
+5/6/2015 11:06:11 PM: RenderMatches - 20 ms
+5/7/2015 10:01:04 AM: 
+
+****************Application started at 5/7/2015 10:01:04 AM*************
+
+
+5/7/2015 10:01:22 AM: InitStitcher - 6872 ms
+5/7/2015 10:01:22 AM: RenderMatches - 29 ms
+5/7/2015 10:01:25 AM: RenderMatches - 51 ms
+5/7/2015 10:01:25 AM: OutputMatchDistance - 48 ms
+5/7/2015 10:01:25 AM: RenderMatches - 49 ms
+5/7/2015 10:01:25 AM: OutputMatchDistance - 0 ms
+5/7/2015 10:01:26 AM: RenderMatches - 47 ms
+5/7/2015 10:01:26 AM: OutputMatchDistance - 0 ms
+5/7/2015 10:01:29 AM: MergeImages - 1632 ms
