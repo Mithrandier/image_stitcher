@@ -1,9 +1,0 @@
-C:\Users\Andrew\Documents\Work\image_stitcher\Matcher\bin\Debug\Matcher.dll
-C:\Users\Andrew\Documents\Work\image_stitcher\Matcher\bin\Debug\Matcher.pdb
-C:\Users\Andrew\Documents\Work\image_stitcher\Matcher\bin\Debug\Emgu.CV.dll
-C:\Users\Andrew\Documents\Work\image_stitcher\Matcher\bin\Debug\Emgu.Util.dll
-C:\Users\Andrew\Documents\Work\image_stitcher\Matcher\bin\Debug\Emgu.CV.xml
-C:\Users\Andrew\Documents\Work\image_stitcher\Matcher\bin\Debug\Emgu.Util.xml
-C:\Users\Andrew\Documents\Work\image_stitcher\Matcher\obj\Debug\Matcher.dll
-C:\Users\Andrew\Documents\Work\image_stitcher\Matcher\obj\Debug\Matcher.pdb
-C:\Users\Andrew\Documents\Work\image_stitcher\Matcher\obj\Debug\Matcher.csprojResolveAssemblyReference.cache

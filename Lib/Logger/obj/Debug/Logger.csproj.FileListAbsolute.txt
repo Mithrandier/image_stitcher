@@ -1,8 +1,0 @@
-C:\Users\Andrew\Documents\Work\image_stitcher\Logger\bin\Debug\Logger.dll
-C:\Users\Andrew\Documents\Work\image_stitcher\Logger\bin\Debug\Logger.pdb
-C:\Users\Andrew\Documents\Work\image_stitcher\Logger\obj\Debug\Logger.dll
-C:\Users\Andrew\Documents\Work\image_stitcher\Logger\obj\Debug\Logger.pdb
-C:\Users\Andrew\Documents\Work\image_stitcher\Lib\Logger\bin\Debug\Logger.dll
-C:\Users\Andrew\Documents\Work\image_stitcher\Lib\Logger\bin\Debug\Logger.pdb
-C:\Users\Andrew\Documents\Work\image_stitcher\Lib\Logger\obj\Debug\Logger.dll
-C:\Users\Andrew\Documents\Work\image_stitcher\Lib\Logger\obj\Debug\Logger.pdb
