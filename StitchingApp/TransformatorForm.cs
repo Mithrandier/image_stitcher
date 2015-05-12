@@ -105,6 +105,10 @@ namespace TransformatorExample {
       tabControlMain.SelectedTab = tabPageMerging;
     }
 
+    private void buttonGotoFiles_Click(object sender, EventArgs e) {
+      tabControlMain.SelectedTab = tabPageSegments;
+    }
+
     //
     // MERGING
     //
@@ -115,6 +119,10 @@ namespace TransformatorExample {
       if (savePanDialog.ShowDialog() != DialogResult.OK)
         return;
       pictureMerged.Image.Save(savePanDialog.FileName);
+    }
+
+    private void button2_Click(object sender, EventArgs e) {
+      tabControlMain.SelectedTab = tabPageMatching;
     }
 
     //
@@ -152,6 +160,10 @@ namespace TransformatorExample {
       LogTime("MergeImages", () => {
         picturebox_merging.Image = stitcher.StitchAll();
       });
+    }
+
+    private void TransformatorForm_Load(object sender, EventArgs e) {
+
     }
   }
 }
