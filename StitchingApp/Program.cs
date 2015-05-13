@@ -13,7 +13,7 @@ namespace TransformatorExample {
     static void Main() {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new TransformatorForm());
+      Application.Run(new MainForm());
     }
   }
 }
