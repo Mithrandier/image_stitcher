@@ -25,12 +25,12 @@
     private void InitializeComponent() {
       this.scrollLimit = new System.Windows.Forms.HScrollBar();
       this.label3 = new System.Windows.Forms.Label();
-      this.savePanDialog = new System.Windows.Forms.SaveFileDialog();
       this.pictureMerged = new System.Windows.Forms.PictureBox();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageSegments = new System.Windows.Forms.TabPage();
+      this.buttonClearSegment = new System.Windows.Forms.Button();
+      this.imagesContainer = new System.Windows.Forms.ListView();
       this.buttonGotoMatching = new System.Windows.Forms.Button();
-      this.listFiles = new System.Windows.Forms.ListView();
       this.buttonAddSegments = new System.Windows.Forms.Button();
       this.tabPageMatching = new System.Windows.Forms.TabPage();
       this.buttonBackToFiles = new System.Windows.Forms.Button();
@@ -45,7 +45,6 @@
       this.tabPageMerging = new System.Windows.Forms.TabPage();
       this.buttonBackToMatching = new System.Windows.Forms.Button();
       this.buttonSavePan = new System.Windows.Forms.Button();
-      this.addSegmentsDialog = new System.Windows.Forms.OpenFileDialog();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMerged)).BeginInit();
       this.tabControlMain.SuspendLayout();
       this.tabPageSegments.SuspendLayout();
@@ -98,8 +97,9 @@
       // tabPageSegments
       // 
       this.tabPageSegments.BackColor = System.Drawing.Color.Silver;
+      this.tabPageSegments.Controls.Add(this.buttonClearSegment);
+      this.tabPageSegments.Controls.Add(this.imagesContainer);
       this.tabPageSegments.Controls.Add(this.buttonGotoMatching);
-      this.tabPageSegments.Controls.Add(this.listFiles);
       this.tabPageSegments.Controls.Add(this.buttonAddSegments);
       this.tabPageSegments.Location = new System.Drawing.Point(4, 22);
       this.tabPageSegments.Name = "tabPageSegments";
@@ -107,6 +107,32 @@
       this.tabPageSegments.Size = new System.Drawing.Size(857, 515);
       this.tabPageSegments.TabIndex = 2;
       this.tabPageSegments.Text = "Segments";
+      // 
+      // buttonClearSegment
+      // 
+      this.buttonClearSegment.BackColor = System.Drawing.Color.Transparent;
+      this.buttonClearSegment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.buttonClearSegment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonClearSegment.ForeColor = System.Drawing.Color.Black;
+      this.buttonClearSegment.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+      this.buttonClearSegment.Location = new System.Drawing.Point(8, 198);
+      this.buttonClearSegment.Name = "buttonClearSegment";
+      this.buttonClearSegment.Size = new System.Drawing.Size(157, 140);
+      this.buttonClearSegment.TabIndex = 5;
+      this.buttonClearSegment.Text = "Clear";
+      this.buttonClearSegment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+      this.buttonClearSegment.UseVisualStyleBackColor = false;
+      this.buttonClearSegment.Click += new System.EventHandler(this.buttonClearSegment_Click);
+      // 
+      // imagesContainer
+      // 
+      this.imagesContainer.Location = new System.Drawing.Point(171, 6);
+      this.imagesContainer.Name = "imagesContainer";
+      this.imagesContainer.ShowGroups = false;
+      this.imagesContainer.ShowItemToolTips = true;
+      this.imagesContainer.Size = new System.Drawing.Size(678, 501);
+      this.imagesContainer.TabIndex = 4;
+      this.imagesContainer.UseCompatibleStateImageBehavior = false;
       // 
       // buttonGotoMatching
       // 
@@ -116,22 +142,13 @@
       this.buttonGotoMatching.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonGotoMatching.ForeColor = System.Drawing.Color.Black;
       this.buttonGotoMatching.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-      this.buttonGotoMatching.Location = new System.Drawing.Point(89, 6);
+      this.buttonGotoMatching.Location = new System.Drawing.Point(8, 6);
       this.buttonGotoMatching.Name = "buttonGotoMatching";
-      this.buttonGotoMatching.Size = new System.Drawing.Size(76, 41);
+      this.buttonGotoMatching.Size = new System.Drawing.Size(157, 41);
       this.buttonGotoMatching.TabIndex = 2;
       this.buttonGotoMatching.Text = "Next";
       this.buttonGotoMatching.UseVisualStyleBackColor = false;
       this.buttonGotoMatching.Click += new System.EventHandler(this.buttonGotoMatching_Click);
-      // 
-      // listFiles
-      // 
-      this.listFiles.Location = new System.Drawing.Point(173, 6);
-      this.listFiles.Name = "listFiles";
-      this.listFiles.Size = new System.Drawing.Size(676, 501);
-      this.listFiles.TabIndex = 1;
-      this.listFiles.UseCompatibleStateImageBehavior = false;
-      this.listFiles.View = System.Windows.Forms.View.List;
       // 
       // buttonAddSegments
       // 
@@ -140,9 +157,9 @@
       this.buttonAddSegments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonAddSegments.ForeColor = System.Drawing.Color.Black;
       this.buttonAddSegments.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-      this.buttonAddSegments.Location = new System.Drawing.Point(8, 6);
+      this.buttonAddSegments.Location = new System.Drawing.Point(8, 53);
       this.buttonAddSegments.Name = "buttonAddSegments";
-      this.buttonAddSegments.Size = new System.Drawing.Size(76, 41);
+      this.buttonAddSegments.Size = new System.Drawing.Size(157, 139);
       this.buttonAddSegments.TabIndex = 0;
       this.buttonAddSegments.Text = "Add..";
       this.buttonAddSegments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -296,11 +313,6 @@
       this.buttonSavePan.UseVisualStyleBackColor = false;
       this.buttonSavePan.Click += new System.EventHandler(this.buttonSavePan_Click);
       // 
-      // addSegmentsDialog
-      // 
-      this.addSegmentsDialog.FileName = "openFileDialog1";
-      this.addSegmentsDialog.Multiselect = true;
-      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,7 +323,6 @@
       this.KeyPreview = true;
       this.Name = "MainForm";
       this.Text = "Image Transformator";
-      this.Load += new System.EventHandler(this.TransformatorForm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.pictureMerged)).EndInit();
       this.tabControlMain.ResumeLayout(false);
       this.tabPageSegments.ResumeLayout(false);
@@ -329,7 +340,6 @@
     private System.Windows.Forms.HScrollBar scrollLimit;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.PictureBox pictureMerged;
-    private System.Windows.Forms.SaveFileDialog savePanDialog;
     private System.Windows.Forms.TabControl tabControlMain;
     private System.Windows.Forms.TabPage tabPageMatching;
     private System.Windows.Forms.TabPage tabPageMerging;
@@ -337,18 +347,18 @@
     private System.Windows.Forms.Button buttonAddSegments;
     private System.Windows.Forms.Button buttonSavePan;
     private System.Windows.Forms.Button buttonGotoMerge;
-    private System.Windows.Forms.OpenFileDialog addSegmentsDialog;
     private System.Windows.Forms.ListBox listSegmentsMatchLeft;
     private System.Windows.Forms.ListBox listSegmentsMatchRight;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.TextBox textMatchDistance;
     private System.Windows.Forms.TextBox textTimer;
-    private System.Windows.Forms.ListView listFiles;
     private System.Windows.Forms.Button buttonGotoMatching;
     private System.Windows.Forms.PictureBox pictureMatches;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Button buttonBackToFiles;
     private System.Windows.Forms.Button buttonBackToMatching;
+    private System.Windows.Forms.ListView imagesContainer;
+    private System.Windows.Forms.Button buttonClearSegment;
   }
 }
 

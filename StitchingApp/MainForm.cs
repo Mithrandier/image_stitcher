@@ -13,16 +13,14 @@ using FormTools;
 namespace TransformatorExample {
   public partial class MainForm : BaseForm {
     BrowseablePicture picturebox_matching, picturebox_merging;
-    Segment[] segments;
+    ImageFilesController images_ctrl;
 
     public MainForm() {
       Logger.Logger.Info(String.Format("\n\n****************Application started at {0}*************\n\n", DateTime.Now));
       InitializeComponent();
       picturebox_matching = new BrowseablePicture(this, this.pictureMatches);
       picturebox_merging = new BrowseablePicture(this, this.pictureMerged);
-      initSegmentsLoading();
-      if (StitcherReady())
-        MergeImages();
+      images_ctrl = new ImageFilesController(imagesContainer);
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
@@ -43,32 +41,32 @@ namespace TransformatorExample {
 
     const int MINIMUM_SEGMENTS = 2;
     void initSegmentsLoading() {
-      var dialog = addSegmentsDialog;
-      if (dialog.ShowDialog() != DialogResult.OK)
-        return;
-      var filenames = dialog.FileNames;
-      if (filenames.Length < MINIMUM_SEGMENTS)
-        return;
-      listFiles.Items.Clear();
-      foreach (var filename in filenames)
-        listFiles.Items.Add(filename);
-      this.stitcher = null;
-      this.segments = filenames.Select((f) => new Segment(f)).ToArray();
-      InitializeSegmentsList();
-      InitStitcher();
-      SetLimit(scrollLimit.Value);
-      RenderMatches();
-      scrollLimit.Enabled = true;
-      buttonGotoMatching.Enabled = true;
-      buttonGotoMerge.Enabled = true;
+      images_ctrl.LoadMore((filenames, bitmaps) => {
+        InitStitcher();
+        //InitializeSegmentsList();
+        //InitializeMatchSegmentsList();
+        //SetLimit(scrollLimit.Value);
+        //RenderMatches();
+        scrollLimit.Enabled = true;
+        buttonGotoMatching.Enabled = true;
+        buttonGotoMerge.Enabled = true;
+      });
     }
 
-    void InitializeSegmentsList() {
+    void InitializeSegmentsList() {      
       listSegmentsMatchLeft.Items.Clear();
-      foreach (var segment in segments) {
+      foreach (var segment in images_ctrl.Images) {
         listSegmentsMatchLeft.Items.Add(segment);
       }
       listSegmentsMatchLeft.SelectedIndex = 0;
+    }
+
+    void InitializeMatchSegmentsList() {
+      listSegmentsMatchRight.Items.Clear();
+      for (var i_item = 0; i_item < listSegmentsMatchLeft.Items.Count; i_item++)
+        if (i_item != listSegmentsMatchLeft.SelectedIndex)
+          listSegmentsMatchRight.Items.Add(listSegmentsMatchLeft.Items[i_item]);
+      listSegmentsMatchRight.SelectedIndex = 0;
     }
 
     Segment CurrentSegment {
@@ -80,15 +78,15 @@ namespace TransformatorExample {
     }
 
     private void listSegmentsMatchLeft_SelectedIndexChanged(object sender, EventArgs e) {
-      listSegmentsMatchRight.Items.Clear();
-      for (var i_item = 0; i_item < listSegmentsMatchLeft.Items.Count; i_item++)
-        if (i_item != listSegmentsMatchLeft.SelectedIndex)
-          listSegmentsMatchRight.Items.Add(listSegmentsMatchLeft.Items[i_item]);
-      listSegmentsMatchRight.SelectedIndex = 0;
+      if (!StitcherReady())
+        return;
+      InitializeMatchSegmentsList();
       UpdateCurrentMatch();
     }
 
     private void listSegmentsMatchRight_SelectedIndexChanged(object sender, EventArgs e) {
+      if (!StitcherReady())
+        return;
       UpdateCurrentMatch();
     }
 
@@ -99,6 +97,10 @@ namespace TransformatorExample {
 
     private void buttonGotoMatching_Click(object sender, EventArgs e) {
       tabControlMain.SelectedTab = tabPageMatching;
+    }
+
+    private void buttonClearSegment_Click(object sender, EventArgs e) {
+      images_ctrl.ClearAll();
     }
 
     //
@@ -127,9 +129,7 @@ namespace TransformatorExample {
     }
 
     void initPanoramaSaving() {
-      if (savePanDialog.ShowDialog() != DialogResult.OK)
-        return;
-      pictureMerged.Image.Save(savePanDialog.FileName);
+      images_ctrl.SaveImage((Bitmap)pictureMerged.Image);
     }
 
     private void buttonBackToMatching_Click(object sender, EventArgs e) {
@@ -143,6 +143,7 @@ namespace TransformatorExample {
     Stitcher stitcher;
     void InitStitcher() {
       LogTime("InitStitcher", () => {
+        Segment[] segments = images_ctrl.FileNames.Select((f) => new Segment(f)).ToArray();
         this.stitcher = new Stitcher(segments);
       });
     }
@@ -173,10 +174,6 @@ namespace TransformatorExample {
       });
       tabControlMain.SelectedTab = tabPageMerging;
       buttonSavePan.Enabled = true;
-    }
-
-    private void TransformatorForm_Load(object sender, EventArgs e) {
-
     }
 
     //
