@@ -11,24 +11,38 @@ using Panoramas;
 using FormTools;
 
 namespace TransformatorExample {
-  public partial class TransformatorForm : BaseForm {
+  public partial class MainForm : BaseForm {
     BrowseablePicture picturebox_matching, picturebox_merging;
     Segment[] segments;
 
-    public TransformatorForm() {
+    public MainForm() {
       Logger.Logger.Info(String.Format("\n\n****************Application started at {0}*************\n\n", DateTime.Now));
       InitializeComponent();
       picturebox_matching = new BrowseablePicture(this, this.pictureMatches);
       picturebox_merging = new BrowseablePicture(this, this.pictureMerged);
-      return;
+      initSegmentsLoading();
+      if (StitcherReady())
+        MergeImages();
+    }
+
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
+      if (tabControlMain.SelectedTab == tabPageSegments && keyData == OpenFileShortCut)
+          initSegmentsLoading();
+      else if (tabControlMain.SelectedTab == tabPageMerging && keyData == SaveFileShortCut)
+          initPanoramaSaving();
+      return base.ProcessCmdKey(ref msg, keyData);
     }
 
     //
     // SEGMENTS
     //
 
-    const int MINIMUM_SEGMENTS = 2;
     private void buttonAddSegments_Click(object sender, EventArgs e) {
+      initSegmentsLoading();
+    }
+
+    const int MINIMUM_SEGMENTS = 2;
+    void initSegmentsLoading() {
       var dialog = addSegmentsDialog;
       if (dialog.ShowDialog() != DialogResult.OK)
         return;
@@ -45,6 +59,8 @@ namespace TransformatorExample {
       SetLimit(scrollLimit.Value);
       RenderMatches();
       scrollLimit.Enabled = true;
+      buttonGotoMatching.Enabled = true;
+      buttonGotoMerge.Enabled = true;
     }
 
     void InitializeSegmentsList() {
@@ -77,8 +93,6 @@ namespace TransformatorExample {
     }
 
     void UpdateCurrentMatch() {
-      if (!StitcherReady())
-        return;
       RenderMatches();
       OutputMatchDistance();
     }
@@ -92,17 +106,12 @@ namespace TransformatorExample {
     //
 
     private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
-      if (!StitcherReady())
-        return;
       SetLimit(scrollLimit.Value);
       RenderMatches();
     }
 
     private void buttonUseMatches_Click(object sender, EventArgs e) {
-      if (!StitcherReady())
-        return;
       MergeImages();
-      tabControlMain.SelectedTab = tabPageMerging;
     }
 
     private void buttonGotoFiles_Click(object sender, EventArgs e) {
@@ -114,14 +123,16 @@ namespace TransformatorExample {
     //
 
     private void buttonSavePan_Click(object sender, EventArgs e) {
-      if (pictureMerged.Image == null)
-        return;
+      initPanoramaSaving();
+    }
+
+    void initPanoramaSaving() {
       if (savePanDialog.ShowDialog() != DialogResult.OK)
         return;
       pictureMerged.Image.Save(savePanDialog.FileName);
     }
 
-    private void button2_Click(object sender, EventArgs e) {
+    private void buttonBackToMatching_Click(object sender, EventArgs e) {
       tabControlMain.SelectedTab = tabPageMatching;
     }
 
@@ -160,10 +171,25 @@ namespace TransformatorExample {
       LogTime("MergeImages", () => {
         picturebox_merging.Image = stitcher.StitchAll();
       });
+      tabControlMain.SelectedTab = tabPageMerging;
+      buttonSavePan.Enabled = true;
     }
 
     private void TransformatorForm_Load(object sender, EventArgs e) {
 
     }
+
+    //
+    // SHORTCUTS
+    //
+
+    Keys OpenFileShortCut {
+      get { return Keys.Control | Keys.O; }
+    }
+
+    Keys SaveFileShortCut {
+      get { return Keys.Control | Keys.S; }
+    }
+    
   }
 }
