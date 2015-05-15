@@ -22,8 +22,8 @@ namespace PanoramasBaseTests {
       return new Segment(VALID_FILE_NAME);
     }
 
-    public static SegmentsMatch ASegmentsMatch() {
-      return new SegmentsMatch(ASegment(), ASegment());
+    public static SegmentsPair ASegmentsMatch() {
+      return new SegmentsPair(ASegment(), ASegment());
     }
 
     public static Transformation ATransformation() {

@@ -8,36 +8,46 @@ using ImagesMatching;
 namespace Panoramas.Matching {
   public class MatchingController {
     public Segment[] AllSegments { get; private set; }
-    public List<SegmentsMatch> Matches { get; private set; }
+    public List<SegmentsPair> Matches { get; private set; }
 
     public MatchingController(Segment[] segments) {
       this.AllSegments = segments;
       this.Matches = GenerateMatches(segments);
     }
 
-    public SegmentsMatch MatchBetween(Segment base_segment, Segment query_segment) {
+    public SegmentsPair MatchBetween(Segment base_segment, Segment query_segment) {
       if (base_segment == query_segment || !AllSegments.Contains(base_segment) || !AllSegments.Contains(query_segment))
         throw new ArgumentException("Request for missing images");
       return Matches.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);
     }
 
-    public SegmentsMatch MatchBetween(String base_segment, String query_segment) {
+    public SegmentsPair MatchBetween(String base_segment, String query_segment) {
       var all_files = AllSegments.Select((s) => s.Filename);
       if (base_segment == query_segment || !all_files.Contains(base_segment) || !all_files.Contains(query_segment))
         throw new ArgumentException("Request for missing images");
       return Matches.Find((m) => m.BaseSegment.Filename == base_segment && m.QuerySegment.Filename == query_segment);
     }
 
-    static List<SegmentsMatch> GenerateMatches(Segment[] segments) {
+    static List<SegmentsPair> GenerateMatches(Segment[] segments) {
       var featured_segments = segments.Select((s) => s.Bitmap).ToArray();
-      var matches = new List<SegmentsMatch>();
-      for (int iBase = 0; iBase < segments.Length; iBase++)
+      var matches = new List<SegmentsPair>();
+      var matched_segments = new List<Segment>();
+      for (int iBase = 0; iBase < segments.Length; iBase++) {
+        var base_segment = segments[iBase];
         for (int iQuery = 0; iQuery < segments.Length; iQuery++) {
           if (iBase == iQuery)
             continue;
+          var matched_segment = segments[iQuery];
           var matcher = new ImagesMatching.Flann.Matcher(featured_segments[iBase], featured_segments[iQuery]);
-          matches.Add(new SegmentsMatch(segments[iBase], segments[iQuery], matcher));
+          var match = new SegmentsPair(base_segment, matched_segment, matcher.Match());
+          if (matched_segments.Contains(matched_segment)) {
+            var prev_match = matches.Find((m) => m.BaseSegment == matched_segment && m.QuerySegment == base_segment);
+            match.SetReversePair(prev_match);
+          }
+          matches.Add(match);
         }
+        matched_segments.Add(base_segment);
+      }
       return matches;
     }
 

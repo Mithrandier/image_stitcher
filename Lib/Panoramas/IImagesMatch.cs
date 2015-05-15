@@ -10,5 +10,7 @@ namespace Panoramas {
     Image ToImage();
     double Distance();
     void SetLimit(int percent);
+    int CurrentLimit();
+    bool IsActive { get; set; }
   }
 }

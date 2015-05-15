@@ -34,12 +34,11 @@
       this.buttonGotoMatching = new System.Windows.Forms.Button();
       this.buttonAddSegments = new System.Windows.Forms.Button();
       this.tabPageMatching = new System.Windows.Forms.TabPage();
+      this.checkBoxActiveMatch = new System.Windows.Forms.CheckBox();
       this.buttonResetMathPicture = new System.Windows.Forms.Button();
       this.buttonBackToFiles = new System.Windows.Forms.Button();
-      this.label2 = new System.Windows.Forms.Label();
       this.pictureMatches = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
-      this.textTimer = new System.Windows.Forms.TextBox();
       this.textMatchDistance = new System.Windows.Forms.TextBox();
       this.listSegmentsMatchRight = new System.Windows.Forms.ListBox();
       this.listSegmentsMatchLeft = new System.Windows.Forms.ListBox();
@@ -77,7 +76,7 @@
       // 
       // pictureMerged
       // 
-      this.pictureMerged.BackColor = System.Drawing.Color.White;
+      this.pictureMerged.BackColor = System.Drawing.Color.Black;
       this.pictureMerged.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.pictureMerged.Location = new System.Drawing.Point(169, 3);
       this.pictureMerged.Name = "pictureMerged";
@@ -191,13 +190,12 @@
       // tabPageMatching
       // 
       this.tabPageMatching.BackColor = System.Drawing.Color.Silver;
+      this.tabPageMatching.Controls.Add(this.checkBoxActiveMatch);
       this.tabPageMatching.Controls.Add(this.buttonResetMathPicture);
       this.tabPageMatching.Controls.Add(this.buttonBackToFiles);
-      this.tabPageMatching.Controls.Add(this.label2);
       this.tabPageMatching.Controls.Add(this.pictureMatches);
       this.tabPageMatching.Controls.Add(this.scrollLimit);
       this.tabPageMatching.Controls.Add(this.label1);
-      this.tabPageMatching.Controls.Add(this.textTimer);
       this.tabPageMatching.Controls.Add(this.textMatchDistance);
       this.tabPageMatching.Controls.Add(this.listSegmentsMatchRight);
       this.tabPageMatching.Controls.Add(this.listSegmentsMatchLeft);
@@ -208,6 +206,17 @@
       this.tabPageMatching.Size = new System.Drawing.Size(857, 515);
       this.tabPageMatching.TabIndex = 0;
       this.tabPageMatching.Text = "Matching";
+      // 
+      // checkBoxActiveMatch
+      // 
+      this.checkBoxActiveMatch.AutoSize = true;
+      this.checkBoxActiveMatch.Location = new System.Drawing.Point(87, 486);
+      this.checkBoxActiveMatch.Name = "checkBoxActiveMatch";
+      this.checkBoxActiveMatch.Size = new System.Drawing.Size(62, 17);
+      this.checkBoxActiveMatch.TabIndex = 18;
+      this.checkBoxActiveMatch.Text = "Active?";
+      this.checkBoxActiveMatch.UseVisualStyleBackColor = true;
+      this.checkBoxActiveMatch.CheckedChanged += new System.EventHandler(this.checkBoxActiveMatch_CheckedChanged);
       // 
       // buttonResetMathPicture
       // 
@@ -237,16 +246,6 @@
       this.buttonBackToFiles.UseVisualStyleBackColor = false;
       this.buttonBackToFiles.Click += new System.EventHandler(this.buttonGotoFiles_Click);
       // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(36, 489);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(33, 13);
-      this.label2.TabIndex = 15;
-      this.label2.Text = "Time:";
-      this.label2.Visible = false;
-      // 
       // pictureMatches
       // 
       this.pictureMatches.BackColor = System.Drawing.Color.White;
@@ -266,18 +265,11 @@
       this.label1.TabIndex = 6;
       this.label1.Text = "Distance:";
       // 
-      // textTimer
-      // 
-      this.textTimer.Location = new System.Drawing.Point(75, 486);
-      this.textTimer.Name = "textTimer";
-      this.textTimer.Size = new System.Drawing.Size(56, 20);
-      this.textTimer.TabIndex = 8;
-      this.textTimer.Visible = false;
-      // 
       // textMatchDistance
       // 
       this.textMatchDistance.Location = new System.Drawing.Point(75, 460);
       this.textMatchDistance.Name = "textMatchDistance";
+      this.textMatchDistance.ReadOnly = true;
       this.textMatchDistance.Size = new System.Drawing.Size(74, 20);
       this.textMatchDistance.TabIndex = 5;
       // 
@@ -391,7 +383,9 @@
       this.ClientSize = new System.Drawing.Size(865, 541);
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.label3);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.KeyPreview = true;
+      this.MaximizeBox = false;
       this.Name = "MainForm";
       this.Text = "Image Transformator";
       ((System.ComponentModel.ISupportInitialize)(this.pictureMerged)).EndInit();
@@ -422,10 +416,8 @@
     private System.Windows.Forms.ListBox listSegmentsMatchRight;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.TextBox textMatchDistance;
-    private System.Windows.Forms.TextBox textTimer;
     private System.Windows.Forms.Button buttonGotoMatching;
     private System.Windows.Forms.PictureBox pictureMatches;
-    private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Button buttonBackToFiles;
     private System.Windows.Forms.Button buttonBackToMatching;
     private System.Windows.Forms.ListView imagesContainer;
@@ -434,6 +426,7 @@
     private System.Windows.Forms.Button buttonResetMathPicture;
     private System.Windows.Forms.Button buttonResetPanoramaPicture;
     private System.Windows.Forms.Button buttonGeneratePanoram;
+    private System.Windows.Forms.CheckBox checkBoxActiveMatch;
   }
 }
 

@@ -22,6 +22,7 @@ namespace TransformatorExample {
       InitializeComponent();
       picturebox_matching = new ImageEditor.Editor(this, this.pictureMatches);
       picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged);
+      picturebox_merging.BackgroundColor = Color.Black;
       images_manager = new ImageFilesManager.Manager();
       this.segments_thumbnails = images_manager.PresentAsListView(imagesContainer);
       this.segments_pair_list = images_manager.PresentAsPairsList(listSegmentsMatchLeft, listSegmentsMatchRight);
@@ -100,6 +101,11 @@ namespace TransformatorExample {
       picturebox_matching.ResetState();
     }
 
+    private void checkBoxActiveMatch_CheckedChanged(object sender, EventArgs e) {
+      current_match.IsActive = checkBoxActiveMatch.Checked;
+      drawCurrentMatch();
+    }
+
     void currentMatch_Change(object sender, EventArgs e) {
       resetCurrentMatch();
     }
@@ -114,7 +120,9 @@ namespace TransformatorExample {
 
     void drawCurrentMatch() {
       picturebox_matching.Image = current_match.ToImage();
-      textMatchDistance.Text = current_match.Distance().ToString();
+      textMatchDistance.Text = current_match.Distance().ToString("F2");
+      scrollLimit.Value = current_match.CurrentLimit();
+      checkBoxActiveMatch.Checked = current_match.IsActive;
     }
 
     //

@@ -11,9 +11,9 @@ namespace Panoramas.Matching {
   public class MatchPresenter {
     Bitmap ImageBase, ImageQuery;
     Bitmap common_template;
-    SegmentsMatch match;
+    SegmentsPair match;
 
-    public MatchPresenter(SegmentsMatch match) {
+    public MatchPresenter(SegmentsPair match) {
       this.match = match;
       this.ImageBase = match.BaseSegment.Bitmap;
       this.ImageQuery = match.QuerySegment.Bitmap;
@@ -21,7 +21,7 @@ namespace Panoramas.Matching {
     }
 
     public Image Render() {
-      var matches = match.Matches();
+      var matches = match.Matches;
       float x_offset = ImageBase.Width;
       var template = (Bitmap)common_template.Clone();
       var g = Graphics.FromImage(template);
