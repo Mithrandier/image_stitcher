@@ -11,23 +11,24 @@ namespace Panoramas {
   public class Stitcher {
     MatchingController matching_controller;
 
-    public Stitcher(Segment[] segments) {
-      if (segments.Length < 2)
+    public Stitcher(String[] filenames) {
+      if (filenames.Length < 2)
         throw new ArgumentException("Not enough images");
-      this.matching_controller = new MatchingController(segments);
+      var segments = filenames.Select((f) => new Segment(f)).ToArray();
+      this.matching_controller = new MatchingController(segments.ToArray());    
     }
 
-    public Image MatchTwo(Segment image_base, Segment image_matched) {
-      var presenter = new MatchPresenter(matching_controller.MatchBetween(image_base, image_matched));
-      return presenter.Render();
+    public Stitcher(String[] keys, Bitmap[] images) {
+      if (keys.Length < 2 || keys.Length != images.Length)
+        throw new ArgumentException("Not enough images");
+      var segments = new List<Segment>();
+      for (int i = 0; i < keys.Length; i++)
+        segments.Add(new Segment(keys[i], images[i]));
+      this.matching_controller = new MatchingController(segments.ToArray());
     }
 
-    public double DistanceBetween(Segment image_base, Segment image_matched) {
-      return matching_controller.MatchBetween(image_base, image_matched).Distance();
-    }
-
-    public void SetLimit(Segment image_base, Segment image_matched, int percent) {
-      matching_controller.MatchBetween(image_base, image_matched).LimitMatchesBy(percent);
+    public IImagesMatch MatchBetween(String image_base, String image_matched) {
+      return matching_controller.MatchBetween(image_base, image_matched);
     }
 
     public Image StitchAll() {

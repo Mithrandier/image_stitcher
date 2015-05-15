@@ -6,25 +6,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TransformatorExample {
-  public class ImageFilesPresenter {
+namespace ImageFilesManager.Presenters {
+  public class ThumbnailsList : IRefreshablePresenter, ISelectableControl {
     ImageList images;
     ListView list;
 
-    public ImageFilesPresenter(ListView list) {
+    public ThumbnailsList(ListView list) {
       this.list = list;
       this.images = new ImageList();
       this.images.ColorDepth = ColorDepth.Depth32Bit;
-      this.images.ImageSize = new System.Drawing.Size(250, 200);
+      this.images.ImageSize = new System.Drawing.Size(150, 150);
       this.list.ShowGroups = false;
       this.list.ShowItemToolTips = true;
       this.list.LargeImageList = images;
     }
 
+    public void RefreshWith(string[] filenames, Bitmap[] images) {
+      Clear();
+      for (int i = 0; i < filenames.Length; i++) {
+        Add(filenames[i], images[i]);
+      }
+    }
+
+    public string[] SelectedItems() {
+      List<String> keys = new List<string>();
+      foreach (ListViewItem item in list.SelectedItems)
+        keys.Add(item.Text);
+      return keys.ToArray();
+    }
+
+    public void AddSelectionChangeHandler(EventHandler handler) {
+      this.list.SelectedIndexChanged += handler;
+    }
+
     public bool Add(String key, System.Drawing.Bitmap image) {
       var item = list.Items.Add(key);
       images.Images.Add(item.Text, FitImage(image));
-      item.ImageKey = item.Text;
+      item.ImageIndex = item.Index;
       item.ToolTipText = key;
       return true;
     }
@@ -32,22 +50,6 @@ namespace TransformatorExample {
     public void Clear() {
       this.list.Items.Clear();
       images.Images.Clear();
-    }
-
-    public String[] Selected {
-      get {
-        List<String> keys = new List<string>();
-        foreach (ListViewItem item in list.SelectedItems)
-          keys.Add(item.Text);
-        return keys.ToArray();
-      }
-    }
-
-    public void RemoveSelected() {
-      foreach (ListViewItem item in list.SelectedItems) {
-        list.Items.Remove(item);
-        images.Images.RemoveByKey(item.Text);
-      }
     }
 
     Bitmap FitImage(Bitmap image) {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ImagesMatching;
 
 namespace Panoramas.Matching {
-  public class SegmentsMatch {
+  public class SegmentsMatch : IImagesMatch {
     public const int MIN_MATCHES_COUNT = 10;
 
     public Segment BaseSegment { get; private set; }
@@ -18,6 +18,14 @@ namespace Panoramas.Matching {
       this.BaseSegment = base_segment;
       this.QuerySegment = query;
       this.matcher = matcher != null ? matcher : new ImagesMatching.Flann.Matcher(base_segment.Bitmap, query.Bitmap);
+    }
+
+    public System.Drawing.Image ToImage() {
+      return new MatchPresenter(this).Render();
+    }
+
+    public void SetLimit(int percent) {
+      LimitMatchesBy(percent);
     }
 
     public Segment[] Segments {

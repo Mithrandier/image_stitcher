@@ -20,6 +20,12 @@ namespace Panoramas {
       ResetTransformation();
     }
 
+    public Segment(String filename, System.Drawing.Bitmap image) {
+      this.Filename = filename;
+      this.Bitmap = image;
+      ResetTransformation();
+    }
+
     public Segment(Segment base_segment) {
       this.Filename = base_segment.Filename;
       this.Bitmap = base_segment.Bitmap;

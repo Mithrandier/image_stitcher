@@ -55,9 +55,6 @@
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FilesDialog.cs" />
-    <Compile Include="ImageFilesController.cs" />
-    <Compile Include="ImageFilesPresenter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,9 +99,13 @@
     <None Include="Resources\Save-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lib\FormTools\FormTools.csproj">
-      <Project>{e0ad863a-26d1-4290-9908-cb53543a3865}</Project>
-      <Name>FormTools</Name>
+    <ProjectReference Include="..\Lib\ImageEditor\ImageEditor.csproj">
+      <Project>{681c7456-763c-4ab6-b75f-131bb27f3a14}</Project>
+      <Name>ImageEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lib\ImageFilesManager\ImageFilesManager.csproj">
+      <Project>{5092da5c-f6dd-428a-b766-288e6dd98f65}</Project>
+      <Name>ImageFilesManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lib\Logger\Logger.csproj">
       <Project>{bd18cfb0-6f67-4059-9282-d76d68c1b867}</Project>

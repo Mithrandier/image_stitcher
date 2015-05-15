@@ -8,26 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Panoramas;
-using FormTools;
 
 namespace TransformatorExample {
   public partial class MainForm : BaseForm {
-    BrowseablePicture picturebox_matching, picturebox_merging;
-    ImageFilesController images_ctrl;
+    Stitcher stitcher;
+    ImageEditor.Editor picturebox_matching, picturebox_merging;
+    ImageFilesManager.Manager images_manager;
+    ImageFilesManager.ISelectableControl segments_thumbnails;
+    ImageFilesManager.ISelectableControl segments_pair_list;
+    IImagesMatch current_match;
 
     public MainForm() {
-      Logger.Logger.Info(String.Format("\n\n****************Application started at {0}*************\n\n", DateTime.Now));
       InitializeComponent();
-      picturebox_matching = new BrowseablePicture(this, this.pictureMatches);
-      picturebox_merging = new BrowseablePicture(this, this.pictureMerged);
-      images_ctrl = new ImageFilesController(imagesContainer);
+      picturebox_matching = new ImageEditor.Editor(this, this.pictureMatches);
+      picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged);
+      images_manager = new ImageFilesManager.Manager();
+      this.segments_thumbnails = images_manager.PresentAsListView(imagesContainer);
+      this.segments_pair_list = images_manager.PresentAsPairsList(listSegmentsMatchLeft, listSegmentsMatchRight);
+      this.segments_pair_list.AddSelectionChangeHandler(new EventHandler(this.currentMatch_Change));
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
-      if (tabControlMain.SelectedTab == tabPageSegments && keyData == OpenFileShortCut)
-          initSegmentsLoading();
-      else if (tabControlMain.SelectedTab == tabPageMerging && keyData == SaveFileShortCut)
-          initPanoramaSaving();
+      if (tabControlMain.SelectedTab == tabPageSegments && keyData == openFileShortCut)
+          addSegments();
+      else if (tabControlMain.SelectedTab == tabPageMerging && keyData == saveFileShortCut)
+          savePanorama();
       return base.ProcessCmdKey(ref msg, keyData);
     }
 
@@ -36,63 +41,17 @@ namespace TransformatorExample {
     //
 
     private void buttonAddSegments_Click(object sender, EventArgs e) {
-      initSegmentsLoading();
+      addSegments();
     }
 
-    const int MINIMUM_SEGMENTS = 2;
-    void initSegmentsLoading() {
-      images_ctrl.LoadMore((filenames, bitmaps) => {
-        InitStitcher();
-        //InitializeSegmentsList();
-        //InitializeMatchSegmentsList();
-        //SetLimit(scrollLimit.Value);
-        //RenderMatches();
+    void addSegments() {
+      images_manager.LoadMore((filenames, bitmaps) => {
+        this.stitcher = new Stitcher(images_manager.FileNames.ToArray(), images_manager.Images.ToArray());
+        resetCurrentMatch();        
         scrollLimit.Enabled = true;
         buttonGotoMatching.Enabled = true;
         buttonGotoMerge.Enabled = true;
       });
-    }
-
-    void InitializeSegmentsList() {      
-      listSegmentsMatchLeft.Items.Clear();
-      foreach (var segment in images_ctrl.Images) {
-        listSegmentsMatchLeft.Items.Add(segment);
-      }
-      listSegmentsMatchLeft.SelectedIndex = 0;
-    }
-
-    void InitializeMatchSegmentsList() {
-      listSegmentsMatchRight.Items.Clear();
-      for (var i_item = 0; i_item < listSegmentsMatchLeft.Items.Count; i_item++)
-        if (i_item != listSegmentsMatchLeft.SelectedIndex)
-          listSegmentsMatchRight.Items.Add(listSegmentsMatchLeft.Items[i_item]);
-      listSegmentsMatchRight.SelectedIndex = 0;
-    }
-
-    Segment CurrentSegment {
-      get { return (Segment)listSegmentsMatchLeft.SelectedItem; }
-    }
-
-    Segment MatchedSegment {
-      get { return (Segment)listSegmentsMatchRight.SelectedItem; }
-    }
-
-    private void listSegmentsMatchLeft_SelectedIndexChanged(object sender, EventArgs e) {
-      if (!StitcherReady())
-        return;
-      InitializeMatchSegmentsList();
-      UpdateCurrentMatch();
-    }
-
-    private void listSegmentsMatchRight_SelectedIndexChanged(object sender, EventArgs e) {
-      if (!StitcherReady())
-        return;
-      UpdateCurrentMatch();
-    }
-
-    void UpdateCurrentMatch() {
-      RenderMatches();
-      OutputMatchDistance();
     }
 
     private void buttonGotoMatching_Click(object sender, EventArgs e) {
@@ -100,7 +59,22 @@ namespace TransformatorExample {
     }
 
     private void buttonClearSegment_Click(object sender, EventArgs e) {
-      images_ctrl.ClearAll();
+      images_manager.ClearAll();
+    }
+
+    private void buttonClearFiles_Click(object sender, EventArgs e) {
+      removeSelectedSegments();
+    }
+
+    private void imagesContainer_KeyDown(object sender, KeyEventArgs e) {
+      if (e.KeyData == Keys.Delete) {
+        removeSelectedSegments();
+      }
+    }
+
+    void removeSelectedSegments() {
+      var selection = segments_thumbnails.SelectedItems();
+      images_manager.RemoveImages(selection);
     }
 
     //
@@ -108,16 +82,39 @@ namespace TransformatorExample {
     //
 
     private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
-      SetLimit(scrollLimit.Value);
-      RenderMatches();
+      if (current_match == null)
+        return;
+      current_match.SetLimit(scrollLimit.Value);
+      drawCurrentMatch();
     }
 
     private void buttonUseMatches_Click(object sender, EventArgs e) {
-      MergeImages();
+      generatePanoram();
     }
 
     private void buttonGotoFiles_Click(object sender, EventArgs e) {
       tabControlMain.SelectedTab = tabPageSegments;
+    }
+
+    private void buttonResetMathPicture_Click(object sender, EventArgs e) {
+      picturebox_matching.ResetState();
+    }
+
+    void currentMatch_Change(object sender, EventArgs e) {
+      resetCurrentMatch();
+    }
+
+    void resetCurrentMatch() {
+      if (stitcher == null)
+        return;
+      var selection = segments_pair_list.SelectedItems();
+      current_match = stitcher.MatchBetween(selection[0], selection[1]);
+      drawCurrentMatch();
+    }
+
+    void drawCurrentMatch() {
+      picturebox_matching.Image = current_match.ToImage();
+      textMatchDistance.Text = current_match.Distance().ToString();
     }
 
     //
@@ -125,53 +122,27 @@ namespace TransformatorExample {
     //
 
     private void buttonSavePan_Click(object sender, EventArgs e) {
-      initPanoramaSaving();
-    }
-
-    void initPanoramaSaving() {
-      images_ctrl.SaveImage((Bitmap)pictureMerged.Image);
+      savePanorama();
     }
 
     private void buttonBackToMatching_Click(object sender, EventArgs e) {
       tabControlMain.SelectedTab = tabPageMatching;
     }
 
-    //
-    // STITCHER STUFF
-    //
-
-    Stitcher stitcher;
-    void InitStitcher() {
-      LogTime("InitStitcher", () => {
-        Segment[] segments = images_ctrl.FileNames.Select((f) => new Segment(f)).ToArray();
-        this.stitcher = new Stitcher(segments);
-      });
+    private void buttonResetPanoramaPicture_Click(object sender, EventArgs e) {
+      picturebox_merging.ResetState();
     }
 
-    bool StitcherReady() {
-      return stitcher != null;
+    private void buttonGeneratePanoram_Click(object sender, EventArgs e) {
+      generatePanoram();
     }
 
-    void RenderMatches() {
-      LogTime("RenderMatches", () => {
-        picturebox_matching.Image = stitcher.MatchTwo(CurrentSegment, MatchedSegment);
-      });
+    void savePanorama() {
+      images_manager.SaveImage((Bitmap)pictureMerged.Image);
     }
 
-    void SetLimit(int percent) {
-      stitcher.SetLimit(CurrentSegment, MatchedSegment, percent);      
-    }
-
-    void OutputMatchDistance() {
-      LogTime("OutputMatchDistance", () => {
-        textMatchDistance.Text = stitcher.DistanceBetween(CurrentSegment, MatchedSegment).ToString();
-      });
-    }
-
-    void MergeImages() {
-      LogTime("MergeImages", () => {
-        picturebox_merging.Image = stitcher.StitchAll();
-      });
+    void generatePanoram() {
+      picturebox_merging.Image = stitcher.StitchAll();
       tabControlMain.SelectedTab = tabPageMerging;
       buttonSavePan.Enabled = true;
     }
@@ -180,11 +151,11 @@ namespace TransformatorExample {
     // SHORTCUTS
     //
 
-    Keys OpenFileShortCut {
+    Keys openFileShortCut {
       get { return Keys.Control | Keys.O; }
     }
 
-    Keys SaveFileShortCut {
+    Keys saveFileShortCut {
       get { return Keys.Control | Keys.S; }
     }
     

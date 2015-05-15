@@ -21,6 +21,13 @@ namespace Panoramas.Matching {
       return Matches.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);
     }
 
+    public SegmentsMatch MatchBetween(String base_segment, String query_segment) {
+      var all_files = AllSegments.Select((s) => s.Filename);
+      if (base_segment == query_segment || !all_files.Contains(base_segment) || !all_files.Contains(query_segment))
+        throw new ArgumentException("Request for missing images");
+      return Matches.Find((m) => m.BaseSegment.Filename == base_segment && m.QuerySegment.Filename == query_segment);
+    }
+
     static List<SegmentsMatch> GenerateMatches(Segment[] segments) {
       var featured_segments = segments.Select((s) => s.Bitmap).ToArray();
       var matches = new List<SegmentsMatch>();

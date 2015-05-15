@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TransformatorExample {
+namespace ImageFilesManager.Dialogs {
   public class FilesDialog {
-    public int MinimalFilesCount = 0;
+    public int MinimalFilesCount = 1;
     public int MaximalFilesCount = 100;
     public System.Windows.Forms.SaveFileDialog SaveDialog { get; private set; }
     public System.Windows.Forms.OpenFileDialog OpenDialog { get; private set; }

@@ -7,75 +7,58 @@ namespace PanoramasBaseTests {
   [TestClass]
   public class StitcherTest {
     [TestMethod]
-    public void ItCanBeCreatedWithImages() {
-      var images = new Segment[] { Factory.ASegment(), Factory.ASegment() };
-      new Stitcher(images);
+    public void ItCanBeCreatedWithFilenames() {
+      AStitcher();
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void ItRequiresAtLeastTwoImages() {
-      var images = new Segment[] { Factory.ASegment() };
-      new Stitcher(images);
+    public void ItRequiresAtLeastTwoFiles() {
+      var files = new String[] { Factory.VALID_FILE_NAME };
+      new Stitcher(files);
     }
 
     [TestMethod]
     public void ItProvidesResultOfMatchingImages() {
-      var images = new Segment[] { Factory.ASegment(), Factory.ASegment() };
-      var stitcher = new Stitcher(images);
-      var match_result = stitcher.MatchTwo(images[0], images[1]);
+      var files = sampleFiles();
+      var stitcher = new Stitcher(files);
+      var match_result = stitcher.MatchBetween(files[0], files[1]);
       Assert.IsNotNull(match_result);
-      Assert.IsInstanceOfType(match_result, typeof(Bitmap));
-      match_result = stitcher.MatchTwo(images[1], images[0]);
+      Assert.IsInstanceOfType(match_result, typeof(IImagesMatch));
+      match_result = stitcher.MatchBetween(files[1], files[0]);
       Assert.IsNotNull(match_result);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
     public void ItRaisesErrorIfAskingForUnknownImages() {
-      var images = new Segment[] { Factory.ASegment(), Factory.ASegment() };
-      var stitcher = new Stitcher(images);
-      var match_result = stitcher.MatchTwo(images[0], Factory.ASegment());
+      var files = sampleFiles();
+      var stitcher = new Stitcher(files);
+      var match_result = stitcher.MatchBetween(files[0], "?.jpg");
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
     public void ItRaisesErrorIfAskingForSameImage() {
-      var images = new Segment[] { Factory.ASegment(), Factory.ASegment() };
-      var stitcher = new Stitcher(images);
-      var match_result = stitcher.MatchTwo(images[0], images[0]);
-    }
-
-    [TestMethod]
-    public void ItAllowsToChangeParametersOfSomeMatch() {
-      var images = new Segment[] { Factory.ASegment(), Factory.ASegment() };
-      var stitcher = new Stitcher(images);
-      stitcher.SetLimit(images[0], images[1], 100);
-    }
-
-    [TestMethod]
-    [ExpectedException(typeof(ArgumentException))]
-    public void ItRequiresValidParametersValues() {
-      var images = new Segment[] { Factory.ASegment(), Factory.ASegment() };
-      var stitcher = new Stitcher(images);
-      stitcher.SetLimit(images[0], images[1], -1);
-    }
-
-    [TestMethod]
-    public void ItComputesLikelinessBetweenTwoSegments() {
-      var images = new Segment[] { Factory.ASegment(), Factory.ASegment() };
-      var stitcher = new Stitcher(images);
-      Assert.IsTrue(stitcher.DistanceBetween(images[0], images[1]) >= 0);
-      Assert.IsTrue(stitcher.DistanceBetween(images[1], images[0]) >= 0);
+      var files = sampleFiles();
+      var stitcher = new Stitcher(files);
+      var match_result = stitcher.MatchBetween(files[0], files[0]);
     }
 
     [TestMethod]
     public void ItGeneratesPanorama() {
-      var images = new Segment[] { Factory.ASegment(), Factory.ASegment() };
-      var stitcher = new Stitcher(images);
+      var stitcher = AStitcher();
       var pan = stitcher.StitchAll();
       Assert.IsNotNull(pan);
       Assert.IsInstanceOfType(pan, typeof(Bitmap));
+    }
+
+    String[] sampleFiles() {
+      return new String[] { Factory.VALID_FILE_NAME, Factory.VALID_FILE_NAME_2 };
+    }
+
+    Stitcher AStitcher() {
+       return new Stitcher(sampleFiles());
     }
   }
 }
