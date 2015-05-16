@@ -22,7 +22,7 @@ namespace PanoramasBaseTests {
     [TestMethod]
     [ExpectedException(typeof(NullReferenceException))]
     public void ItRequiresSegmentsToBePresent() {
-      new SegmentsMatch(Factory.ASegment(), null);
+      new SegmentsPair(Factory.ASegment(), null);
     }
 
     [TestMethod]
@@ -32,9 +32,9 @@ namespace PanoramasBaseTests {
 
     [TestMethod]
     public void ItProvidesMatchesBetweenSegments() {
-      var matches = Factory.ASegmentsMatch().Matches();
+      var matches = Factory.ASegmentsMatch().Matches;
       Assert.IsInstanceOfType(matches, typeof(ImagesMatching.KeyPointsPair[]));
-      Assert.AreEqual(matches.Length, SegmentsMatch.MIN_MATCHES_COUNT);
+      Assert.AreEqual(matches.Length, SegmentsPair.MIN_MATCHES_COUNT);
     }
 
     [TestMethod]
@@ -47,28 +47,17 @@ namespace PanoramasBaseTests {
     [TestMethod]
     public void ItAllowsToUseMoreMatches() {
       var match = Factory.ASegmentsMatch();
-      var first_matches = match.Matches();
-      match.LimitMatchesBy(100);
-      var more_matches = match.Matches();
+      var first_matches = match.Matches;
+      match.LimitPercent = 100;
+      var more_matches = match.Matches;
       Assert.IsTrue(first_matches.Length < more_matches.Length);
-    }
-
-    [TestMethod]
-    public void ItAllowsToCheckSegmentPresence() {
-      var present_segment = Factory.ASegment();
-      var match = new SegmentsMatch(present_segment, Factory.ASegment());
-      var not_present_segment = Factory.ASegment();
-      Assert.IsTrue(match.Includes(present_segment));
-      Assert.IsFalse(match.Includes(not_present_segment));
-      var both_segment = new Segment[] { present_segment, not_present_segment };
-      Assert.IsTrue(match.IncludesAnyOf(both_segment));
     }
 
     [TestMethod]
     public void ItProvidesOpponentSegment() {
       var segment_query = Factory.ASegment();
       var segment_pair = Factory.ASegment();
-      var match = new SegmentsMatch(segment_query, segment_pair);
+      var match = new SegmentsPair(segment_query, segment_pair);
       Assert.AreEqual(match.PairOf(segment_query), segment_pair);
       Assert.AreEqual(match.PairOf(segment_pair), segment_query);
     }

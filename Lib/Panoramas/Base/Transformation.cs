@@ -12,23 +12,7 @@ namespace Panoramas {
     Emgu.CV.HomographyMatrix homography_matrix;
 
     public Transformation() {
-      this.homography_matrix = NewHomography();
-    }
-
-    public Transformation(Emgu.CV.HomographyMatrix matrix) {
-      this.homography_matrix = matrix.Clone();
-    }
-
-    public Transformation(Transformation transformation) {
-      this.homography_matrix = transformation.homography_matrix.Clone();
-    }
-
-    public double[,] Matrix() {
-      return (double[,])homography_matrix.Data.Clone();
-    }
-
-    public Transformation Invert() {
-      return (Transformation)this.MemberwiseClone();
+      this.homography_matrix = newHomography();
     }
 
     public void Distort(Transformation outer_transformation) {
@@ -45,30 +29,18 @@ namespace Panoramas {
 
     public Bitmap Transform(Bitmap image) {
       var formatted_result = new Emgu.CV.Image<Bgr, int>(image);
-      return TransformOn(image, formatted_result);
+      TransformOn(image, formatted_result);
+      return formatted_result.ToBitmap();
     }
 
-    public Bitmap TransformOn(Bitmap image, Emgu.CV.Image<Bgr, int> template) {
+    public void TransformOn(Bitmap image, Emgu.CV.Image<Bgr, int> template) {
       var formatted_segment = new Emgu.CV.Image<Bgr, int>(image);
-      Emgu.CV.CvInvoke.cvWarpPerspective(formatted_segment.Ptr, template.Ptr, homography_matrix.Ptr, (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, new MCvScalar(0, 0, 0));
-
-      return template.ToBitmap();
-    }
-
-    public Bitmap TransformWithin(Bitmap image, Emgu.CV.Image<Bgr, int> template, Transformation accum_transform) {
-      var self_clone = new Transformation(this);
-      self_clone.Distort(accum_transform);
-      var formatted_segment = new Emgu.CV.Image<Bgr, int>(image);
-      Emgu.CV.CvInvoke.cvWarpPerspective(formatted_segment.Ptr, template.Ptr, self_clone.homography_matrix.Ptr, (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, new MCvScalar(0, 0, 0));
-      return template.ToBitmap();
-    }
-
-    public Bitmap TransformWithin(Bitmap image, Emgu.CV.Image<Bgr, int> template, int x_offset, int y_offset) {
-      var self_clone = new Transformation(this);
-      self_clone.Move(x_offset, y_offset);
-      var formatted_segment = new Emgu.CV.Image<Bgr, int>(image);
-      Emgu.CV.CvInvoke.cvWarpPerspective(formatted_segment.Ptr, template.Ptr, self_clone.homography_matrix.Ptr, (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, new MCvScalar(0, 0, 0));
-      return template.ToBitmap();
+      Emgu.CV.CvInvoke.cvWarpPerspective(
+        formatted_segment.Ptr, 
+        template.Ptr, 
+        homography_matrix.Ptr, 
+        (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, 
+        new MCvScalar(0, 0, 0));
     }
 
     public void Move(int x_diff, int y_diff) {
@@ -76,17 +48,25 @@ namespace Panoramas {
       homography_matrix[1, 2] += y_diff;
     }
 
-    public override bool Equals(object obj) {
-      if (!(obj is Transformation))
-        return false;
-      for (int x = 0; x < Matrix().GetLength(0); x++)
-        for (int y = 0; y < Matrix().GetLength(1); y++)
-          if (((Transformation)obj).Matrix()[x, y] != Matrix()[x, y])
-            return false;
-      return true;
+    public Transformation Clone() {
+      var clone = new Transformation();
+      clone.homography_matrix = this.homography_matrix.Clone();
+      return clone;
     }
 
-    Emgu.CV.HomographyMatrix NewHomography() {
+    public static Transformation Generate(PointF[] points_dst, PointF[] points_src) {
+      var matrix = Emgu.CV.CameraCalibration.FindHomography(
+        points_src,
+        points_dst,
+        Emgu.CV.CvEnum.HOMOGRAPHY_METHOD.RANSAC,
+        2 // RANSAC reprojection error
+        );
+      var transformation = new Transformation();
+      transformation.homography_matrix = matrix;
+      return transformation;
+    }
+
+    Emgu.CV.HomographyMatrix newHomography() {
       var matrix = new Emgu.CV.HomographyMatrix();
       matrix[0, 0] = 1;
       matrix[1, 1] = 1;

@@ -61,9 +61,9 @@ namespace PanoramasBaseTests {
       root.Segment.Transformation.Move(1, 1);
       Assert.AreEqual(root.Transformation(), root.Segment.Transformation);
       var context = Factory.ATransformation();
-      Assert.AreEqual(root.Transformation(context), root.Segment.Transformation);
+      Assert.AreEqual(root.Transformation(), root.Segment.Transformation);
       context.Move(1, 0);
-      Assert.AreNotEqual(root.Transformation(context), root.Segment.Transformation);
+      Assert.AreNotEqual(root.Transformation(), root.Segment.Transformation);
       var leaf = root.AddChild(Factory.ASegment());
       Assert.AreNotEqual(leaf.Transformation(), leaf.Segment.Transformation);
     }

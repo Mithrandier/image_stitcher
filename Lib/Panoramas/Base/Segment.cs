@@ -10,13 +10,18 @@ namespace Panoramas {
     public System.Drawing.Bitmap Bitmap { get; private set; }
     public String Filename { get; private set; }
     public Transformation Transformation { get; private set; }
-    public bool BelongsToPan = false;
 
     public Segment(String filename) {
       this.Filename = filename;
       if (!File.Exists(filename))
         throw new FileNotFoundException();
       this.Bitmap = new System.Drawing.Bitmap(Filename);
+      ResetTransformation();
+    }
+
+    public Segment(String filename, System.Drawing.Bitmap image) {
+      this.Filename = filename;
+      this.Bitmap = image;
       ResetTransformation();
     }
 

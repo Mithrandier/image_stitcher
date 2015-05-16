@@ -14,33 +14,19 @@ namespace PanoramasBaseTests {
     [TestMethod]
     public void ItCanBeCreatedWithAnotherTransformation() {
       var old_trnsformation = Factory.ATransformation();
-      var new_transformation = new Transformation(old_trnsformation);
+      var new_transformation = old_trnsformation.Clone();
       Assert.AreEqual(old_trnsformation, new_transformation);
-    }
-
-    [TestMethod]
-    public void ItProvidesTransitionMatrix() {
-      var matrix = Factory.ATransformation().Matrix();
-      Assert.IsNotNull(matrix);
-      Assert.IsInstanceOfType(matrix, typeof(double[,]));
-    }
-
-    [TestMethod]
-    public void ItProvidesInvertTransformation() {
-      var invert = Factory.ATransformation().Invert();
-      Assert.IsNotNull(invert);
-      Assert.IsInstanceOfType(invert, typeof(Transformation));
     }
 
     [TestMethod]
     public void ItUsesOuterTransformation() {
       var first_version = Factory.ATransformation();
-      var changed_version = new Transformation(first_version);
+      var changed_version = first_version.Clone();
       Assert.AreEqual(first_version, changed_version);
       changed_version.Move(1, 1);
       Assert.AreNotEqual(first_version, changed_version);
 
-      var distorted_version = new Transformation(first_version);
+      var distorted_version = first_version.Clone();
       Assert.AreEqual(first_version, distorted_version);
       distorted_version.Distort(first_version);
       Assert.AreEqual(first_version, distorted_version);

@@ -8,28 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Panoramas;
-using FormTools;
 
 namespace TransformatorExample {
   public partial class MainForm : BaseForm {
-    BrowseablePicture picturebox_matching, picturebox_merging;
-    Segment[] segments;
+    Stitcher stitcher;
+    ImageEditor.Editor picturebox_matching, picturebox_merging;
+    ImageFilesManager.CollectionManager images_manager;
+    ImageFilesManager.ISelectableControl segments_thumbnails;
+    ImageFilesManager.ISelectableControl segments_pair_list;
+    IRelationController current_match;
 
     public MainForm() {
-      Logger.Logger.Info(String.Format("\n\n****************Application started at {0}*************\n\n", DateTime.Now));
       InitializeComponent();
-      picturebox_matching = new BrowseablePicture(this, this.pictureMatches);
-      picturebox_merging = new BrowseablePicture(this, this.pictureMerged);
-      initSegmentsLoading();
-      if (StitcherReady())
-        MergeImages();
+      picturebox_matching = new ImageEditor.Editor(this, this.pictureMatches);
+      picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged);
+      picturebox_merging.BackgroundColor = Color.Black;
+      images_manager = new ImageFilesManager.CollectionManager();
+      this.segments_thumbnails = images_manager.PresentAsListView(imagesContainer);
+      this.segments_pair_list = images_manager.PresentAsPairsList(listSegmentsMatchLeft, listSegmentsMatchRight);
+      this.segments_pair_list.AddSelectionChangeHandler(new EventHandler(this.currentMatch_Change));
     }
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
-      if (tabControlMain.SelectedTab == tabPageSegments && keyData == OpenFileShortCut)
-          initSegmentsLoading();
-      else if (tabControlMain.SelectedTab == tabPageMerging && keyData == SaveFileShortCut)
-          initPanoramaSaving();
+      if (tabControlMain.SelectedTab == tabPageSegments && keyData == openFileShortCut)
+          addSegments();
+      else if (tabControlMain.SelectedTab == tabPageMerging && keyData == saveFileShortCut)
+          savePanorama();
       return base.ProcessCmdKey(ref msg, keyData);
     }
 
@@ -38,67 +42,42 @@ namespace TransformatorExample {
     //
 
     private void buttonAddSegments_Click(object sender, EventArgs e) {
-      initSegmentsLoading();
+      addSegments();
     }
 
-    const int MINIMUM_SEGMENTS = 2;
-    void initSegmentsLoading() {
-      var dialog = addSegmentsDialog;
-      if (dialog.ShowDialog() != DialogResult.OK)
-        return;
-      var filenames = dialog.FileNames;
-      if (filenames.Length < MINIMUM_SEGMENTS)
-        return;
-      listFiles.Items.Clear();
-      foreach (var filename in filenames)
-        listFiles.Items.Add(filename);
-      this.stitcher = null;
-      this.segments = filenames.Select((f) => new Segment(f)).ToArray();
-      InitializeSegmentsList();
-      InitStitcher();
-      SetLimit(scrollLimit.Value);
-      RenderMatches();
-      scrollLimit.Enabled = true;
-      buttonGotoMatching.Enabled = true;
-      buttonGotoMerge.Enabled = true;
-    }
-
-    void InitializeSegmentsList() {
-      listSegmentsMatchLeft.Items.Clear();
-      foreach (var segment in segments) {
-        listSegmentsMatchLeft.Items.Add(segment);
-      }
-      listSegmentsMatchLeft.SelectedIndex = 0;
-    }
-
-    Segment CurrentSegment {
-      get { return (Segment)listSegmentsMatchLeft.SelectedItem; }
-    }
-
-    Segment MatchedSegment {
-      get { return (Segment)listSegmentsMatchRight.SelectedItem; }
-    }
-
-    private void listSegmentsMatchLeft_SelectedIndexChanged(object sender, EventArgs e) {
-      listSegmentsMatchRight.Items.Clear();
-      for (var i_item = 0; i_item < listSegmentsMatchLeft.Items.Count; i_item++)
-        if (i_item != listSegmentsMatchLeft.SelectedIndex)
-          listSegmentsMatchRight.Items.Add(listSegmentsMatchLeft.Items[i_item]);
-      listSegmentsMatchRight.SelectedIndex = 0;
-      UpdateCurrentMatch();
-    }
-
-    private void listSegmentsMatchRight_SelectedIndexChanged(object sender, EventArgs e) {
-      UpdateCurrentMatch();
-    }
-
-    void UpdateCurrentMatch() {
-      RenderMatches();
-      OutputMatchDistance();
+    void addSegments() {
+      images_manager.LoadMore((images) => {
+        this.stitcher = new Stitcher(
+          images.Select((i) => i.FileName).ToArray(), 
+          images.Select((i) => i.Bitmap).ToArray());
+        resetCurrentMatch();        
+        scrollLimit.Enabled = true;
+        buttonGotoMatching.Enabled = true;
+        buttonGotoMerge.Enabled = true;
+      });
     }
 
     private void buttonGotoMatching_Click(object sender, EventArgs e) {
       tabControlMain.SelectedTab = tabPageMatching;
+    }
+
+    private void buttonClearSegment_Click(object sender, EventArgs e) {
+      images_manager.ClearAll();
+    }
+
+    private void buttonClearFiles_Click(object sender, EventArgs e) {
+      removeSelectedSegments();
+    }
+
+    private void imagesContainer_KeyDown(object sender, KeyEventArgs e) {
+      if (e.KeyData == Keys.Delete) {
+        removeSelectedSegments();
+      }
+    }
+
+    void removeSelectedSegments() {
+      var selection = segments_thumbnails.SelectedItems();
+      images_manager.Remove(selection);
     }
 
     //
@@ -106,16 +85,46 @@ namespace TransformatorExample {
     //
 
     private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
-      SetLimit(scrollLimit.Value);
-      RenderMatches();
+      if (current_match == null)
+        return;
+      current_match.LimitPercent = scrollLimit.Value;
+      drawCurrentMatch();
     }
 
     private void buttonUseMatches_Click(object sender, EventArgs e) {
-      MergeImages();
+      generatePanoram();
     }
 
     private void buttonGotoFiles_Click(object sender, EventArgs e) {
       tabControlMain.SelectedTab = tabPageSegments;
+    }
+
+    private void buttonResetMathPicture_Click(object sender, EventArgs e) {
+      picturebox_matching.ResetState();
+    }
+
+    private void checkBoxActiveMatch_CheckedChanged(object sender, EventArgs e) {
+      current_match.Active = checkBoxActiveMatch.Checked;
+      drawCurrentMatch();
+    }
+
+    void currentMatch_Change(object sender, EventArgs e) {
+      resetCurrentMatch();
+    }
+
+    void resetCurrentMatch() {
+      if (stitcher == null)
+        return;
+      var selection = segments_pair_list.SelectedItems();
+      current_match = stitcher.MatchBetween(selection[0], selection[1]);
+      drawCurrentMatch();
+    }
+
+    void drawCurrentMatch() {
+      picturebox_matching.Image = current_match.ToImage();
+      textMatchDistance.Text = current_match.Distance().ToString("F2");
+      scrollLimit.Value = current_match.LimitPercent;
+      checkBoxActiveMatch.Checked = current_match.Active;
     }
 
     //
@@ -123,71 +132,43 @@ namespace TransformatorExample {
     //
 
     private void buttonSavePan_Click(object sender, EventArgs e) {
-      initPanoramaSaving();
-    }
-
-    void initPanoramaSaving() {
-      if (savePanDialog.ShowDialog() != DialogResult.OK)
-        return;
-      pictureMerged.Image.Save(savePanDialog.FileName);
+      savePanorama();
     }
 
     private void buttonBackToMatching_Click(object sender, EventArgs e) {
       tabControlMain.SelectedTab = tabPageMatching;
     }
 
-    //
-    // STITCHER STUFF
-    //
+    private void buttonResetPanoramaPicture_Click(object sender, EventArgs e) {
+      picturebox_merging.ResetState();
+    }
 
-    Stitcher stitcher;
-    void InitStitcher() {
-      LogTime("InitStitcher", () => {
-        this.stitcher = new Stitcher(segments);
+    private void buttonGeneratePanoram_Click(object sender, EventArgs e) {
+      generatePanoram();
+    }
+
+    void savePanorama() {
+      var dialog = new ImageFilesManager.Dialog();
+      dialog.SaveToFile((filename) => {
+        pictureMerged.Image.Save(filename);
       });
     }
 
-    bool StitcherReady() {
-      return stitcher != null;
-    }
-
-    void RenderMatches() {
-      LogTime("RenderMatches", () => {
-        picturebox_matching.Image = stitcher.MatchTwo(CurrentSegment, MatchedSegment);
-      });
-    }
-
-    void SetLimit(int percent) {
-      stitcher.SetLimit(CurrentSegment, MatchedSegment, percent);      
-    }
-
-    void OutputMatchDistance() {
-      LogTime("OutputMatchDistance", () => {
-        textMatchDistance.Text = stitcher.DistanceBetween(CurrentSegment, MatchedSegment).ToString();
-      });
-    }
-
-    void MergeImages() {
-      LogTime("MergeImages", () => {
-        picturebox_merging.Image = stitcher.StitchAll();
-      });
+    void generatePanoram() {
+      picturebox_merging.Image = stitcher.StitchAll();
       tabControlMain.SelectedTab = tabPageMerging;
       buttonSavePan.Enabled = true;
-    }
-
-    private void TransformatorForm_Load(object sender, EventArgs e) {
-
     }
 
     //
     // SHORTCUTS
     //
 
-    Keys OpenFileShortCut {
+    Keys openFileShortCut {
       get { return Keys.Control | Keys.O; }
     }
 
-    Keys SaveFileShortCut {
+    Keys saveFileShortCut {
       get { return Keys.Control | Keys.S; }
     }
     

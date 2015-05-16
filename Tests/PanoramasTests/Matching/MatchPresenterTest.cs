@@ -8,12 +8,12 @@ namespace PanoramasBaseTests.Matching {
   public class MatchPresenterTest {
     [TestMethod]
     public void ItCanBeCreatedWithAMatch() {
-      new MatchPresenter(Factory.ASegmentsMatch());
+      new PairPresenter(Factory.ASegmentsMatch());
     }
 
     [TestMethod]
     public void ItGeneratesABitmap() {
-      var result = new MatchPresenter(Factory.ASegmentsMatch()).Render();
+      var result = new PairPresenter(Factory.ASegmentsMatch()).Render();
       Assert.IsNotNull(result);
       Assert.IsInstanceOfType(result, typeof(Bitmap));
     }

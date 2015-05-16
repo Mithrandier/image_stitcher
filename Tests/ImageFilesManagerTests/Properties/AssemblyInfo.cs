@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FormTools")]
+[assembly: AssemblyTitle("ImageFilesManagerTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FormTools")]
+[assembly: AssemblyProduct("ImageFilesManagerTests")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("016af8fb-c50b-4c70-816e-573ab1af0350")]
+[assembly: Guid("149678cd-7208-48bd-b2fb-e92d244f0945")]
 
 // Version information for an assembly consists of the following four values:
 //

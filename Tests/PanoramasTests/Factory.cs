@@ -11,6 +11,7 @@ using Panoramas.Tree;
 namespace PanoramasBaseTests {
   class Factory {
     public const string VALID_FILE_NAME = "..\\..\\Resources\\2.jpg";
+    public const string VALID_FILE_NAME_2 = "..\\..\\Resources\\1.jpg";
     public const string INVALID_FILE_NAME = "..\\..\\Resources\\?.jpg";
 
     public static Bitmap ABitmap() {
@@ -21,8 +22,8 @@ namespace PanoramasBaseTests {
       return new Segment(VALID_FILE_NAME);
     }
 
-    public static SegmentsMatch ASegmentsMatch() {
-      return new SegmentsMatch(ASegment(), ASegment());
+    public static SegmentsPair ASegmentsMatch() {
+      return new SegmentsPair(ASegment(), ASegment());
     }
 
     public static Transformation ATransformation() {
