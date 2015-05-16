@@ -9,6 +9,12 @@ namespace ImageFilesManager.Presenters {
   public class PairsList : IRefreshablePresenter, ISelectableControl {
     public delegate void PairChanged(String main_item, String sub_item);
     public PairChanged PairChangedProcessor;
+    public String MainItem {
+      get { return (String)main_list.SelectedItem; }
+    }
+    public String SubItem {
+      get { return (String)sub_list.SelectedItem; }
+    }
 
     ListBox main_list, sub_list;
     List<String> items;
@@ -16,14 +22,14 @@ namespace ImageFilesManager.Presenters {
     public PairsList(ListBox main_list, ListBox sub_list) {
       this.main_list = main_list;
       this.sub_list = sub_list;
-      this.main_list.SelectedIndexChanged += new System.EventHandler(this.SelectedMainIndexChanged);
-      this.sub_list.SelectedIndexChanged += new System.EventHandler(this.SelectedSubIndexChanged);
+      this.main_list.SelectedIndexChanged += new System.EventHandler(this.selectedMainIndexChanged);
+      this.sub_list.SelectedIndexChanged += new System.EventHandler(this.selectedSubIndexChanged);
       this.items = new List<string>();
     }
 
-    public void RefreshWith(string[] filenames, System.Drawing.Bitmap[] images) {
+    public void RefreshWith(ImageFile[] images) {
       Clear();
-      AddItems(filenames);
+      AddItems(images.Select((i) => i.FileName).ToArray());
     }
 
     public string[] SelectedItems() {
@@ -45,14 +51,6 @@ namespace ImageFilesManager.Presenters {
       refreshMainList();
     }
 
-    public String MainItem {
-      get { return (String)main_list.SelectedItem; }
-    }
-
-    public String SubItem {
-      get { return (String)sub_list.SelectedItem; }
-    }
-
     void refreshMainList() {
       main_list.Items.Clear();
       foreach (var item in items) {
@@ -72,13 +70,13 @@ namespace ImageFilesManager.Presenters {
       sub_list.SelectedIndex = 0;
     }
 
-    void SelectedMainIndexChanged(object sender, EventArgs e) {
+    void selectedMainIndexChanged(object sender, EventArgs e) {
       refreshSubList();
       if (PairChangedProcessor != null)
         PairChangedProcessor.Invoke(MainItem, SubItem);
     }
 
-    void SelectedSubIndexChanged(object sender, EventArgs e) {
+    void selectedSubIndexChanged(object sender, EventArgs e) {
       if (PairChangedProcessor != null)
         PairChangedProcessor.Invoke(MainItem, SubItem);
     }

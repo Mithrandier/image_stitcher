@@ -21,10 +21,10 @@ namespace ImageFilesManager.Presenters {
       this.list.LargeImageList = images;
     }
 
-    public void RefreshWith(string[] filenames, Bitmap[] images) {
+    public void RefreshWith(ImageFile[] images) {
       Clear();
-      for (int i = 0; i < filenames.Length; i++) {
-        Add(filenames[i], images[i]);
+      foreach (var image in images) {
+        Add(image);
       }
     }
 
@@ -39,11 +39,11 @@ namespace ImageFilesManager.Presenters {
       this.list.SelectedIndexChanged += handler;
     }
 
-    public bool Add(String key, System.Drawing.Bitmap image) {
-      var item = list.Items.Add(key);
-      images.Images.Add(item.Text, FitImage(image));
+    public bool Add(ImageFile image) {
+      var item = list.Items.Add(image.FileName);
+      images.Images.Add(item.Text, fitImage(image.Bitmap));
       item.ImageIndex = item.Index;
-      item.ToolTipText = key;
+      item.ToolTipText = image.FileName;
       return true;
     }
 
@@ -52,7 +52,7 @@ namespace ImageFilesManager.Presenters {
       images.Images.Clear();
     }
 
-    Bitmap FitImage(Bitmap image) {
+    Bitmap fitImage(Bitmap image) {
       var image_ratio = image.Width * 1.0f / image.Height;
       var list_ratio = images.ImageSize.Width * 1.0f / images.ImageSize.Height;
       var position = new PointF(0, 0);

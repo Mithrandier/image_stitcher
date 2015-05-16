@@ -13,17 +13,17 @@ namespace TransformatorExample {
   public partial class MainForm : BaseForm {
     Stitcher stitcher;
     ImageEditor.Editor picturebox_matching, picturebox_merging;
-    ImageFilesManager.Manager images_manager;
+    ImageFilesManager.CollectionManager images_manager;
     ImageFilesManager.ISelectableControl segments_thumbnails;
     ImageFilesManager.ISelectableControl segments_pair_list;
-    IImagesMatch current_match;
+    IRelationController current_match;
 
     public MainForm() {
       InitializeComponent();
       picturebox_matching = new ImageEditor.Editor(this, this.pictureMatches);
       picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged);
       picturebox_merging.BackgroundColor = Color.Black;
-      images_manager = new ImageFilesManager.Manager();
+      images_manager = new ImageFilesManager.CollectionManager();
       this.segments_thumbnails = images_manager.PresentAsListView(imagesContainer);
       this.segments_pair_list = images_manager.PresentAsPairsList(listSegmentsMatchLeft, listSegmentsMatchRight);
       this.segments_pair_list.AddSelectionChangeHandler(new EventHandler(this.currentMatch_Change));
@@ -46,8 +46,10 @@ namespace TransformatorExample {
     }
 
     void addSegments() {
-      images_manager.LoadMore((filenames, bitmaps) => {
-        this.stitcher = new Stitcher(images_manager.FileNames.ToArray(), images_manager.Images.ToArray());
+      images_manager.LoadMore((images) => {
+        this.stitcher = new Stitcher(
+          images.Select((i) => i.FileName).ToArray(), 
+          images.Select((i) => i.Bitmap).ToArray());
         resetCurrentMatch();        
         scrollLimit.Enabled = true;
         buttonGotoMatching.Enabled = true;
@@ -75,7 +77,7 @@ namespace TransformatorExample {
 
     void removeSelectedSegments() {
       var selection = segments_thumbnails.SelectedItems();
-      images_manager.RemoveImages(selection);
+      images_manager.Remove(selection);
     }
 
     //
@@ -146,7 +148,10 @@ namespace TransformatorExample {
     }
 
     void savePanorama() {
-      images_manager.SaveImage((Bitmap)pictureMerged.Image);
+      var dialog = new ImageFilesManager.Dialog();
+      dialog.SaveToFile((filename) => {
+        pictureMerged.Image.Save(filename);
+      });
     }
 
     void generatePanoram() {

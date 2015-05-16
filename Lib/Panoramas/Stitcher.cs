@@ -27,7 +27,7 @@ namespace Panoramas {
       this.matching_controller = new MatchingController(segments.ToArray());
     }
 
-    public IImagesMatch MatchBetween(String image_base, String image_matched) {
+    public IRelationController MatchBetween(String image_base, String image_matched) {
       return matching_controller.MatchBetween(image_base, image_matched);
     }
 

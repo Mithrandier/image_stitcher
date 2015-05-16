@@ -43,7 +43,7 @@ namespace Panoramas.Tree {
       return segments.ToArray();
     }
 
-    public Transformation Transformation(Transformation context = null) {
+    public Transformation Transformation() {
       List<Transformation> transformations = new List<Transformation>();
       var node = this;
       do {
@@ -54,8 +54,6 @@ namespace Panoramas.Tree {
       Transformation result = new Transformation();
       foreach (var step_transform in transformations)
         result = result.Multiply(step_transform);
-      if (context != null)
-        result = context.Multiply(result);
       return result;
     }
   }

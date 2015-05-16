@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ImagesMatching;
 
 namespace Panoramas.Matching {
-  public class SegmentsPair : IImagesMatch {
+  public class SegmentsPair : IRelationController {
     public const int MIN_MATCHES_COUNT = 10;
 
     SegmentsPair reverse_pair;
@@ -18,24 +18,9 @@ namespace Panoramas.Matching {
     public KeyPointsPair[] Matches { get; private set; }
     public Segment BaseSegment { get; private set; }
     public Segment QuerySegment { get; private set; }
-
-    public SegmentsPair(Segment base_segment, Segment query, KeyPointsPair[] matches = null) {
-      this.BaseSegment = base_segment;
-      this.QuerySegment = query;
-      if (matches == null) {
-        var matcher = new ImagesMatching.Flann.Matcher(base_segment.Bitmap, query.Bitmap);
-        this.all_matches = matcher.Match();
-      } else {
-        this.all_matches = matches;
-      }
-      setOptimalLimit();
+    public Segment[] Segments {
+      get { return new Segment[] { BaseSegment, QuerySegment }; }
     }
-
-    public void SetReversePair(SegmentsPair pair) {
-      this.reverse_pair = pair;
-      pair.reverse_pair = this;
-    }
-
     public bool Active {
       get { return active; }
       set {
@@ -50,15 +35,17 @@ namespace Panoramas.Matching {
       }
     }
 
-    public System.Drawing.Image ToImage() {
-      return new MatchPresenter(this).Render();
+    public SegmentsPair(Segment base_segment, Segment query) {
+      this.BaseSegment = base_segment;
+      this.QuerySegment = query;
+      var matcher = new ImagesMatching.Flann.Matcher(base_segment.Bitmap, query.Bitmap);
+      this.all_matches = matcher.Match();
+      setOptimalLimit();
     }
 
-    void setOptimalLimit() {
-      int count = MIN_MATCHES_COUNT;
-      this.limit = count * 100 / all_matches.Length;
-      this.active = true;
-      setCountLimit(count);
+    public void SetReversePair(SegmentsPair pair) {
+      this.reverse_pair = pair;
+      pair.reverse_pair = this;
     }
 
     public int LimitPercent {
@@ -81,28 +68,20 @@ namespace Panoramas.Matching {
       }
     }
 
-    void setCountLimit(int count) {
-      this.Matches = all_matches.Take(count).ToArray();
-      ResetDistance();
-    }
-
-    public Segment[] Segments {
-      get { return new Segment[] { BaseSegment, QuerySegment }; }
+    public System.Drawing.Image ToImage() {
+      return new PairPresenter(this).Render();
     }
 
     public double Distance() {
       if (distance == null || Double.IsNaN((double)distance))
-        ResetDistance();
+        resetDistance();
       return (double)distance;
     }
 
-    void ResetDistance() {
-      var sum = Matches.Sum((m) => m.Distance);
-      this.distance = sum*sum / Matches.Length;
-    }
-
     public Transformation GenerateTransformation() {
-      return new Transformation(defineHomography());
+      var points_dst = this.Matches.Select((m) => m.Left.Point).ToArray();
+      var points_src = this.Matches.Select((m) => m.Right.Point).ToArray();
+      return Transformation.Generate(points_dst, points_src);
     }
 
     public bool Includes(Segment segment) {
@@ -118,16 +97,21 @@ namespace Panoramas.Matching {
         return null;
     }
 
-    Emgu.CV.HomographyMatrix defineHomography() {
-      var points_dst = Matches.Select((m) => m.Left.Point).ToArray();
-      var points_src = Matches.Select((m) => m.Right.Point).ToArray();
-      var matrix = Emgu.CV.CameraCalibration.FindHomography(
-        points_src,
-        points_dst,
-        Emgu.CV.CvEnum.HOMOGRAPHY_METHOD.RANSAC,
-        2 // RANSAC reprojection error
-        );
-      return matrix;
+    void setOptimalLimit() {
+      int count = MIN_MATCHES_COUNT;
+      this.limit = count * 100 / all_matches.Length;
+      this.active = true;
+      setCountLimit(count);
+    }
+
+    void setCountLimit(int count) {
+      this.Matches = all_matches.Take(count).ToArray();
+      resetDistance();
+    }
+
+    void resetDistance() {
+      var sum = Matches.Sum((m) => m.Distance);
+      this.distance = sum / Matches.Length;
     }
   }
 }

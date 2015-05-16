@@ -5,19 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ImageFilesManager.Dialogs {
-  public class FilesDialog {
+namespace ImageFilesManager {
+  public class Dialog {
     public int MinimalFilesCount = 1;
     public int MaximalFilesCount = 100;
     public System.Windows.Forms.SaveFileDialog SaveDialog { get; private set; }
     public System.Windows.Forms.OpenFileDialog OpenDialog { get; private set; }
+    public delegate void FilePathProcessor(String file_path);
+    public delegate void FilePathsProcessor(String[] file_path);
 
-    public FilesDialog() {
+    public Dialog() {
       this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenDialog = new System.Windows.Forms.OpenFileDialog();
     }
 
-    public delegate void FilePathProcessor(String file_path);
     public void OpenFile(FilePathProcessor processor) {
       var dialog = OpenDialog;
       dialog.Multiselect = false;
@@ -26,7 +27,6 @@ namespace ImageFilesManager.Dialogs {
       processor.Invoke(dialog.FileName);
     }
 
-    public delegate void FilePathsProcessor(String[] file_path);
     public void OpenFiles(FilePathsProcessor processor) {
       var dialog = OpenDialog;
       dialog.Multiselect = true;      

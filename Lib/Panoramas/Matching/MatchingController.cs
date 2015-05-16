@@ -12,7 +12,7 @@ namespace Panoramas.Matching {
 
     public MatchingController(Segment[] segments) {
       this.AllSegments = segments;
-      this.Matches = GenerateMatches(segments);
+      this.Matches = generateMatches(segments);
     }
 
     public SegmentsPair MatchBetween(Segment base_segment, Segment query_segment) {
@@ -28,33 +28,10 @@ namespace Panoramas.Matching {
       return Matches.Find((m) => m.BaseSegment.Filename == base_segment && m.QuerySegment.Filename == query_segment);
     }
 
-    static List<SegmentsPair> GenerateMatches(Segment[] segments) {
-      var featured_segments = segments.Select((s) => s.Bitmap).ToArray();
-      var matches = new List<SegmentsPair>();
-      var matched_segments = new List<Segment>();
-      for (int iBase = 0; iBase < segments.Length; iBase++) {
-        var base_segment = segments[iBase];
-        for (int iQuery = 0; iQuery < segments.Length; iQuery++) {
-          if (iBase == iQuery)
-            continue;
-          var matched_segment = segments[iQuery];
-          var matcher = new ImagesMatching.Flann.Matcher(featured_segments[iBase], featured_segments[iQuery]);
-          var match = new SegmentsPair(base_segment, matched_segment, matcher.Match());
-          if (matched_segments.Contains(matched_segment)) {
-            var prev_match = matches.Find((m) => m.BaseSegment == matched_segment && m.QuerySegment == base_segment);
-            match.SetReversePair(prev_match);
-          }
-          matches.Add(match);
-        }
-        matched_segments.Add(base_segment);
-      }
-      return matches;
-    }
-
     public Segment CoreSegment(Segment[] domain = null) {
       if (domain == null)
         domain = AllSegments;
-      return domain.OrderBy((s) => DistancesFor(s)).First();
+      return domain.OrderBy((s) => distancesFor(s)).First();
     }
 
     public Segment ClosestTo(Segment segment) {
@@ -97,8 +74,36 @@ namespace Panoramas.Matching {
       return domain.Where((s) => ClosestTo(s) == segment).ToArray();
     }
 
-    double DistancesFor(Segment segment) {
+    double distancesFor(Segment segment) {
       return Matches.Sum((m) => m.QuerySegment == segment ? m.Distance() : 0);
+    }
+
+    static List<SegmentsPair> generateMatches(Segment[] segments) {
+      var featured_segments = segments.Select((s) => s.Bitmap).ToArray();
+      var matches = new List<SegmentsPair>();
+      var matched_segments = new List<Segment>();
+      int pairs_count = 0;
+      for (int iBase = 0; iBase < segments.Length; iBase++) {
+        var base_segment = segments[iBase];
+        for (int iQuery = 0; iQuery < segments.Length; iQuery++) {
+          if (iBase == iQuery)
+            continue;
+          var matched_segment = segments[iQuery];
+          var match = new SegmentsPair(base_segment, matched_segment);
+          if (matched_segments.Contains(matched_segment)) {
+            var prev_match = matches.Find((m) => m.BaseSegment == matched_segment && m.QuerySegment == base_segment);
+            match.SetReversePair(prev_match);
+            pairs_count += 1;
+          } else {
+            pairs_count -= 1;
+          }
+          matches.Add(match);
+        }
+        matched_segments.Add(base_segment);
+      }
+      if (pairs_count != 0)
+        throw new Exception("Matches generator error!");
+      return matches;
     }
   }
 }

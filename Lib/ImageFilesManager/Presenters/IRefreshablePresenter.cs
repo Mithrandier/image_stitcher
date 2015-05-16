@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace ImageFilesManager.Presenters {
   interface IRefreshablePresenter {
-    void RefreshWith(String[] filenames, Bitmap[] images);
+    void RefreshWith(ImageFile[] images);
   }
 }

@@ -5,51 +5,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ImageFilesManager.Dialogs;
 using ImageFilesManager.Presenters;
 
 namespace ImageFilesManager {
-  public class Manager {
-    public List<String> FileNames { get; private set; }
-    public List<Bitmap> Images { get; private set; }
-    FilesDialog dialog;
+  public class CollectionManager {
+    public List<ImageFile> Images { get; private set; }
+    public delegate void LoadedImagesProcessor(ImageFile[] filenames);
+
+    Dialog dialog;
     List<IRefreshablePresenter> presenters;
 
-    public Manager() {
-      this.FileNames = new List<string>();
-      this.Images = new List<Bitmap>();
-      this.dialog = new FilesDialog();
+    public CollectionManager() {
+      this.Images = new List<ImageFile>();
+      this.dialog = new Dialog();
       this.presenters = new List<IRefreshablePresenter>();
     }
 
-    public delegate void LoadedImagesProcessor(String[] filenames, Bitmap[] images);
     public void LoadMore(LoadedImagesProcessor processor = null) {
       dialog.OpenFiles((filenames) => {
-        filenames = filenames.Except(FileNames).ToArray();
-        var new_images = filenames.Select((f) => new Bitmap(f)).ToArray();
-        FileNames.AddRange(filenames);
+        var present_filenames = Images.Select((i) => i.FileName);
+        filenames = filenames.Except(present_filenames).ToArray();
+        var new_images = filenames.Select((f) => new ImageFile(f)).ToArray();
         Images.AddRange(new_images);
         refreshAll();
-        processor.Invoke(filenames, new_images);
-      });
-    }
-
-    public void SaveImage(Bitmap image) {
-      dialog.SaveToFile((filename) => {
-        image.Save(filename);
+        processor.Invoke(new_images);
       });
     }
 
     public void ClearAll() {
-      this.FileNames.Clear();
       this.Images.Clear();
       refreshAll();
     }
 
-    public void RemoveImages(String[] filenames) {
+    public void Remove(String[] filenames) {
       foreach (var filename in filenames) {
-        int index = FileNames.IndexOf(filename);
-        FileNames.RemoveAt(index);
+        int index = Images.FindIndex((i) => i.FileName == filename);
         Images.RemoveAt(index);
       }
       refreshAll();
@@ -68,10 +58,8 @@ namespace ImageFilesManager {
     }
 
     void refreshAll() {
-      var keys = FileNames.ToArray();
-      var images = Images.ToArray();
       foreach (var presenter in presenters)
-        presenter.RefreshWith(keys, images);
+        presenter.RefreshWith(Images.ToArray());
     }
   }
 }
