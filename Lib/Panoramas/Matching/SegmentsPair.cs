@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ImagesMatching;
 
 namespace Panoramas.Matching {
-  public class SegmentsPair : IRelationController {
+  public class SegmentsPair : IRelationControl {
     public const int MIN_MATCHES_COUNT = 10;
 
     SegmentsPair reverse_pair;

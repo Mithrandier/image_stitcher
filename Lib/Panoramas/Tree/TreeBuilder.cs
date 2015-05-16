@@ -7,18 +7,20 @@ using Panoramas.Matching;
 
 namespace Panoramas.Tree {
   public class TreeBuilder {
-    MatchingController map;
+    Segment[] all_segments;
+    IAnalyzer map;
     List<Segment> loose_segments;
     Segment[] treeNodes {
-      get { return map.AllSegments.Except(loose_segments).ToArray(); }
+      get { return all_segments.Except(loose_segments).ToArray(); }
     }
 
-    public TreeBuilder(MatchingController map) {
+    public TreeBuilder(IPanorama panorama, IAnalyzer map) {
       this.map = map;
+      this.all_segments = panorama.Segments;
     }
 
     public TreeNode Generate() {
-      this.loose_segments = map.AllSegments.ToList();
+      this.loose_segments = all_segments.ToList();
       resetSegments();
       var root = addNodeToTree(map.CoreSegment());
       while (loose_segments.Count > 0) {
@@ -47,7 +49,7 @@ namespace Panoramas.Tree {
     }
 
     void resetSegments() {
-      foreach (var segment in map.AllSegments) {
+      foreach (var segment in all_segments) {
         segment.ResetTransformation();
       }
     }

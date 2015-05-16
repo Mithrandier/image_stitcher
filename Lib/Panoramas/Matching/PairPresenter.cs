@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Emgu.CV.Features2D;
 
 namespace Panoramas.Matching {
   public class PairPresenter {

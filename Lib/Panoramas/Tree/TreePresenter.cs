@@ -25,12 +25,11 @@ namespace Panoramas.Tree {
       offset.Move(tree.Segment.Bitmap.Width, tree.Segment.Bitmap.Height);
       renderNode(tree, offset, result);
       var result_bitmap = result.ToBitmap();
-      result_bitmap = new Cropper(result_bitmap).AutoCrop();
       return result_bitmap;
     }
 
     void renderNode(TreeNode node, Transformation context, Emgu.CV.Image<Emgu.CV.Structure.Bgr, int> template) {
-      var transformation = context.Multiply(node.Transformation());
+      var transformation = context.Multiply(node.Segment.Transformation);//.UpdateTransformation());
       transformation.TransformOn(node.Segment.Bitmap, template);
       foreach (var child in node.Children)
         renderNode(child, context, template);

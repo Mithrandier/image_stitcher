@@ -30,10 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV">
+    <Reference Include="Emgu.CV, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.Util">
+    <Reference Include="Emgu.Util, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.Util.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -47,7 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRelationController.cs" />
+    <Compile Include="IAnalyzer.cs" />
+    <Compile Include="IBuilder.cs" />
+    <Compile Include="IFactory.cs" />
+    <Compile Include="IPanorama.cs" />
+    <Compile Include="IRelationControl.cs" />
+    <Compile Include="Base\Panorama.cs" />
     <Compile Include="Tree\TreeBuilder.cs" />
     <Compile Include="Matching\PairPresenter.cs" />
     <Compile Include="Tree\TreePresenter.cs" />
@@ -60,6 +67,10 @@
     <Compile Include="Tree\TreeNode.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\EmguWrapper\EmguWrapper.csproj">
+      <Project>{1569e9be-a1aa-499d-a4b6-b485feef4488}</Project>
+      <Name>EmguWrapper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ImagesMatching\ImagesMatching.csproj">
       <Project>{e3e5232e-2ffd-4b37-b0c0-f38fd84c7abe}</Project>
       <Name>ImagesMatching</Name>

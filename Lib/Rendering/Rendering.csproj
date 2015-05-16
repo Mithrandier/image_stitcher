@@ -30,12 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV">
-      <HintPath>..\..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.Util">
-      <HintPath>..\..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.Util.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -47,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cropper.cs" />
+    <Compile Include="IFactory.cs" />
+    <Compile Include="IIntegralImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

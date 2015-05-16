@@ -24,7 +24,7 @@ namespace PanoramasBaseTests {
       var stitcher = new Stitcher(files);
       var match_result = stitcher.MatchBetween(files[0], files[1]);
       Assert.IsNotNull(match_result);
-      Assert.IsInstanceOfType(match_result, typeof(IRelationController));
+      Assert.IsInstanceOfType(match_result, typeof(IRelationControl));
       match_result = stitcher.MatchBetween(files[1], files[0]);
       Assert.IsNotNull(match_result);
     }

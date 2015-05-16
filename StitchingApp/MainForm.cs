@@ -16,7 +16,7 @@ namespace TransformatorExample {
     ImageFilesManager.CollectionManager images_manager;
     ImageFilesManager.ISelectableControl segments_thumbnails;
     ImageFilesManager.ISelectableControl segments_pair_list;
-    IRelationController current_match;
+    IRelationControl current_match;
 
     public MainForm() {
       InitializeComponent();

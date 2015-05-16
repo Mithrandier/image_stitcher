@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas {
-  public interface IRelationController {
+  public interface IRelationControl {
     Image ToImage();
     double Distance();
     int LimitPercent { get; set; }

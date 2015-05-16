@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ImagesMatching;
 
 namespace Panoramas.Matching {
-  public class MatchingController {
+  public class MatchingController : IAnalyzer {
     public Segment[] AllSegments { get; private set; }
     public List<SegmentsPair> Matches { get; private set; }
 
@@ -21,7 +21,7 @@ namespace Panoramas.Matching {
       return Matches.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);
     }
 
-    public SegmentsPair MatchBetween(String base_segment, String query_segment) {
+    public IRelationControl MatchBetween(String base_segment, String query_segment) {
       var all_files = AllSegments.Select((s) => s.Filename);
       if (base_segment == query_segment || !all_files.Contains(base_segment) || !all_files.Contains(query_segment))
         throw new ArgumentException("Request for missing images");
