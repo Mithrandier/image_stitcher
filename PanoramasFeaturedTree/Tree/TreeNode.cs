@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Panoramas.Tree {
+namespace Panoramas.FeaturedTree {
   public class TreeNode {
     public Segment Segment { get; private set; }
     public List<TreeNode> Children { get; private set; }

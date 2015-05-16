@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ImagesMatching;
 
-namespace Panoramas.Matching {
-  public class SegmentsPair : IRelationControl {
+namespace Panoramas.FeaturedTree.Matching {
+  public class SegmentsPair : ISegmentsRelation, IRelationControl {
     public const int MIN_MATCHES_COUNT = 10;
 
     SegmentsPair reverse_pair;

@@ -4,12 +4,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Panoramas.Tree;
 using Rendering;
 
-namespace Panoramas {
+namespace Panoramas.FeaturedTree {
   public class PanoramaPresenter {
-    public Bitmap Render(IPanorama panorama) {
+    public Bitmap Render(IPanoramaSegments panorama) {
       var template = generateTemplate(panorama.Core.Bitmap);
       var result = new Emgu.CV.Image<Emgu.CV.Structure.Bgr, int>((Bitmap)template.Clone());
       var offset = new Transformation();

@@ -4,12 +4,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Panoramas.Matching;
-using Panoramas.Tree;
+using Panoramas.FeaturedTree.Matching;
 
-namespace Panoramas {
+namespace Panoramas.FeaturedTree {
   public class Stitcher {
-    IPanorama panorama;
+    IPanoramaSegments panorama;
     IAnalyzer matching_controller;
     IBuilder builder;
 

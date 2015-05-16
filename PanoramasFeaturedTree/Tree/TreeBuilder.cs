@@ -3,29 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Panoramas.Matching;
+using Panoramas.FeaturedTree.Matching;
 
-namespace Panoramas.Tree {
+namespace Panoramas.FeaturedTree {
   public class TreeBuilder : IBuilder {
-    IAnalyzer map;
-    List<Segment> loose_segments;
-    IPanorama panorama;
-
-    public TreeBuilder(IPanorama panorama, IAnalyzer map) {
-      this.panorama = panorama;
-      this.loose_segments = panorama.Segments.ToList();
-      this.map = map;
+    public TreeBuilder() {
     }
 
-    public IPanorama Generate() {
-      if (loose_segments.Count == 0)
-        return panorama;
-      panorama.ResetSegmentsPositions();
-      var root = addNodeToTree(panorama.Core);
+    public IPanoramaSegments Generate(IPanoramaMatches panorama_matches) {
+      panorama_matches.ResetSegmentsPositions();
+      var loose_segments = panorama_matches.Segments.ToList();
+      var root = addNodeToTree(panorama_matches.Core());
       while (loose_segments.Count > 0) {
         Segment closest_loose_segment, closest_tree_segment;
         var registered = panorama.Segments.Except(loose_segments);
-        map.ClosestTo(registered.ToArray(), loose_segments.ToArray(), out closest_loose_segment, out closest_tree_segment);
+        panorama_matches.ClosestTo(registered.ToArray(), loose_segments.ToArray(), out closest_loose_segment, out closest_tree_segment);
         var closest_tree_node = root.FindNode(closest_tree_segment);
         addNodeToTree(closest_loose_segment, closest_tree_node);
       }

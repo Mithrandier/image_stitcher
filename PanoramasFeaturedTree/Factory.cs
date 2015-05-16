@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Panoramas {
-  public interface IFactory {
+namespace Panoramas.FeaturedTree {
+  public class Factory : IFactory {
+
   }
 }
