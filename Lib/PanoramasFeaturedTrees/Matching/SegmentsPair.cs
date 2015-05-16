@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using ImagesMatching;
 
-namespace Panoramas.Matching {
-  public class SegmentsPair : IRelationControl {
+namespace Panoramas.FeaturedTrees.Matching {
+  public class SegmentsPair : ISegmentsRelation {
     public const int MIN_MATCHES_COUNT = 10;
 
-    SegmentsPair reverse_pair;
     int limit;
     double? distance;
     KeyPointsPair[] all_matches;
@@ -29,11 +28,12 @@ namespace Panoramas.Matching {
           return;
         }
         this.active = value;
-        if (reverse_pair != null && reverse_pair.Active != active) {
-          reverse_pair.Active = active;
+        if (ReversePair != null && ReversePair.Active != active) {
+          ReversePair.Active = active;
         }
       }
     }
+    public ISegmentsRelation ReversePair { get; set; }
 
     public SegmentsPair(Segment base_segment, Segment query) {
       this.BaseSegment = base_segment;
@@ -43,9 +43,9 @@ namespace Panoramas.Matching {
       setOptimalLimit();
     }
 
-    public void SetReversePair(SegmentsPair pair) {
-      this.reverse_pair = pair;
-      pair.reverse_pair = this;
+    public void SetReversePair(ISegmentsRelation pair) {
+      this.ReversePair = pair;
+      pair.ReversePair = this;
     }
 
     public int LimitPercent {
@@ -61,8 +61,8 @@ namespace Panoramas.Matching {
         if (matches_count < MIN_MATCHES_COUNT) {
           active = false;
         }
-        if (reverse_pair != null && reverse_pair.LimitPercent != this.LimitPercent) {
-          reverse_pair.LimitPercent = percent;
+        if (ReversePair != null && ReversePair.LimitPercent != this.LimitPercent) {
+          ReversePair.LimitPercent = percent;
         }
         setCountLimit(matches_count);
       }

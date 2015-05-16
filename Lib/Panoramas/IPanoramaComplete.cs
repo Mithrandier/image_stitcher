@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas {
-  public interface IAnalyzer {
-    IPanoramaRelations Analyze(IPanoramaSegments panorama_segment);
+  public interface IPanoramaComplete : IPanoramaRelations {
+    System.Drawing.Bitmap Render();
   }
 }

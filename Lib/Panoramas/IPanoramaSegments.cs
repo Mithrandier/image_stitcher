@@ -5,10 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas {
-  public interface IPanorama {
+  public interface IPanoramaSegments {
     Segment[] Segments { get; }
-    Segment Core { get; }
-    void SetCore(Segment segment);
-    void ResetSegmentsPositions();
   }
 }

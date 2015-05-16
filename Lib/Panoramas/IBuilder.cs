@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Panoramas {
   public interface IBuilder {
-    IPanorama Generate();
+    IPanoramaComplete Generate(IPanoramaRelations panorama_relations);
   }
 }

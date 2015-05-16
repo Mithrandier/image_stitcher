@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageEditor", "Lib\ImageEdi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmguWrapper", "EmguWrapper\EmguWrapper.csproj", "{1569E9BE-A1AA-499D-A4B6-B485FEEF4488}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanoramasFeaturedTrees", "Lib\PanoramasFeaturedTrees\PanoramasFeaturedTrees.csproj", "{4878504A-EC98-4CAB-AE85-75556D762CAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{1569E9BE-A1AA-499D-A4B6-B485FEEF4488}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1569E9BE-A1AA-499D-A4B6-B485FEEF4488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1569E9BE-A1AA-499D-A4B6-B485FEEF4488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4878504A-EC98-4CAB-AE85-75556D762CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4878504A-EC98-4CAB-AE85-75556D762CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4878504A-EC98-4CAB-AE85-75556D762CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4878504A-EC98-4CAB-AE85-75556D762CAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +99,6 @@ Global
 		{503F0FC4-C9BA-482C-A4D2-0F760CD6C970} = {E29CC72E-A00C-4D3D-B37C-82AAACEBB11E}
 		{681C7456-763C-4AB6-B75F-131BB27F3A14} = {B1733881-B47C-4EBB-A5EA-4388FA872BA9}
 		{1569E9BE-A1AA-499D-A4B6-B485FEEF4488} = {B1733881-B47C-4EBB-A5EA-4388FA872BA9}
+		{4878504A-EC98-4CAB-AE85-75556D762CAE} = {B1733881-B47C-4EBB-A5EA-4388FA872BA9}
 	EndGlobalSection
 EndGlobal

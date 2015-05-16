@@ -60,20 +60,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Factory.cs" />
-    <Compile Include="Matching\MatchPresenterTest.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Matching\SegmentsMatchTest.cs" />
-    <Compile Include="Base\SegmentTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Base\TransformationTest.cs" />
-    <Compile Include="Matching\MatchingControllerTest.cs" />
-    <Compile Include="Tree\TreeBuilderTest.cs" />
-    <Compile Include="Tree\TreeNodeTest.cs" />
-    <Compile Include="StitcherTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

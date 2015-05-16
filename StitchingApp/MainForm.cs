@@ -11,6 +11,7 @@ using Panoramas;
 
 namespace TransformatorExample {
   public partial class MainForm : BaseForm {
+    Panoramas.IFactory panoramas_factory;
     Stitcher stitcher;
     ImageEditor.Editor picturebox_matching, picturebox_merging;
     ImageFilesManager.CollectionManager images_manager;
@@ -20,6 +21,7 @@ namespace TransformatorExample {
 
     public MainForm() {
       InitializeComponent();
+      panoramas_factory = new Panoramas.FeaturedTrees.Factory();
       picturebox_matching = new ImageEditor.Editor(this, this.pictureMatches);
       picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged);
       picturebox_merging.BackgroundColor = Color.Black;
@@ -48,6 +50,7 @@ namespace TransformatorExample {
     void addSegments() {
       images_manager.LoadMore((images) => {
         this.stitcher = new Stitcher(
+          panoramas_factory,
           images.Select((i) => i.FileName).ToArray(), 
           images.Select((i) => i.Bitmap).ToArray());
         resetCurrentMatch();        

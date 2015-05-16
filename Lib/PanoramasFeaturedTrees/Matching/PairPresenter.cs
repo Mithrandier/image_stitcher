@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Panoramas.Matching {
+namespace Panoramas.FeaturedTrees.Matching {
   public class PairPresenter {
     Bitmap ImageBase, ImageQuery;
     Bitmap common_template;

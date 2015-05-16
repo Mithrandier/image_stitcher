@@ -111,6 +111,10 @@
       <Project>{bd18cfb0-6f67-4059-9282-d76d68c1b867}</Project>
       <Name>Logger</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lib\PanoramasFeaturedTrees\PanoramasFeaturedTrees.csproj">
+      <Project>{4878504a-ec98-4cab-ae85-75556d762cae}</Project>
+      <Name>PanoramasFeaturedTrees</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lib\Panoramas\Panoramas.csproj">
       <Project>{401d7ebd-5e6e-4ce4-8c43-67a12c620216}</Project>
       <Name>Panoramas</Name>
