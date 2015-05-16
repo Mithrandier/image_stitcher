@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 using Panoramas.Matching;
 
 namespace Panoramas.Tree {
-  public class TreeBuilder {
-    Segment[] all_segments;
+  public class TreeBuilder : IBuilder {
     IAnalyzer map;
     List<Segment> loose_segments;
-    Segment[] treeNodes {
-      get { return all_segments.Except(loose_segments).ToArray(); }
-    }
+    IPanorama panorama;
 
     public TreeBuilder(IPanorama panorama, IAnalyzer map) {
+      this.panorama = panorama;
+      this.loose_segments = panorama.Segments.ToList();
       this.map = map;
-      this.all_segments = panorama.Segments;
     }
 
-    public TreeNode Generate() {
-      this.loose_segments = all_segments.ToList();
-      resetSegments();
-      var root = addNodeToTree(map.CoreSegment());
+    public IPanorama Generate() {
+      if (loose_segments.Count == 0)
+        return panorama;
+      panorama.ResetSegmentsPositions();
+      var root = addNodeToTree(panorama.Core);
       while (loose_segments.Count > 0) {
         Segment closest_loose_segment, closest_tree_segment;
-        map.ClosestTo(treeNodes, loose_segments.ToArray(), out closest_loose_segment, out closest_tree_segment);
+        var registered = panorama.Segments.Except(loose_segments);
+        map.ClosestTo(registered.ToArray(), loose_segments.ToArray(), out closest_loose_segment, out closest_tree_segment);
         var closest_tree_node = root.FindNode(closest_tree_segment);
         addNodeToTree(closest_loose_segment, closest_tree_node);
       }
-      return root;
+      return panorama;
     }
 
     TreeNode addNodeToTree(Segment segment, TreeNode parent = null) {
@@ -46,12 +46,6 @@ namespace Panoramas.Tree {
         addNodeToTree(neighbour, node);
       }
       return node;
-    }
-
-    void resetSegments() {
-      foreach (var segment in all_segments) {
-        segment.ResetTransformation();
-      }
     }
   }
 }

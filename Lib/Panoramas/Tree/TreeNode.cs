@@ -10,14 +10,15 @@ namespace Panoramas.Tree {
     public List<TreeNode> Children { get; private set; }
     public TreeNode Parent { get; private set; }
 
-    public TreeNode(Segment segment) {
+    public TreeNode(Segment segment, TreeNode parent = null) {
       this.Segment = segment;
+      this.Parent = parent;
       this.Children = new List<TreeNode>();
+      updateTransformation();
     }
 
     public TreeNode AddChild(Segment segment) {
-      var child = new TreeNode(segment);
-      child.Parent = this;
+      var child = new TreeNode(segment, this);
       Children.Add(child);
       return child;
     }
@@ -43,19 +44,9 @@ namespace Panoramas.Tree {
       return segments.ToArray();
     }
 
-    public void UpdateTransformation() {
-      List<Transformation> transformations = new List<Transformation>();
-      var node = this;
-      do {
-        transformations.Add(node.Segment.Transformation);
-        node = node.Parent;
-      } while (node != null);
-      transformations.Reverse();
-      Transformation result = new Transformation();
-      foreach (var step_transform in transformations)
-        this.Segment.Transformation.Distort(step_transform);
-        //result = result.Multiply(step_transform);
-      //return result;
+    void updateTransformation() {
+      if (Parent != null)
+        this.Segment.Transformation.Distort(Parent.Segment.Transformation);      
     }
   }
 }

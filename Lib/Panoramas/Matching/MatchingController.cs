@@ -12,7 +12,13 @@ namespace Panoramas.Matching {
 
     public MatchingController(Segment[] segments) {
       this.AllSegments = segments;
-      this.Matches = generateMatches(segments);
+    }
+
+    public IPanorama Analyze() {
+      this.Matches = generateMatches(AllSegments);
+      var panorama = new Panorama(AllSegments);
+      panorama.SetCore(findCoreSegment());
+      return panorama;
     }
 
     public SegmentsPair MatchBetween(Segment base_segment, Segment query_segment) {
@@ -26,12 +32,6 @@ namespace Panoramas.Matching {
       if (base_segment == query_segment || !all_files.Contains(base_segment) || !all_files.Contains(query_segment))
         throw new ArgumentException("Request for missing images");
       return Matches.Find((m) => m.BaseSegment.Filename == base_segment && m.QuerySegment.Filename == query_segment);
-    }
-
-    public Segment CoreSegment(Segment[] domain = null) {
-      if (domain == null)
-        domain = AllSegments;
-      return domain.OrderBy((s) => distancesFor(s)).First();
     }
 
     public Segment ClosestTo(Segment segment) {
@@ -104,6 +104,10 @@ namespace Panoramas.Matching {
       if (pairs_count != 0)
         throw new Exception("Matches generator error!");
       return matches;
+    }
+
+    Segment findCoreSegment() {
+      return AllSegments.OrderBy((s) => distancesFor(s)).First();
     }
   }
 }

@@ -15,9 +15,8 @@ namespace Panoramas {
       this.homography_matrix = newHomography();
     }
 
-    public void Distort(Transformation outer_transformation) {
-      var multiplied = this.homography_matrix.Mul(outer_transformation.homography_matrix);
-      this.homography_matrix.Data = multiplied.Data;
+    public void Distort(Transformation transformation) {
+      this.homography_matrix.Data = transformation.homography_matrix.Mul(this.homography_matrix).Data;
     }
 
     public Transformation Multiply(Transformation transformation) {

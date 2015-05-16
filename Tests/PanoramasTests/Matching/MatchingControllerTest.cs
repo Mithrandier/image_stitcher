@@ -19,13 +19,6 @@ namespace PanoramasBaseTests {
     }
 
     [TestMethod]
-    public void ItDefinesCoreSegment() {
-      var core = Factory.AMatchingController().CoreSegment();
-      Assert.IsNotNull(core);
-      Assert.IsInstanceOfType(core, typeof(Segment));
-    }
-
-    [TestMethod]
     public void ItProvidesMatchBetweenSegments() {
       var segment1 = Factory.ASegment();
       var segment2 = Factory.ASegment();

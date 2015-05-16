@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas {
-  interface IBuilder {
-
+  public interface IBuilder {
+    IPanorama Generate();
   }
 }

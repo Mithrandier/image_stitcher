@@ -73,7 +73,6 @@
     <Compile Include="Matching\MatchingControllerTest.cs" />
     <Compile Include="Tree\TreeBuilderTest.cs" />
     <Compile Include="Tree\TreeNodeTest.cs" />
-    <Compile Include="Tree\TreePresenterTest.cs" />
     <Compile Include="StitcherTest.cs" />
   </ItemGroup>
   <ItemGroup>

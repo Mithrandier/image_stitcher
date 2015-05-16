@@ -9,7 +9,7 @@ namespace Panoramas {
   public class Segment {
     public System.Drawing.Bitmap Bitmap { get; private set; }
     public String Filename { get; private set; }
-    public Transformation Transformation { get; private set; }
+    public Transformation Transformation { get; set; }
 
     public Segment(String filename) {
       this.Filename = filename;
