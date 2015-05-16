@@ -12,7 +12,7 @@ namespace Panoramas {
     Emgu.CV.HomographyMatrix homography_matrix;
 
     public Transformation() {
-      this.homography_matrix = NewHomography();
+      this.homography_matrix = newHomography();
     }
 
     public Transformation(Emgu.CV.HomographyMatrix matrix) {
@@ -86,7 +86,7 @@ namespace Panoramas {
       return true;
     }
 
-    Emgu.CV.HomographyMatrix NewHomography() {
+    Emgu.CV.HomographyMatrix newHomography() {
       var matrix = new Emgu.CV.HomographyMatrix();
       matrix[0, 0] = 1;
       matrix[1, 1] = 1;

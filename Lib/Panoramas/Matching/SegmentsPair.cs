@@ -36,7 +36,7 @@ namespace Panoramas.Matching {
       pair.reverse_pair = this;
     }
 
-    public bool IsActive {
+    public bool Active {
       get { return active; }
       set {
         if (Matches.Length < MIN_MATCHES_COUNT && value == true) {
@@ -44,18 +44,14 @@ namespace Panoramas.Matching {
           return;
         }
         this.active = value;
-        if (reverse_pair != null && reverse_pair.IsActive != active) {
-          reverse_pair.IsActive = active;
+        if (reverse_pair != null && reverse_pair.Active != active) {
+          reverse_pair.Active = active;
         }
       }
     }
 
     public System.Drawing.Image ToImage() {
       return new MatchPresenter(this).Render();
-    }
-
-    public int CurrentLimit() {
-      return limit;
     }
 
     void setOptimalLimit() {
@@ -65,18 +61,24 @@ namespace Panoramas.Matching {
       setCountLimit(count);
     }
 
-    public void SetLimit(int percent) {
-      this.limit = percent;
-      if (percent < 0 || percent > 100)
-        throw new ArgumentException("Invalid parameter value");      
-      var matches_count = all_matches.Length * percent / 100;
-      if (matches_count < MIN_MATCHES_COUNT) {
-        active = false;
+    public int LimitPercent {
+      get {
+        return limit;
       }
-      if (reverse_pair != null && reverse_pair.CurrentLimit() != CurrentLimit()) {
-        reverse_pair.SetLimit(percent);
+      set {
+        var percent = value;
+        this.limit = percent;
+        if (percent < 0 || percent > 100)
+          throw new ArgumentException("Invalid parameter value");
+        var matches_count = all_matches.Length * percent / 100;
+        if (matches_count < MIN_MATCHES_COUNT) {
+          active = false;
+        }
+        if (reverse_pair != null && reverse_pair.LimitPercent != this.LimitPercent) {
+          reverse_pair.LimitPercent = percent;
+        }
+        setCountLimit(matches_count);
       }
-      setCountLimit(matches_count);
     }
 
     void setCountLimit(int count) {

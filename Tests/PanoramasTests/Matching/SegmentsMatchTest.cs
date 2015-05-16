@@ -48,7 +48,7 @@ namespace PanoramasBaseTests {
     public void ItAllowsToUseMoreMatches() {
       var match = Factory.ASegmentsMatch();
       var first_matches = match.Matches;
-      match.SetLimit(100);
+      match.LimitPercent = 100;
       var more_matches = match.Matches;
       Assert.IsTrue(first_matches.Length < more_matches.Length);
     }

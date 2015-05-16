@@ -85,7 +85,7 @@ namespace TransformatorExample {
     private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
       if (current_match == null)
         return;
-      current_match.SetLimit(scrollLimit.Value);
+      current_match.LimitPercent = scrollLimit.Value;
       drawCurrentMatch();
     }
 
@@ -102,7 +102,7 @@ namespace TransformatorExample {
     }
 
     private void checkBoxActiveMatch_CheckedChanged(object sender, EventArgs e) {
-      current_match.IsActive = checkBoxActiveMatch.Checked;
+      current_match.Active = checkBoxActiveMatch.Checked;
       drawCurrentMatch();
     }
 
@@ -121,8 +121,8 @@ namespace TransformatorExample {
     void drawCurrentMatch() {
       picturebox_matching.Image = current_match.ToImage();
       textMatchDistance.Text = current_match.Distance().ToString("F2");
-      scrollLimit.Value = current_match.CurrentLimit();
-      checkBoxActiveMatch.Checked = current_match.IsActive;
+      scrollLimit.Value = current_match.LimitPercent;
+      checkBoxActiveMatch.Checked = current_match.Active;
     }
 
     //
