@@ -32,14 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.CV.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.Util, Version=2.4.2.1777, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libemgucv-windows-x86-gpu-2.4.2.1777\bin\Emgu.Util.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -111,13 +103,13 @@
       <Project>{bd18cfb0-6f67-4059-9282-d76d68c1b867}</Project>
       <Name>Logger</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lib\PanoramasFeaturedTrees\PanoramasFeaturedTrees.csproj">
-      <Project>{4878504a-ec98-4cab-ae85-75556d762cae}</Project>
-      <Name>PanoramasFeaturedTrees</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lib\Panoramas\Panoramas.csproj">
       <Project>{401d7ebd-5e6e-4ce4-8c43-67a12c620216}</Project>
       <Name>Panoramas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PanoramasFeaturedTree\PanoramasFeaturedTree.csproj">
+      <Project>{94f0179a-4c3c-4d1b-b7e1-51182a5162ad}</Project>
+      <Name>PanoramasFeaturedTree</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

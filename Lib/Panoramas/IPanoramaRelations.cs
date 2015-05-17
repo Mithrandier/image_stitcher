@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Panoramas {
   public interface IPanoramaRelations : IPanoramaSegments {
-    Segment Core();
-    ISegmentsRelation MatchBetween(Segment base_segment, Segment related_image);
+    IImage Core();
+    ISegmentsRelation MatchBetween(IImage base_segment, IImage related_image);
     IRelationControl MatchBetween(String base_iamge, String related_image);
-    Segment[] NeighboursOf(Segment segment, Segment[] domain = null);
-    void ClosestTo(Segment[] group, Segment[] domain, out Segment closest, out Segment closest_from_group);
-    void ResetSegmentsPositions();
+    IImage[] NeighboursOf(IImage segment, IImage[] domain = null);
+    void ClosestTo(IImage[] group, IImage[] domain, out IImage closest, out IImage closest_from_group);
     List<ISegmentsRelation> Relations { get; }
   }
 }

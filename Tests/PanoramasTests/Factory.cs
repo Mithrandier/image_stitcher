@@ -15,9 +15,5 @@ namespace PanoramasBaseTests {
     public static Bitmap ABitmap() {
       return new Bitmap(VALID_FILE_NAME);
     }
-
-    public static Segment ASegment() {
-      return new Segment(VALID_FILE_NAME);
-    }
   }
 }

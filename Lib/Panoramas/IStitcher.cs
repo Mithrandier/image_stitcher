@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas {
-  public interface IPanoramaComplete : IPanoramaRelations {
-    ISegment[] Segments { get;  }
+  public interface IStitcher {
+    IRelationControl MatchBetween(String image_base, String image_matched);
+    System.Drawing.Bitmap StitchAll();
   }
 }

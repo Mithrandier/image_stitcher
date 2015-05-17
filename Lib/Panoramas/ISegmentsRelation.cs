@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Panoramas {
   public interface ISegmentsRelation : IRelationControl {
-    Segment BaseSegment { get; }
-    Segment QuerySegment { get; }
-    Segment[] Segments { get; }
+    IImage BaseSegment { get; }
+    IImage QuerySegment { get; }
+    IImage[] Segments { get; }
     ISegmentsRelation ReversePair { get; set; }
-    Transformation GenerateTransformation();
-    bool Includes(Segment segment);
-    Segment PairOf(Segment segment);
+    ITransformation GenerateTransformation();
+    bool Includes(IImage segment);
+    IImage PairOf(IImage segment);
   }
 }

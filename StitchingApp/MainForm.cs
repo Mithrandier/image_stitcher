@@ -11,8 +11,8 @@ using Panoramas;
 
 namespace TransformatorExample {
   public partial class MainForm : BaseForm {
-    Panoramas.IFactory panoramas_factory;
-    Stitcher stitcher;
+    Panoramas.FeaturedTrees.Factory panoramas_factory;
+    IStitcher stitcher;
     ImageEditor.Editor picturebox_matching, picturebox_merging;
     ImageFilesManager.CollectionManager images_manager;
     ImageFilesManager.ISelectableControl segments_thumbnails;
@@ -49,8 +49,7 @@ namespace TransformatorExample {
 
     void addSegments() {
       images_manager.LoadMore((images) => {
-        this.stitcher = new Stitcher(
-          panoramas_factory,
+        this.stitcher = panoramas_factory.Stitcher(
           images.Select((i) => i.FileName).ToArray(), 
           images.Select((i) => i.Bitmap).ToArray());
         resetCurrentMatch();        

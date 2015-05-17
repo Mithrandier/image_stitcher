@@ -83,10 +83,6 @@
     <Content Include="Resources\vt.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lib\ImagesMatching\ImagesMatching.csproj">
-      <Project>{e3e5232e-2ffd-4b37-b0c0-f38fd84c7abe}</Project>
-      <Name>ImagesMatching</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Lib\Panoramas\Panoramas.csproj">
       <Project>{401d7ebd-5e6e-4ce4-8c43-67a12c620216}</Project>
       <Name>Panoramas</Name>
