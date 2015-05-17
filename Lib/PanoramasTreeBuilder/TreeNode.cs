@@ -6,44 +6,44 @@ using System.Threading.Tasks;
 
 namespace Panoramas.TreeBuilder {
   public class TreeNode {
-    public IImage Segment { get; private set; }
+    public IImage Image { get; private set; }
     public List<TreeNode> Children { get; private set; }
     public TreeNode Parent { get; private set; }
     public ITransformation Transformation { get; private set; }
 
-    public TreeNode(IImage segment, ITransformation transformation = null, TreeNode parent = null) {
-      this.Segment = segment;
+    public TreeNode(IImage image, ITransformation transformation, TreeNode parent = null) {
+      this.Image = image;
       this.Transformation = transformation;
       this.Parent = parent;
       this.Children = new List<TreeNode>();
       updateTransformation();
     }
 
-    public TreeNode AddChild(IImage segment, ITransformation transformation) {
-      var child = new TreeNode(segment, transformation, this);
+    public TreeNode AddChild(IImage image, ITransformation transformation) {
+      var child = new TreeNode(image, transformation, this);
       Children.Add(child);
       return child;
     }
 
-    public TreeNode FindNode(IImage segment) {
-      if (Segment == segment)
+    public TreeNode FindNode(IImage image) {
+      if (Image == image)
         return this;
       else
         foreach (var child in Children) {
-          var match = child.FindNode(segment);
+          var match = child.FindNode(image);
           if (match != null)
             return match;
         }
       return null;
     }
 
-    public IImage[] CollectSegments(List<IImage> segments = null) {
-      if (segments == null)
-        segments = new List<IImage>();
-      segments.Add(Segment);
+    public IImage[] CollectSegments(List<IImage> images = null) {
+      if (images == null)
+        images = new List<IImage>();
+      images.Add(Image);
       foreach (var child in Children)
-        child.CollectSegments(segments);
-      return segments.ToArray();
+        child.CollectSegments(images);
+      return images.ToArray();
     }
 
     void updateTransformation() {

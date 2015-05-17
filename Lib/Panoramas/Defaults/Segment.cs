@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas.Defaults {
-  public class Segment : ISegment {
+  public class Segment : IImageTransformed {
     public System.Drawing.Bitmap Bitmap { get; private set; }
     public String Name { get; private set; }
     public ITransformation Transformation { get; private set; }

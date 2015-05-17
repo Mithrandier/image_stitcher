@@ -13,21 +13,19 @@ namespace Panoramas.IntegralPresenter {
       this.factory = factory;
     }
 
-    public Bitmap Render(IPanoramaComplete panorama) {
+    public Bitmap Render(IPanoramaTransformations panorama) {
       var template = generateTemplate(panorama.Core().Bitmap);
-      var result = new Emgu.CV.Image<Emgu.CV.Structure.Bgr, int>((Bitmap)template.Clone());
       var offset = factory.Transformation();
       offset.Move(panorama.Core().Bitmap.Width, panorama.Core().Bitmap.Height);
       foreach (var segment in panorama.Segments)
-        renderSegment(segment, offset, result);
-      var result_bitmap = result.ToBitmap();
-      var cropped_bitmap = new Cropper(result_bitmap, new Factory()).AutoCrop();
+        template = renderSegment(segment, offset, template);
+      var cropped_bitmap = new Cropper(template, new Factory()).AutoCrop();
       return cropped_bitmap;
     }
 
-    void renderSegment(ISegment segment, ITransformation context, Emgu.CV.Image<Emgu.CV.Structure.Bgr, int> template) {
+    Bitmap renderSegment(IImageTransformed segment, ITransformation context, Bitmap template) {
       var transformation = context.Multiply(segment.Transformation);
-      transformation.TransformOn(segment.Bitmap, template.ToBitmap());      
+      return transformation.TransformOn(segment.Bitmap, template);      
     }
 
     Bitmap generateTemplate(Bitmap core_image) {

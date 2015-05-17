@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Panoramas.Defaults {
   public class PanoramaRelations: PanoramaSegments, IPanoramaRelations {
-    public List<ISegmentsRelation> Relations { get; private set; }
+    public List<IImagesRelation> Relations { get; private set; }
 
-    public PanoramaRelations(IPanoramaSegments panorama, List<ISegmentsRelation> relations)
+    public PanoramaRelations(IPanoramaImages panorama, List<IImagesRelation> relations)
       : base(panorama) {
         this.Relations = relations;
     }
@@ -26,7 +26,7 @@ namespace Panoramas.Defaults {
       return Relations.Sum((m) => m.QuerySegment == segment ? m.Distance() : 0);
     }
 
-    public ISegmentsRelation MatchBetween(IImage base_segment, IImage query_segment) {
+    public IImagesRelation MatchBetween(IImage base_segment, IImage query_segment) {
       if (base_segment == query_segment || !Images.Contains(base_segment) || !Images.Contains(query_segment))
         throw new ArgumentException("Request for missing images");
       return Relations.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);

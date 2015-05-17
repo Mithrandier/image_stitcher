@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas.FeaturedTrees {
-  public class Factory : Panoramas.Defaults.Factory {
+  public class Factory : Panoramas.Defaults.DefaultsFactory {
+    public override ITransformation Transformation() {
+      return new Panoramas.HomographyTransformer.Transformation();
+    }
+
     public override IAnalyzer Analyzer() {
       return new Panoramas.FeaturesAnalyzer.Analyzer(this);
     }

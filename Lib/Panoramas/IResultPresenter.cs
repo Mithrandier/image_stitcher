@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Panoramas {
   public interface IResultPresenter {
-    System.Drawing.Bitmap Render(IPanoramaComplete panorama);
+    System.Drawing.Bitmap Render(IPanoramaTransformations panorama);
   }
 }

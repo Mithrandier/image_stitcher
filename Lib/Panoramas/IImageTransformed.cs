@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas {
-  public interface IPanoramaComplete : IPanoramaRelations {
-    ISegment[] Segments { get;  }
+  public interface IImageTransformed : IImage {
+    ITransformation Transformation { get; }
   }
 }

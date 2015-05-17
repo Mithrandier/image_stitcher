@@ -12,14 +12,14 @@ namespace Panoramas.FeaturesAnalyzer {
       this.factory = factory;
     }
 
-    public IPanoramaRelations Analyze(IPanoramaSegments panorama_segment) {
+    public IPanoramaRelations Analyze(IPanoramaImages panorama_segment) {
       var relations = generateMatches(panorama_segment.Images);
       return factory.PanoramaRelations(panorama_segment, relations);
     }
 
-    static List<ISegmentsRelation> generateMatches(IImage[] segments) {
+    static List<IImagesRelation> generateMatches(IImage[] segments) {
       var featured_segments = segments.Select((s) => s.Bitmap).ToArray();
-      var matches = new List<ISegmentsRelation>();
+      var matches = new List<IImagesRelation>();
       var matched_segments = new List<IImage>();
       int pairs_count = 0;
       for (int iBase = 0; iBase < segments.Length; iBase++) {

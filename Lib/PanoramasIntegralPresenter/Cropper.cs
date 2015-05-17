@@ -31,26 +31,26 @@ namespace Panoramas.IntegralPresenter {
       do {
         bottom_y += 1;
         current_value = integral[image.Width - 1, bottom_y];
-      } while ((current_value == 0 || Double.IsInfinity(current_value)) && bottom_y < image.Height - 1);
+      } while ((current_value == 0 || Double.IsInfinity(current_value)) && bottom_y < image.Height - 2);
 
       int top_y = image.Height;
       do {
         top_y -= 1;
         current_value = integral[image.Width - 1, top_y];
         down_value = integral[image.Width - 1, top_y - 1];
-      } while (top_y > bottom_y && (current_value == down_value));
+      } while (top_y > bottom_y + 1 && (current_value == down_value));
 
       int bottom_x = -1;
       do {
         bottom_x += 1;
         current_value = integral[bottom_x, image.Height - 1];
-      } while ((current_value == 0 || Double.IsInfinity(current_value)) && bottom_x < image.Width - 1);
+      } while ((current_value == 0 || Double.IsInfinity(current_value)) && bottom_x < image.Width - 2);
       int top_x = image.Width;
       do {
         top_x -= 1;
         current_value = integral[top_x, image.Height - 1];
         down_value = integral[top_x - 1, image.Height - 1];
-      } while (top_x > bottom_x && (current_value == down_value));
+      } while (top_x > bottom_x + 1 && (current_value == down_value));
       var location = new Point(bottom_x, bottom_y);
       var size = new Size(top_x - bottom_x, top_y - bottom_y);
       return new Rectangle(location, size);

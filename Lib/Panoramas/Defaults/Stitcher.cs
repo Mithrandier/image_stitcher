@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace Panoramas.Defaults {
   public class Stitcher : IStitcher {
     IFactory factory;
-    IPanoramaSegments panorama_segments;
+    IPanoramaImages panorama_segments;
     IPanoramaRelations panorama_relations;
-    IPanoramaComplete panorama_complate;
+    IPanoramaTransformations panorama_complate;
     IAnalyzer analyzer;
     IBuilder builder;
     IResultPresenter presenter;

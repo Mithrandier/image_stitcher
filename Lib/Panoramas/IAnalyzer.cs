@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Panoramas {
   public interface IAnalyzer {
-    IPanoramaRelations Analyze(IPanoramaSegments panorama_segment);
+    IPanoramaRelations Analyze(IPanoramaImages panorama_segment);
   }
 }

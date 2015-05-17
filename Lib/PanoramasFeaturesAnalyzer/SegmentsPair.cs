@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas.FeaturesAnalyzer {
-  public class SegmentsPair : ISegmentsRelation {
+  public class SegmentsPair : IImagesRelation {
     public const int MIN_MATCHES_COUNT = 10;
 
     int limit;
@@ -32,7 +32,7 @@ namespace Panoramas.FeaturesAnalyzer {
         }
       }
     }
-    public ISegmentsRelation ReversePair { get; set; }
+    public IImagesRelation ReversePair { get; set; }
 
     public SegmentsPair(IImage base_segment, IImage query) {
       this.BaseSegment = base_segment;
@@ -42,7 +42,7 @@ namespace Panoramas.FeaturesAnalyzer {
       setOptimalLimit();
     }
 
-    public void SetReversePair(ISegmentsRelation pair) {
+    public void SetReversePair(IImagesRelation pair) {
       this.ReversePair = pair;
       pair.ReversePair = this;
     }
@@ -80,7 +80,7 @@ namespace Panoramas.FeaturesAnalyzer {
     public ITransformation GenerateTransformation() {
       var points_dst = this.Matches.Select((m) => m.Left.Point).ToArray();
       var points_src = this.Matches.Select((m) => m.Right.Point).ToArray();
-      return Panoramas.Defaults.Transformation.Generate(points_dst, points_src);
+      return Panoramas.HomographyTransformer.Transformation.Generate(points_dst, points_src);
     }
 
     public bool Includes(IImage segment) {

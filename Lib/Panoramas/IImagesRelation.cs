@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas {
-  public interface ISegmentsRelation : IRelationControl {
+  public interface IImagesRelation : IRelationControl {
     IImage BaseSegment { get; }
     IImage QuerySegment { get; }
     IImage[] Segments { get; }
-    ISegmentsRelation ReversePair { get; set; }
+    IImagesRelation ReversePair { get; set; }
     ITransformation GenerateTransformation();
     bool Includes(IImage segment);
     IImage PairOf(IImage segment);

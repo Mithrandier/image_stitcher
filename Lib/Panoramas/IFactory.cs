@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace Panoramas {
   public interface IFactory {
     IImage Image(String name, System.Drawing.Bitmap bitmap);
-    ISegment Segment(IImage image, ITransformation transformation);
+    IImageTransformed Segment(IImage image, ITransformation transformation);
     ITransformation Transformation();
 
-    IPanoramaSegments PanoramaSegments(IImage[] images);
-    IPanoramaRelations PanoramaRelations(IPanoramaSegments panorama, List<ISegmentsRelation> relations);
-    IPanoramaComplete PanoramaComplete(IPanoramaRelations panorama, ISegment[] segments);
+    IPanoramaImages PanoramaSegments(IImage[] images);
+    IPanoramaRelations PanoramaRelations(IPanoramaImages panorama_segments, List<IImagesRelation> relations);
+    IPanoramaTransformations PanoramaComplete(IPanoramaRelations panorama_relations, IImageTransformed[] segments);
 
     IStitcher Stitcher(IImage[] images);
     IAnalyzer Analyzer();

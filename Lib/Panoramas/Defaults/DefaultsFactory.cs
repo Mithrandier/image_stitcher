@@ -5,28 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas.Defaults {
-  public abstract class Factory : IFactory {
+  public abstract class DefaultsFactory : IFactory {
     public IImage Image(string name, System.Drawing.Bitmap bitmap) {
       return new Segment(name, bitmap);
     }
 
-    public ISegment Segment(IImage image, ITransformation transformation) {
-      return new Segment(image.Name, image.Bitmap);
+    public IImageTransformed Segment(IImage image, ITransformation transformation) {
+      return new Segment(image.Name, image.Bitmap, transformation);
     }
 
-    public ITransformation Transformation() {
-      return new Transformation();
-    }
-
-    public IPanoramaSegments PanoramaSegments(IImage[] images) {
+    public IPanoramaImages PanoramaSegments(IImage[] images) {
       return new PanoramaSegments(images);
     }
 
-    public IPanoramaRelations PanoramaRelations(IPanoramaSegments panorama, List<ISegmentsRelation> relations) {
+    public IPanoramaRelations PanoramaRelations(IPanoramaImages panorama, List<IImagesRelation> relations) {
       return new PanoramaRelations(panorama, relations);
     }
 
-    public IPanoramaComplete PanoramaComplete(IPanoramaRelations panorama, ISegment[] segments) {
+    public IPanoramaTransformations PanoramaComplete(IPanoramaRelations panorama, IImageTransformed[] segments) {
       return new PanoramaComplete(panorama, segments);
     }
 
@@ -37,5 +33,6 @@ namespace Panoramas.Defaults {
     public abstract IAnalyzer Analyzer();
     public abstract IBuilder Builder();
     public abstract IResultPresenter ResultPresenter();
+    public abstract ITransformation Transformation();
   }
 }

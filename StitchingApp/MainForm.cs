@@ -64,11 +64,16 @@ namespace TransformatorExample {
     }
 
     private void buttonClearSegment_Click(object sender, EventArgs e) {
+      this.stitcher = null;
       images_manager.ClearAll();
     }
 
     private void buttonClearFiles_Click(object sender, EventArgs e) {
       removeSelectedSegments();
+      var images = images_manager.Images;
+      this.stitcher = panoramas_factory.Stitcher(
+        images.Select((i) => i.FileName).ToArray(),
+        images.Select((i) => i.Bitmap).ToArray());
     }
 
     private void imagesContainer_KeyDown(object sender, KeyEventArgs e) {

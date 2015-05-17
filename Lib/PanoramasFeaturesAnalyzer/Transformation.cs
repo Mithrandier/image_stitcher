@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Emgu.CV.Structure;
 
-namespace Panoramas.Defaults {
+namespace Panoramas.HomographyTransformer {
   public class Transformation : ITransformation {
     Emgu.CV.HomographyMatrix homography_matrix;
 
@@ -33,7 +33,7 @@ namespace Panoramas.Defaults {
       return formatted_result.ToBitmap();
     }
 
-    public void TransformOn(Bitmap image, Bitmap template) {
+    public Bitmap TransformOn(Bitmap image, Bitmap template) {
       Emgu.CV.Image<Bgr, int> template_raw = new Emgu.CV.Image<Bgr, int>(template);
       var formatted_segment = new Emgu.CV.Image<Bgr, int>(image);
       Emgu.CV.CvInvoke.cvWarpPerspective(
@@ -42,6 +42,7 @@ namespace Panoramas.Defaults {
         homography_matrix.Ptr, 
         (int)Emgu.CV.CvEnum.INTER.CV_INTER_NN, 
         new MCvScalar(0, 0, 0));
+      return template_raw.ToBitmap();
     }
 
     public void Move(int x_diff, int y_diff) {
