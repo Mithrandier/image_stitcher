@@ -11,15 +11,17 @@ using Panoramas;
 
 namespace TransformatorExample {
   public partial class MainForm : BaseForm {
-    Stitcher stitcher;
+    Panoramas.FeaturedTrees.Factory panoramas_factory;
+    IStitcher stitcher;
     ImageEditor.Editor picturebox_matching, picturebox_merging;
     ImageFilesManager.CollectionManager images_manager;
     ImageFilesManager.ISelectableControl segments_thumbnails;
     ImageFilesManager.ISelectableControl segments_pair_list;
-    IRelationController current_match;
+    IRelationControl current_match;
 
     public MainForm() {
       InitializeComponent();
+      panoramas_factory = new Panoramas.FeaturedTrees.Factory();
       picturebox_matching = new ImageEditor.Editor(this, this.pictureMatches);
       picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged);
       picturebox_merging.BackgroundColor = Color.Black;
@@ -47,7 +49,7 @@ namespace TransformatorExample {
 
     void addSegments() {
       images_manager.LoadMore((images) => {
-        this.stitcher = new Stitcher(
+        this.stitcher = panoramas_factory.Stitcher(
           images.Select((i) => i.FileName).ToArray(), 
           images.Select((i) => i.Bitmap).ToArray());
         resetCurrentMatch();        
@@ -62,11 +64,16 @@ namespace TransformatorExample {
     }
 
     private void buttonClearSegment_Click(object sender, EventArgs e) {
+      this.stitcher = null;
       images_manager.ClearAll();
     }
 
     private void buttonClearFiles_Click(object sender, EventArgs e) {
       removeSelectedSegments();
+      var images = images_manager.Images;
+      this.stitcher = panoramas_factory.Stitcher(
+        images.Select((i) => i.FileName).ToArray(),
+        images.Select((i) => i.Bitmap).ToArray());
     }
 
     private void imagesContainer_KeyDown(object sender, KeyEventArgs e) {

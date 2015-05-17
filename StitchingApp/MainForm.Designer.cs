@@ -28,7 +28,7 @@
       this.pictureMerged = new System.Windows.Forms.PictureBox();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageSegments = new System.Windows.Forms.TabPage();
-      this.buttonClearFiles = new System.Windows.Forms.Button();
+      this.buttonRemoveSelectedFiles = new System.Windows.Forms.Button();
       this.buttonClearSegment = new System.Windows.Forms.Button();
       this.imagesContainer = new System.Windows.Forms.ListView();
       this.buttonGotoMatching = new System.Windows.Forms.Button();
@@ -100,7 +100,7 @@
       // tabPageSegments
       // 
       this.tabPageSegments.BackColor = System.Drawing.Color.Silver;
-      this.tabPageSegments.Controls.Add(this.buttonClearFiles);
+      this.tabPageSegments.Controls.Add(this.buttonRemoveSelectedFiles);
       this.tabPageSegments.Controls.Add(this.buttonClearSegment);
       this.tabPageSegments.Controls.Add(this.imagesContainer);
       this.tabPageSegments.Controls.Add(this.buttonGotoMatching);
@@ -112,21 +112,21 @@
       this.tabPageSegments.TabIndex = 2;
       this.tabPageSegments.Text = "Segments";
       // 
-      // buttonClearFiles
+      // buttonRemoveSelectedFiles
       // 
-      this.buttonClearFiles.BackColor = System.Drawing.Color.Transparent;
-      this.buttonClearFiles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.buttonClearFiles.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonClearFiles.ForeColor = System.Drawing.Color.Black;
-      this.buttonClearFiles.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-      this.buttonClearFiles.Location = new System.Drawing.Point(8, 344);
-      this.buttonClearFiles.Name = "buttonClearFiles";
-      this.buttonClearFiles.Size = new System.Drawing.Size(157, 140);
-      this.buttonClearFiles.TabIndex = 6;
-      this.buttonClearFiles.Text = "Remove selected";
-      this.buttonClearFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.buttonClearFiles.UseVisualStyleBackColor = false;
-      this.buttonClearFiles.Click += new System.EventHandler(this.buttonClearFiles_Click);
+      this.buttonRemoveSelectedFiles.BackColor = System.Drawing.Color.Transparent;
+      this.buttonRemoveSelectedFiles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.buttonRemoveSelectedFiles.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonRemoveSelectedFiles.ForeColor = System.Drawing.Color.Black;
+      this.buttonRemoveSelectedFiles.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+      this.buttonRemoveSelectedFiles.Location = new System.Drawing.Point(8, 198);
+      this.buttonRemoveSelectedFiles.Name = "buttonRemoveSelectedFiles";
+      this.buttonRemoveSelectedFiles.Size = new System.Drawing.Size(157, 140);
+      this.buttonRemoveSelectedFiles.TabIndex = 6;
+      this.buttonRemoveSelectedFiles.Text = "Remove selected";
+      this.buttonRemoveSelectedFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+      this.buttonRemoveSelectedFiles.UseVisualStyleBackColor = false;
+      this.buttonRemoveSelectedFiles.Click += new System.EventHandler(this.buttonClearFiles_Click);
       // 
       // buttonClearSegment
       // 
@@ -135,7 +135,7 @@
       this.buttonClearSegment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonClearSegment.ForeColor = System.Drawing.Color.Black;
       this.buttonClearSegment.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-      this.buttonClearSegment.Location = new System.Drawing.Point(8, 198);
+      this.buttonClearSegment.Location = new System.Drawing.Point(8, 344);
       this.buttonClearSegment.Name = "buttonClearSegment";
       this.buttonClearSegment.Size = new System.Drawing.Size(157, 140);
       this.buttonClearSegment.TabIndex = 5;
@@ -422,7 +422,7 @@
     private System.Windows.Forms.Button buttonBackToMatching;
     private System.Windows.Forms.ListView imagesContainer;
     private System.Windows.Forms.Button buttonClearSegment;
-    private System.Windows.Forms.Button buttonClearFiles;
+    private System.Windows.Forms.Button buttonRemoveSelectedFiles;
     private System.Windows.Forms.Button buttonResetMathPicture;
     private System.Windows.Forms.Button buttonResetPanoramaPicture;
     private System.Windows.Forms.Button buttonGeneratePanoram;

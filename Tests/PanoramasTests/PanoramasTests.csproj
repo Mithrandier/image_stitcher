@@ -60,21 +60,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Factory.cs" />
-    <Compile Include="Matching\MatchPresenterTest.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Matching\SegmentsMatchTest.cs" />
-    <Compile Include="Base\SegmentTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Base\TransformationTest.cs" />
-    <Compile Include="Matching\MatchingControllerTest.cs" />
-    <Compile Include="Tree\TreeBuilderTest.cs" />
-    <Compile Include="Tree\TreeNodeTest.cs" />
-    <Compile Include="Tree\TreePresenterTest.cs" />
-    <Compile Include="StitcherTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -92,10 +83,6 @@
     <Content Include="Resources\vt.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lib\ImagesMatching\ImagesMatching.csproj">
-      <Project>{e3e5232e-2ffd-4b37-b0c0-f38fd84c7abe}</Project>
-      <Name>ImagesMatching</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Lib\Panoramas\Panoramas.csproj">
       <Project>{401d7ebd-5e6e-4ce4-8c43-67a12c620216}</Project>
       <Name>Panoramas</Name>

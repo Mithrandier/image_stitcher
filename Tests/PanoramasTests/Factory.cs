@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Panoramas;
-using Panoramas.Matching;
-using Panoramas.Tree;
 
 namespace PanoramasBaseTests {
   class Factory {
@@ -16,27 +14,6 @@ namespace PanoramasBaseTests {
 
     public static Bitmap ABitmap() {
       return new Bitmap(VALID_FILE_NAME);
-    }
-
-    public static Segment ASegment() {
-      return new Segment(VALID_FILE_NAME);
-    }
-
-    public static SegmentsPair ASegmentsMatch() {
-      return new SegmentsPair(ASegment(), ASegment());
-    }
-
-    public static Transformation ATransformation() {
-      return new Transformation();
-    }
-
-    public static MatchingController AMatchingController() {
-      var segments = new Segment[] { ASegment(), ASegment() };
-      return new MatchingController(segments);
-    }
-
-    public static TreeNode ATreeNode() {
-      return new TreeNode(Factory.ASegment());
     }
   }
 }
