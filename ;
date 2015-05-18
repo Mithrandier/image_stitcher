@@ -1,0 +1,443 @@
+[33mcommit dd1a0d3ef2ceed80e0e821f1f7aef474ece02dc3[m
+Merge: db70e5e e96d3db
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Mon May 18 11:10:40 2015 +0300
+
+    Merge pull request #8 from Mithrandier/design-edits-2
+    
+    Design edits 2
+
+[33mcommit e96d3dbb21e7454c4e96ae8264215f66fe705ed5[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Mon May 18 11:09:53 2015 +0300
+
+    Small design refactoring
+
+[33mcommit 4c82adfe14f0c6ab2b661a5211f31171e8467615[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Mon May 18 09:03:58 2015 +0300
+
+    Small design refactoring
+
+[33mcommit db70e5efd942cdcc0de620bf8751b4c8ea266281[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Sun May 17 23:09:13 2015 +0300
+
+    Implementation report rewritten
+
+[33mcommit 9120e914656646050c4778f36ae1b6a4dc34d3fe[m
+Merge: 60f3b4e 33395cd
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sun May 17 19:28:08 2015 +0300
+
+    Merge pull request #7 from Mithrandier/design-edits-2
+    
+    Interfaces!
+
+[33mcommit 33395cdfaead30fbd52c1483ccd0d21ed1e62041[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sun May 17 19:26:23 2015 +0300
+
+    Panorama building fixed
+
+[33mcommit 02a6843902249d6336287896e06302dd0ed11f1d[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sun May 17 17:43:35 2015 +0300
+
+    Interfaces & implementations rearranged
+
+[33mcommit aae4462bdf982e308abf946925891f1f196f9573[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sun May 17 02:12:11 2015 +0300
+
+    Interfaces111
+
+[33mcommit dea90a047cd19c4d7013659d7e2513fcc9c0f9f9[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sat May 16 21:42:26 2015 +0300
+
+    Interfaces for panoramas!
+
+[33mcommit 045a64e4615748dfee264e3b9efa388a74f28f47[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Sat May 16 20:14:37 2015 +0300
+
+    Interfaces!
+
+[33mcommit 60f3b4e3178f2ef9e5667e88aa5d62fa8587f065[m
+Merge: 62a2368 541835b
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sat May 16 20:23:14 2015 +0300
+
+    Merge pull request #6 from Mithrandier/design-edits
+    
+    Design edits
+
+[33mcommit 541835bc10313ad718f7a0356f7af0db0111297e[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Sat May 16 17:30:02 2015 +0300
+
+    Design refactoring. Report.
+
+[33mcommit d2e6c34999ce71477a6132bf2206d6f76736068c[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sat May 16 09:43:20 2015 +0300
+
+    Implementation report. Some refactoring.
+
+[33mcommit b735565b269f84b63c4555900b1f2e38e3011ea6[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Fri May 15 23:14:39 2015 +0300
+
+    Implementation report additions
+
+[33mcommit 2b285ac92d206b8774ca64efc6f7ffbc288c68a8[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Fri May 15 22:34:11 2015 +0300
+
+    Edits in stitcher lib & UI
+
+[33mcommit 93b8aef9ff5e783503d79a66fce148bf231e5748[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Fri May 15 19:24:23 2015 +0300
+
+    Design edits
+
+[33mcommit 62a2368eb06bf892c66a5fa9ff6f349da4ef2c75[m
+Merge: ff52211 7ec96f0
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 14 20:17:38 2015 +0300
+
+    Merge pull request #5 from Mithrandier/report
+    
+    Economics (Final bullshit)
+
+[33mcommit 7ec96f0c45429b590f3ed683b951daf676d90181[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 14 20:14:27 2015 +0300
+
+    Economics (Final bullshit)
+
+[33mcommit 2fca2e80d800c7a46ff05ce21afb40fda0c83a09[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 14 11:36:12 2015 +0300
+
+    FileManager added
+
+[33mcommit ff5221160f0f133efc2f68ce3e20f47b3ed06565[m
+Merge: a7ef62e 583bd64
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 14 08:51:31 2015 +0300
+
+    Merge pull request #4 from Mithrandier/report
+    
+    Design edits
+
+[33mcommit 583bd64a6fd2b2a312410ded2b41b82fbecc2458[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Wed May 13 23:08:34 2015 +0300
+
+    Edited UI
+
+[33mcommit 80affc3b4f1a968fdf078880a989d19c67ad269b[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Wed May 13 21:59:17 2015 +0300
+
+    Implemenation report
+
+[33mcommit a2f6f893763e3a7eb2e06e809a873b9ab47245d7[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Wed May 13 20:08:49 2015 +0300
+
+    Economics (super bullshit)
+
+[33mcommit d5d34efaac96dab3a91448ba5b4010ad1d5492ba[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Wed May 13 11:01:40 2015 +0300
+
+    Design report completed. General rport edits
+
+[33mcommit c3865382a939555d843d8b8a0e754abb7e7fc83a[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Tue May 12 22:57:30 2015 +0300
+
+    Builder schema enhanced
+
+[33mcommit df090dd0470420c42e2a2a00f95348e9241a078d[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Tue May 12 22:25:33 2015 +0300
+
+    Design edits
+
+[33mcommit a7ef62e265479f86ef6c7bc3a2c97398003ffd8e[m
+Merge: fc31f01 397af40
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue May 12 10:29:45 2015 +0300
+
+    Merge pull request #3 from Mithrandier/report
+    
+    Report
+
+[33mcommit 397af403ef52d2d70e3ea54e56f7522f771f2651[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Tue May 12 10:10:54 2015 +0300
+
+    Economics (bullshit)
+
+[33mcommit d8b6dad8cdf2c8ee2f4532dbf5dc9979f753b8c4[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue May 12 08:37:20 2015 +0300
+
+    UI fixes. Report fixes
+
+[33mcommit 2444186c827ff09c809ddba0d5fba9142d547f52[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Mon May 11 10:14:41 2015 +0300
+
+    Design edits. Schemes updated.
+
+[33mcommit 5c713bff8bace56213e8c84d4f45fedb87647eab[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Mon May 11 03:00:38 2015 +0300
+
+    Design & ergonomics reports
+
+[33mcommit f19caf63bf8089223ae9b7df8e709e4d51c79171[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Sat May 9 22:02:53 2015 +0300
+
+    Design report
+
+[33mcommit 4d7afd5cd42e0852d8207f7a6bc924d28f68cb4d[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Fri May 8 22:29:51 2015 +0300
+
+    Updated economics report
+
+[33mcommit e350e358a20c9446647d84d8af4b183a2e82bbc5[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Fri May 8 10:29:38 2015 +0300
+
+    Economics..
+
+[33mcommit a831fd4f710c08abcc8f25c1bec40dbcff8f63ac[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 7 23:16:51 2015 +0300
+
+    Economics report
+
+[33mcommit fc31f01de86859d3f3c3bc3d3e134f308155003f[m
+Merge: dfd5796 f8ed13d
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 7 11:53:35 2015 +0300
+
+    Merge pull request #2 from Mithrandier/git-ignore
+    
+    Added .gitignore
+
+[33mcommit f8ed13d916f2845280238ec64ffa5de0fa2f11bb[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 7 11:45:01 2015 +0300
+
+    Updated gitignore
+
+[33mcommit 8279c28267a75d328f4054dcd6807f5769c39c1d[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 7 11:37:15 2015 +0300
+
+    Added .gitignore
+
+[33mcommit dfd57964fe6d95e487abae33b779c34a74acb1eb[m
+Merge: 78a8948 6283b06
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 7 10:24:24 2015 +0300
+
+    Merge pull request #1 from Mithrandier/emgu-implementation
+    
+    Emgu implementation
+
+[33mcommit 6283b06dea4f432b485445f4ee54a33c957ab464[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Thu May 7 10:18:06 2015 +0300
+
+    Solution rearranged. Tests expanded. Refactoring
+
+[33mcommit 3d02e67e4a58a789560b7e8b5c6229da2b425d47[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Wed May 6 23:07:15 2015 +0300
+
+    Small UI upgrades
+
+[33mcommit 13005e56c822b3c93df6cb2e74c560897e62ca4f[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Wed May 6 21:50:26 2015 +0300
+
+    Fixed tree stitching. It's working11
+
+[33mcommit ca8b764f2d307636165a3ff5232442f648ba39e6[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Wed May 6 11:01:29 2015 +0300
+
+    MassMorpher replaced by a tree
+
+[33mcommit 5728efe4973070cb8f678bdc55a58bb040573cba[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue May 5 22:56:24 2015 +0300
+
+    Panorama. First scratch
+
+[33mcommit f3e7ab7efb5f17bde331965fbf622946b794d1b0[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue May 5 22:34:13 2015 +0300
+
+    New operations for segments map
+
+[33mcommit 7f21e4b465f47a029a9665062d430c90e3fef0a3[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue May 5 21:35:40 2015 +0300
+
+    Refactored Transformation
+
+[33mcommit 28c48cc3dedf385d81e72506556c64c915c22604[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue May 5 11:58:15 2015 +0300
+
+    Test for transformation. Refactoring!
+
+[33mcommit a30600e714ea48351fe6a63cd2e4668ec7462454[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Mon May 4 23:05:16 2015 +0300
+
+    Tests for segments
+
+[33mcommit bc55c08c00aaf6af919da5b1f1f72ee4fd8a3133[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Mon May 4 11:22:19 2015 +0300
+
+    Performance optimized
+
+[33mcommit 7afa0b71d51af8a08f0563a9dabe5ed6c3a5d803[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sun May 3 22:49:15 2015 +0300
+
+    It works!!! 2+ images
+
+[33mcommit 28fb47de61815ccfa10b1fe95f6b0c9e666c9fca[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sat May 2 22:10:53 2015 +0300
+
+    Segments list UI expanded. Economics doc created.
+
+[33mcommit 77417e9372536ac8ac637353f28cbbedb949ab44[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sat May 2 13:40:48 2015 +0300
+
+    Fixed rendering. Added economics section to report.
+
+[33mcommit 70f12f771277c7e9b71c8cfe381c94ee123b9602[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Fri May 1 19:49:11 2015 +0300
+
+    Rearranged solution (architecture). Removed text project.
+
+[33mcommit 23b520f4e50b809437ae89942c35bfeb426c4dc6[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Fri May 1 12:14:14 2015 +0300
+
+    Fixed BrowseablePicture
+
+[33mcommit a67bc3c3faa2bdef9b20a2eaccaf8b3725740cc0[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Wed Apr 29 22:54:09 2015 +0300
+
+    Mass-matcher created. Custom picture box created.
+
+[33mcommit b0f5c06d92a6d23b9046e466d842a8a710015239[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Wed Apr 29 09:52:30 2015 +0300
+
+    FeaturedImage refactored
+
+[33mcommit 650e069840fdf16a30c2380c346a4bd439ea5a5f[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Wed Apr 29 09:39:43 2015 +0300
+
+    Logger created
+
+[33mcommit 09a3fb038b1acf2fd955d05437e31365a173b8b2[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue Apr 28 22:44:19 2015 +0300
+
+    Cut off Matcher & Morpher
+
+[33mcommit 6f7316687395a0d5bc2c9f10b5ebaab28083bfcb[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue Apr 28 22:06:33 2015 +0300
+
+    Removed old implementation
+
+[33mcommit 78a8948ebc1e73d26ebf8763eae0d28f324c273c[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Wed Apr 29 08:49:34 2015 +0300
+
+    Report doc added
+
+[33mcommit 1a3051643e57b2a6443b86feee3cb71575c455a4[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue Apr 28 21:09:17 2015 +0300
+
+    UI upgrades
+
+[33mcommit 9281f7d70722c07ae6e21138a1eb9fc7b2108a4f[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue Apr 28 20:31:20 2015 +0300
+
+    Merging added. Basic UI implemented
+
+[33mcommit 5375f2f0df443da6528d86c9e061795bb487f893[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Fri Apr 24 10:09:28 2015 +0300
+
+    Matching example project
+
+[33mcommit 0296e6c59b45e222918fce5ea21634c1f4c9b5f8[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Fri Apr 24 04:17:00 2015 +0300
+
+    SiftExample project
+
+[33mcommit d6b9656f8221b3c66bacc254b3658897beaed24b[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Tue Apr 21 18:29:57 2015 +0300
+
+    First running version
+
+[33mcommit b8ddf693447dbda0316cb31f64a278e40391646f[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Tue Apr 21 16:52:06 2015 +0300
+
+    Added emgu cv stitcher
+
+[33mcommit 38581c3a2a4fd40d9d840c2674930daf3c30e9ef[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Mon Apr 13 17:13:37 2015 +0300
+
+    Rearranged detector modules
+
+[33mcommit 87635bf6217ba8aed4c6c6fb710fd66875c553f8[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Mon Apr 13 16:35:59 2015 +0300
+
+    KeyPointDetector project created
+
+[33mcommit 33e71d65560dfe9918328e3efb90e95104c0c96b[m
+Author: Mithrandier <andrew.prostakov@gmail.com>
+Date:   Sat Apr 11 19:48:45 2015 +0300
+
+    New project
+
+[33mcommit 415dad7b4bd7f3b09bcea881b57146957d873104[m
+Author: Andrew Prostakov <andrew.prostakov@gmail.com>
+Date:   Sat Apr 11 19:36:17 2015 +0300
+
+    Initial commit
