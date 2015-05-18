@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Defaults\DefaultsFactory.cs" />
-    <Compile Include="Defaults\PanoramaComplete.cs" />
+    <Compile Include="Defaults\PanoramaTransformations.cs" />
     <Compile Include="Defaults\Stitcher.cs" />
     <Compile Include="IAnalyzer.cs" />
     <Compile Include="IBuilder.cs" />
@@ -58,7 +58,7 @@
     <Compile Include="IStitcher.cs" />
     <Compile Include="ITransformation.cs" />
     <Compile Include="Defaults\PanoramaRelations.cs" />
-    <Compile Include="Defaults\PanoramaSegments.cs" />
+    <Compile Include="Defaults\PanoramaImages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Defaults\Segment.cs" />
   </ItemGroup>

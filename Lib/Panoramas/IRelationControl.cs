@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Panoramas {
   public interface IRelationControl {
-    Image ToImage();
-    double Distance();
+    Bitmap ToImage();
+    double Similarity();
     int LimitPercent { get; set; }
     bool Active { get; set; }
   }

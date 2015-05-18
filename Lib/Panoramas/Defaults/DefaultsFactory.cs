@@ -15,7 +15,7 @@ namespace Panoramas.Defaults {
     }
 
     public IPanoramaImages PanoramaSegments(IImage[] images) {
-      return new PanoramaSegments(images);
+      return new PanoramaImages(images);
     }
 
     public IPanoramaRelations PanoramaRelations(IPanoramaImages panorama, List<IImagesRelation> relations) {
@@ -23,7 +23,7 @@ namespace Panoramas.Defaults {
     }
 
     public IPanoramaTransformations PanoramaComplete(IPanoramaRelations panorama, IImageTransformed[] segments) {
-      return new PanoramaComplete(panorama, segments);
+      return new PanoramaTransformations(panorama, segments);
     }
 
     public IStitcher Stitcher(IImage[] images) {

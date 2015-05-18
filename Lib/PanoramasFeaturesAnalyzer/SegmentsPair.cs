@@ -67,11 +67,11 @@ namespace Panoramas.FeaturesAnalyzer {
       }
     }
 
-    public System.Drawing.Image ToImage() {
+    public System.Drawing.Bitmap ToImage() {
       return new PairPresenter(this).Render();
     }
 
-    public double Distance() {
+    public double Similarity() {
       if (distance == null || Double.IsNaN((double)distance))
         resetDistance();
       return (double)distance;

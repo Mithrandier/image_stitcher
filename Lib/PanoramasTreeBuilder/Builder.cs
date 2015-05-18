@@ -22,7 +22,7 @@ namespace Panoramas.TreeBuilder {
       while (loose_images.Count > 0) {
         IImage closest_loose_image, closest_tree_image;
         var registered = panorama.Images.Except(loose_images);
-        panorama.ClosestTo(registered.ToArray(), loose_images.ToArray(), out closest_loose_image, out closest_tree_image);
+        panorama.ClosestBetween(registered.ToArray(), loose_images.ToArray(), out closest_loose_image, out closest_tree_image);
         var closest_tree_node = root.FindNode(closest_tree_image);
         addNodeToTree(panorama, closest_loose_image, closest_tree_node);
       }

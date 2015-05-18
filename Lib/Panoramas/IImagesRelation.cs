@@ -11,7 +11,7 @@ namespace Panoramas {
     IImage[] Segments { get; }
     IImagesRelation ReversePair { get; set; }
     ITransformation GenerateTransformation();
-    bool Includes(IImage segment);
-    IImage PairOf(IImage segment);
+    bool Includes(IImage image);
+    IImage PairOf(IImage image);
   }
 }

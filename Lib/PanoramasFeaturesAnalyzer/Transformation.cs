@@ -50,12 +50,6 @@ namespace Panoramas.HomographyTransformer {
       homography_matrix[1, 2] += y_diff;
     }
 
-    public ITransformation Clone() {
-      var clone = new Transformation();
-      clone.homography_matrix = this.homography_matrix.Clone();
-      return clone;
-    }
-
     public static ITransformation Generate(PointF[] points_dst, PointF[] points_src) {
       var matrix = Emgu.CV.CameraCalibration.FindHomography(
         points_src,

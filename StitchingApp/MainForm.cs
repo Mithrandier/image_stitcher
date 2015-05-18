@@ -129,7 +129,7 @@ namespace TransformatorExample {
 
     void drawCurrentMatch() {
       picturebox_matching.Image = current_match.ToImage();
-      textMatchDistance.Text = current_match.Distance().ToString("F2");
+      textMatchDistance.Text = current_match.Similarity().ToString("F2");
       scrollLimit.Value = current_match.LimitPercent;
       checkBoxActiveMatch.Checked = current_match.Active;
     }
