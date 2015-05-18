@@ -59,7 +59,7 @@ namespace Panoramas.Defaults {
       return domain.Where((s) => closestTo(s) == segment).ToArray();
     }
 
-    IImage closestTo(IImage segment) {
+    protected IImage closestTo(IImage segment) {
       return Relations.
         Where((m) => m.Includes(segment)).
         OrderBy((m) => m.Similarity()).

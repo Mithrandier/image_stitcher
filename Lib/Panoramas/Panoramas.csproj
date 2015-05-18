@@ -51,8 +51,9 @@
     <Compile Include="IPanoramaTransformations.cs" />
     <Compile Include="IPanoramaRelations.cs" />
     <Compile Include="IPanoramaImages.cs" />
+    <Compile Include="IPublicFactory.cs" />
     <Compile Include="IRelationControl.cs" />
-    <Compile Include="IResultPresenter.cs" />
+    <Compile Include="IPresenter.cs" />
     <Compile Include="IImageTransformed.cs" />
     <Compile Include="IImagesRelation.cs" />
     <Compile Include="IStitcher.cs" />

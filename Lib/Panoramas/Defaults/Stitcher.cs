@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace Panoramas.Defaults {
   public class Stitcher : IStitcher {
-    IFactory factory;
-    IPanoramaImages panorama_segments;
-    IPanoramaRelations panorama_relations;
-    IPanoramaTransformations panorama_complate;
-    IAnalyzer analyzer;
-    IBuilder builder;
-    IResultPresenter presenter;
+    protected IFactory factory;
+    protected IPanoramaImages panorama_segments;
+    protected IPanoramaRelations panorama_relations;
+    protected IPanoramaTransformations panorama_complate;
+    protected IAnalyzer analyzer;
+    protected IBuilder builder;
+    protected IPresenter presenter;
 
     public Stitcher(IFactory factory, IImage[] images) {
       this.factory = factory;
       this.analyzer = factory.Analyzer();
       this.builder = factory.Builder();
-      this.presenter = factory.ResultPresenter();
-      this.panorama_segments = factory.PanoramaSegments(images);
+      this.presenter = factory.Presenter();
+      this.panorama_segments = factory.PanoramaImages(images);
       this.panorama_relations = analyzer.Analyze(panorama_segments);
     }
 
@@ -29,8 +29,8 @@ namespace Panoramas.Defaults {
     }
 
     public Bitmap StitchAll() {
-      this.panorama_complate = builder.Generate(panorama_relations);
-      return presenter.Render(panorama_complate);
+      this.panorama_complate = builder.Build(panorama_relations);
+      return presenter.Present(panorama_complate);
     }
   }
 }

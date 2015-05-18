@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas {
-  public interface IResultPresenter {
-    System.Drawing.Bitmap Render(IPanoramaTransformations panorama);
+  public interface IPresenter {
+    System.Drawing.Bitmap Present(IPanoramaTransformations panorama);
   }
 }

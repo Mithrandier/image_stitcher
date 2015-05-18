@@ -15,7 +15,7 @@ namespace Panoramas.TreeBuilder {
       this.segments = new List<IImageTransformed>();
     }
 
-    public IPanoramaTransformations Generate(IPanoramaRelations panorama) {
+    public IPanoramaTransformations Build(IPanoramaRelations panorama) {
       this.segments.Clear();
       this.loose_images = panorama.Images.ToList();
       var root = addNodeToTree(panorama, panorama.Core());
@@ -26,7 +26,7 @@ namespace Panoramas.TreeBuilder {
         var closest_tree_node = root.FindNode(closest_tree_image);
         addNodeToTree(panorama, closest_loose_image, closest_tree_node);
       }
-      return factory.PanoramaComplete(panorama, segments.ToArray());
+      return factory.PanoramaTransformations(panorama, segments.ToArray());
     }
 
     TreeNode addNodeToTree(IPanoramaRelations panorama, IImage image, TreeNode parent = null) {
@@ -38,7 +38,7 @@ namespace Panoramas.TreeBuilder {
         node = new TreeNode(image, factory.Transformation());
       }
       loose_images.Remove(image);
-      segments.Add(factory.Segment(node.Image, node.Transformation));
+      segments.Add(factory.ImageTransformed(node.Image, node.Transformation));
       var neighbours = panorama.NeighboursOf(image, loose_images.ToArray());
       foreach (var neighbour in neighbours) {
         addNodeToTree(panorama, neighbour, node);

@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas.IntegralPresenter {
-  public class Presenter : IResultPresenter {
+  public class Presenter : IPresenter {
     IFactory factory;
 
     public Presenter(IFactory factory) {
       this.factory = factory;
     }
 
-    public Bitmap Render(IPanoramaTransformations panorama) {
+    public Bitmap Present(IPanoramaTransformations panorama) {
       var template = generateTemplate(panorama.Core().Bitmap);
       var offset = factory.Transformation();
       offset.Move(panorama.Core().Bitmap.Width, panorama.Core().Bitmap.Height);
