@@ -11,7 +11,7 @@ using Panoramas;
 
 namespace TransformatorExample {
   public partial class MainForm : BaseForm {
-    Panoramas.FeaturedTrees.Factory panoramas_factory;
+    IPublicFactory panoramas_factory;
     IStitcher stitcher;
     ImageEditor.Editor picturebox_matching, picturebox_merging;
     ImageFilesManager.CollectionManager images_manager;
@@ -21,7 +21,7 @@ namespace TransformatorExample {
 
     public MainForm() {
       InitializeComponent();
-      panoramas_factory = new Panoramas.FeaturedTrees.Factory();
+      panoramas_factory = Panoramas.FeaturedTrees.Factory.Generate();
       picturebox_matching = new ImageEditor.Editor(this, this.pictureMatches);
       picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged);
       picturebox_merging.BackgroundColor = Color.Black;
@@ -129,7 +129,7 @@ namespace TransformatorExample {
 
     void drawCurrentMatch() {
       picturebox_matching.Image = current_match.ToImage();
-      textMatchDistance.Text = current_match.Distance().ToString("F2");
+      textMatchDistance.Text = current_match.Similarity().ToString("F2");
       scrollLimit.Value = current_match.LimitPercent;
       checkBoxActiveMatch.Checked = current_match.Active;
     }

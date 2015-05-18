@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas.Defaults {
-  public class PanoramaRelations: PanoramaSegments, IPanoramaRelations {
+  public class PanoramaRelations: PanoramaImages, IPanoramaRelations {
     public List<IImagesRelation> Relations { get; private set; }
 
     public PanoramaRelations(IPanoramaImages panorama, List<IImagesRelation> relations)
@@ -23,7 +23,7 @@ namespace Panoramas.Defaults {
     }
 
     double distancesFor(IImage segment) {
-      return Relations.Sum((m) => m.QuerySegment == segment ? m.Distance() : 0);
+      return Relations.Sum((m) => m.QuerySegment == segment ? m.Similarity() : 0);
     }
 
     public IImagesRelation MatchBetween(IImage base_segment, IImage query_segment) {
@@ -39,27 +39,7 @@ namespace Panoramas.Defaults {
       return Relations.Find((m) => m.BaseSegment.Name == base_segment && m.QuerySegment.Name == query_segment);
     }
 
-    public IImage ClosestTo(IImage segment) {
-      return Relations.
-        Where((m) => m.Includes(segment)).
-        OrderBy((m) => m.Distance()).
-        First().
-        PairOf(segment);
-    }
-
-    public IImage ClosestTo(IImage segment, IImage[] domain = null) {
-      if (domain.Contains(segment))
-        throw new ArgumentException();
-      if (domain == null)
-        domain = Images;
-      return Relations.
-        Where((m) => m.Includes(segment) && domain.Contains(m.PairOf(segment))).
-        OrderBy((m) => m.Distance()).
-        First().
-        PairOf(segment);
-    }
-
-    public void ClosestTo(IImage[] group, IImage[] domain, out IImage closest, out IImage closest_from_group) {
+    public void ClosestBetween(IImage[] group, IImage[] domain, out IImage closest, out IImage closest_from_group) {
       if (domain.Intersect(group).Count() > 0)
         throw new ArgumentException();
       if (domain == null)
@@ -67,7 +47,7 @@ namespace Panoramas.Defaults {
       var match = Relations.
         Where((m) => m.Segments.Intersect(group).Count() > 0).
         Where((m) => m.Segments.Intersect(domain).Count() > 0).
-        OrderBy((m) => m.Distance()).
+        OrderBy((m) => m.Similarity()).
         First();
       closest = match.Segments.Except(group).First();
       closest_from_group = match.Segments.Except(domain).First();
@@ -76,7 +56,15 @@ namespace Panoramas.Defaults {
     public IImage[] NeighboursOf(IImage segment, IImage[] domain = null) {
       if (domain == null)
         domain = Images;
-      return domain.Where((s) => ClosestTo(s) == segment).ToArray();
+      return domain.Where((s) => closestTo(s) == segment).ToArray();
+    }
+
+    protected IImage closestTo(IImage segment) {
+      return Relations.
+        Where((m) => m.Includes(segment)).
+        OrderBy((m) => m.Similarity()).
+        First().
+        PairOf(segment);
     }
   }
 }

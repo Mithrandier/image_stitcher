@@ -19,7 +19,7 @@ namespace Panoramas.FeaturesAnalyzer {
       this.common_template = generateCommonTemplate();
     }
 
-    public Image Render() {
+    public Bitmap Render() {
       var matches = match.Matches;
       float x_offset = ImageBase.Width;
       var template = (Bitmap)common_template.Clone();

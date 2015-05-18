@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas.Defaults {
-  public class PanoramaSegments : IPanoramaImages {
+  public class PanoramaImages : IPanoramaImages {
     public IImage[] Images { get; private set; }
 
-    public PanoramaSegments(IImage[] segments) {
+    public PanoramaImages(IImage[] segments) {
       this.Images = segments;
     }
 
-    public PanoramaSegments(IPanoramaImages panorama) {
+    public PanoramaImages(IPanoramaImages panorama) {
       this.Images = panorama.Images;
     }
   }

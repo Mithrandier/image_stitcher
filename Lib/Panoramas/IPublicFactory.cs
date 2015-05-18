@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Panoramas {
-  public interface IBuilder {
-    IPanoramaTransformations Build(IPanoramaRelations panorama_relations);
+  public interface IPublicFactory {
+    IStitcher Stitcher(String[] files, System.Drawing.Bitmap[] bitmaps = null);
   }
 }
