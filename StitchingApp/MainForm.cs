@@ -96,13 +96,12 @@ namespace TransformatorExample {
     }
 
     void updatePageStatus() {
-      bool can_stitch = images_manager.Images.Count >= 2;
-      scrollLimit.Enabled = can_stitch;
-      buttonGotoMatching.Enabled = can_stitch;
-      buttonGotoMerge.Enabled = can_stitch;
       bool images_present = images_manager.Images.Count > 0;
       buttonRemoveSelectedFiles.Enabled = images_present;
       buttonClearSegment.Enabled = images_present;
+      bool can_stitch = images_manager.Images.Count >= 2;
+      scrollLimit.Enabled = can_stitch;
+      buttonGotoMatching.Enabled = can_stitch;
     }
 
     void updateStitcher() {
@@ -110,6 +109,7 @@ namespace TransformatorExample {
         this.stitcher = panoramas_factory.Stitcher(
           images_manager.Images.Select((i) => i.FileName).ToArray(),
           images_manager.Images.Select((i) => i.Bitmap).ToArray());
+        buttonGotoMerge.Enabled = true;
       });
     }
 
@@ -163,6 +163,7 @@ namespace TransformatorExample {
         picturebox_merging.Image = stitcher.StitchAll();
         tabControlMain.SelectedTab = tabPageMerging;
         buttonSavePan.Enabled = true;
+        buttonResetPanoramaPicture.Enabled = true;
       });
     }
 

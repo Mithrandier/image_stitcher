@@ -332,6 +332,7 @@
       // 
       this.buttonResetPanoramaPicture.BackColor = System.Drawing.Color.Transparent;
       this.buttonResetPanoramaPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.buttonResetPanoramaPicture.Enabled = false;
       this.buttonResetPanoramaPicture.Font = new System.Drawing.Font("Segoe UI", 14.25F);
       this.buttonResetPanoramaPicture.ForeColor = System.Drawing.Color.Black;
       this.buttonResetPanoramaPicture.ImageAlign = System.Drawing.ContentAlignment.TopRight;
