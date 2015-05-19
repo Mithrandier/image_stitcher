@@ -7,21 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Panoramas;
 
 namespace TransformatorExample {
   public partial class MainForm : BaseForm {
-    IPublicFactory panoramas_factory;
-    IStitcher stitcher;
+    Panoramas.IPublicFactory panoramas_factory;
+    Panoramas.IStitcher stitcher;
+    Panoramas.IRelationControl current_match;
     ImageEditor.Editor picturebox_matching, picturebox_merging;
     ImageFilesManager.CollectionManager images_manager;
     ImageFilesManager.ISelectableControl segments_thumbnails;
     ImageFilesManager.ISelectableControl segments_pair_list;
-    IRelationControl current_match;
 
-    public MainForm() {
+    public MainForm(Panoramas.IPublicFactory factory) {
       InitializeComponent();
-      panoramas_factory = Panoramas.FeaturedTrees.Factory.Generate();
+      this.panoramas_factory = factory;
       picturebox_matching = new ImageEditor.Editor(this, this.pictureMatches);
       picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged);
       picturebox_merging.BackgroundColor = Color.Black;
@@ -29,51 +28,48 @@ namespace TransformatorExample {
       this.segments_thumbnails = images_manager.PresentAsListView(imagesContainer);
       this.segments_pair_list = images_manager.PresentAsPairsList(listSegmentsMatchLeft, listSegmentsMatchRight);
       this.segments_pair_list.AddSelectionChangeHandler(new EventHandler(this.currentMatch_Change));
+      initToolTips();
     }
 
-    protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
-      if (tabControlMain.SelectedTab == tabPageSegments && keyData == openFileShortCut)
-          addSegments();
-      else if (tabControlMain.SelectedTab == tabPageMerging && keyData == saveFileShortCut)
-          savePanorama();
-      return base.ProcessCmdKey(ref msg, keyData);
+    void initToolTips() {
+      setToolTip(this.buttonAddSegments, "Open (Ctrl+O)", "Add more images to stitch them into a panoram");
+      setToolTip(this.buttonRemoveSelectedFiles, "Remove (Del)", "Remove selected images");
+      setToolTip(this.buttonClearSegment, "Remove images", "Clear images list");
+      setToolTip(this.buttonResetPanoramaPicture, "Reset image", "Show full image as it is");
+      setToolTip(this.buttonSavePan, "Save (Ctrl+S)", "Save current panorama image");
+    }
+
+    const int TOOLTIP_DELAY = 1500;
+    void setToolTip(Control control, String title, String text = null) {
+      ToolTip tooltip = new ToolTip();
+      tooltip.InitialDelay = TOOLTIP_DELAY;
+      tooltip.IsBalloon = true;
+      tooltip.ToolTipTitle = title;
+      tooltip.SetToolTip(control, text);
+    }
+
+    delegate void a_process();
+    void waitForProcessComplete(a_process process) {
+      this.Cursor = Cursors.WaitCursor;
+      process.Invoke();
+      this.Cursor = Cursors.Default;
     }
 
     //
-    // SEGMENTS
+    // LOADING IMAGES
     //
 
     private void buttonAddSegments_Click(object sender, EventArgs e) {
       addSegments();
     }
 
-    void addSegments() {
-      images_manager.LoadMore((images) => {
-        this.stitcher = panoramas_factory.Stitcher(
-          images.Select((i) => i.FileName).ToArray(), 
-          images.Select((i) => i.Bitmap).ToArray());
-        resetCurrentMatch();        
-        scrollLimit.Enabled = true;
-        buttonGotoMatching.Enabled = true;
-        buttonGotoMerge.Enabled = true;
-      });
-    }
-
-    private void buttonGotoMatching_Click(object sender, EventArgs e) {
-      tabControlMain.SelectedTab = tabPageMatching;
-    }
-
     private void buttonClearSegment_Click(object sender, EventArgs e) {
-      this.stitcher = null;
       images_manager.ClearAll();
+      updatePageStatus();
     }
 
     private void buttonClearFiles_Click(object sender, EventArgs e) {
       removeSelectedSegments();
-      var images = images_manager.Images;
-      this.stitcher = panoramas_factory.Stitcher(
-        images.Select((i) => i.FileName).ToArray(),
-        images.Select((i) => i.Bitmap).ToArray());
     }
 
     private void imagesContainer_KeyDown(object sender, KeyEventArgs e) {
@@ -82,9 +78,39 @@ namespace TransformatorExample {
       }
     }
 
+    private void buttonGotoMatching_Click(object sender, EventArgs e) {
+      tabControlMain.SelectedTab = tabPageMatching;
+      updateStitcher();
+      resetCurrentMatch();
+    }
+
+    void addSegments() {
+      images_manager.LoadMore();
+      updatePageStatus();
+    }
+
     void removeSelectedSegments() {
       var selection = segments_thumbnails.SelectedItems();
       images_manager.Remove(selection);
+      updatePageStatus();
+    }
+
+    void updatePageStatus() {
+      bool can_stitch = images_manager.Images.Count >= 2;
+      scrollLimit.Enabled = can_stitch;
+      buttonGotoMatching.Enabled = can_stitch;
+      buttonGotoMerge.Enabled = can_stitch;
+      bool images_present = images_manager.Images.Count > 0;
+      buttonRemoveSelectedFiles.Enabled = images_present;
+      buttonClearSegment.Enabled = images_present;
+    }
+
+    void updateStitcher() {
+      waitForProcessComplete(() => {
+        this.stitcher = panoramas_factory.Stitcher(
+          images_manager.Images.Select((i) => i.FileName).ToArray(),
+          images_manager.Images.Select((i) => i.Bitmap).ToArray());
+      });
     }
 
     //
@@ -92,18 +118,8 @@ namespace TransformatorExample {
     //
 
     private void scrollLimit_Scroll(object sender, ScrollEventArgs e) {
-      if (current_match == null)
-        return;
       current_match.LimitPercent = scrollLimit.Value;
       drawCurrentMatch();
-    }
-
-    private void buttonUseMatches_Click(object sender, EventArgs e) {
-      generatePanoram();
-    }
-
-    private void buttonGotoFiles_Click(object sender, EventArgs e) {
-      tabControlMain.SelectedTab = tabPageSegments;
     }
 
     private void buttonResetMathPicture_Click(object sender, EventArgs e) {
@@ -119,10 +135,18 @@ namespace TransformatorExample {
       resetCurrentMatch();
     }
 
+    private void buttonBackToFiles_Click(object sender, EventArgs e) {
+      tabControlMain.SelectedTab = tabPageSegments;
+    }
+
+    private void buttonGotoMerge_Click(object sender, EventArgs e) {
+      generatePanoram();
+    }
+
     void resetCurrentMatch() {
-      if (stitcher == null)
-        return;
       var selection = segments_pair_list.SelectedItems();
+      if (stitcher == null || selection.Any((i) => i == null))
+        return;
       current_match = stitcher.MatchBetween(selection[0], selection[1]);
       drawCurrentMatch();
     }
@@ -132,6 +156,14 @@ namespace TransformatorExample {
       textMatchDistance.Text = current_match.Similarity().ToString("F2");
       scrollLimit.Value = current_match.LimitPercent;
       checkBoxActiveMatch.Checked = current_match.Active;
+    }
+
+    void generatePanoram() {
+      waitForProcessComplete(() => {
+        picturebox_merging.Image = stitcher.StitchAll();
+        tabControlMain.SelectedTab = tabPageMerging;
+        buttonSavePan.Enabled = true;
+      });
     }
 
     //
@@ -150,10 +182,6 @@ namespace TransformatorExample {
       picturebox_merging.ResetState();
     }
 
-    private void buttonGeneratePanoram_Click(object sender, EventArgs e) {
-      generatePanoram();
-    }
-
     void savePanorama() {
       var dialog = new ImageFilesManager.Dialog();
       dialog.SaveToFile((filename) => {
@@ -161,15 +189,17 @@ namespace TransformatorExample {
       });
     }
 
-    void generatePanoram() {
-      picturebox_merging.Image = stitcher.StitchAll();
-      tabControlMain.SelectedTab = tabPageMerging;
-      buttonSavePan.Enabled = true;
+    //
+    // HOTKEYS
+    //
+    
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
+      if (tabControlMain.SelectedTab == tabPageSegments && keyData == openFileShortCut)
+        addSegments();
+      else if (tabControlMain.SelectedTab == tabPageMerging && keyData == saveFileShortCut)
+        savePanorama();
+      return base.ProcessCmdKey(ref msg, keyData);
     }
-
-    //
-    // SHORTCUTS
-    //
 
     Keys openFileShortCut {
       get { return Keys.Control | Keys.O; }

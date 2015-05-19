@@ -13,7 +13,8 @@ namespace TransformatorExample {
     static void Main() {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new MainForm());
+      var panoramas_factory = Panoramas.FeaturedTrees.Factory.Generate();
+      Application.Run(new MainForm(panoramas_factory));
     }
   }
 }

@@ -28,7 +28,8 @@ namespace ImageFilesManager {
         var new_images = filenames.Select((f) => new ImageFile(f)).ToArray();
         Images.AddRange(new_images);
         refreshAll();
-        processor.Invoke(new_images);
+        if (processor != null)
+          processor.Invoke(new_images);
       });
     }
 
