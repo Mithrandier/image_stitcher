@@ -17,6 +17,9 @@ namespace TransformatorExample {
     ImageFilesManager.CollectionManager images_manager;
     ImageFilesManager.ISelectableControl segments_thumbnails;
     ImageFilesManager.ISelectableControl segments_pair_list;
+    bool stitched = false;
+
+    TabPage page_matching, page_stitching;
 
     public MainForm(Panoramas.IPublicFactory factory) {
       InitializeComponent();
@@ -26,9 +29,15 @@ namespace TransformatorExample {
       picturebox_merging.BackgroundColor = Color.Black;
       images_manager = new ImageFilesManager.CollectionManager();
       this.segments_thumbnails = images_manager.PresentAsListView(imagesContainer);
+      this.segments_thumbnails.AddSelectionChangeHandler(new EventHandler(this.currentFilesSelection_Change));
       this.segments_pair_list = images_manager.PresentAsPairsList(listSegmentsMatchLeft, listSegmentsMatchRight);
       this.segments_pair_list.AddSelectionChangeHandler(new EventHandler(this.currentMatch_Change));
       initToolTips();
+      page_matching = tabPageMatching;
+      page_stitching = tabPageMerging;
+      tabControlMain.TabPages.Remove(tabPageMatching);
+      tabControlMain.TabPages.Remove(tabPageMerging);
+      updateLoadingPageStatus();
     }
 
     void initToolTips() {
@@ -65,7 +74,7 @@ namespace TransformatorExample {
 
     private void buttonClearSegment_Click(object sender, EventArgs e) {
       images_manager.ClearAll();
-      updatePageStatus();
+      updateLoadingPageStatus();
     }
 
     private void buttonClearFiles_Click(object sender, EventArgs e) {
@@ -79,29 +88,44 @@ namespace TransformatorExample {
     }
 
     private void buttonGotoMatching_Click(object sender, EventArgs e) {
-      tabControlMain.SelectedTab = tabPageMatching;
       updateStitcher();
       resetCurrentMatch();
+      if (stitched) {
+        tabControlMain.SelectedTab = tabPageMatching;
+      } else {
+        generatePanoram();
+        tabControlMain.TabPages.Add(tabPageMatching);
+        tabControlMain.TabPages.Add(tabPageMerging);
+        tabControlMain.SelectedTab = tabPageMerging;
+        stitched = true;
+      }
     }
 
     void addSegments() {
       images_manager.LoadMore();
-      updatePageStatus();
+      updateLoadingPageStatus();
     }
 
     void removeSelectedSegments() {
       var selection = segments_thumbnails.SelectedItems();
       images_manager.Remove(selection);
-      updatePageStatus();
+      updateLoadingPageStatus();
     }
 
-    void updatePageStatus() {
+    void updateLoadingPageStatus() {
       bool images_present = images_manager.Images.Count > 0;
-      buttonRemoveSelectedFiles.Enabled = images_present;
       buttonClearSegment.Enabled = images_present;
       bool can_stitch = images_manager.Images.Count >= 2;
       scrollLimit.Enabled = can_stitch;
       buttonGotoMatching.Enabled = can_stitch;
+      if (!can_stitch) {
+        unmarkButton(buttonGotoMatching);
+        markButton(buttonAddSegments);
+      } else {
+        markButton(buttonGotoMatching);
+        unmarkButton(buttonAddSegments);
+      }
+      updateFileSelectionStatus();
     }
 
     void updateStitcher() {
@@ -111,6 +135,15 @@ namespace TransformatorExample {
           images_manager.Images.Select((i) => i.Bitmap).ToArray());
         buttonGotoMerge.Enabled = true;
       });
+    }
+
+    void currentFilesSelection_Change(object sender, EventArgs e) {
+      updateFileSelectionStatus();
+    }
+
+    void updateFileSelectionStatus() {
+      bool selection_present = segments_thumbnails.SelectedItems().Length > 0;
+      buttonRemoveSelectedFiles.Enabled = selection_present;
     }
 
     //
@@ -164,6 +197,7 @@ namespace TransformatorExample {
         tabControlMain.SelectedTab = tabPageMerging;
         buttonSavePan.Enabled = true;
         buttonResetPanoramaPicture.Enabled = true;
+        markButton(buttonSavePan);
       });
     }
 
@@ -209,6 +243,18 @@ namespace TransformatorExample {
     Keys saveFileShortCut {
       get { return Keys.Control | Keys.S; }
     }
-    
+
+    //
+    // BUTTONS
+    //
+
+    void markButton(Button button) {
+      button.Font = new Font(button.Font, FontStyle.Bold);
+      button.Focus();
+    }
+
+    void unmarkButton(Button button) {
+      button.Font = new Font(button.Font, FontStyle.Regular);
+    }
   }
 }

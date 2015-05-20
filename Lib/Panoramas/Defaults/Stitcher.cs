@@ -10,12 +10,14 @@ namespace Panoramas.Defaults {
     protected IFactory factory;
     protected IPanoramaImages panorama_segments;
     protected IPanoramaRelations panorama_relations;
-    protected IPanoramaTransformations panorama_complate;
+    protected IPanoramaTransformations panorama_complete;
     protected IAnalyzer analyzer;
     protected IBuilder builder;
     protected IPresenter presenter;
 
     public Stitcher(IFactory factory, IImage[] images) {
+      if (images.Length < 2)
+        throw new ArgumentException("Not enough images");
       this.factory = factory;
       this.analyzer = factory.Analyzer();
       this.builder = factory.Builder();
@@ -29,8 +31,8 @@ namespace Panoramas.Defaults {
     }
 
     public Bitmap StitchAll() {
-      this.panorama_complate = builder.Build(panorama_relations);
-      return presenter.Present(panorama_complate);
+      this.panorama_complete = builder.Build(panorama_relations);
+      return presenter.Present(panorama_complete);
     }
   }
 }
