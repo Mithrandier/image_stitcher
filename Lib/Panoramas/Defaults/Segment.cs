@@ -11,22 +11,22 @@ namespace Panoramas.Defaults {
     public String Name { get; private set; }
     public ITransformation Transformation { get; private set; }
 
-    public Segment(String filename)
-      : this(filename, new System.Drawing.Bitmap(filename)) {
-    }
-
     public Segment(Segment segment)
       : this(segment.Name, segment.Bitmap) {
     }
 
-    public Segment(String filename, System.Drawing.Bitmap image) {
+    public Segment(String filename, System.Drawing.Bitmap bitmap = null) {
+      if (filename == null)
+        throw new ArgumentNullException();
+      if (bitmap == null)
+        bitmap = (System.Drawing.Bitmap)System.Drawing.Bitmap.FromFile(filename);
       this.Name = filename;
-      this.Bitmap = image;
+      this.Bitmap = bitmap;
     }
 
-    public Segment(String filename, System.Drawing.Bitmap image, ITransformation transformation) {
-      this.Name = filename;
-      this.Bitmap = image;
+    public Segment(IImage image, ITransformation transformation) {
+      this.Name = image.Name;
+      this.Bitmap = image.Bitmap;
       this.Transformation = transformation;
     }
 

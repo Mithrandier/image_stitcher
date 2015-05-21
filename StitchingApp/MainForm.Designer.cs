@@ -164,11 +164,13 @@
       // 
       // buttonGotoMatching
       // 
-      this.buttonGotoMatching.BackColor = System.Drawing.Color.Transparent;
+      this.buttonGotoMatching.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
       this.buttonGotoMatching.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.buttonGotoMatching.Cursor = System.Windows.Forms.Cursors.Default;
       this.buttonGotoMatching.Enabled = false;
-      this.buttonGotoMatching.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+      this.buttonGotoMatching.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+      this.buttonGotoMatching.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.buttonGotoMatching.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonGotoMatching.ForeColor = System.Drawing.Color.Black;
       this.buttonGotoMatching.ImageAlign = System.Drawing.ContentAlignment.TopRight;
       this.buttonGotoMatching.Location = new System.Drawing.Point(8, 6);
@@ -182,9 +184,9 @@
       // buttonAddSegments
       // 
       this.buttonAddSegments.BackColor = System.Drawing.Color.Transparent;
-      this.buttonAddSegments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.buttonAddSegments.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-      this.buttonAddSegments.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.buttonAddSegments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+      this.buttonAddSegments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonAddSegments.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.buttonAddSegments.ImageAlign = System.Drawing.ContentAlignment.TopRight;
       this.buttonAddSegments.Location = new System.Drawing.Point(8, 53);
       this.buttonAddSegments.Name = "buttonAddSegments";
@@ -248,8 +250,10 @@
       // 
       // buttonBackToFiles
       // 
-      this.buttonBackToFiles.BackColor = System.Drawing.Color.Transparent;
-      this.buttonBackToFiles.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonBackToFiles.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+      this.buttonBackToFiles.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+      this.buttonBackToFiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.buttonBackToFiles.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonBackToFiles.Location = new System.Drawing.Point(8, 6);
       this.buttonBackToFiles.Name = "buttonBackToFiles";
       this.buttonBackToFiles.Size = new System.Drawing.Size(76, 41);
@@ -303,9 +307,11 @@
       // 
       // buttonGotoMerge
       // 
-      this.buttonGotoMerge.BackColor = System.Drawing.Color.Transparent;
+      this.buttonGotoMerge.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
       this.buttonGotoMerge.Enabled = false;
-      this.buttonGotoMerge.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonGotoMerge.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+      this.buttonGotoMerge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.buttonGotoMerge.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonGotoMerge.Location = new System.Drawing.Point(88, 6);
       this.buttonGotoMerge.Name = "buttonGotoMerge";
       this.buttonGotoMerge.Size = new System.Drawing.Size(76, 41);
@@ -336,7 +342,7 @@
       this.buttonResetPanoramaPicture.Font = new System.Drawing.Font("Segoe UI", 14.25F);
       this.buttonResetPanoramaPicture.ForeColor = System.Drawing.Color.Black;
       this.buttonResetPanoramaPicture.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-      this.buttonResetPanoramaPicture.Location = new System.Drawing.Point(6, 53);
+      this.buttonResetPanoramaPicture.Location = new System.Drawing.Point(6, 199);
       this.buttonResetPanoramaPicture.Name = "buttonResetPanoramaPicture";
       this.buttonResetPanoramaPicture.Size = new System.Drawing.Size(157, 140);
       this.buttonResetPanoramaPicture.TabIndex = 18;
@@ -347,9 +353,11 @@
       // 
       // buttonBackToMatching
       // 
-      this.buttonBackToMatching.BackColor = System.Drawing.Color.Transparent;
+      this.buttonBackToMatching.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
       this.buttonBackToMatching.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.buttonBackToMatching.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonBackToMatching.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+      this.buttonBackToMatching.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.buttonBackToMatching.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonBackToMatching.Location = new System.Drawing.Point(6, 6);
       this.buttonBackToMatching.Name = "buttonBackToMatching";
       this.buttonBackToMatching.Size = new System.Drawing.Size(157, 41);
@@ -364,7 +372,7 @@
       this.buttonSavePan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.buttonSavePan.Enabled = false;
       this.buttonSavePan.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-      this.buttonSavePan.Location = new System.Drawing.Point(6, 199);
+      this.buttonSavePan.Location = new System.Drawing.Point(6, 53);
       this.buttonSavePan.Name = "buttonSavePan";
       this.buttonSavePan.Size = new System.Drawing.Size(157, 140);
       this.buttonSavePan.TabIndex = 12;

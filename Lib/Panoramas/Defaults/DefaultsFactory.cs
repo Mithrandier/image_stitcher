@@ -8,7 +8,7 @@ namespace Panoramas.Defaults {
   public abstract class DefaultsFactory : IFactory, IPublicFactory {
 
     public IImageTransformed ImageTransformed(IImage image, ITransformation transformation) {
-      return new Segment(image.Name, image.Bitmap, transformation);
+      return new Segment(image, transformation);
     }
 
     public IPanoramaImages PanoramaImages(IImage[] images) {
