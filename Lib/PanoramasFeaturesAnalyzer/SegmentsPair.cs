@@ -37,7 +37,7 @@ namespace Panoramas.FeaturesAnalyzer {
     public SegmentsPair(IImage base_segment, IImage query) {
       this.BaseSegment = base_segment;
       this.QuerySegment = query;
-      var matcher = new Flann.Matcher(base_segment.Bitmap, query.Bitmap);
+      var matcher = new Flann.Matcher(BaseSegment.Bitmap, QuerySegment.Bitmap);
       this.all_matches = matcher.Match();
       setOptimalLimit();
     }

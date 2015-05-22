@@ -59,6 +59,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Defaults\PanoramaRelationsTest.cs" />
     <Compile Include="FeaturesAnalyzer\AnalyzerTest.cs" />
     <Compile Include="TestFactory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -69,7 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StitcherTest.cs" />
     <Compile Include="SegmentTest.cs" />
-    <Compile Include="PanoramaImagesTest.cs" />
+    <Compile Include="Defaults\PanoramaImagesTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -78,9 +79,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="OrderedTest1.orderedtest">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>

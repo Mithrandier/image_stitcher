@@ -17,8 +17,9 @@ namespace Panoramas.FeaturesAnalyzer.Flann {
       this.Image = image;
       this.Width = Image.Width;
       this.Height = Image.Height;
+      var emgu_image = new Emgu.CV.Image<Gray, byte>(Image);
       var detector = new Emgu.CV.Features2D.SIFTDetector();
-      _features = detector.DetectFeatures(new Emgu.CV.Image<Gray, byte>(Image), null);
+      _features = detector.DetectFeatures(emgu_image, null);
     }
     public FeaturedImage(String filename) : this(new Bitmap(filename)) { }
 

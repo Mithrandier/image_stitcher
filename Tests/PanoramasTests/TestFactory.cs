@@ -35,6 +35,16 @@ namespace PanoramasBaseTests {
       return images;
     }
 
+    public static List<IImagesRelation> ImagesRelations(List<IImage> images = null) {
+      if (images == null)
+        images = Images();
+      var pan_images = PanoramaImages(images);
+      var relations = new List<IImagesRelation>();
+      relations.Add(new Panoramas.FeaturesAnalyzer.SegmentsPair(pan_images.Images[0], pan_images.Images[1]));
+      relations.Add(new Panoramas.FeaturesAnalyzer.SegmentsPair(pan_images.Images[1], pan_images.Images[0]));
+      return relations;
+    }
+
     public static IImageTransformed ImageTransformed() {
       return Segment();
     }
@@ -43,16 +53,17 @@ namespace PanoramasBaseTests {
       return PanoramasFactory().Transformation();
     }
 
-    public static IPanoramaImages PanoramaImages() {
-      return PanoramasFactory().PanoramaImages(Images().ToArray());
+    public static IPanoramaImages PanoramaImages(List<IImage> images = null) {
+      if (images == null)
+        images = Images();
+      return PanoramasFactory().PanoramaImages(images.ToArray());
     }
 
-    public static IPanoramaRelations PanoramaRelations(IPanoramaImages pan_images = null) {
-      if (pan_images == null)
-        pan_images = PanoramaImages();
-      var relations = new List<IImagesRelation>();
-      relations.Add(new Panoramas.FeaturesAnalyzer.SegmentsPair(pan_images.Images[0], pan_images.Images[1]));
-      relations.Add(new Panoramas.FeaturesAnalyzer.SegmentsPair(pan_images.Images[1], pan_images.Images[0]));
+    public static IPanoramaRelations PanoramaRelations(List<IImage> images = null) {
+      if (images == null)
+        images = Images();
+      var  pan_images = PanoramaImages(images);
+      var relations = ImagesRelations(images);
       return PanoramasFactory().PanoramaRelations(PanoramaImages(), relations);
     }
 
@@ -61,6 +72,10 @@ namespace PanoramasBaseTests {
         pan_relations = TestFactory.PanoramaRelations();
       var transformations = new IImageTransformed[] { TestFactory.ImageTransformed(), TestFactory.ImageTransformed() };
       return PanoramasFactory().PanoramaTransformations(pan_relations, transformations);
+    }
+
+    public static Panoramas.Processors.IAnalyzer Analyzer() {
+      return new Panoramas.FeaturesAnalyzer.Analyzer(PanoramasFactory());
     }
   }
 }

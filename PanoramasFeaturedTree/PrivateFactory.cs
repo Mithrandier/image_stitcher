@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Panoramas.Processors;
 
 namespace Panoramas.FeaturedTrees {
   public class PrivateFactory : Panoramas.Defaults.DefaultsFactory {
@@ -19,7 +20,7 @@ namespace Panoramas.FeaturedTrees {
     }
 
     public override IPresenter Presenter() {
-      return new Panoramas.IntegralPresenter.Presenter(this);
+      return new Panoramas.BoundsPresenter.Presenter(this);
     }
   }
 }

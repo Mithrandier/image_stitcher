@@ -23,6 +23,7 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.scrollLimit = new System.Windows.Forms.HScrollBar();
       this.label3 = new System.Windows.Forms.Label();
       this.pictureMerged = new System.Windows.Forms.PictureBox();
@@ -45,7 +46,6 @@
       this.listSegmentsMatchLeft = new System.Windows.Forms.ListBox();
       this.buttonGotoMerge = new System.Windows.Forms.Button();
       this.tabPageMerging = new System.Windows.Forms.TabPage();
-      this.buttonResetPanoramaPicture = new System.Windows.Forms.Button();
       this.buttonBackToMatching = new System.Windows.Forms.Button();
       this.buttonSavePan = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.pictureMerged)).BeginInit();
@@ -323,7 +323,6 @@
       // tabPageMerging
       // 
       this.tabPageMerging.BackColor = System.Drawing.Color.Silver;
-      this.tabPageMerging.Controls.Add(this.buttonResetPanoramaPicture);
       this.tabPageMerging.Controls.Add(this.buttonBackToMatching);
       this.tabPageMerging.Controls.Add(this.buttonSavePan);
       this.tabPageMerging.Controls.Add(this.pictureMerged);
@@ -333,23 +332,6 @@
       this.tabPageMerging.Size = new System.Drawing.Size(786, 537);
       this.tabPageMerging.TabIndex = 1;
       this.tabPageMerging.Text = "Stitching";
-      // 
-      // buttonResetPanoramaPicture
-      // 
-      this.buttonResetPanoramaPicture.BackColor = System.Drawing.Color.Transparent;
-      this.buttonResetPanoramaPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.buttonResetPanoramaPicture.Enabled = false;
-      this.buttonResetPanoramaPicture.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-      this.buttonResetPanoramaPicture.ForeColor = System.Drawing.Color.Black;
-      this.buttonResetPanoramaPicture.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-      this.buttonResetPanoramaPicture.Location = new System.Drawing.Point(6, 199);
-      this.buttonResetPanoramaPicture.Name = "buttonResetPanoramaPicture";
-      this.buttonResetPanoramaPicture.Size = new System.Drawing.Size(157, 140);
-      this.buttonResetPanoramaPicture.TabIndex = 18;
-      this.buttonResetPanoramaPicture.Text = "Reset image";
-      this.buttonResetPanoramaPicture.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-      this.buttonResetPanoramaPicture.UseVisualStyleBackColor = false;
-      this.buttonResetPanoramaPicture.Click += new System.EventHandler(this.buttonResetPanoramaPicture_Click);
       // 
       // buttonBackToMatching
       // 
@@ -388,6 +370,7 @@
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.label3);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.MaximizeBox = false;
       this.Name = "MainForm";
@@ -427,7 +410,6 @@
     private System.Windows.Forms.ListView imagesContainer;
     private System.Windows.Forms.Button buttonClearSegment;
     private System.Windows.Forms.Button buttonRemoveSelectedFiles;
-    private System.Windows.Forms.Button buttonResetPanoramaPicture;
     private System.Windows.Forms.CheckBox checkBoxActiveMatch;
     private System.Windows.Forms.Label label4;
     private System.Windows.Forms.Label label2;

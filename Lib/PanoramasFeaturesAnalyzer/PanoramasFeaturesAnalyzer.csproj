@@ -61,6 +61,10 @@
       <Project>{401d7ebd-5e6e-4ce4-8c43-67a12c620216}</Project>
       <Name>Panoramas</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ThreadsPool\ThreadsPool.csproj">
+      <Project>{b584292c-f1b6-4ca3-afdc-47b1117a981a}</Project>
+      <Name>ThreadsPool</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

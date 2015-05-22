@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Panoramas.Processors;
 
 namespace Panoramas.Defaults {
   public class Stitcher : IStitcher {
@@ -33,6 +34,10 @@ namespace Panoramas.Defaults {
     public Bitmap StitchAll() {
       this.panorama_complete = builder.Build(panorama_relations);
       return presenter.Present(panorama_complete);
+    }
+
+    public void AddImage(string name, Bitmap bitmap) {
+      throw new NotImplementedException();
     }
   }
 }

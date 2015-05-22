@@ -45,6 +45,10 @@
     <Compile Include="Factory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lib\PanoramasBoundsPresenter\PanoramasBoundsPresenter.csproj">
+      <Project>{c0f8d491-4314-4621-836c-fbe27234f44b}</Project>
+      <Name>PanoramasBoundsPresenter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lib\PanoramasFeaturesAnalyzer\PanoramasFeaturesAnalyzer.csproj">
       <Project>{416448fe-d7b9-4dab-b13f-e69d618b6c4b}</Project>
       <Name>PanoramasFeaturesAnalyzer</Name>
