@@ -44,7 +44,6 @@ namespace TransformatorExample {
       setToolTip(this.buttonAddSegments, "Open (Ctrl+O)", "Add more images to stitch them into a panoram");
       setToolTip(this.buttonRemoveSelectedFiles, "Remove (Del)", "Remove selected images");
       setToolTip(this.buttonClearSegment, "Remove images", "Clear images list");
-      setToolTip(this.buttonResetPanoramaPicture, "Reset image", "Show full image as it is");
       setToolTip(this.buttonSavePan, "Save (Ctrl+S)", "Save current panorama image");
     }
 
@@ -88,17 +87,19 @@ namespace TransformatorExample {
     }
 
     private void buttonGotoMatching_Click(object sender, EventArgs e) {
-      updateStitcher();
-      resetCurrentMatch();
-      if (stitched) {
-        tabControlMain.SelectedTab = tabPageMatching;
-      } else {
-        generatePanoram();
-        tabControlMain.TabPages.Add(tabPageMatching);
-        tabControlMain.TabPages.Add(tabPageMerging);
-        tabControlMain.SelectedTab = tabPageMerging;
-        stitched = true;
-      }
+      Logger.Logger.LogTime("Matching", () => {
+        updateStitcher();
+        resetCurrentMatch();
+        if (stitched) {
+          tabControlMain.SelectedTab = tabPageMatching;
+        } else {
+          generatePanoram();
+          tabControlMain.TabPages.Add(tabPageMatching);
+          tabControlMain.TabPages.Add(tabPageMerging);
+          tabControlMain.SelectedTab = tabPageMerging;
+          stitched = true;
+        }
+      });
     }
 
     void addSegments() {
@@ -196,7 +197,6 @@ namespace TransformatorExample {
         picturebox_merging.Image = stitcher.StitchAll();
         tabControlMain.SelectedTab = tabPageMerging;
         buttonSavePan.Enabled = true;
-        buttonResetPanoramaPicture.Enabled = true;
         markButton(buttonSavePan);
       });
     }
@@ -213,14 +213,10 @@ namespace TransformatorExample {
       tabControlMain.SelectedTab = tabPageMatching;
     }
 
-    private void buttonResetPanoramaPicture_Click(object sender, EventArgs e) {
-      picturebox_merging.ResetState();
-    }
-
     void savePanorama() {
       var dialog = new ImageFilesManager.Dialog();
       dialog.SaveToFile((filename) => {
-        pictureMerged.Image.Save(filename);
+        picturebox_merging.Image.Save(filename);
       });
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Panoramas.Processors;
 
 namespace Panoramas.FeaturesAnalyzer {
   public class Analyzer : IAnalyzer {
@@ -21,7 +22,6 @@ namespace Panoramas.FeaturesAnalyzer {
       var featured_segments = segments.Select((s) => s.Bitmap).ToArray();
       var matches = new List<IImagesRelation>();
       var matched_segments = new List<IImage>();
-      int pairs_count = 0;
       for (int iBase = 0; iBase < segments.Length; iBase++) {
         var base_segment = segments[iBase];
         for (int iQuery = 0; iQuery < segments.Length; iQuery++) {
@@ -32,17 +32,21 @@ namespace Panoramas.FeaturesAnalyzer {
           if (matched_segments.Contains(matched_segment)) {
             var prev_match = matches.Find((m) => m.BaseSegment == matched_segment && m.QuerySegment == base_segment);
             match.ReversePair = prev_match;
-            pairs_count += 1;
-          } else {
-            pairs_count -= 1;
           }
           matches.Add(match);
         }
         matched_segments.Add(base_segment);
       }
-      if (pairs_count != 0)
-        throw new Exception("Matches generator error!");
       return matches;
+    }
+
+
+    public bool AddImage(IPanoramaRelations panorama_relations, IImage image) {
+      throw new NotImplementedException();
+    }
+
+    public bool RemoveImage(IPanoramaRelations panorama_relations, IImage image) {
+      throw new NotImplementedException();
     }
   }
 }

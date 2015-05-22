@@ -22,10 +22,6 @@ namespace Panoramas.Defaults {
       return Images.OrderBy((s) => distancesFor(s)).First();
     }
 
-    double distancesFor(IImage segment) {
-      return Relations.Sum((m) => m.QuerySegment == segment ? m.Similarity() : 0);
-    }
-
     public IImagesRelation MatchBetween(IImage base_segment, IImage query_segment) {
       if (base_segment == query_segment || !Images.Contains(base_segment) || !Images.Contains(query_segment))
         throw new ArgumentException("Request for missing images");
@@ -65,6 +61,10 @@ namespace Panoramas.Defaults {
         OrderBy((m) => m.Similarity()).
         First().
         PairOf(segment);
+    }
+
+    double distancesFor(IImage segment) {
+      return Relations.Sum((m) => m.QuerySegment == segment ? m.Similarity() : 0);
     }
   }
 }

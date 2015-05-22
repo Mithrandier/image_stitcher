@@ -12,5 +12,6 @@ namespace Panoramas {
     void Distort(ITransformation transformation);
     ITransformation Multiply(ITransformation transformation);
     Bitmap TransformOn(Bitmap image, Bitmap template);
+    PointF Transform(PointF point);
   }
 }
