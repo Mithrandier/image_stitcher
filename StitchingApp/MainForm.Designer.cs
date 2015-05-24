@@ -77,12 +77,11 @@
       // 
       // pictureMerged
       // 
-      this.pictureMerged.BackColor = System.Drawing.Color.Black;
+      this.pictureMerged.BackColor = System.Drawing.Color.White;
       this.pictureMerged.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.pictureMerged.Location = new System.Drawing.Point(169, 6);
       this.pictureMerged.Name = "pictureMerged";
       this.pictureMerged.Size = new System.Drawing.Size(611, 528);
-      this.pictureMerged.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
       this.pictureMerged.TabIndex = 10;
       this.pictureMerged.TabStop = false;
       // 

@@ -32,7 +32,16 @@ namespace Panoramas.FeaturesAnalyzer {
         }
       }
     }
-    public IImagesRelation ReversePair { get; set; }
+
+    IImagesRelation reverse_pair;
+    public IImagesRelation ReversePair {
+      get { return this.reverse_pair; }
+      set {
+        this.reverse_pair = value;
+        if (value.ReversePair != this)
+          value.ReversePair = this;
+      }
+    }
 
     public SegmentsPair(IImage base_segment, IImage query) {
       this.BaseSegment = base_segment;
@@ -40,11 +49,6 @@ namespace Panoramas.FeaturesAnalyzer {
       var matcher = new Flann.Matcher(BaseSegment.Bitmap, QuerySegment.Bitmap);
       this.all_matches = matcher.Match();
       setOptimalLimit();
-    }
-
-    public void SetReversePair(IImagesRelation pair) {
-      this.ReversePair = pair;
-      pair.ReversePair = this;
     }
 
     public int LimitPercent {

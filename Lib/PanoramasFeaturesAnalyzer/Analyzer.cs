@@ -37,6 +37,10 @@ namespace Panoramas.FeaturesAnalyzer {
         }
         matched_segments.Add(base_segment);
       }
+      foreach (var match in matches) {
+        if (match.ReversePair == null)
+          throw new NullReferenceException("Cannot find a reverse pair");
+      }
       return matches;
     }
 

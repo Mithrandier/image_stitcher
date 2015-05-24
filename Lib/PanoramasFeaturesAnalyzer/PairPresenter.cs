@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace Panoramas.FeaturesAnalyzer {
   public class PairPresenter {
+    public Pen KeyPointPen { get; set; }
+    public Pen RelationPen { get; set; }
+
     Bitmap ImageBase, ImageQuery;
     Bitmap common_template;
     SegmentsPair match;
@@ -17,6 +20,8 @@ namespace Panoramas.FeaturesAnalyzer {
       this.ImageBase = match.BaseSegment.Bitmap;
       this.ImageQuery = match.QuerySegment.Bitmap;
       this.common_template = generateCommonTemplate();
+      this.KeyPointPen = new Pen(Color.Yellow, 2);
+      this.RelationPen = new Pen(Color.Red, 1);
     }
 
     public Bitmap Render() {
@@ -29,7 +34,7 @@ namespace Panoramas.FeaturesAnalyzer {
         drawFeature(g, pair.Left.Point, pair.Left.Size, 0);
         var point2 = pair.Right.Point;
         drawFeature(g, pair.Right.Point, pair.Right.Size, x_offset);
-        g.DrawLine(Pens.Blue, point1.X, point1.Y, point2.X + x_offset, point2.Y);
+        g.DrawLine(RelationPen, point1.X, point1.Y, point2.X + x_offset, point2.Y);
       }
       g.Save();
       return template;
@@ -48,7 +53,7 @@ namespace Panoramas.FeaturesAnalyzer {
       float x = location.X + x_offset;
       float y = location.Y;
       int radius = (int)(size / 2);
-      g.DrawEllipse(Pens.Red, x - radius, y - radius, radius * 2, radius * 2);
+      g.DrawEllipse(KeyPointPen, x - radius, y - radius, radius * 2, radius * 2);
     }
   }
 }

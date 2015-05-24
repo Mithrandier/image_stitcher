@@ -47,9 +47,10 @@ namespace Panoramas.BoundsPresenter
         float max_x = bounds.Max((b) => b.X);
         float min_y = bounds.Min((b) => b.Y);
         float max_y = bounds.Max((b) => b.Y);
-        int width = (int)((max_x - min_x) * 1.5);
-        int height = (int)((max_y - min_y) * 1.5);
+        int width = (int)((max_x - min_x) * 1.0);
+        int height = (int)((max_y - min_y) * 1.0);
         var template = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+        Graphics.FromImage(template).Clear(Color.White);
         offset = new PointF(-min_x, -min_y);
         return template;
       }

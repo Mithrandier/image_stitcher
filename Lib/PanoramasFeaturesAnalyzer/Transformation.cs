@@ -78,8 +78,8 @@ namespace Panoramas.HomographyTransformer {
     
     public PointF Transform(PointF point) {
       var new_point = new PointF();
-      new_point.X = (float)(point.X * homography_matrix[0, 0] + point.X * homography_matrix[0, 1] + homography_matrix[0, 2]);
-      new_point.Y = (float)(point.X * homography_matrix[1, 0] + point.X * homography_matrix[1, 1] + homography_matrix[1, 2]);
+      new_point.X = (float)(point.X * homography_matrix[0, 0] + point.Y * homography_matrix[0, 1] + homography_matrix[0, 2]);
+      new_point.Y = (float)(point.X * homography_matrix[1, 0] + point.Y * homography_matrix[1, 1] + homography_matrix[1, 2]);
       return new_point;
     }
   }

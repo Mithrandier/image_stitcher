@@ -12,20 +12,32 @@ namespace ImageEditor {
     PictureBox box;
     Form form;
     Graphics g;
-    Point image_location;
-    Size image_size;
-    Scaler scaler;
+    Allocator allocator;
+    Tools.ContextMenu context_menu;
+
+    enum Operators { Move, Crop };
+    Operators current_operator;
 
     public Color BackgroundColor = Color.White;
 
-    public Editor(Form form, PictureBox box) {
+    public Editor(Form form, PictureBox box, bool browseable = false) {
       this.form = form;
       this.box = box;
       if (box.Image == null) {
         box.Image = new Bitmap(box.Width, box.Height);
       }
       this.Image = box.Image;
-      initPictureHandlers();
+      if (browseable) {
+        this.context_menu = new Tools.ContextMenu();
+        box.ContextMenuStrip = context_menu.Control;
+        initMenuItems();
+        initPictureHandlers();
+      }
+    }
+
+    public Image VisibleImage() {
+
+      return Image;
     }
 
     Image _image;
@@ -41,10 +53,14 @@ namespace ImageEditor {
     }
 
     public void ResetState() {
-      this.scaler = new Scaler(box);
-      this.image_size = shrinkFrameTo(this.box.Size, this.Image.Size);
-      this.image_location = new Point((box.Size.Width - image_size.Width) / 2, (box.Size.Height - image_size.Height) / 2);
+      this.allocator = new Allocator(box, (Bitmap)Image.Clone());
       refreshPicture();
+    }
+
+    void initMenuItems() {
+      //this.context_menu.AddItem("Move", new EventHandler(toolStripMenuItemMove_Click));
+      //this.context_menu.AddItem("Crop", new EventHandler(toolStripMenuItemCrop_Click));
+      this.context_menu.AddItem("Reset", new EventHandler(toolStripMenuItemReset_Click));
     }
 
     void initPictureHandlers() {
@@ -60,8 +76,21 @@ namespace ImageEditor {
     // HANDLERS
     //
 
+    private void toolStripMenuItemMove_Click(object sender, EventArgs e) {
+      this.current_operator = Operators.Move;
+    }
+
+    private void toolStripMenuItemCrop_Click(object sender, EventArgs e) {
+      this.current_operator = Operators.Crop;
+    }
+
+    private void toolStripMenuItemReset_Click(object sender, EventArgs e) {
+      ResetState();
+    }
+
     private void pictureMatches_MouseEnter(object sender, EventArgs e) {
-      form.Cursor = Cursors.Hand;
+      if (current_operator == Operators.Move)
+        form.Cursor = Cursors.Hand;
       box.Focus();
     }
 
@@ -73,39 +102,50 @@ namespace ImageEditor {
     }
 
     private void pictureMatches_MouseDown(object sender, MouseEventArgs e) {
-      start_point = e.Location;
+      if (e.Button == MouseButtons.Left) {
+        start_point = e.Location;
+      }
     }
 
     private void pictureMatches_MouseUp(object sender, MouseEventArgs e) {
-      //if (start_point.IsEmpty)
-      //  return;
-      //var end_point = new Point(e.Location.X, e.Location.Y);
-      //end_point.X = (int)Math.Max(0, Math.Min(end_point.X, box.Width));
-      //end_point.Y = (int)Math.Max(0, Math.Min(end_point.Y, box.Height));
-      //image_location.X -= Math.Min(start_point.X, e.Location.X);
-      //image_location.Y -= Math.Min(start_point.Y, e.Location.Y);
-      //int window_width = Math.Abs(start_point.X - end_point.X);
-      //int window_height = Math.Abs(start_point.Y - end_point.Y);
-      //scaler.ScaleTo(((float)box.Size.Height) / window_height);
-      refreshPicture();
-      start_point = Point.Empty;
-    }
-
-    const float SCALE_STEP = 0.1f;
-    private void pictureMatches_MouseWheel(object sender, MouseEventArgs e) {
-      if (e.Delta < 0)
-        scaler.ScaleBy(-SCALE_STEP);
-      else
-        scaler.ScaleBy(SCALE_STEP);
-      refreshPicture();
+      if (e.Button == MouseButtons.Left) {
+        if (!start_point.IsEmpty && current_operator == Operators.Crop) {
+          int min_x = Math.Min(e.Location.X, start_point.X);
+          int max_x = Math.Max(e.Location.X, start_point.X);
+          int min_y = Math.Min(e.Location.Y, start_point.Y);
+          int max_y = Math.Max(e.Location.Y, start_point.Y);
+          var new_frame = new Rectangle(new Point(min_x, min_y), new Size(max_x - min_x, max_y - min_y));
+          allocator.SetFrame(new_frame);
+        }
+        refreshPicture();
+        start_point = Point.Empty;
+      }
     }
 
     private void pictureMatches_MouseMove(object sender, MouseEventArgs e) {
       if (start_point.IsEmpty)
         return;
-      var new_window = newWindow(start_point, e.Location);
-      g.Clear(BackgroundColor);
-      drawRectangle(new_window);
+      switch (current_operator) {
+        case Operators.Move:
+          allocator.MoveBy(e.Location.X - start_point.X, e.Location.Y - start_point.Y);
+          start_point = e.Location;
+          refreshPicture();
+          break;
+        case Operators.Crop:
+          var new_window = newWindow(start_point, e.Location);
+          refreshPicture();
+          drawRectangle(new_window);
+          break;
+      }
+    }
+
+    const float SCALE_STEP = 0.3f;
+    private void pictureMatches_MouseWheel(object sender, MouseEventArgs e) {
+      if (e.Delta > 0)
+        allocator.ScaleBy(1-SCALE_STEP, e.Location);
+      else
+        allocator.ScaleBy(1+SCALE_STEP, e.Location);
+      refreshPicture();
     }
 
     Rectangle newWindow(Point start_point, Point end_point) {
@@ -117,12 +157,22 @@ namespace ImageEditor {
     }
 
     void drawRectangle(Rectangle rect) {
-      var pen = Pens.Purple;
-      g.DrawLine(pen, rect.X, rect.Y, rect.Right, rect.Top);
-      g.DrawLine(pen, rect.X, rect.Y, rect.Left, rect.Bottom);
-      g.DrawLine(pen, rect.Right, rect.Bottom, rect.Right, rect.Top);
-      g.DrawLine(pen, rect.Right, rect.Bottom, rect.Left, rect.Bottom);
+      g.DrawLine(selectionPen, rect.X, rect.Y, rect.Right, rect.Top);
+      g.DrawLine(selectionPen, rect.X, rect.Y, rect.Left, rect.Bottom);
+      g.DrawLine(selectionPen, rect.Right, rect.Bottom, rect.Right, rect.Top);
+      g.DrawLine(selectionPen, rect.Right, rect.Bottom, rect.Left, rect.Bottom);
       box.Refresh();
+    }
+
+    Pen selection_pen;
+    Pen selectionPen {
+      get {
+        if (selection_pen == null) {
+          selection_pen = new Pen(Color.White, 1);
+          selection_pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+        }
+        return selection_pen;
+      }
     }
 
     //
@@ -134,29 +184,8 @@ namespace ImageEditor {
         this.g = Graphics.FromImage(this.box.Image);
       }
       g.Clear(BackgroundColor);
-      var dest_rectangle = new RectangleF(image_location, scaler.CurrentSize());
-      var rect = new Rectangle(image_location, image_size);
-      g.DrawImage(this.Image, rect);
+      g.DrawImage(this.Image, allocator.CurrentInboxRectangle());
       box.Refresh();
-    }
-
-    //
-    // SUPPORTIVE STUFF
-    //
-
-    Size shrinkFrameTo(Size target_frame, Size object_frame) {
-      Size result_frame = target_frame;
-      double object_ratio = frameRatio(object_frame);
-      if (frameRatio(target_frame) > object_ratio) {
-        result_frame.Width = (int)(result_frame.Height * object_ratio);
-      } else {
-        result_frame.Height = (int)(result_frame.Width / object_ratio);
-      }
-      return result_frame;
-    }
-
-    double frameRatio(Size frame) {
-      return frame.Width * 1.0 / frame.Height;
     }
   }
 }

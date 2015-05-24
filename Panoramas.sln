@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsPool", "Lib\ThreadsP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanoramasBoundsPresenter", "Lib\PanoramasBoundsPresenter\PanoramasBoundsPresenter.csproj", "{C0F8D491-4314-4621-836C-FBE27234F44B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageEditorTestApp", "ImageEditorTestApp\ImageEditorTestApp.csproj", "{BED69E68-BB37-410E-8EB3-C9EADB444A3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,10 @@ Global
 		{C0F8D491-4314-4621-836C-FBE27234F44B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0F8D491-4314-4621-836C-FBE27234F44B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0F8D491-4314-4621-836C-FBE27234F44B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED69E68-BB37-410E-8EB3-C9EADB444A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED69E68-BB37-410E-8EB3-C9EADB444A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED69E68-BB37-410E-8EB3-C9EADB444A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED69E68-BB37-410E-8EB3-C9EADB444A3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
