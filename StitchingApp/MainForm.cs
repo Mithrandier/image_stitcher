@@ -139,9 +139,14 @@ namespace TransformatorExample {
     void updateStitcher() {
       waitForProcessComplete(() => {
         try {
-          this.stitcher = panoramas_factory.Stitcher(
-            images_manager.Images.Select((i) => i.FileName).ToArray(),
-            images_manager.Images.Select((i) => i.Bitmap).ToArray());
+          if (stitcher == null)
+            this.stitcher = panoramas_factory.Stitcher(
+              images_manager.Images.Select((i) => i.FileName).ToArray(),
+              images_manager.Images.Select((i) => i.Bitmap).ToArray());
+          else
+            this.stitcher.SetImages(
+              images_manager.Images.Select((i) => i.FileName).ToArray(),
+              images_manager.Images.Select((i) => i.Bitmap).ToArray());
           buttonGotoMerge.Enabled = true;
         } catch (Exception ex) {
           Logger.Logger.Info(ex.ToString());
@@ -191,7 +196,7 @@ namespace TransformatorExample {
 
     void resetCurrentMatch() {
       var selection = segments_pair_list.SelectedItems();
-      if (stitcher == null || selection.Any((i) => i == null))
+      if (tabControlMain.SelectedTab != tabPageMatching || stitcher == null || selection.Any((i) => i == null))
         return;
       try {
         current_match = stitcher.MatchBetween(selection[0], selection[1]);

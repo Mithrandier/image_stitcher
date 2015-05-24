@@ -39,7 +39,7 @@ namespace Panoramas.Defaults {
       if (domain.Intersect(group).Count() > 0)
         throw new ArgumentException();
       if (domain == null)
-        domain = Images;
+        domain = Images.ToArray();
       var match = Relations.
         Where((m) => m.Segments.Intersect(group).Count() > 0).
         Where((m) => m.Segments.Intersect(domain).Count() > 0).
@@ -51,7 +51,7 @@ namespace Panoramas.Defaults {
 
     public IImage[] NeighboursOf(IImage segment, IImage[] domain = null) {
       if (domain == null)
-        domain = Images;
+        domain = Images.ToArray();
       return domain.Where((s) => closestTo(s) == segment).ToArray();
     }
 

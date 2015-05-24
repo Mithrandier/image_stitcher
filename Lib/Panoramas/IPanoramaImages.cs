@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Panoramas {
   public interface IPanoramaImages {
-    IImage[] Images { get; }
+    List<IImage> Images { get; }
   }
 }

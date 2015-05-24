@@ -18,7 +18,7 @@ namespace PanoramasBaseTests {
       Assert.IsNotNull(pan_relations);
       Assert.IsTrue(pan_relations is IPanoramaRelations);
       Assert.IsTrue(pan_relations.Images == pan_images.Images);
-      Assert.IsTrue(pan_relations.Relations.Count == factorial(pan_images.Images.Length));        
+      Assert.IsTrue(pan_relations.Relations.Count == factorial(pan_images.Images.Count));        
       var neighbours = pan_relations.NeighboursOf(pan_images.Images[0]);
       Assert.IsTrue(neighbours.Length == 1 && neighbours[0] == pan_images.Images[1]);
       Assert.IsNotNull(pan_relations.MatchBetween(pan_images.Images[0], pan_images.Images[1]));
