@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace Panoramas.Defaults {
   public class PanoramaRelations: PanoramaImages, IPanoramaRelations {
     public List<IImagesRelation> Relations { get; private set; }
+    public List<IImagesRelation> ActiveRelations {
+      get { return Relations.Where((r) => r.Active).ToList(); }
+    }
 
     public PanoramaRelations(IPanoramaImages panorama, List<IImagesRelation> relations)
       : base(panorama) {
@@ -25,7 +28,7 @@ namespace Panoramas.Defaults {
     public IImagesRelation MatchBetween(IImage base_segment, IImage query_segment) {
       if (base_segment == query_segment || !Images.Contains(base_segment) || !Images.Contains(query_segment))
         throw new ArgumentException("Request for missing images");
-      return Relations.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);
+      return ActiveRelations.Find((m) => m.BaseSegment == base_segment && m.QuerySegment == query_segment);
     }
 
     public IRelationControl MatchBetween(String base_segment, String query_segment) {
@@ -40,7 +43,7 @@ namespace Panoramas.Defaults {
         throw new ArgumentException();
       if (domain == null)
         domain = Images.ToArray();
-      var match = Relations.
+      var match = ActiveRelations.
         Where((m) => m.Segments.Intersect(group).Count() > 0).
         Where((m) => m.Segments.Intersect(domain).Count() > 0).
         OrderBy((m) => m.Similarity()).
@@ -56,7 +59,7 @@ namespace Panoramas.Defaults {
     }
 
     protected IImage closestTo(IImage segment) {
-      return Relations.
+      return ActiveRelations.
         Where((m) => m.Includes(segment)).
         OrderBy((m) => m.Similarity()).
         First().
@@ -64,7 +67,7 @@ namespace Panoramas.Defaults {
     }
 
     double distancesFor(IImage segment) {
-      return Relations.Sum((m) => m.QuerySegment == segment ? m.Similarity() : 0);
+      return ActiveRelations.Sum((m) => m.QuerySegment == segment ? m.Similarity() : 0);
     }
   }
 }
