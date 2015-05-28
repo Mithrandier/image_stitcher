@@ -18,6 +18,8 @@ namespace ImageFilesManager {
     public CollectionManager() {
       this.Images = new List<ImageFile>();
       this.dialog = new Dialog();
+      dialog.OpenDialog.Filter = "JPEG Files|*.jpeg;*.jpg";
+      dialog.SaveDialog.Filter = "JPEG Files|*.jpeg;*.jpg";
       this.presenters = new List<IRefreshablePresenter>();
     }
 

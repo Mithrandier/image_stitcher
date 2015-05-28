@@ -36,8 +36,20 @@ namespace Panoramas.Defaults {
       return presenter.Present(panorama_complete);
     }
 
-    public void AddImage(string name, Bitmap bitmap) {
-      throw new NotImplementedException();
+    public void SetImages(string[] names, Bitmap[] bitmaps) {
+      if (names.Length != bitmaps.Length)
+        throw new ArgumentException();
+      foreach (var image in panorama_relations.Images) {
+        if (!names.Contains(image.Name))
+          analyzer.RemoveImage(panorama_relations, image);
+      }
+      for (int i_name = 0; i_name < names.Length; i_name++) {
+        var name = names[i_name];
+        if (!panorama_relations.Images.Select((i) => i.Name).Contains(name))
+          analyzer.AddImage(panorama_relations, factory.Image(name, bitmaps[i_name]));
+      }
+      if (panorama_relations.Images.Count != names.Length)
+        throw new NullReferenceException();
     }
   }
 }

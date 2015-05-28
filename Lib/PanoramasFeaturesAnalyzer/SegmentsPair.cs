@@ -32,7 +32,16 @@ namespace Panoramas.FeaturesAnalyzer {
         }
       }
     }
-    public IImagesRelation ReversePair { get; set; }
+
+    IImagesRelation reverse_pair;
+    public IImagesRelation ReversePair {
+      get { return this.reverse_pair; }
+      set {
+        this.reverse_pair = value;
+        if (value.ReversePair != this)
+          value.ReversePair = this;
+      }
+    }
 
     public SegmentsPair(IImage base_segment, IImage query) {
       this.BaseSegment = base_segment;
@@ -40,11 +49,6 @@ namespace Panoramas.FeaturesAnalyzer {
       var matcher = new Flann.Matcher(BaseSegment.Bitmap, QuerySegment.Bitmap);
       this.all_matches = matcher.Match();
       setOptimalLimit();
-    }
-
-    public void SetReversePair(IImagesRelation pair) {
-      this.ReversePair = pair;
-      pair.ReversePair = this;
     }
 
     public int LimitPercent {
@@ -56,7 +60,7 @@ namespace Panoramas.FeaturesAnalyzer {
         this.limit = percent;
         if (percent < 0 || percent > 100)
           throw new ArgumentException("Invalid parameter value");
-        var matches_count = all_matches.Length * percent / 100;
+        var matches_count = (int)Math.Ceiling(all_matches.Length * percent / 100.0);
         if (matches_count < MIN_MATCHES_COUNT) {
           active = false;
         }
@@ -97,7 +101,7 @@ namespace Panoramas.FeaturesAnalyzer {
     }
 
     void setOptimalLimit() {
-      int count = MIN_MATCHES_COUNT;
+      int count = (int)(MIN_MATCHES_COUNT * 1.2);
       this.limit = count * 100 / all_matches.Length;
       this.active = true;
       setCountLimit(count);

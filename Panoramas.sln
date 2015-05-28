@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Lib\Logger\Logger
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Panoramas", "Lib\Panoramas\Panoramas.csproj", "{401D7EBD-5E6E-4CE4-8C43-67A12C620216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmguPlainStitcherApp", "EmguPlainStitcherApp\EmguPlainStitcherApp.csproj", "{44A79740-4E18-4B4E-B658-56255501468D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageFilesManager", "Lib\ImageFilesManager\ImageFilesManager.csproj", "{5092DA5C-F6DD-428A-B766-288E6DD98F65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageEditor", "Lib\ImageEditor\ImageEditor.csproj", "{681C7456-763C-4AB6-B75F-131BB27F3A14}"
@@ -34,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsPool", "Lib\ThreadsPool\ThreadsPool.csproj", "{B584292C-F1B6-4CA3-AFDC-47B1117A981A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanoramasBoundsPresenter", "Lib\PanoramasBoundsPresenter\PanoramasBoundsPresenter.csproj", "{C0F8D491-4314-4621-836C-FBE27234F44B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageEditorTestApp", "ImageEditorTestApp\ImageEditorTestApp.csproj", "{BED69E68-BB37-410E-8EB3-C9EADB444A3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,10 +57,6 @@ Global
 		{401D7EBD-5E6E-4CE4-8C43-67A12C620216}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{401D7EBD-5E6E-4CE4-8C43-67A12C620216}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{401D7EBD-5E6E-4CE4-8C43-67A12C620216}.Release|Any CPU.Build.0 = Release|Any CPU
-		{44A79740-4E18-4B4E-B658-56255501468D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44A79740-4E18-4B4E-B658-56255501468D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44A79740-4E18-4B4E-B658-56255501468D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44A79740-4E18-4B4E-B658-56255501468D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5092DA5C-F6DD-428A-B766-288E6DD98F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5092DA5C-F6DD-428A-B766-288E6DD98F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5092DA5C-F6DD-428A-B766-288E6DD98F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -97,6 +93,10 @@ Global
 		{C0F8D491-4314-4621-836C-FBE27234F44B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0F8D491-4314-4621-836C-FBE27234F44B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0F8D491-4314-4621-836C-FBE27234F44B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED69E68-BB37-410E-8EB3-C9EADB444A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED69E68-BB37-410E-8EB3-C9EADB444A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED69E68-BB37-410E-8EB3-C9EADB444A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED69E68-BB37-410E-8EB3-C9EADB444A3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,27 +17,29 @@ namespace TransformatorExample {
     ImageFilesManager.CollectionManager images_manager;
     ImageFilesManager.ISelectableControl segments_thumbnails;
     ImageFilesManager.ISelectableControl segments_pair_list;
+    ImageFilesManager.Dialog save_dialog;
     bool stitched = false;
-
-    TabPage page_matching, page_stitching;
 
     public MainForm(Panoramas.IPublicFactory factory) {
       InitializeComponent();
       this.panoramas_factory = factory;
+      initFilesControls();
+      initToolTips();
+      tabControlMain.TabPages.Remove(tabPageMatching);
+      tabControlMain.TabPages.Remove(tabPageMerging);
+      updateLoadingPageStatus();
+    }
+
+    void initFilesControls() {
       picturebox_matching = new ImageEditor.Editor(this, this.pictureMatches);
-      picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged);
-      picturebox_merging.BackgroundColor = Color.Black;
+      picturebox_merging = new ImageEditor.Editor(this, this.pictureMerged, true);
       images_manager = new ImageFilesManager.CollectionManager();
       this.segments_thumbnails = images_manager.PresentAsListView(imagesContainer);
       this.segments_thumbnails.AddSelectionChangeHandler(new EventHandler(this.currentFilesSelection_Change));
       this.segments_pair_list = images_manager.PresentAsPairsList(listSegmentsMatchLeft, listSegmentsMatchRight);
       this.segments_pair_list.AddSelectionChangeHandler(new EventHandler(this.currentMatch_Change));
-      initToolTips();
-      page_matching = tabPageMatching;
-      page_stitching = tabPageMerging;
-      tabControlMain.TabPages.Remove(tabPageMatching);
-      tabControlMain.TabPages.Remove(tabPageMerging);
-      updateLoadingPageStatus();
+      this.save_dialog = new ImageFilesManager.Dialog();
+      save_dialog.SaveDialog.Filter = "JPEG Files|*.jpeg;*.jpg";
     }
 
     void initToolTips() {
@@ -72,6 +74,7 @@ namespace TransformatorExample {
     }
 
     private void buttonClearSegment_Click(object sender, EventArgs e) {
+      this.stitcher = null;
       images_manager.ClearAll();
       updateLoadingPageStatus();
     }
@@ -87,27 +90,34 @@ namespace TransformatorExample {
     }
 
     private void buttonGotoMatching_Click(object sender, EventArgs e) {
-      Logger.Logger.LogTime("Matching", () => {
-        updateStitcher();
+      updateStitcher();
+      resetCurrentMatch();
+      if (stitched) {
+        tabControlMain.SelectedTab = tabPageMatching;
         resetCurrentMatch();
-        if (stitched) {
-          tabControlMain.SelectedTab = tabPageMatching;
-        } else {
-          generatePanoram();
-          tabControlMain.TabPages.Add(tabPageMatching);
-          tabControlMain.TabPages.Add(tabPageMerging);
-          tabControlMain.SelectedTab = tabPageMerging;
-          stitched = true;
-        }
-      });
+      } else {
+        generatePanoram();
+        tabControlMain.TabPages.Add(tabPageMatching);
+        tabControlMain.SelectedTab = tabPageMatching;
+        resetCurrentMatch();
+        tabControlMain.TabPages.Add(tabPageMerging);
+        tabControlMain.SelectedTab = tabPageMerging;
+        stitched = true;
+      }
     }
 
     void addSegments() {
-      images_manager.LoadMore();
+      try {
+        images_manager.LoadMore();
+      } catch (Exception ex) {
+        Logger.Logger.Info(ex.ToString());
+        MessageBox.Show("Cannot load files!");
+      }
       updateLoadingPageStatus();
     }
 
     void removeSelectedSegments() {
+      this.stitcher = null;
       var selection = segments_thumbnails.SelectedItems();
       images_manager.Remove(selection);
       updateLoadingPageStatus();
@@ -131,10 +141,20 @@ namespace TransformatorExample {
 
     void updateStitcher() {
       waitForProcessComplete(() => {
-        this.stitcher = panoramas_factory.Stitcher(
-          images_manager.Images.Select((i) => i.FileName).ToArray(),
-          images_manager.Images.Select((i) => i.Bitmap).ToArray());
-        buttonGotoMerge.Enabled = true;
+        try {
+          if (stitcher == null)
+            this.stitcher = panoramas_factory.Stitcher(
+              images_manager.Images.Select((i) => i.FileName).ToArray(),
+              images_manager.Images.Select((i) => i.Bitmap).ToArray());
+          else
+            this.stitcher.SetImages(
+              images_manager.Images.Select((i) => i.FileName).ToArray(),
+              images_manager.Images.Select((i) => i.Bitmap).ToArray());
+          buttonGotoMerge.Enabled = true;
+        } catch (Exception ex) {
+          Logger.Logger.Info(ex.ToString());
+          MessageBox.Show("Cannot use that files!");
+        }
       });
     }
 
@@ -179,10 +199,15 @@ namespace TransformatorExample {
 
     void resetCurrentMatch() {
       var selection = segments_pair_list.SelectedItems();
-      if (stitcher == null || selection.Any((i) => i == null))
+      if (tabControlMain.SelectedTab != tabPageMatching || stitcher == null || selection.Any((i) => i == null))
         return;
-      current_match = stitcher.MatchBetween(selection[0], selection[1]);
-      drawCurrentMatch();
+      try {
+        current_match = stitcher.MatchBetween(selection[0], selection[1]);
+        drawCurrentMatch();
+      } catch (Exception ex) {
+        Logger.Logger.Info(ex.ToString());
+        MessageBox.Show("Cannot analyze images!");
+      }
     }
 
     void drawCurrentMatch() {
@@ -194,10 +219,15 @@ namespace TransformatorExample {
 
     void generatePanoram() {
       waitForProcessComplete(() => {
-        picturebox_merging.Image = stitcher.StitchAll();
-        tabControlMain.SelectedTab = tabPageMerging;
-        buttonSavePan.Enabled = true;
-        markButton(buttonSavePan);
+        try {
+          picturebox_merging.Image = stitcher.StitchAll();
+          tabControlMain.SelectedTab = tabPageMerging;
+          buttonSavePan.Enabled = true;
+          markButton(buttonSavePan);
+        } catch (Exception ex) {
+          Logger.Logger.Info(ex.ToString());
+          MessageBox.Show("Cannot generate!");
+        }
       });
     }
 
@@ -214,9 +244,8 @@ namespace TransformatorExample {
     }
 
     void savePanorama() {
-      var dialog = new ImageFilesManager.Dialog();
-      dialog.SaveToFile((filename) => {
-        picturebox_merging.Image.Save(filename);
+      save_dialog.SaveToFile((filename) => {
+        picturebox_merging.CurrentView().Save(filename);
       });
     }
 

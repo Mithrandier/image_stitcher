@@ -43,7 +43,8 @@
   <ItemGroup>
     <Compile Include="Editor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\Scaler.cs" />
+    <Compile Include="Tools\Allocator.cs" />
+    <Compile Include="Tools\ContextMenu.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

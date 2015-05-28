@@ -14,7 +14,7 @@ namespace Panoramas.FeaturesAnalyzer {
     }
 
     public IPanoramaRelations Analyze(IPanoramaImages panorama_segment) {
-      var relations = generateMatches(panorama_segment.Images);
+      var relations = generateMatches(panorama_segment.Images.ToArray());
       return factory.PanoramaRelations(panorama_segment, relations);
     }
 
@@ -37,16 +37,42 @@ namespace Panoramas.FeaturesAnalyzer {
         }
         matched_segments.Add(base_segment);
       }
+      foreach (var match in matches) {
+        if (match.ReversePair == null)
+          throw new NullReferenceException("Cannot find a reverse pair");
+      }
       return matches;
     }
 
 
     public bool AddImage(IPanoramaRelations panorama_relations, IImage image) {
-      throw new NotImplementedException();
+      if (panorama_relations.Images.Contains(image))
+        return false;
+      var new_relations = new List<SegmentsPair>();
+      foreach (var old_image in panorama_relations.Images) {
+        var match = new SegmentsPair(image, old_image);
+        var reverse_match = new SegmentsPair(old_image, image);
+        match.ReversePair = reverse_match;
+        new_relations.Add(match);
+        new_relations.Add(reverse_match);
+      }
+      foreach (var match in new_relations) {
+        if (match.ReversePair == null)
+          throw new NullReferenceException("Cannot find a reverse pair");
+      }
+      panorama_relations.Images.Add(image);
+      panorama_relations.Relations.AddRange(new_relations);
+      return true;
     }
 
     public bool RemoveImage(IPanoramaRelations panorama_relations, IImage image) {
-      throw new NotImplementedException();
+      var toremove_relations = panorama_relations.Relations.Where((r) => r.Includes(image));
+      if (toremove_relations.Count() < 1)
+        return false;
+      foreach (var relation in toremove_relations)
+        panorama_relations.Relations.Remove(relation);
+      panorama_relations.Images.Remove(image);
+      return true;
     }
   }
 }

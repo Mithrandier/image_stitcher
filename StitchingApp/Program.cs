@@ -13,8 +13,13 @@ namespace TransformatorExample {
     static void Main() {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      var panoramas_factory = Panoramas.FeaturedTrees.Factory.Generate();
-      Application.Run(new MainForm(panoramas_factory));
+      try {
+        var panoramas_factory = Panoramas.FeaturedTrees.Factory.Generate();
+        Application.Run(new MainForm(panoramas_factory));
+      } catch (Exception ex) {
+        Logger.Logger.Info(ex.ToString());
+        MessageBox.Show("The program unexpectedly ended. Please, contact us to fix the problem");
+      }
     }
   }
 }

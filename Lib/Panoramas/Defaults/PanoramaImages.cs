@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Panoramas.Defaults {
   public class PanoramaImages : IPanoramaImages {
-    public IImage[] Images { get; private set; }
+    public List<IImage> Images { get; private set; }
 
     public PanoramaImages(IImage[] segments) {
-      this.Images = segments;
+      this.Images = segments.ToList();
     }
 
     public PanoramaImages(IPanoramaImages panorama) {
