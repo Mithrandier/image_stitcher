@@ -94,9 +94,12 @@ namespace TransformatorExample {
       resetCurrentMatch();
       if (stitched) {
         tabControlMain.SelectedTab = tabPageMatching;
+        resetCurrentMatch();
       } else {
         generatePanoram();
         tabControlMain.TabPages.Add(tabPageMatching);
+        tabControlMain.SelectedTab = tabPageMatching;
+        resetCurrentMatch();
         tabControlMain.TabPages.Add(tabPageMerging);
         tabControlMain.SelectedTab = tabPageMerging;
         stitched = true;
@@ -242,7 +245,7 @@ namespace TransformatorExample {
 
     void savePanorama() {
       save_dialog.SaveToFile((filename) => {
-        picturebox_merging.Image.Save(filename);
+        picturebox_merging.CurrentView().Save(filename);
       });
     }
 

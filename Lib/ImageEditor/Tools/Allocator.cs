@@ -7,43 +7,27 @@ using System.Threading.Tasks;
 
 namespace ImageEditor.Tools {
   public class Allocator {
-    Image original;
+    SizeF original_size;
     SizeF box_size;
-    SizeF current_size;
-    PointF current_location;
+    SizeF shrinked_size;
     SizeF boxed_size;
     PointF boxed_location;
 
-    Image boxed_image = null;
-    public Image BoxedImage {
-      get {
-        if (boxed_image == null) {
-          this.boxed_image = new Bitmap((int)box_size.Width, (int)box_size.Height);
-          Graphics.FromImage(boxed_image).DrawImage(original, CurrentInboxRectangle());
-        }
-        return boxed_image;
-      }
-    }
-
-    public Allocator(System.Windows.Forms.PictureBox box, Image original) {
-      this.original = original;
-      this.box_size = box.Size;
-      this.current_size = original.Size;
-      this.current_location = new Point(0, 0);
+    public Allocator(Size box_size, Size original_size) {
+      this.original_size = original_size;
+      this.box_size = box_size;
       resetBoxedRectangle();
-    }
-
-    void resetBoxedRectangle() {
-      this.boxed_size = shrinkFrameTo(box_size, current_size);
-      this.boxed_location = new PointF((box_size.Width - boxed_size.Width) / 2, (box_size.Height - boxed_size.Height) / 2);
-    }
-
-    public RectangleF CurrentRectangle() {
-      return new RectangleF(current_location, current_size);
     }
 
     public RectangleF CurrentInboxRectangle() {
       return new RectangleF(boxed_location, boxed_size);
+    }
+
+    public RectangleF CurrentImageViewPort() {
+      var top_left = transformViewPointToReal(new PointF(0, 0));
+      var bottom_right = transformViewPointToReal(new PointF(box_size.Width, box_size.Height));
+      var port_size = new SizeF(bottom_right.X - top_left.X, bottom_right.Y - top_left.Y);
+      return new RectangleF(top_left, port_size);
     }
 
     public void ScaleBy(float scale, Point core_location) {
@@ -55,11 +39,59 @@ namespace ImageEditor.Tools {
       this.boxed_location.Y += y;
     }
 
-    public void SetFrame(Rectangle new_frame) {
-      this.current_location.X += new_frame.Location.X - boxed_location.X;
-      this.current_location.Y += new_frame.Location.Y - boxed_location.Y;
-      resetBoxedRectangle();
+    public Rectangle TranslateViewFrameToReal(Rectangle view_frame) {
+      var top_left = transformViewPointToReal(view_frame.Location);
+      var bottom_right_view = new Point(view_frame.Location.X + view_frame.Width, view_frame.Location.Y + view_frame.Height);
+      var bottom_right = transformViewPointToReal(bottom_right_view);
+      return new Rectangle(
+        (int)top_left.X, 
+        (int)top_left.Y,
+        (int)(bottom_right.X - top_left.X),
+        (int)(bottom_right.Y - top_left.Y));
     }
+
+    void resetBoxedRectangle() {
+      this.shrinked_size = shrinkFrameTo(box_size, original_size);
+      this.boxed_size = shrinked_size;
+      this.boxed_location = new PointF((box_size.Width - boxed_size.Width) / 2, (box_size.Height - boxed_size.Height) / 2);
+    }
+
+    //
+    // TRANSLATIONS
+    //
+
+    PointF transformViewPointToReal(PointF view_point) {
+      return transformShrinkedPointToReal(
+        transformBoxedPointToShrinked(
+        transformViewPointToBoxed(view_point)));
+    }
+
+    PointF transformViewPointToBoxed(PointF view_point) {
+      var boxed_point = new PointF();
+      boxed_point.X = view_point.X - boxed_location.X;
+      boxed_point.Y = view_point.Y - boxed_location.Y;
+      return boxed_point;
+    }
+
+    PointF transformBoxedPointToShrinked(PointF boxed_point) {
+      var scale = boxed_size.Width / shrinked_size.Width;
+      var shrinked_point = new PointF();
+      shrinked_point.X = boxed_point.X / scale;
+      shrinked_point.Y = boxed_point.Y / scale;
+      return shrinked_point;
+    }
+
+    PointF transformShrinkedPointToReal(PointF shrinked_point) {
+      var scale = shrinked_size.Width / original_size.Width;
+      var real_point = new PointF();
+      real_point.X = shrinked_point.X / scale;
+      real_point.Y = shrinked_point.Y / scale;
+      return real_point;
+    }
+
+    //
+    // MODIFICATIONS
+    //
 
     bool allowScale(float new_scale) {
       return new_scale >= 0.2 && new_scale <= 5;
@@ -97,19 +129,35 @@ namespace ImageEditor.Tools {
     // SUPPORTIVE STUFF
     //
 
-    double frameRatio(SizeF frame) {
-      return frame.Width * 1.0 / frame.Height;
-    }
-
-    SizeF shrinkFrameTo(SizeF target_frame, SizeF object_frame) {
-      SizeF result_frame = target_frame;
-      double object_ratio = frameRatio(object_frame);
-      if (frameRatio(target_frame) > object_ratio) {
+    SizeF shrinkFrameTo(SizeF outer_frame, SizeF object_frame) {
+      SizeF result_frame = outer_frame;
+      var object_ratio = frameRatio(object_frame);
+      var frame_ration = frameRatio(outer_frame);
+      if (frame_ration > object_ratio) {
         result_frame.Width = (int)(result_frame.Height * object_ratio);
       } else {
         result_frame.Height = (int)(result_frame.Width / object_ratio);
       }
       return result_frame;
+    }
+
+    SizeF expandFrameTo(SizeF inner_frame, SizeF object_frame, out PointF expansion_offset) {
+      expansion_offset = new PointF();
+      SizeF result_frame = object_frame;
+      double frame_ratio = frameRatio(inner_frame);
+      double object_ratio = frameRatio(object_frame);
+      if (frame_ratio > object_ratio) {
+        result_frame.Width = (int)(result_frame.Height * frame_ratio);
+        expansion_offset.X = (result_frame.Width - object_frame.Width) / 2;
+      } else {
+        result_frame.Height = (int)(result_frame.Width / frame_ratio);
+        expansion_offset.Y = (result_frame.Height - object_frame.Height) / 2;
+      }
+      return result_frame;
+    }
+
+    double frameRatio(SizeF frame) {
+      return frame.Width * 1.0 / frame.Height;
     }
   }
 }

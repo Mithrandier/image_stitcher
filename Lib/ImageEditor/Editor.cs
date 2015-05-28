@@ -13,6 +13,8 @@ namespace ImageEditor {
     Form form;
     Graphics g;
     Allocator allocator;
+    Image image;
+    Image cropped_image;
     Tools.ContextMenu context_menu;
 
     enum Operators { Move, Crop };
@@ -23,9 +25,9 @@ namespace ImageEditor {
     public Editor(Form form, PictureBox box, bool browseable = false) {
       this.form = form;
       this.box = box;
-      if (box.Image == null) {
-        box.Image = new Bitmap(box.Width, box.Height);
-      }
+      var preset_image = box.Image;
+      box.SizeMode = PictureBoxSizeMode.Normal;      
+      box.Image = new Bitmap(box.Width, box.Height);
       this.Image = box.Image;
       if (browseable) {
         this.context_menu = new Tools.ContextMenu();
@@ -33,33 +35,44 @@ namespace ImageEditor {
         initMenuItems();
         initPictureHandlers();
       }
+      if (preset_image != null)
+        this.Image = preset_image;
     }
 
-    public Image VisibleImage() {
-
-      return Image;
-    }
-
-    Image _image;
     public Image Image {
-      get { return _image; }
+      get {
+        if (cropped_image != null)
+          return cropped_image;
+        else
+          return image; 
+      }
       set {
         if (value == null)
           return;
-        var new_image = (Bitmap)value.Clone();
-        this._image = new_image;
+        var new_image = value;
+        this.image = new_image;
+        this.cropped_image = null;
         ResetState();
+        refreshPicture();
       }
     }
 
     public void ResetState() {
-      this.allocator = new Allocator(box, (Bitmap)Image.Clone());
-      refreshPicture();
+      this.allocator = new Allocator(box.Size, this.Image.Size);
+    }
+
+    public Bitmap CurrentView() {
+      var view_port = allocator.CurrentImageViewPort();
+      var view = new Bitmap((int)view_port.Width, (int)view_port.Height);
+      var g = Graphics.FromImage(view);
+      var dest_rect = new RectangleF(new PointF(0, 0), view.Size);
+      g.DrawImage(this.Image, dest_rect, view_port, GraphicsUnit.Pixel);
+      return view;
     }
 
     void initMenuItems() {
-      //this.context_menu.AddItem("Move", new EventHandler(toolStripMenuItemMove_Click));
-      //this.context_menu.AddItem("Crop", new EventHandler(toolStripMenuItemCrop_Click));
+      this.context_menu.AddItem("Move", new EventHandler(toolStripMenuItemMove_Click));
+      this.context_menu.AddItem("Crop", new EventHandler(toolStripMenuItemCrop_Click));
       this.context_menu.AddItem("Reset", new EventHandler(toolStripMenuItemReset_Click));
     }
 
@@ -85,7 +98,9 @@ namespace ImageEditor {
     }
 
     private void toolStripMenuItemReset_Click(object sender, EventArgs e) {
+      this.cropped_image = null;
       ResetState();
+      refreshPicture();
     }
 
     private void pictureMatches_MouseEnter(object sender, EventArgs e) {
@@ -114,10 +129,15 @@ namespace ImageEditor {
           int max_x = Math.Max(e.Location.X, start_point.X);
           int min_y = Math.Min(e.Location.Y, start_point.Y);
           int max_y = Math.Max(e.Location.Y, start_point.Y);
-          var new_frame = new Rectangle(new Point(min_x, min_y), new Size(max_x - min_x, max_y - min_y));
-          allocator.SetFrame(new_frame);
+          var selected_frame = new Rectangle(new Point(min_x, min_y), new Size(max_x - min_x, max_y - min_y));
+          var cropped_frame = allocator.TranslateViewFrameToReal(selected_frame);
+          var new_image = new Bitmap(cropped_frame.Width, cropped_frame.Height);
+          var dest_rect = new Rectangle(new Point(0, 0), cropped_frame.Size);
+          Graphics.FromImage(new_image).DrawImage(this.Image, dest_rect, cropped_frame, GraphicsUnit.Pixel);
+          this.cropped_image = new_image;
+          ResetState();
+          refreshPicture();
         }
-        refreshPicture();
         start_point = Point.Empty;
       }
     }
